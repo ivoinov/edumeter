@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Developer>
+                <version>1.0.0</version>
+                <name>Developer Tools</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+            </Developer>
+        </modules>
+    </global>
+</config>

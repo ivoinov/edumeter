@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Core>
+                <version>1.0.0</version>
+                <name>System CORE</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+            </Core>
+        </modules>
+        <areas>
+            <frontend translate="name">
+                <name>Frontend</name>
+            </frontend>
+        </areas>
+        <design>
+        	<paths>
+        		<global>design/global</global>
+        	</paths>
+        	<skin>
+        		<frontend>public/skin/global</frontend>
+        	</skin>
+        </design>
+		<extends>
+			<system />
+		</extends>
+    </global>
+	<frontend>
+		<extends>
+			<global />
+		</extends>
+        <design>
+        	<paths>
+        		<frontend>design/frontend</frontend>
+        	</paths>
+        	<skin>
+        		<frontend>public/skin/frontend</frontend>
+        	</skin>
+        </design>
+	</frontend>
+</config>

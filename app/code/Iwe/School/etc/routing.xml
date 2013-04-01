@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+        <routing>
+            <routes>
+                <school translate="name">
+                    <controller>core/crud</controller>
+                    <use>iwe_school/school</use>
+                    <name>School</name>
+                </school>
+                <content translate="name">
+                    <name>Content</name>
+                    <routes>
+                        <region translate="name">
+                            <controller>core/crud</controller>
+                            <use>iwe_school/region</use>
+                            <name>Regions</name>
+                        </region>
+                    </routes>
+                </content>
+            </routes>
+        </routing>
+    </admin>
+    <frontend>
+        <routing>
+            <routes>
+                <school>
+                    <name>School</name>
+                    <controller>iwe_school/map</controller>
+                    <use>iwe_school/school</use>
+                </school>
+            </routes>
+        </routing>
+    </frontend>
+</config>

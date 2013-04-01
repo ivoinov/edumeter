@@ -1,0 +1,68 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+<?php if($this->getFilterable() !== false) : ?>
+<div class="widget-grid-search-button">
+	<input type="button" onclick="grid_<?php echo $this->getHtmlId() ?>.search()" value="<?php _e("Search"); ?>" />
+	<input type="button" onclick="grid_<?php echo $this->getHtmlId() ?>.search('')" value="<?php _e("Reset"); ?>" />
+</div>
+<?php endif; ?>
+<?php if($this->getFilter('pager')) : ?>
+	<div class="pager"><?php echo $this->getFilter('pager')->toHtml(); ?></div>
+<?php endif; ?>
+<div class="grid">
+	<table>
+		<thead>
+			<tr>
+				<?php foreach($this->getColumns() as $id => $column) : if($column->getIgnore()) continue; ?>
+				<th <?php echo $column->getHtmlAttributeString(); ?>><?php echo $column->toHtml(); ?></th>
+				<?php endforeach; ?>
+			</tr>
+			<?php if($this->getFilterable() !== false) : ?>
+				<tr class="widget-grid-filter">
+				<?php foreach($this->getColumns() as $id => $column) : if($column->getIgnore()) continue; ?>
+					<th><?php echo $column->getFilterHtml(); ?></th>
+					<?php endforeach; ?>
+				</tr>
+			<?php endif; ?>
+		</thead>
+		<?php if(count($this->getCollection()) > 30) : ?>
+		<tfoot>
+			<tr>
+				<?php foreach($this->getColumns() as $id => $column) : if($column->getIgnore()) continue; ?>
+					<th <?php echo $column->getHtmlAttributeString(); ?>><?php echo $column->toHtml();  ?></th>
+				<?php endforeach; ?>
+			</tr>
+		</tfoot>
+		<?php endif; ?>
+		<tbody>
+		<?php if (count($this->getCollection()) > 0): ?>
+			<?php foreach($this->getCollection() as $row) : ?>
+				<tr>
+					<?php foreach($this->getColumns() as $id => $column) : if($column->getIgnore()) continue; ?>
+					<td <?php echo $column->getHtmlAttributeString(); ?>><?php echo $column->getCellValue($row); ?></td>
+					<?php endforeach; ?>
+				</tr>
+			<?php endforeach; ?>
+		<?php else: ?>
+			<tr>
+				<td colspan='<?php echo count($this->getColumns()); ?>'
+					class='empty-row'><?php _e("No records found"); ?></td>
+			</tr>
+		<?php endif; ?>
+		</tbody>
+	</table>
+</div>

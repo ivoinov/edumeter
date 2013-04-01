@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<access>
+				<role>
+					<table>access_role</table>
+					<permission_table>access_role_permissions</permission_table>
+					<key>role_id</key>
+					<attributes>
+						<role_id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</role_id>
+						<name translate="label">
+							<label>Name</label>
+							<required>1</required>
+						</name>
+					</attributes>
+				</role>
+			</access>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<access>
+				<role translate="title">
+					<title>Role</title>
+					<fieldsets>
+						<default translate="label"><label>Role information</label></default>
+						<permissions translate="label"><label>Role permissions</label></permissions>
+					</fieldsets>
+					<source>access/role</source>
+					<fields>
+						<name />
+						<permissions translate="label,fieldset,tab">
+							<fieldset>permissions</fieldset>
+							<label>Permissions</label>
+							<type>access/accesstree</type>
+							<flat_name>1</flat_name>
+						</permissions>
+					</fields>
+				</role>
+			</access>
+		</forms>
+		<grids>
+			<access>
+				<role translate="title">
+					<title>Roles</title>
+					<source>access/role</source>
+					<add_default_actions>0</add_default_actions>
+					<fields>
+						<name />
+						<action>
+							<type>action</type>
+							<actions>
+								<edit translate="label">
+									<label>Edit</label>
+									<skin_icon>images/icons/group_edit.png</skin_icon>
+									<url_template>*/*/edit?id={role_id}</url_template>
+								</edit>
+								<delete translate="label">
+									<label>Delete</label>
+									<skin_icon>images/icons/group_delete.png</skin_icon>
+									<url_template>*/*/delete?id={role_id}</url_template>
+								</delete>
+							</actions>
+						</action>
+					</fields>
+				</role>
+			</access>
+		</grids>
+	</admin>
+</config>

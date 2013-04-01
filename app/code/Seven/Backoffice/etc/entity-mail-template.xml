@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<forms>
+			<core>
+				<mail_template translate="title">
+					<title>E-Mail template</title>
+					<source>core/mail_template</source>
+					<fieldsets>
+						<default translate="label">
+							<label>Template details</label>
+						</default>
+					</fieldsets>
+					<fields>
+						<id      />
+						<subject />
+						<type    />
+						<content />
+					</fields>
+				</mail_template>
+			</core>
+		</forms>
+		<grids>
+			<core>
+				<mail_template translate="title">
+					<title>E-Mail templates</title>
+					<source>core/mail_template</source>
+					<fields>
+						<id    />
+						<subject />
+						<type    />
+					</fields>
+				</mail_template>
+			</core>
+		</grids>
+	</admin>
+</config>   

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<users_login>
+		<reference name="content">
+			<block name="login-form" type="core/widget_form">
+				<action method="addButton">
+					<id>submit</id>
+					<data>
+						<type>submit</type>
+						<label>Login</label>
+					</data>
+				</action>
+			</block>
+		</reference>
+	</users_login>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<system_packages_index>
+		<reference name="grid_container">
+			<action method="setTitle" translate="title">
+				<title>Packages</title>
+			</action>
+			<action method="addButton">
+				<id>renew-packages</id>
+				<data translate="label">
+					<label>Refresh package list</label>
+					<location>*/*/refresh</location>
+				</data>
+			</action>
+			<action method="addButton">
+				<id>upgrade-packages</id>
+				<data translate="label">
+					<label>Upgrade packages</label>
+					<location>*/*/upgrade_all</location>
+				</data>
+			</action>
+			<action method="removeButton">
+				<id>create</id>
+			</action>
+		</reference>
+	</system_packages_index>
+	
+	<system_packages_view>
+		<remove name="view" />
+		<reference name="content">
+			<block name="container" type="core/widget_container">
+				<action method="setTitle" translate="title"><title>Package</title></action>
+				<block name="package" wrapper=".widget-box" template="Seven/Backoffice/package_view.phtml" type="backoffice/package">
+					<action method="setRegistryName"><name>view_package</name></action>
+				</block>
+			</block>
+		</reference>
+	</system_packages_view>
+
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<default>
+		<reference name="mainmenu">
+			<action method="addItem">
+				<id>configuration</id>
+				<data translate="label">
+					<label>Configuration</label>
+					<order>1000</order>
+					<url>*/system/config</url>
+				</data>
+				<parent>system</parent>
+			</action>
+		</reference>
+	</default>
+
+	<system_configuration_page>
+		<reference name="content">
+			<block name="system_config" type="core/widget_form">
+				<action method="setTitle" translate="title">
+					<title>Configuration</title>
+				</action>
+				<action method="setButtonsTop">
+					<enabled>1</enabled>
+				</action>
+				<action method="addButton">
+					<id>submit</id>
+					<data translate="label">
+						<type>submit</type>
+						<label>Save</label>
+					</data>
+				</action>
+			</block>
+		</reference>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>system</id>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addJs">
+				<js>js/system-config.js</js>
+				<type>skin</type>
+			</action>
+		</reference>
+	</system_configuration_page>
+
+</layout>

@@ -1,0 +1,7 @@
+.settings
+.buildpath
+.project
+.idea
+/.htaccess
+app/etc/local.xml
+*xml-translate.php

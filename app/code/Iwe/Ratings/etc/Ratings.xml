@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<iwe_ratings>
+				<rating>
+					<table>iwe_school_stat</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</id>
+						<school_id translate="label,description">
+							<label>School</label>
+                            <type>select</type>
+                            <options>iwe_school/school</options>
+                            <required>1</required>
+                            <description>School name and school town</description>
+						</school_id>
+						<subject_id translate="label">
+							<label>Subject</label>
+                            <type>select</type>
+                            <options>iwe_ratings/subject</options>
+                            <required>1</required>
+                            <description>Name of examination subjects </description>
+                        </subject_id>
+                        <rate translate="label,description">
+                            <label>Rating</label>
+                            <type>number</type>
+                            <data_type>decimal</data_type>
+                            <scale>2</scale>
+                            <precision>12</precision>
+                            <required>1</required>
+                            <description>Rate for current school</description>
+                        </rate>
+                        <count translate="label,description">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <data_type>decimal</data_type>
+                            <scale>2</scale>
+                            <precision>12</precision>
+                            <required>1</required>
+                            <description>Number of students who passed</description>
+                        </count>
+                        <year translate="label,description" >
+                            <label>Year</label>
+                            <type>number</type>
+                            <required>1</required>
+                            <description>Year of examination</description>
+                        </year>
+					</attributes>
+				</rating>
+                <subject>
+                    <table>iwe_ratings_subjects</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                        </id>
+                        <name translate="label,description">
+                            <label>Name</label>
+                            <maxlength>255</maxlength>
+                            <description>Subject name</description>
+                            <multiview>1</multiview>
+                            <required>1</required>
+                        </name>
+                    </attributes>
+                </subject>
+			</iwe_ratings>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<iwe_ratings>
+				<rating translate="title,fieldset,tab">
+					<title>Rating edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_ratings/rating</source>
+					<fields>
+						<school_id />
+						<subject_id />
+                        <rate/>
+                        <count/>
+                        <year/>
+					</fields>
+				</rating>
+                <subject translate="title,fieldset,tab">
+                    <title>Subject edit from</title>
+                    <fieldset>General</fieldset>
+                    <tab>General</tab>
+                    <source>iwe_ratings/subject</source>
+                    <fields>
+                        <name/>
+                    </fields>
+                </subject>
+			</iwe_ratings>
+		</forms>
+		<grids>
+			<iwe_ratings>
+				<rating translate="title">
+					<title>School ratings</title>
+					<source>iwe_ratings/rating</source>
+                    <collection>iwe_ratings/rating</collection>
+					<use_ajax>1</use_ajax>
+					<fields>
+						<id>	
+							<width>40px</width>
+						</id>
+						<school_id />
+                        <subject_id/>
+                        <rate>
+                            <output_callback>iwe_ratings/output::getValue</output_callback>
+                        </rate>
+					</fields>
+				</rating>
+                <subject translate="title">
+                    <title>Subject list</title>
+                    <source>iwe_ratings/subject</source>
+                    <collection>iwe_ratings/subject</collection>
+                    <use_ajax>1</use_ajax>
+                    <fields>
+                        <id>
+                            <width>40px</width>
+                        </id>
+                        <name />
+                    </fields>
+                </subject>
+			</iwe_ratings>
+		</grids>
+	</admin>
+</config>

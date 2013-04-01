@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <News translate="description,name">
+            	<name>News</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <description>Simple news package</description>
+                <version>0.1.4</version>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>                
+            </News>
+        </modules>
+    </global>
+</config>

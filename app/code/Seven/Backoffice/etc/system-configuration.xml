@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+        <forms>
+            <admin>
+                <system_config translate="tab,fieldset">
+                    <tab>General</tab>
+                    <fieldset>General</fieldset>
+               </system_config>
+           </admin> 
+        </forms>
+    </admin>
+</config>

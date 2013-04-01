@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Backoffice>
+                <version>0.1.0</version>
+                <name>Back office</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>
+            </Backoffice>
+        </modules>
+        <areas>
+            <admin translate="name">
+                <name>Backoffice</name>
+                <secure>1</secure>
+            </admin>
+        </areas>
+    </global>
+    <admin>
+        <extends>
+            <global />
+        </extends>
+        <design>
+            <paths>
+                <admin>design/admin</admin>
+            </paths>
+            <skin>
+                <frontend>public/skin/admin</frontend>
+            </skin>
+        </design>
+    </admin>
+</config>

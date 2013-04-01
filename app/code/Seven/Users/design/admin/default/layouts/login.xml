@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<login_page>
+        <block type="core/html" name="html">
+            <action method="setDocType"><doctype>html4-transitional</doctype></action>
+            <block name="head" type="core/html_head">
+                <action method = "addCss"><css>users/login/style.css</css><type>skin</type></action>
+                <action method = "addMetaHttp"><http-equiv>Content-Type</http-equiv><content>text/html, charset=utf-8</content></action>
+                <action method = "addJs"><script>jquery/jquery.js</script><type>lib</type></action>
+                <action method = "addJs"><script>js/main.js</script><type>skin</type></action>
+            </block>
+            <block name="body" type="core/html_body" template="Seven/Users/login/layout.phtml">             
+                <block type="core/array" name="content">
+					<block name="message" wrapper=".messages" type="core/message" template="page/message.phtml" />
+                	<block name="login-form" type="core/widget_form">
+                		<action method="setTitle"><title>Seven &lt;span&gt;Administrator&lt;/span&gt;</title></action>
+                		<action method="addButton">
+                			<id>submit</id>
+                			<data>
+								<type>submit</type>
+                				<label>Login</label>
+                			</data>
+                		</action>
+                	</block>
+                </block>
+            </block>
+        </block>
+	</login_page>
+
+</layout>

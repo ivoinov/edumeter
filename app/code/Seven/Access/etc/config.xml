@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Access translate="description">
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <description></description>
+                <version>0.1.1</version>
+                <depends>
+                	<Seven_Users>0.1.0</Seven_Users>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>
+            </Access>
+        </modules>
+        <events>
+        	<route_access>
+        		<Access>access/observer::isRouteAllowed</Access>
+        	</route_access>
+        	<denied_action>
+        		<Access>access/observer::deniedAction</Access>
+        	</denied_action>
+        	<no_route_action>
+        		<Access>access/observer::norouteAction</Access>
+        	</no_route_action>
+        </events>
+		<urlaliases>
+			<login>*/users/login</login>
+		</urlaliases>
+    </global>
+	<admin>
+		<urlaliases>
+			<login>*/users/account/login</login>
+		</urlaliases>
+	</admin>
+</config>

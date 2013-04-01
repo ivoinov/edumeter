@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<default>
+		<reference name='topline'>
+			<block type="users/user" name="topline.user" template="Seven/Users/top-menu.phtml" wrapper="#user-top-menu">
+				<block name="topline.user.menu" type="core/widget_sitemap">
+					<action method="setSitemapPath"><path>users/account</path></action>
+				</block>
+			</block>
+		</reference>
+	</default>
+	
+	<profile_edit_page>
+		<reference name="content">
+			<block type="core/widget_form" name="form">
+				<action method="setTitle" translate="title"><title>Your account</title></action>
+			</block>
+		</reference>
+	</profile_edit_page>
+
+</layout>

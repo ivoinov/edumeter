@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<routes>
+				<content translate="name">
+					<name>Content</name>
+					<routes>
+						<pages translate="name">
+							<controller>core/crud</controller>
+							<use>pages/page</use>
+							<name>Pages</name>
+						</pages>
+					</routes>
+				</content>
+			</routes>
+		</routing>
+	</admin>
+	<frontend>
+		<routing>
+			<routes>
+				<__page__>
+					<pattern>/\.html$/</pattern>
+					<access>INHERIT</access>
+					<hidden>1</hidden>
+					<controller>pages/frontend_view</controller>
+				</__page__>
+			</routes>
+		</routing>
+	</frontend>
+</config>

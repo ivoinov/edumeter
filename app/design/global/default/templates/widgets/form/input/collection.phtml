@@ -1,0 +1,52 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+<div class="widget-input-collection" id="<?php echo $this->getHtmlId(); ?>">
+<?php 
+$increment = 0;
+foreach((array)$this->getInputs() as $index => $input) :
+	$id  = $this->getHtmlId() . "_" . $index;
+	$increment = (int)max((int)$index, $increment);
+	$classes = array("widget-input-collection-item");
+	if((string)$index == '__template__') {
+		$id = $this->getHtmlId() . "_template";
+		$classes[] = "widget-input-collection-item-template";
+	}
+	?>
+	<div id="<?php echo $id; ?>" class="<?php echo implode(' ', $classes); ?>">
+		<input class="widget-input-collection-remove" type="button" value="<?php _e("Delete"); ?>" onclick="$(this).parent().remove()" >
+		<?php echo $input->toHtml(); ?>
+		<p><?php echo $input->getErrorMessage(); ?></p>
+	</div>
+	<?php  
+endforeach; 
+?>
+<input type="button" onclick="<?php echo $this->getHtmlId() ?>_add_item()" value="<?php _e("Add"); ?>" />
+</div>
+<script type="text/javascript">//<!--
+	var <?php echo $this->getHtmlId() ?>_increment = <?php echo $increment; ?>;
+	function <?php echo $this->getHtmlId() ?>_add_item() {
+		var template = $("#<?php echo $this->getHtmlId() ?>_template");
+		var index = ++<?php echo $this->getHtmlId() ?>_increment;
+		var new_item = template.clone(true);
+		new_item.find("[name^='<?php echo $this->getName() ?>[__template__]']").each(function() {
+			var oldname = $(this).attr('name');
+			$(this).attr('name', oldname.replace('<?php echo $this->getName() ?>[__template__]', '<?php echo $this->getName() ?>[' + index + ']'));
+		});
+		new_item.removeClass('widget-input-collection-item-template').attr('id', '<?php echo $this->getHtmlId(); ?>_' + index);
+		template.before(new_item);
+	}
+//--></script>

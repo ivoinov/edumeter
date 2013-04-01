@@ -1,0 +1,35 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+<input type='file' <?php echo $this->getAttributeString(); ?>>
+<?php if($this->getFile() && $this->getFile()->_getId()) : ?>
+<div class="widget-input-image">
+    <div class="widget-input-image-preview"><a href='<?php echo $this->getFile(); ?>'><img src="<?php echo $this->getFile()->getThumbUrl(70, 70); ?>"></a></div>
+    <div class="widget-input-image-prop">
+        <ul>
+            <li><b><?php _e("Name") ?>:</b> <?php echo $this->getFile()->getName(); ?></li>
+            <li><b><?php _e("Size") ?>:</b> <?php echo $this->getFile()->getSize(); ?> <?php _e("bytes") ?></li>
+            <li><b><?php _e("Resolution") ?>:</b> <?php echo $this->getFile()->getWidth(); ?>x<?php echo $this->getFile()->getHeight(); ?></li>
+        </ul>
+        <div class="widget-input-image-delete">
+            <label><input name="<?php echo $this->getHtmlName() ?>_delete" <?php echo $this->getDeleteFile() ? "checked" : ""; ?> type="checkbox"> <?php _e("Delete") ?></label>
+        </div>    
+    </div>
+                    
+
+</div>
+    
+<?php endif; ?>

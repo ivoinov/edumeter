@@ -1,0 +1,33 @@
+div.messages > div { 
+	border-radius: 5px;
+	font-size:13px;
+	box-shadow: 2px 2px 1px #ccc;
+	padding: 8px 7px 8px 30px;
+	margin: 15px 0 0;
+}
+
+div.messages ul, div.messages ul li {
+	list-style: none;
+	padding:0px;
+	margin: 0px;
+}
+
+div.messages #success-notifications {
+	border: 1px solid #00CC00;
+	background:#DFFFDF url(images/icons/tick.png) no-repeat 10px 8px;
+}
+
+div.messages #info-notifications {
+	border: 1px solid #0099CC;
+	background: white url(images/icons/information.png) no-repeat 10px 8px;
+}
+
+div.messages #warning-notifications {
+	border: 1px solid #CCBB00;
+	background:#FFFFE0 url(images/icons/error.png) no-repeat 10px 8px;
+}
+
+div.messages #error-notifications {
+	border: 1px solid #CC0000;
+	background:#FFE0E0 url(images/icons/exclamation.png) no-repeat 10px 8px;
+}

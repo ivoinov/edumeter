@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Signup>
+                <version>1.0.0</version>
+                <name>Fronted Signup</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                	<Seven_Users>0.1.0</Seven_Users>
+                </depends>
+            </Signup>
+        </modules>
+    </global>
+</config>

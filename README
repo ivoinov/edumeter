@@ -1,0 +1,8 @@
+INSTALL
+1. Clone project repository to your local enviroment
+2. Copy .htaccess.dist to .htaccess
+3. Open app/etc and copy local.xml.dist to local.xml, then enter database credentials to local.xml file.
+4. Run shell/install.php in terminal to initialize base application database scheme, OR just run all queries listed in shell/install.php file
+5. Run shell/chmod-setup in terminal to allow writing in var and public/media directories for web user
+
+Now your site are ready to use. You can get more information from our wiki: https://github.com/sevenframework/core/wiki

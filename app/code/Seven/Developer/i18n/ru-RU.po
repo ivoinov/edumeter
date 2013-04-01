@@ -1,0 +1,545 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seven Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 00:12+0300\n"
+"PO-Revision-Date: 2012-09-21 00:12+0300\n"
+"Last-Translator: Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>\n"
+"Language-Team: Seven Core Team <team@sevenframework.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;_en;_n;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2))\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../i18n/translate.php:3
+msgid "ID"
+msgstr "ID"
+
+#: ../i18n/translate.php:4
+msgid "Name"
+msgstr "Название"
+
+#: ../i18n/translate.php:5
+msgid "Description"
+msgstr "Описание"
+
+#: ../i18n/translate.php:6
+msgid "Start"
+msgstr "Начало"
+
+#: ../i18n/translate.php:7
+msgid "End"
+msgstr "Конец"
+
+#: ../i18n/translate.php:8
+msgid "Rules"
+msgstr "Правила"
+
+#: ../i18n/translate.php:9
+msgid "Team"
+msgstr "Команда"
+
+#: ../i18n/translate.php:10
+msgid "Show results after"
+msgstr "Показать результат после"
+
+#: ../i18n/translate.php:11
+msgid "Auto start"
+msgstr "Автостарт"
+
+#: ../i18n/translate.php:12
+msgid "Enable"
+msgstr "Включено"
+
+#: ../i18n/translate.php:13
+msgid "Open problems on start"
+msgstr "Открыть задачи в начале"
+
+#: ../i18n/translate.php:14
+msgid "Close problems on end"
+msgstr "Закрыть задачи в конце"
+
+#: ../i18n/translate.php:15
+#: ../i18n/translate.php:19
+#: ../i18n/translate.php:20
+msgid "Problems"
+msgstr "Задачи"
+
+#: ../i18n/translate.php:16
+msgid "Competition"
+msgstr "Соревнование"
+
+#: ../i18n/translate.php:17
+#: ../i18n/translate.php:18
+msgid "General"
+msgstr "Основное"
+
+#: ../i18n/translate.php:21
+msgid "Problem ID"
+msgstr "Задача"
+
+#: ../i18n/translate.php:22
+msgid "Score"
+msgstr "Балы"
+
+#: ../i18n/translate.php:23
+msgid "Members"
+msgstr "Участники"
+
+#: ../i18n/translate.php:24
+msgid "List"
+msgstr "Список"
+
+#: ../i18n/translate.php:27
+#: ../i18n/translate.php:28
+msgid "Competitions"
+msgstr "Соревнования"
+
+#: ../i18n/xml-translate.php:6
+#: ../i18n/xml-translate.php:12
+msgid "Error reports"
+msgstr "Отчеты об ошибках"
+
+#: ../i18n/xml-translate.php:9
+msgid "Developer"
+msgstr "Разработчик"
+
+#: ../i18n/xml-translate.php:10
+#: ../Model/Integritycheck/Task/Routes.php:7
+msgid "Routes"
+msgstr "Маршруты"
+
+#: ../i18n/xml-translate.php:11
+msgid "Integrity check"
+msgstr "Проверка целестности"
+
+#: ../Model/Integritycheck.php:11
+msgid "System integrity checker"
+msgstr "Система проверки целостности"
+
+#: ../Model/Integritycheck/Task/Entity.php:7
+msgid "System entities"
+msgstr "Системные сущности"
+
+#: ../Model/Integritycheck/Task/Permissions.php:7
+msgid "Directory Permissions"
+msgstr "Права доступа к дерикториям"
+
+#: ../Model/Integritycheck/Task/Routes.php:19
+#, php-format
+msgid "Routes of %s"
+msgstr "Маршруты %s"
+
+#: ../Model/Integritycheck/Task/Routes.php:36
+msgid "<b>Subroutes</b>"
+msgstr "<b>Вложенные маршруты</b>"
+
+#: ../Model/Integritycheck/Task/Routes.php:50
+#, php-format
+msgid "<b>Controller:</b> %s &rarr; %s"
+msgstr "<b>Контроллер:</b> %s &rarr; %s"
+
+#: ../Model/Integritycheck/Task/Routes.php:54
+msgid "This is CRUD controller"
+msgstr "Это CRUD контроллер"
+
+#: ../Model/Integritycheck/Task/Routes.php:55
+#, php-format
+msgid "Controller use %s entity"
+msgstr "Контроллер использует %s сущность"
+
+#: ../Model/Integritycheck/Task/Routes.php:67
+msgid "<b>Actions</b>"
+msgstr "<b>Действия</b>"
+
+#: ../Model/Integritycheck/Task/Routes.php:84
+#, php-format
+msgid "<b>Type:</b> %s"
+msgstr "<b>Тип:</b> %s"
+
+#: ../Model/Integritycheck/Task/Routes.php:90
+#, php-format
+msgid "<b>Access:</b> %s"
+msgstr "<b>Доступ:</b> %s"
+
+#: ../Model/Integritycheck/Task/Entity/Tables.php:17
+msgid "Unable to get table list"
+msgstr "Невозможно получить список таблиц"
+
+#: ../Model/Integritycheck/Task/Entity/Tables.php:36
+#, php-format
+msgid "Table `%s`"
+msgstr "Таблица `%s`"
+
+#: ../Model/Integritycheck/Task/Entity/Tables.php:56
+msgid "Table not exists"
+msgstr "Таблица не существует"
+
+#: ../Model/Integritycheck/Task/Entity/Tables.php:77
+msgid "Field not stored in this table"
+msgstr "Это поле не хранится в таблице"
+
+#: ../Model/Integritycheck/Task/Entity/Tables.php:80
+msgid "Field not defined"
+msgstr "Поле не определено"
+
+#: ../Model/Integritycheck/Task/Entity/Classes.php:13
+msgid "Entity classes"
+msgstr "Класы сущности"
+
+#: ../Model/Integritycheck/Task/Entity/Classes.php:16
+#, php-format
+msgid "Model <b>%s</b>"
+msgstr "Модель <b>%s</b>"
+
+#: ../Model/Integritycheck/Task/Entity/Classes.php:25
+#, php-format
+msgid "Resource <b>%s</b>"
+msgstr "Ресурс <b>%s</b>"
+
+#: ../Model/Integritycheck/Task/Entity/Classes.php:34
+#, php-format
+msgid "Collection <b>%s</b>"
+msgstr "Колекция <b>%s</b>"
+
+#: ../Model/Integritycheck/Task/Entity/Tables/Indexes.php:22
+#, php-format
+msgid "PRIMARY KEY `%s`"
+msgstr "ПЕРВИЧНЫЙ КЛЮЧ `%s`"
+
+#: ../Model/Integritycheck/Task/Entity/Tables/Indexes.php:32
+#, php-format
+msgid "Incrrect PRIMARY KEY `%s`"
+msgstr "Некорректный ПЕРВИЧНЫЙ КЛЮЧ `%s`"
+
+#: ../Model/Integritycheck/Task/Entity/Tables/Indexes.php:37
+msgid "Have no PRIMARY KEY"
+msgstr "ПЕРВИЧНЫЙ КЛЮЧ отсутствует"
+
+#: ../design/admin/default/templates/integritycheck/view.phtml:42
+msgid "How to fix"
+msgstr "Как исправить"
+
+#: ../design/admin/default/templates/routing/map.phtml:13
+msgid "Yes"
+msgstr "Да"
+
+#: ../design/admin/default/templates/routing/map.phtml:13
+msgid "No"
+msgstr "Нет"
+
+#: ../design/admin/default/templates/routing/map.phtml:28
+msgid "Urlkey"
+msgstr "Ключ URL"
+
+#: ../design/admin/default/templates/routing/map.phtml:30
+msgid "Hidden"
+msgstr "Скрытый"
+
+#: ../design/admin/default/templates/routing/map.phtml:31
+msgid "Access"
+msgstr "Доступ"
+
+#~ msgid "Open course"
+#~ msgstr "Открытый курс"
+
+#~ msgid "Public course"
+#~ msgstr "Публичный курс"
+
+#~ msgid "Private course"
+#~ msgstr "Закрытый курс"
+
+#~ msgid "Create course"
+#~ msgstr "Создать курс"
+
+#~ msgid "Courses"
+#~ msgstr "Курсы"
+
+#~ msgid "Subscribers"
+#~ msgstr "Подписчики"
+
+#~ msgid "View"
+#~ msgstr "Просмотр"
+
+#~ msgid "Sort order"
+#~ msgstr "Порядок сортировки"
+
+#~ msgid "Type"
+#~ msgstr "Тип"
+
+#~ msgid "Lecture"
+#~ msgstr "Лекция"
+
+#~ msgid "Test"
+#~ msgstr "Тест"
+
+#~ msgid "Adding new material"
+#~ msgstr "Добавить новый материал"
+
+#~ msgid "Course items"
+#~ msgstr "Элементы курса"
+
+#~ msgid "Open"
+#~ msgstr "Открыть"
+
+#~ msgid "Remove"
+#~ msgstr "Удалить"
+
+#~ msgid "Content"
+#~ msgstr "Содержимое"
+
+#~ msgid "Teacher courses"
+#~ msgstr "Преподавателя курсы"
+
+#~ msgid "Course item"
+#~ msgstr "Элемент курса"
+
+#~ msgid "ACM"
+#~ msgstr "ACM"
+
+#~ msgid "By last solution"
+#~ msgstr "По последнему решению"
+
+#~ msgid "By best solution"
+#~ msgstr "По лучшему решению"
+
+#~ msgid "Teams"
+#~ msgstr "Команды"
+
+#~ msgid "Currently in progress"
+#~ msgstr "Проходит сейчас"
+
+#~ msgid "Complete"
+#~ msgstr "Завершено"
+
+#~ msgid "Team standings"
+#~ msgstr "Командный зачет"
+
+#~ msgid "Driver standings"
+#~ msgstr "Личный зачет"
+
+#~ msgid "By ACM rules"
+#~ msgstr "По правилам ACM"
+
+#~ msgid "Start at"
+#~ msgstr "Начало"
+
+#~ msgid "DATEFORMAT::h:i:s A, m/d/Y"
+#~ msgstr "H:i:s, d.m.Y"
+
+#~ msgid "TIME::in %s"
+#~ msgstr "через %s"
+
+#~ msgid "End at"
+#~ msgstr "Конец"
+
+#~ msgid "Duration"
+#~ msgstr "Продолжительность"
+
+#~ msgid "Participate"
+#~ msgstr "Участники"
+
+#~ msgid "All group members"
+#~ msgstr "Все пользователи группы"
+
+#~ msgid "Registered teams"
+#~ msgstr "Зарегистрированные команды"
+
+#~ msgid "All website registered users"
+#~ msgstr "Все зарегистрированные пользователи сайта"
+
+#~ msgid "or"
+#~ msgstr "или"
+
+#~ msgid "Join to team"
+#~ msgstr "Присоеденится к команде"
+
+#~ msgid "See all competitions"
+#~ msgstr "Просмотреть все соревнования"
+
+#~ msgid "Statement of %s"
+#~ msgstr "Результаты %s"
+
+#~ msgid "Unknown"
+#~ msgstr "Неизвестно"
+
+#~ msgid "See results table"
+#~ msgstr "Показать таблицу результатов"
+
+#~ msgid "Rules %s"
+#~ msgstr "Правила %s"
+
+#~ msgid "Participants of the competition - all group members"
+#~ msgstr "Участники соревнования - пользователи группы"
+
+#~ msgid "Participants of the competition - all registered teams"
+#~ msgstr "Участники соревнования - зарегистрированные команды"
+
+#~ msgid "general"
+#~ msgstr "Основное"
+
+#~ msgid "Enter problem ID here"
+#~ msgstr "Введите номер задачи сюда"
+
+#~ msgid "Edit from"
+#~ msgstr "Форма редактирования"
+
+#~ msgid "Index"
+#~ msgstr "Индекс"
+
+#~ msgid "Edit"
+#~ msgstr "Изменить"
+
+#~ msgid "Add new"
+#~ msgstr "Добавить"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Time limit"
+#~ msgstr "Лимит времени"
+
+#~ msgid "Memory limit"
+#~ msgstr "Лимит памяти"
+
+#~ msgid "Test amount"
+#~ msgstr "Количество тестов"
+
+#~ msgid "Example input"
+#~ msgstr "Пример ввода"
+
+#~ msgid "Example output"
+#~ msgstr "Пример вывода"
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#~ msgid "Source"
+#~ msgstr "Источник"
+
+#~ msgid "Technical condition"
+#~ msgstr "Техническое условие"
+
+#~ msgid "Example tip"
+#~ msgstr "Подсказка к примеру"
+
+#~ msgid "Example"
+#~ msgstr "Пример"
+
+#~ msgid "Difficulty"
+#~ msgstr "Сложность"
+
+#~ msgid "Problems list"
+#~ msgstr "Список задач"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Back to list"
+#~ msgstr "Назад к списку"
+
+#~ msgid "Site frontend"
+#~ msgstr "Интерфейс сайта"
+
+#~ msgid "General controller"
+#~ msgstr "Контроллер по-умолчанию"
+
+#~ msgid "Home"
+#~ msgstr "Главная страница"
+
+#~ msgid "Site"
+#~ msgstr "Сайт"
+
+#~ msgid "Administrator e-mail"
+#~ msgstr "E-Mail администратора"
+
+#~ msgid "Site language"
+#~ msgstr "Язык сайта"
+
+#~ msgid "Theme"
+#~ msgstr "Тема"
+
+#~ msgid "Design"
+#~ msgstr "Дизайн"
+
+#~ msgid "Logo"
+#~ msgstr "Логотип"
+
+#~ msgid "Logo alt"
+#~ msgstr "Текстовый логотип"
+
+#~ msgid "Favicon"
+#~ msgstr "Иконка"
+
+#~ msgid "Webmaster e-mail"
+#~ msgstr "E-mail веб-мастера"
+
+#~ msgid "Webmaster"
+#~ msgstr "Веб-мастер"
+
+#~ msgid "Send exception via e-mail"
+#~ msgstr "Отправлять отчеты об ошибках на почту"
+
+#~ msgid "Code"
+#~ msgstr "Код"
+
+#~ msgid "Unique site code"
+#~ msgstr "Уникальный код сайта"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid ""
+#~ "Enter site URL here without protocol, just host and\n"
+#~ "\t\t\t\t\t\t\t\tpath."
+#~ msgstr "Введите ссылку на сайт без протокола, только имя домена и пути"
+
+#~ msgid "Area"
+#~ msgstr "Зона"
+
+#~ msgid "Website"
+#~ msgstr "Сайт"
+
+#~ msgid "Default"
+#~ msgstr "По-умолчанию"
+
+#~ msgid "All settings"
+#~ msgstr "Все настройки"
+
+#~ msgid "Incorrect value"
+#~ msgstr "Некорректное значение"
+
+#~ msgid "Incorrect length"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Incorrect size"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Incorrect file extension"
+#~ msgstr "Некорректное расширение файла"
+
+#~ msgid "Some of form fields filled with invalid values"
+#~ msgstr "Некоторые поля формы были заполнены не правильно"
+
+#~ msgid "Choose a view"
+#~ msgstr "Выберите представление"
+
+#~ msgid "Record successfully updated"
+#~ msgstr "Запись успешно обновлена"
+
+#~ msgid "Record successfully added"
+#~ msgstr "Запись успешно добавлена"
+
+#~ msgid "Package sources not exists"
+#~ msgstr "Исходный код пакета не найден"
+
+#, fuzzy
+#~ msgid "Listf"
+#~ msgstr "Список"

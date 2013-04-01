@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<core>
+				<website>
+					<attributes>
+						<name translate="label">
+							<label>Name</label>
+							<required>1</required>
+						</name>
+						<code translate="label, description">
+							<label>Code</label>
+							<description>Unique site code</description>
+							<required>1</required>
+						</code>
+						<url translate="label, description">
+							<label>URL</label>
+							<description>Enter site URL here without protocol, just host and
+								path.</description>
+							<required>1</required>
+						</url>
+						<area translate="label">
+							<label>Area</label>
+							<type>select</type>
+							<options>core/website::getAreasArray</options>
+							<required>1</required>
+						</area>
+						<id translate="label">
+							<label>Website ID</label>
+							<type>number</type>
+						</id>
+					</attributes>
+				</website>
+			</core>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<core>
+				<website translate="fieldset">
+					<fieldset>Website</fieldset>
+					<source>core/website</source>
+					<fields>
+						<name />
+						<code />
+						<url />
+						<area />
+					</fields>
+				</website>
+			</core>
+		</forms>
+		<grids>
+			<core>
+				<website>
+					<source>core/website</source>
+					<fields>
+						<id translate="label">
+							<label>ID</label>
+							<width>40px</width>
+						</id>
+						<name />
+						<code />
+						<area />
+					</fields>
+				</website>
+			</core>
+		</grids>
+	</admin>
+
+</config>

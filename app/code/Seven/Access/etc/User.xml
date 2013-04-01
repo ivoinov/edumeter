@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<users>
+				<user>
+					<attributes>
+						<role_id translate="label">
+							<label>Role</label>
+							<type>select</type>
+							<data_type>int</data_type>
+							<options>access/role</options>
+							<default>1</default>
+						</role_id>
+					</attributes>
+				</user>
+			</users>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<users>
+				<user>
+					<fields>
+						<role_id>
+							<order>100</order>
+						</role_id>
+					</fields>
+				</user>
+			</users>
+		</forms>
+		<grids>
+			<users>
+				<user>
+					<fields>
+						<role_id>
+							<order>100</order>
+						</role_id>
+					</fields>
+				</user>
+			</users>
+		</grids>
+	</admin>
+</config>

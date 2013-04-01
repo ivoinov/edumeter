@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<pages>
+				<page>
+					<table>pages_entity</table>
+					<key>id</key>
+					<views>core/multiview_views::getFrontendSites</views>
+					<base_class>core/multiview_entity</base_class>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</id>
+						<title translate="label,description">
+							<label>URL</label>
+							<maxlength>255</maxlength>
+							<multiview>1</multiview>
+							<description>This key will be used as a part of page URL</description>
+							<filters>
+								<trim>core/filters::trim</trim>
+							</filters>
+						</title>
+						<content translate="label">
+							<label>Content</label>
+							<type>textarea</type>
+							<wysiwyg>1</wysiwyg>
+							<allow_html>1</allow_html>
+							<multiview>1</multiview>
+						</content>
+					</attributes>
+				</page>
+			</pages>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<pages>
+				<page translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>pages/page</source>
+					<fields>
+						<title />
+						<content />
+					</fields>
+				</page>
+			</pages>
+		</forms>
+		<grids>
+			<pages>
+				<page translate="title">
+					<title>List</title>
+					<source>pages/page</source>
+					<use_ajax>1</use_ajax>
+					<fields>
+						<id>	
+							<width>40px</width>
+						</id>
+						<title />
+					</fields>
+				</page>
+			</pages>
+		</grids>
+	</admin>
+</config>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<core>
+				<mail_template>
+					<table>core_mail_template</table>
+					<key>id</key>
+					<views>core/multiview_views::getI18nViews</views>
+					<attributes>
+						<id translate="label,description">
+							<label>ID</label>
+							<filters>
+								<trim>core/filters::trim</trim>
+							</filters>
+							<validators>
+								<unique>core/validators::unique</unique>
+							</validators>
+							<required>1</required>
+							<minlength>1</minlength>
+							<identify>1</identify>
+						</id>
+						<subject translate="label">
+							<label>Subject</label>
+							<required>1</required>
+							<minlength>1</minlength>
+						</subject>
+						<content translate="label">
+							<label>Content</label>
+							<required>1</required>
+							<type>textarea</type>
+							<minlength>1</minlength>
+							<wysiwyg>0</wysiwyg>
+						</content>
+						<type translate="label">
+							<type>select</type>
+							<label>Type</label>
+							<options translate="plain,html">
+								<plain>Plain text</plain>
+								<html>HTML</html>
+							</options>
+						</type>
+					</attributes>
+				</mail_template>
+			</core>
+		</entity>
+	</global>
+</config>

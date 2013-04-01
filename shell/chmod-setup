@@ -1,0 +1,2 @@
+#!/bin/sh
+chmod -R 0777 ../var ../public/media && echo "Chmod succesfully changed"

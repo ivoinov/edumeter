@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<content_pages_index>
+		<reference name="grid_container">
+			<action method="setTitle" translate="title">
+				<title>Pages</title>
+			</action>
+		</reference>
+	</content_pages_index>
+	
+	<content_pages_edit>
+		<reference name="form">
+			<action method="setTitle" translate="title">
+				<title>Page edit</title>
+			</action>
+		</reference>
+	</content_pages_edit>
+
+</layout>

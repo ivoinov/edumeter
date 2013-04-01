@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<system_cache_index>
+		<reference name="grid_container">
+			<action method="removeButton">
+				<id>add</id>
+			</action>
+			<action method="addButton">
+				<id>flush_all</id>
+				<data translate="label">
+					<label>Flush cache storage</label>
+					<type>button</type>
+					<order>1</order>
+					<location>*/*/flush_all</location>
+				</data>
+			</action>
+		</reference>
+		<reference name="grid">
+			<action method="removeFilter"><id>pager</id></action>
+		</reference>
+	</system_cache_index>
+
+</layout>

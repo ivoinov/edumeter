@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<admin>
+				<user>
+					<table>admin_user</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</id>
+						<email translate="label">
+							<label>E-Mail</label>
+							<type>text</type>
+							<required>1</required>
+							<minlength>6</minlength>
+							<validators>
+								<is_unique>core/validators::unique</is_unique>
+								<is_email>core/validators::email</is_email>
+							</validators>	
+						</email>
+						<password translate="label">
+							<label>Password</label>
+							<type>password</type>
+							<encrypt>md5+salt</encrypt>
+							<required>1</required>
+							<minlength>6</minlength>
+						</password>
+						<name translate="label">
+							<label>Admin::Name</label>
+							<required>1</required>
+							<minlength>3</minlength>
+						</name>
+					</attributes>
+				</user>
+			</admin>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<admin>
+				<user translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldsets>
+						<default><label>Account information</label></default>
+					</fieldsets>
+					<source>admin/user</source>
+					<fields>
+						<name />
+						<email />
+						<password />
+						<password_confirm translate="label">
+							<label>Password confirmation</label>
+							<type>password</type>
+							<confirm_to>password</confirm_to>
+							<validators>
+								<is_unique>core/validators::confirm</is_unique>
+							</validators>
+							<required>1</required>
+						</password_confirm>
+					</fields>
+				</user>
+				<login translate="title">
+					<title>Login</title>
+					<source>admin/user</source>
+					<action>:admin_login</action>
+					<fieldsets>
+						<default>
+							<label></label>
+						</default>
+					</fieldsets>
+					<fields>
+						<email>
+							<validators>
+								<is_unique>skip</is_unique>
+							</validators>
+						</email>
+						<password />
+					</fields>
+				</login>
+			</admin>
+		</forms>
+		<grids>
+			<admin>
+				<user translate="title">
+					<title>Administrators</title>
+					<source>admin/user</source>
+					<fields>
+						<id />
+						<name />
+						<email />
+					</fields>
+				</user>
+			</admin>
+		</grids>
+	</admin>
+</config>

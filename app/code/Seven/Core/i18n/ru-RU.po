@@ -1,0 +1,296 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seven Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 00:12+0300\n"
+"PO-Revision-Date: 2012-09-21 00:15+0300\n"
+"Last-Translator: Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>\n"
+"Language-Team: Seven Core Team <team@sevenframework.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;_en:1,1;_n:1,1;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2))\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../Helper/Validators.php:16
+msgid "Value should be unique"
+msgstr "Значение должно быть уникально"
+
+#: ../Helper/Validators.php:24
+msgid "E-Mail has incorrect format"
+msgstr "Формат e-mail адреса не корректный"
+
+#: ../Helper/Validators.php:33
+msgid "Value not confirmed"
+msgstr "Значение не подтверждено"
+
+#: ../i18n/xml-translate.php:3
+msgid "Choose one"
+msgstr "Выберите"
+
+#: ../i18n/xml-translate.php:4
+#: ../i18n/xml-translate.php:6
+msgid "Add new"
+msgstr "Добавить"
+
+#: ../i18n/xml-translate.php:7
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../i18n/xml-translate.php:8
+msgid "Back to list"
+msgstr "Назад к списку"
+
+#: ../i18n/xml-translate.php:12
+msgid "Application Configuration"
+msgstr "Конфигурация приложения"
+
+#: ../i18n/xml-translate.php:13
+msgid "Localization dictionaries"
+msgstr "Словари переводов"
+
+#: ../i18n/xml-translate.php:15
+msgid "Frontend"
+msgstr "Интерфейс сайта"
+
+#: ../i18n/xml-translate.php:17
+#: ../i18n/xml-translate.php:43
+msgid "Code"
+msgstr "Код"
+
+#: ../i18n/xml-translate.php:18
+msgid "Language code in xx-YY format"
+msgstr "Код языка в формате xx-YY"
+
+#: ../i18n/xml-translate.php:19
+msgid "Language code"
+msgstr "Код языка"
+
+#: ../i18n/xml-translate.php:20
+msgid "Dictionary"
+msgstr "Словарь"
+
+#: ../i18n/xml-translate.php:21
+msgid "Site dictionary in .mo format"
+msgstr "Словарь сайта в формате .mo"
+
+#: ../i18n/xml-translate.php:22
+#: ../i18n/xml-translate.php:31
+#: ../i18n/xml-translate.php:42
+msgid "Name"
+msgstr "Название"
+
+#: ../i18n/xml-translate.php:24
+msgid "Site frontend controller"
+msgstr "Контроллер сайта"
+
+#: ../i18n/xml-translate.php:26
+msgid "General"
+msgstr "Основное"
+
+#: ../i18n/xml-translate.php:27
+#: ../i18n/xml-translate.php:30
+msgid "Webmaster"
+msgstr "Веб-мастер"
+
+#: ../i18n/xml-translate.php:28
+msgid "Site"
+msgstr "Сайт"
+
+#: ../i18n/xml-translate.php:29
+msgid "Design"
+msgstr "Дизайн"
+
+#: ../i18n/xml-translate.php:32
+msgid "Administrator\\'s e-mail"
+msgstr "E-Mail администратора"
+
+#: ../i18n/xml-translate.php:33
+msgid "Description"
+msgstr "Описание"
+
+#: ../i18n/xml-translate.php:34
+msgid "Site language"
+msgstr "Язык сайта"
+
+#: ../i18n/xml-translate.php:35
+msgid "Theme"
+msgstr "Тема"
+
+#: ../i18n/xml-translate.php:36
+msgid "Logo"
+msgstr "Логотип"
+
+#: ../i18n/xml-translate.php:37
+msgid "Logo alt"
+msgstr "Текстовый логотип"
+
+#: ../i18n/xml-translate.php:38
+msgid "Favicon"
+msgstr "Иконка"
+
+#: ../i18n/xml-translate.php:39
+msgid "Webmaster\\'s e-mail"
+msgstr "E-mail веб-мастера"
+
+#: ../i18n/xml-translate.php:40
+msgid "Send exception via e-mail"
+msgstr "Отправлять отчеты об ошибках на почту"
+
+#: ../i18n/xml-translate.php:44
+msgid "Unique site code"
+msgstr "Уникальный код сайта"
+
+#: ../i18n/xml-translate.php:45
+msgid "URL"
+msgstr "URL"
+
+#: ../i18n/xml-translate.php:46
+msgid ""
+"Enter site URL here without protocol, just host and\n"
+"\t\t\t\t\t\t\t\tpath."
+msgstr "Введите ссылку на сайт без протокола, только имя домена и пути"
+
+#: ../i18n/xml-translate.php:48
+msgid "Area"
+msgstr "Зона"
+
+#: ../i18n/xml-translate.php:49
+msgid "Website ID"
+msgstr "ID сайта"
+
+#: ../i18n/xml-translate.php:50
+msgid "Website"
+msgstr "Сайт"
+
+#: ../i18n/xml-translate.php:51
+msgid "ID"
+msgstr "ID"
+
+#: ../Block/Widget/Form.php:33
+msgid "Submit"
+msgstr "Отправить"
+
+#: ../Block/Widget/Grid/Xml.php:60
+msgid "Edit"
+msgstr "Изменить"
+
+#: ../Block/Widget/Grid/Xml.php:60
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../Block/Widget/Grid/Column/Datetime.php:28
+#: ../Block/Widget/Grid/Column/Date.php:30
+#: ../Block/Widget/Grid/Column/Number.php:30
+msgid "From"
+msgstr "От"
+
+#: ../Block/Widget/Grid/Column/Datetime.php:35
+#: ../Block/Widget/Grid/Column/Date.php:37
+#: ../Block/Widget/Grid/Column/Number.php:37
+msgid "To"
+msgstr "До"
+
+#: ../Block/Widget/Grid/Column/Datetime.php:46
+msgid "DATEFORMAT::m/d/Y h:i:s A"
+msgstr "d.m.Y H:i:s"
+
+#: ../Block/Widget/Grid/Column/Date.php:68
+msgid "DATEFORMAT::m/d/Y"
+msgstr "d.m.Y"
+
+#: ../Model/Breadcrumbs.php:43
+msgid "Breadcrumb::Home"
+msgstr "Главная"
+
+#: ../Model/Multiview/Entity.php:45
+msgid "Default"
+msgstr "По-умолчанию"
+
+#: ../Model/Website/Config.php:80
+msgid "All settings"
+msgstr "Все настройки"
+
+#: ../Model/Form/Input/Text.php:32
+msgid "Incorrect value"
+msgstr "Некорректное значение"
+
+#: ../Model/Form/Input/Text.php:40
+#: ../Model/Form/Input/Text.php:49
+msgid "Incorrect length"
+msgstr "Некорректная длинна"
+
+#: ../Model/Form/Input/Select.php:41
+msgid "Value is not exists"
+msgstr "Значение не существует"
+
+#: ../Model/Form/Input/File.php:49
+msgid "Incorrect size"
+msgstr "Некорректная длинна"
+
+#: ../Model/Form/Input/File.php:60
+msgid "Incorrect file extension"
+msgstr "Некорректное расширение файла"
+
+#: ../Model/Form/Input/Select/Yesno.php:20
+msgid "Yes"
+msgstr "Да"
+
+#: ../Model/Form/Input/Select/Yesno.php:20
+msgid "No"
+msgstr "Нет"
+
+#: ../Controller/Deprecated/List/Abstract.php:54
+msgid "List"
+msgstr "Список"
+
+#: ../Controller/Deprecated/Crud/Abstract.php:65
+#: ../Controller/Crud/Abstract/Edit.php:81
+msgid "Some of the form fields are filled with invalid values"
+msgstr "Некоторые поля формы были заполнены не правильно"
+
+#: ../Controller/Deprecated/Crud/Abstract.php:95
+msgid "Choose a view"
+msgstr "Выберите представление"
+
+#: ../Controller/Deprecated/Crud/Abstract.php:127
+#: ../Controller/Crud/Abstract/Edit.php:30
+msgid "Record was successfully updated"
+msgstr "Запись успешно обновлена"
+
+#: ../Controller/Deprecated/Crud/Abstract.php:127
+msgid "Record was successfully added"
+msgstr "Запись успешно добавлена"
+
+#: ../Controller/Crud/Abstract/Delete.php:22
+msgid "Record was successfully deleted"
+msgstr "Запись успешно удалена"
+
+#: ../Resource/Package.php:118
+msgid "Package sources do not exist"
+msgstr "Исходный код пакета не найден"
+
+#~ msgid "Choose to filter"
+#~ msgstr "Поиск"
+
+#~ msgid "Some of form fields filled with invalid values"
+#~ msgstr "Некоторые поля формы были заполнены не правильно"
+
+#~ msgid "System settings"
+#~ msgstr "Системные настройки"
+
+#~ msgid "General controller"
+#~ msgstr "Контроллер по-умолчанию"
+
+#~ msgid "Home"
+#~ msgstr "Главная страница"
+
+#, fuzzy
+#~ msgid "Listf"
+#~ msgstr "Список"

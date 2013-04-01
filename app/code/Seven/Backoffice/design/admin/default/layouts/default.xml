@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<default>
+		<block type="core/html" name="html">
+			<action method="setDocType">
+				<doctype>html4-transitional</doctype>
+			</action>
+			<block name="head" type="core/html_head">
+				<action method="addCss">
+					<css>style.css</css>
+					<type>skin</type>
+				</action>
+				<action method="addMetaHttp">
+					<http-equiv>Content-Type</http-equiv>
+					<content>text/html, charset=utf-8</content>
+				</action>
+				<action method="addJs">
+					<script>jquery/jquery.js</script>
+					<type>lib</type>
+				</action>
+	            <action method = "addCss"><css>message.css</css><type>skin</type></action>
+	            <action method = "addJs"><js>seven/seven.js</js><type>lib</type></action>
+				<action method="addJs">
+					<script>js/main.js</script>
+					<type>skin</type>
+				</action>
+			</block>
+			<block name="body" type="core/html_body" template="page/layout.phtml">
+				<block name="topline" type="core/array" before="header"
+					wrapper="#topline" />
+				<block name="header" type="core/array" before="content"
+					wrapper="#header">
+					<block name="logo" wrapper=".logo" type="core/template"
+						template="page/logo.phtml" />
+					<block name="mainmenud" wrapper="#menu-container" type="core/widget_sitemap"
+						template="page/main-menu.phtml">
+						<action method="setActiveItem">
+							<item>dashboard</item>
+						</action>
+						<action method="setSitemapPath">
+							<path></path>
+							<deep>4</deep>
+						</action>
+						<action method="addItem">
+							<id>dashboard</id>
+							<data translate="label">
+								<label>Dashboard</label>
+								<order>-1000</order>
+								<url>*</url>
+							</data>
+						</action>
+					</block>
+				</block>
+				<block name="content" type="core/array" wrapper="#content">
+					<block name="message" wrapper=".messages" type="core/message"
+						template="page/message.phtml" />
+				</block>
+				<block name="footer" type="core/widget_menu" after="content" wrapper="#footer"
+					template="page/footer.phtml">
+					<action method="addItem">
+						<id>site</id>
+						<data translate="label">
+							<label>Site</label>
+							<url>/</url>
+						</data>
+					</action>
+					<action method="addItem">
+						<id>dashboard</id>
+						<data translate="label">
+							<label>Dashboard</label>
+							<url>*</url>
+						</data>
+					</action>
+					<action method="addItem">
+						<id>top</id>
+						<data translate="label">
+							<label>Top</label>
+							<href>#</href>
+						</data>
+					</action>
+				</block>
+			</block>
+		</block>
+	</default>
+
+	<dashboard>
+		<reference name="content">
+			<block type="core/widget_container" name="dashboard">
+				<action method="setTitle" translate="title">
+					<title>Dashboard</title>
+				</action>
+				<block type="core/template" name="dummy-dashboard-widget"
+					template="dashboard.phtml" />
+			</block>
+		</reference>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>dashboard</id>
+			</action>
+		</reference>
+	</dashboard>
+
+	<default_service_noroute>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>page-not-found</id>
+			</action>
+		</reference>
+	</default_service_noroute>
+	
+	<default_service_denied>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>access-denied</id>
+			</action>
+		</reference>
+	</default_service_denied>
+
+	<default_service_forbidden>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>forbidden</id>
+			</action>
+		</reference>
+	</default_service_forbidden>
+
+</layout>

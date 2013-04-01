@@ -1,0 +1,15 @@
+SetEnv SEVEN_DEVELOPER_MODE 0
+
+SetEnv SEVEN_MAINTENANCE_ENABLE		0
+SetEnv SEVEN_MAINTENANCE_CODE		"AAE523E"
+SetEnv SEVEN_MAINTENANCE_TEMPLATE	"errors/Maintenance.php"
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI}         !^/(public)/
+RewriteCond %{REQUEST_FILENAME}    !-f
+RewriteCond %{REQUEST_FILENAME}    !-d
+RewriteCond %{REQUEST_FILENAME}    !-l
+
+RewriteRule .* index.php/$0        [L]
+

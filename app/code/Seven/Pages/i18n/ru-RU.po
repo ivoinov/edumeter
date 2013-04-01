@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seven Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 00:12+0300\n"
+"PO-Revision-Date: 2012-09-21 00:12+0300\n"
+"Last-Translator: Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>\n"
+"Language-Team: Seven Core Team <team@sevenframework.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;_en:1,1;_n:1,1;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2))\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../i18n/xml-translate.php:4
+#: ../i18n/xml-translate.php:19
+msgid "Pages"
+msgstr "Страницы"
+
+#: ../i18n/xml-translate.php:5
+msgid "Page edit"
+msgstr "Редактирование страницы"
+
+#: ../i18n/xml-translate.php:7
+msgid "ID"
+msgstr "ID"
+
+#: ../i18n/xml-translate.php:8
+msgid "URL"
+msgstr "URL"
+
+#: ../i18n/xml-translate.php:9
+msgid "This key will be used as a part of page URL"
+msgstr "Этот ключ будет использован как часть ссылки на страницу"
+
+#: ../i18n/xml-translate.php:10
+#: ../i18n/xml-translate.php:18
+msgid "Content"
+msgstr "Содержание"
+
+#: ../i18n/xml-translate.php:11
+msgid "Edit from"
+msgstr "Форма редактирования"
+
+#: ../i18n/xml-translate.php:12
+#: ../i18n/xml-translate.php:13
+msgid "General"
+msgstr "Основная"
+
+#: ../i18n/xml-translate.php:14
+msgid "List"
+msgstr "Список"
+
+#: ../i18n/xml-translate.php:16
+msgid "Allow to create content pages"
+msgstr "Позволяет создавать текстовые страницы"
+
+#~ msgid "Title"
+#~ msgstr "Заголовок"
+
+#~ msgid "Content page"
+#~ msgstr "Страница"
+
+#~ msgid "Index"
+#~ msgstr "Начальная"
+
+#~ msgid "Manage content pages"
+#~ msgstr "Управление страницами"
+
+#~ msgid "Edit"
+#~ msgstr "Редактирование"
+
+#~ msgid "Add new"
+#~ msgstr "Добавить"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "View list"
+#~ msgstr "Просмотр списка"
+
+#~ msgid "Name"
+#~ msgstr "Название"
+
+#~ msgid "Site"
+#~ msgstr "Сайт"
+
+#~ msgid "Administrator e-mail"
+#~ msgstr "E-Mail администратора"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "Site language"
+#~ msgstr "Язык сайта"
+
+#~ msgid "Theme"
+#~ msgstr "Тема"
+
+#~ msgid "Design"
+#~ msgstr "Дизайн"
+
+#~ msgid "Logo"
+#~ msgstr "Логотип"
+
+#~ msgid "Logo alt"
+#~ msgstr "Текстовый логотип"
+
+#~ msgid "Favicon"
+#~ msgstr "Иконка"
+
+#~ msgid "Webmaster e-mail"
+#~ msgstr "E-mail веб-мастера"
+
+#~ msgid "Webmaster"
+#~ msgstr "Веб-мастер"
+
+#~ msgid "Send exception via e-mail"
+#~ msgstr "Отправлять отчеты об ошибках на почту"
+
+#~ msgid "Code"
+#~ msgstr "Код"
+
+#~ msgid "Area"
+#~ msgstr "Зона"
+
+#~ msgid "Website"
+#~ msgstr "Сайт"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Back to list"
+#~ msgstr "Назад к списку"
+
+#~ msgid "Default"
+#~ msgstr "По-умолчанию"
+
+#~ msgid "All settings"
+#~ msgstr "Все настройки"
+
+#~ msgid "System settings"
+#~ msgstr "Системные настройки"
+
+#~ msgid "Incorrect value"
+#~ msgstr "Некорректное значение"
+
+#~ msgid "Incorrect length"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Value is not exists"
+#~ msgstr "Значение не существует"
+
+#~ msgid "Incorrect size"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Incorrect file extension"
+#~ msgstr "Некорректное расширение файла"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "Нет"
+
+#~ msgid "Choose a view"
+#~ msgstr "Выберите представление"
+
+#~ msgid "Package sources not exists"
+#~ msgstr "Исходный код пакета не найден"
+
+#, fuzzy
+#~ msgid "Listf"
+#~ msgstr "Список"

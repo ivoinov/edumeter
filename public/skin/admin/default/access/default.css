@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.widget-accesstree, .widget-accesstree > li {
+	margin: 0;
+	padding: 0;
+}
+/*
+.widget-accesstree > li ul {
+	display: none;
+}
+*/
+.widget-accesstree li.opened > ul {
+	display: block;
+}
+
+.widget-accesstree, .widget-accesstree li, .widget-accesstree ul {  
+	list-style: none;	
+}
+}
+
+.widget-box div.input .widget-accesstree select {
+	width: 100px;
+}
+
+.widget-box .widget-accesstree label {
+	width: auto;
+	margin: 0;
+	line-height: 19px;
+}
+
+.access-node {
+	display: block;
+	background: white;
+	width: 9px; 
+	height: 9px;
+	border-radius: 50%;
+	border: 4px solid #888;
+	float: left;
+	margin: 1px 4px 1px 0;
+}
+
+.stateallow .state .access-node {
+	border: 4px solid #00ff00;
+}
+
+.statedeny .state .access-node {
+	border: 4px solid #ff0000;
+}
+
+
+.stateallow > label > .access-node {
+	background: #00ff00;
+	border: 4px solid #00ff00;
+}
+
+.statedeny > label > .access-node {
+	background: #ff0000;
+	border: 4px solid #ff0000;
+}

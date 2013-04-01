@@ -1,0 +1,46 @@
+div.system-block { border: 1px solid red; }
+div.system-block div.system-block { border-color: blue; }
+div.system-block div.system-block div.system-block { border-color: green; }
+div.system-block div.system-block div.system-block div.system-block { border-color: yellow; }
+div.system-block div.system-block div.system-block div.system-block div.system-block { border-color: magenta; }
+div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block { border-color: orange; }
+div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block { border-color: blue; }
+div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block { border-color: green; }
+div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block div.system-block { border-color: red; }
+
+
+#profiler {}
+#profiler { font-size: 12px; font-family: sans-serif; border: 1px solid #888800; background: #ffffee;padding: 10px 10px 10px 110px;margin: 5px; position: absolute; top: 5px; left: 5px;z-index: 10000; right: 5px; border-radius: 4px; display: none; -webkit-box-shadow: 0px 0px 50px rgba(0,0,0,1); }
+#profiler ul { padding: 0; margin: 0 0 0 15px; list-style: none; }
+#profiler li { padding: 2px 0; color: #777; }
+#profiler li:hover > div > div { background: #ff9; font-weight: bold; color: #444; }
+#profiler li:hover li:hover > div > div { background: #fda; font-weight: bold; }
+#profiler li:hover li:hover li:hover > div > div { background: #fcc; }
+#profiler li:hover li:hover li:hover li:hover > div > div { background: #afa; }
+#profiler li:hover li:hover li:hover li:hover li:hover > div > div { background: #ccf; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #fcf; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #cff; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #ff8; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #fda; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #fcc; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #afa; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover > div > div { background: #ccf; }
+/*#profiler li:hover li:hover li:hover { background: #f66; }
+#profiler li:hover li:hover li:hover li:hover { background: #ffa; }
+#profiler li:hover li:hover li:hover li:hover li:hover { background: #aaf; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover { background: #f66; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #aaf; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #ffa; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #f66; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #aaf; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #f66; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #ffa; }
+#profiler li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover li:hover { background: #aaf; }*/
+#profiler div.profiler-row {  }
+#profiler div.profiler-row-name { float: left; font-weight: normal; display: inline; margin-right: 10px; }
+#profiler div.profiler-row-time { float: left; width: 50px; position: absolute; left: 10px; }
+#profiler div.profiler-row-memory { float: left; width: 50px; position: absolute; left: 60px; }
+#profiler div.profiler-row-data { overflow: hidden; height: 15px; color: #888; font-style: italic;clear: right; }
+#profiler div.profiler-row-data.active { overflow: visible; height: auto; clear: both; padding: 6px; color: #333; font-style: normal; border: 1px solid #aa8; background: #ffffdd; }
+
+#debug-toolbar li.debug-profiler { padding-left: 26px; background-image: url(icon.png); background-position: 4px 3px; background-repeat: no-repeat; }

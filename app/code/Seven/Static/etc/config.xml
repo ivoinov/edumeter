@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Static>
+                <version>1.0.2</version>
+                <name>Static CMS blocks</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>
+            </Static>
+        </modules>
+    </global>
+</config>

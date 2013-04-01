@@ -1,0 +1,75 @@
+ul.widget-tabs-list {
+    list-style: none;
+    margin: 0 0 0 0px;
+    padding: 0;
+    float: left;
+    padding: 20px 0 20px;
+}
+
+ul.widget-tabs-list li {
+    display: block;
+    width: 200px;
+    background: rgb(214,214,214);
+    background: -moz-linear-gradient(left, rgba(214,214,214,1) 73%, rgba(206,206,206,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(73%,rgba(214,214,214,1)), color-stop(100%,rgba(206,206,206,1)));
+    background: -webkit-linear-gradient(left, rgba(214,214,214,1) 73%,rgba(206,206,206,1) 100%);
+    background: -o-linear-gradient(left, rgba(214,214,214,1) 73%,rgba(206,206,206,1) 100%);
+    background: -ms-linear-gradient(left, rgba(214,214,214,1) 73%,rgba(206,206,206,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#cecece',GradientType=1 );
+    background: linear-gradient(left, rgba(214,214,214,1) 73%,rgba(206,206,206,1) 100%);
+    border-bottom: 1px solid #bbb;
+}
+
+ul.widget-tabs-list li:first-child {
+    border-top: 1px solid #bbb;
+}
+
+ul.widget-tabs-list li a {
+    padding: 7px 9px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.widget-tabs {
+    background: #ddd;
+    margin-bottom: -40px;
+}
+
+ul.widget-tabs-list li.selected {
+    width: 202px;
+    border: 1px solid #aaa;
+    border-left: 3px solid #0099aa;
+    border-right: none;
+    margin: -1px 0 0 -2px;
+}
+
+ul.widget-tabs-list li.selected a,
+ul.widget-tabs-list li.selected a:hover {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 73%, rgba(238,238,238,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(73%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 73%,rgba(238,238,238,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 73%,rgba(238,238,238,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 73%,rgba(238,238,238,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=1 );
+    background: linear-gradient(left, rgba(255,255,255,1) 73%,rgba(238,238,238,1) 100%);
+    color: #000;
+}
+
+ul.widget-tabs-list li a:hover {
+    background: #ccc;
+    color: #000;
+}
+
+ul.widget-tabs-list li a:focus {
+    outline: 0;
+}
+
+.widget-tabs-holder {
+    padding: 20px 0 35px 20px;
+    margin: -10px 0 -10px;
+    margin-left: 200px;
+    border-left: 1px solid #aaa;
+    background: #eeeeee;
+}

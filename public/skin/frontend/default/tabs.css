@@ -1,0 +1,60 @@
+div.widget-tabs {
+}
+
+div.container {
+	margin: auto;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+ul.widget-tabs-list {
+	list-style: none;
+	margin: 0 0 -6px 0;
+	padding: 0;
+	height: 30px;
+}
+
+ul.widget-tabs-list li {
+	display: inline;
+}
+
+ul.widget-tabs-list li a {
+	padding: 4px 13px 4px;
+	margin-right: -1px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	line-height: 30px;
+	text-decoration: none;
+	background: rgb(240,240,240);
+	background: -moz-linear-gradient(top, rgba(240,240,240,1) 0%, rgba(214,214,214,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,240,240,1)), color-stop(100%,rgba(214,214,214,1)));
+	background: -webkit-linear-gradient(top, rgba(240,240,240,1) 0%,rgba(214,214,214,1) 100%);
+	background: -o-linear-gradient(top, rgba(240,240,240,1) 0%,rgba(214,214,214,1) 100%);
+	background: -ms-linear-gradient(top, rgba(240,240,240,1) 0%,rgba(214,214,214,1) 100%);
+	background: linear-gradient(top, rgba(240,240,240,1) 0%,rgba(214,214,214,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#d6d6d6',GradientType=0 );
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #999;
+}
+
+ul.widget-tabs-list li.selected a {
+	padding: 6px 13px 6px;
+	border-bottom: none;
+	border-top: 2px solid #09f;
+	color: #444;
+	text-shadow: 1px 1px 0px #ddd;
+	background: #f0f0f0;
+}
+
+ul.widget-tabs-list li a:focus {
+	outline: 0;
+}
+
+div.widget-tabs-holder div.widget-tab-holder {
+	padding: 15px 15px 5px;
+	margin: 3px 0px;
+	border: 1px solid #ddd;
+	background: #F0F0F0;
+	
+}

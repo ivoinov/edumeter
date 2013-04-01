@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<default_list_index>
+		<reference name="content">
+			<block name="grid_container" type="core/widget_container">
+				<block type="core/widget_grid_xml" name="grid" />
+			</block>
+		</reference>
+	</default_list_index>
+
+	<default_crud_index>
+		<reference name="grid_container">
+			<action method="addButton">
+				<id>add</id>
+				<data translate="label">
+					<label>Add new</label>
+					<order>1000</order>
+					<type>button</type>
+					<location>*/*/add</location>
+				</data>
+			</action>
+		</reference>
+	</default_crud_index>
+
+	<default_crud_form>
+		<reference name="content">
+			<block name="form" type="core/widget_form">
+				<action method="addButton">
+					<id>submit</id>
+					<data translate="label">
+						<label>Save</label>
+						<type>submit</type>
+						<order>1</order>
+					</data>
+				</action>
+				<action method="addButton">
+					<id>back</id>
+					<data translate="label">
+						<label>Back to list</label>
+						<type>button</type>
+						<location>*/*/</location>
+						<order>0</order>
+					</data>
+				</action>
+			</block>
+		</reference>
+	</default_crud_form>
+
+	<default_crud_multiview_form>
+		<reference name="head">
+			<action method="addJs"><js>js/multiview-form.js</js><type>skin</type></action>
+		</reference>
+	</default_crud_multiview_form>
+	
+</layout>

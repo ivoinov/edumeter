@@ -1,0 +1,26 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+Lorem ipsum dolor sit amet, onsectetur adipiscing elit. Suspendisse ut mi tortor, eget egestas orci. Proin vitae faucibus mauris. Nam dignissim varius metus at vestibulum. Fusce vel nibh velit, in interdum justo. Aliquam eleifend luctus ipsum eget porttitor. Phasellus pulvinar sem ut sapien lobortis molestie. Aenean quis purus nulla, eu pharetra risus. Vestibulum suscipit mollis lacus ut accumsan. Aliquam erat volutpat. Integer in tellus eget nunc feugiat commodo vulputate vitae metus.
+
+
+<?php if($this->getItems()) : ?>
+<ul>
+    <?php foreach($this->getItems() as $item) : ?>
+        <li><a href="<?php echo $item->hasHref() ? $item->getHref() : $this->getUrl($item->getUrl()); ?>"><?php echo $item->getLabel(); ?></a></li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

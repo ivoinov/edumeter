@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	
+	<news_index>
+		<reference name="grid">
+			<action method="setTemplate"><template>Seven/News/list.phtml</template></action>
+		</reference>
+	</news_index>
+	
+	<news_view>
+		<reference name="view">
+			<action method="setTemplate"><template>Seven/News/view.phtml</template></action>
+		</reference>
+	</news_view>
+	
+</layout>

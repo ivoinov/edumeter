@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<{{CRUD_ENTITY_POOLNAME}}>
+				<{{CRUD_ENTITY_NAME}}>
+					<table>{{CRUD_ENTITY_POOLNAME}}_{{CRUD_ENTITY_NAME}}</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+						</id>
+					</attributes>
+				</{{CRUD_ENTITY_NAME}}>
+			</{{CRUD_ENTITY_POOLNAME}}>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<{{CRUD_ENTITY_POOLNAME}}>
+				<{{CRUD_ENTITY_NAME}} translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>{{CRUD_ENTITY_FULLNAME}}</source>
+					<fields>
+					
+					</fields>
+				</{{CRUD_ENTITY_NAME}}>
+			</{{CRUD_ENTITY_POOLNAME}}>
+		</forms>
+		<grids>
+			<{{CRUD_ENTITY_POOLNAME}}>
+				<{{CRUD_ENTITY_NAME}} translate="title">
+					<title>List</title>
+					<source>{{CRUD_ENTITY_FULLNAME}}</source>
+					<fields>
+						<id />
+					</fields>
+				</{{CRUD_ENTITY_NAME}}>
+			</{{CRUD_ENTITY_POOLNAME}}>
+		</grids>
+	</admin>
+</config>

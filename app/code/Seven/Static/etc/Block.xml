@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<static>
+				<block>
+					<table>static_block</table>
+					<key>id</key>
+					<views>core/multiview_views::getI18nViews</views>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<required>1</required>
+							<minlength>1</minlength>
+							<maxlength>255</maxlength>
+							<filters>
+								<trim>core/filters::trim</trim>
+							</filters>
+							<validators>
+								<unique>core/validators::unique</unique>
+							</validators>
+						</id>
+						<title translate="label,description">
+							<label>Title</label>
+							<maxlength>255</maxlength>
+							<filters>
+								<trim>core/filters::trim</trim>
+							</filters>
+							<multiview>1</multiview>
+						</title>
+						<content translate="label">
+							<label>Content</label>
+							<type>textarea</type>
+							<wysiwyg>1</wysiwyg>
+							<multiview>1</multiview>
+						</content>
+					</attributes>
+				</block>
+			</static>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<static>
+				<block translate="title">
+					<title>Edit static block</title>
+					<fieldsets><default translate="label"><label>Static block</label></default></fieldsets>
+					<source>static/block</source>
+					<fields>
+						<id />
+						<title />
+						<content />
+					</fields>
+				</block>
+			</static>
+		</forms>
+		<grids>
+			<static>
+				<block translate="title">
+					<title>Static blocks</title>
+					<source>static/block</source>
+					<use_ajax>1</use_ajax>
+					<fields>
+						<id />
+						<title />
+					</fields>
+				</block>
+			</static>
+		</grids>
+	</admin>
+</config>

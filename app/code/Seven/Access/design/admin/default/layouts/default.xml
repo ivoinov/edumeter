@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<default>
+		<reference name="mainmenu">
+			<action method="addItem">
+				<id>access.roles</id>
+				<data translate="label">
+					<label>User roles</label>
+					<order>20</order>
+					<url>*/access/role</url>
+				</data>
+				<parent>users</parent>
+			</action>
+			<action method="addItem">
+				<id>access.users</id>
+				<data translate="label">
+					<label>Users</label>
+					<order>10</order>
+					<url>*/users</url>
+				</data>
+				<parent>users</parent>
+			</action>
+		</reference>
+	</default>
+	
+	<access_role_edit>
+		<reference name="head">
+			<!-- action method="addJs">
+				<js>access/role_edit.js</js>
+				<type>skin</type>
+			</action-->
+		</reference>
+	</access_role_edit>
+
+	<access_ALL_ALL>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>access.roles</id>
+			</action>
+		</reference>
+	</access_ALL_ALL>
+
+</layout>

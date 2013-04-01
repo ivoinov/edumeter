@@ -1,0 +1,57 @@
+#location {
+    height: 500px;
+    width: 1000px;
+    background: gray;
+    padding: 15px;
+}
+#map_canvas {
+    padding-top: 5px;
+    height: 450px;
+    width: 600px;
+    float: left;
+}
+span.header-title {
+    font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 2.75em;
+    letter-spacing: .2em;
+    line-height: 1.1em;
+    margin:0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#navigation-menu-form {
+    width: 200px;
+    float: left;
+    padding-left: 10px;
+}
+#address-field {
+    padding-bottom: 40px;
+}
+#address-field label, #way-field-title {
+    width: 250px;
+    font-size: 22px;
+}
+#address-field input {
+    margin-top: 15px;
+}
+input#search_address{
+    width: 250px;
+}
+
+#way-field .checkbox-container {
+    margin-top: 20px;
+}
+#search_button {
+    width: 100px;
+
+}
+input.search-ways {
+    margin-right: 10px;
+}
+#social-buttons {
+    padding-top: 30px;
+}
+div#social-buttons div {
+    display: inline-block;
+}

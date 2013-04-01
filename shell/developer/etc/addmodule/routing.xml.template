@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+		<routing>
+			<routes>
+	            <{{CRUD_ROUTE}} translate="name">
+	                <name>{{NAME}}</name>
+	                <controller>core/crud</controller>
+	                <use>{{CRUD_ENTITY_POOLNAME}}/{{CRUD_ENTITY_NAME}}</use>
+	            </{{CRUD_ROUTE}}>
+	        </routes>
+        </routing>
+    </admin>
+</config>

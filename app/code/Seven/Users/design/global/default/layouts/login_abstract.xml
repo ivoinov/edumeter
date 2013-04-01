@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<login_page>
+		<reference name="login-form">
+			<action method="setRegistryName">
+				<registry>login_form</registry>
+			</action>
+		</reference>
+	</login_page>
+</layout>

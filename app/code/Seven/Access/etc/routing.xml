@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<routes>
+				<users>
+					<routes>
+						<roles translate="name">
+							<name>Access roles</name>
+							<controller>core/crud</controller>
+							<use>access/role</use>
+						</roles>
+					</routes>
+				</users>
+			</routes>
+		</routing>
+	</admin>
+</config>

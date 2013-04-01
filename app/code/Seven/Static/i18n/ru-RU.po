@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seven Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 00:12+0300\n"
+"PO-Revision-Date: 2012-09-21 00:12+0300\n"
+"Last-Translator: Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>\n"
+"Language-Team: Seven Core Team <team@sevenframework.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;_en:1,1;_n:1,1;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2))\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../i18n/xml-translate.php:4
+msgid "ID"
+msgstr "ID"
+
+#: ../i18n/xml-translate.php:5
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../i18n/xml-translate.php:6
+msgid "Content"
+msgstr "Содержание"
+
+#: ../i18n/xml-translate.php:7
+msgid "Edit static block"
+msgstr "Изменить статический блок"
+
+#: ../i18n/xml-translate.php:8
+msgid "Static block"
+msgstr "Статический блок"
+
+#: ../i18n/xml-translate.php:9
+#: ../i18n/xml-translate.php:12
+msgid "Static blocks"
+msgstr "Статические блоки"
+
+#~ msgid "Choose one"
+#~ msgstr "Выберите"
+
+#~ msgid "Add new"
+#~ msgstr "Добавить"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Back to list"
+#~ msgstr "Назад к списку"
+
+#~ msgid "Application Configuration"
+#~ msgstr "Конфигурация приложения"
+
+#~ msgid "Localization dictionaries"
+#~ msgstr "Словари переводов"
+
+#~ msgid "Site frontend controller"
+#~ msgstr "Контроллер сайта"
+
+#~ msgid "General"
+#~ msgstr "Основное"
+
+#~ msgid "Webmaster"
+#~ msgstr "Веб-мастер"
+
+#~ msgid "Site"
+#~ msgstr "Сайт"
+
+#~ msgid "Design"
+#~ msgstr "Дизайн"
+
+#~ msgid "Name"
+#~ msgstr "Название"
+
+#~ msgid "Administrator\\'s e-mail"
+#~ msgstr "E-Mail администратора"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "Site language"
+#~ msgstr "Язык сайта"
+
+#~ msgid "Theme"
+#~ msgstr "Тема"
+
+#~ msgid "Logo"
+#~ msgstr "Логотип"
+
+#~ msgid "Logo alt"
+#~ msgstr "Текстовый логотип"
+
+#~ msgid "Favicon"
+#~ msgstr "Иконка"
+
+#~ msgid "Webmaster\\'s e-mail"
+#~ msgstr "E-mail веб-мастера"
+
+#~ msgid "Send exception via e-mail"
+#~ msgstr "Отправлять отчеты об ошибках на почту"
+
+#~ msgid "Code"
+#~ msgstr "Код"
+
+#~ msgid "Unique site code"
+#~ msgstr "Уникальный код сайта"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid ""
+#~ "Enter site URL here without protocol, just host and\n"
+#~ "\t\t\t\t\t\t\t\tpath."
+#~ msgstr "Введите ссылку на сайт без протокола, только имя домена и пути"
+
+#~ msgid "Area"
+#~ msgstr "Зона"
+
+#~ msgid "Website"
+#~ msgstr "Сайт"
+
+#~ msgid "Submit"
+#~ msgstr "Отправить"
+
+#~ msgid "Edit"
+#~ msgstr "Изменить"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Choose to filter"
+#~ msgstr "Поиск"
+
+#~ msgid "From"
+#~ msgstr "От"
+
+#~ msgid "To"
+#~ msgstr "До"
+
+#~ msgid "DATEFORMAT::m/d/Y h:i:s A"
+#~ msgstr "d.m.Y H:i:s"
+
+#~ msgid "DATEFORMAT::m/d/Y"
+#~ msgstr "d.m.Y"
+
+#~ msgid "Default"
+#~ msgstr "По-умолчанию"
+
+#~ msgid "All settings"
+#~ msgstr "Все настройки"
+
+#~ msgid "Incorrect value"
+#~ msgstr "Некорректное значение"
+
+#~ msgid "Incorrect length"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Value is not exists"
+#~ msgstr "Значение не существует"
+
+#~ msgid "Incorrect size"
+#~ msgstr "Некорректная длинна"
+
+#~ msgid "Incorrect file extension"
+#~ msgstr "Некорректное расширение файла"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "Нет"
+
+#~ msgid "List"
+#~ msgstr "Список"
+
+#~ msgid "Some of the form fields are filled with invalid values"
+#~ msgstr "Некоторые поля формы были заполнены не правильно"
+
+#~ msgid "Choose a view"
+#~ msgstr "Выберите представление"
+
+#~ msgid "Record was successfully updated"
+#~ msgstr "Запись успешно обновлена"
+
+#~ msgid "Record was successfully added"
+#~ msgstr "Запись успешно добавлена"
+
+#~ msgid "Record was successfully deleted"
+#~ msgstr "Запись успешно удалена"
+
+#~ msgid "Package sources do not exist"
+#~ msgstr "Исходный код пакета не найден"
+
+#~ msgid "Some of form fields filled with invalid values"
+#~ msgstr "Некоторые поля формы были заполнены не правильно"
+
+#~ msgid "System settings"
+#~ msgstr "Системные настройки"
+
+#~ msgid "General controller"
+#~ msgstr "Контроллер по-умолчанию"
+
+#~ msgid "Home"
+#~ msgstr "Главная страница"
+
+#, fuzzy
+#~ msgid "Listf"
+#~ msgstr "Список"

@@ -1,0 +1,85 @@
+@import url(../../style.css);
+
+/**
+*   Login container
+*/
+
+body {
+    text-align: center; padding: 170px 20px 20px;
+}
+
+#login-container {
+    margin: 10px auto;  text-align: left; width: 400px; background: red;
+	background: rgb(0,101,153);
+	background: -moz-linear-gradient(top,  rgba(0,101,153,1) 0%, rgba(46,145,178,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,101,153,1)), color-stop(100%,rgba(46,145,178,1)));
+	background: -webkit-linear-gradient(top,  rgba(0,101,153,1) 0%,rgba(46,145,178,1) 100%);
+	background: -o-linear-gradient(top,  rgba(0,101,153,1) 0%,rgba(46,145,178,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,101,153,1) 0%,rgba(46,145,178,1) 100%);
+	background: linear-gradient(top,  rgba(0,101,153,1) 0%,rgba(46,145,178,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006599', endColorstr='#2e91b2',GradientType=0 );
+    color: white;
+    border: 2px solid #003434;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+
+#login-container h1 {
+	font-weight: bold; 
+    margin: 15px;
+    padding: 0;
+	font-size: 22px;
+    -moz-text-shadow: 1px 2px 0px #003434;
+    text-shadow: 1px 2px 0px #003434;
+	background: none; 
+	color: white; 
+	border: 0px;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+#login-container h1 span { color: #88B5CC; }
+
+#login-container .widget-box, #login-container fieldset.widget-box { 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	box-shadow: none;
+	padding: 16px 30px 10px;
+	border-radius: 0;
+	margin: 0;
+}
+
+#login-container .widget-box div.validation-error  { color: white; font-weight: bold; text-shadow: 1px 1px 0px black; margin-left: 70px; }
+
+#login-container span.required { display: none; }
+
+#login-container .widget-box label { width: 70px; margin-right: -70px; }
+#login-container .widget-box .input { margin-left: 70px; padding-right: 0px; }
+#login-container .widget-box .input input { width: 100%; }
+
+#login-container .widget-container-buttons-bottom { text-align: center; margin: 10px 20px 6px; }
+#login-container .widget-container-buttons-bottom input { width: 100px; }
+
+.light-border {
+    border: 1px solid white;
+    padding: 0;
+    margin: 3px;
+	border-radius: 2px;
+}
+
+.session-message-success {
+    width: 290px;
+    border: 1px solid #3a3; background: #ddffdd url("images/icons/tick.png") no-repeat 10px 9px; padding: 9px 20px 9px 30px; margin: 10px auto 0; color: #363; font-size: 12px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #ccc; -webkit-box-shadow: 1px 1px 2px #ccc; -moz-box-shadow: 1px 1px 2px #ccc;
+}
+
+.session-message-error {
+    width: 290px;
+    border: 1px solid #a33; background: #fdd url("images/icons/cross.png") no-repeat 10px 9px; padding: 9px 20px 9px 30px; margin: 10px auto 0; color: #633; font-size: 12px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #ccc; -webkit-box-shadow: 1px 1px 2px #ccc; -moz-box-shadow: 1px 1px 2px #ccc;
+}

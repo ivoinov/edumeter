@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<grids>
+			<core>
+				<locale translate="title">
+					<title>Languages</title>
+					<source>core/locale</source>
+					<add_default_actions>0</add_default_actions>
+					<fields>
+						<code translate="label">
+							<label>Code</label>
+						</code>
+						<name translate="label">
+							<label>Name</label>
+						</name>
+						<actions>
+							<type>action</type>
+							<actions>
+								<edit translate="label">
+									<label>Edit</label>
+									<url_template>*/*/edit?id={code}</url_template>
+									<skin_icon>images/icons/world_edit.png</skin_icon>
+								</edit>
+								<delete translate="label">
+									<label>Delete</label>
+									<url_template>*/*/delete?id={code}</url_template>
+									<skin_icon>images/icons/world_delete.png</skin_icon>
+								</delete>
+							</actions>
+						</actions>
+					</fields>
+				</locale>
+			</core>
+		</grids>
+		<forms>
+			<core>
+				<locale translate="title">
+					<title>Languages</title>
+					<source>core/locale</source>
+					<fieldsets>
+						<default translate="label">
+							<label>Language details</label>
+						</default>
+					</fieldsets>
+					<fields>
+						<code />
+						<name />
+						<dictionary_file />
+					</fields>
+				</locale>
+			</core>
+		</forms>
+	</admin>
+</config>

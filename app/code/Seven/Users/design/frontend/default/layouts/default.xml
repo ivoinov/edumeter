@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<users_index>
+		<reference name="content">
+			<block type="core/widget_form" name="form">
+				<action method="setTitle" translate="title"><title>Your account</title></action>
+			</block>
+		</reference>
+	</users_index>
+
+</layout>

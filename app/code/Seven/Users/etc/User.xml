@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<users>
+				<user>
+					<table>users_user</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</id>
+						<email translate="label">
+							<label>E-Mail</label>
+							<type>text</type>
+							<required>1</required>
+							<minlength>6</minlength>
+							<validators>
+								<is_unique>core/validators::unique</is_unique>
+								<is_email>core/validators::email</is_email>
+							</validators>	
+						</email>
+						<password translate="label">
+							<label>Password</label>
+							<type>password</type>
+							<encrypt>md5+keys</encrypt>
+							<required>1</required>
+							<minlength>6</minlength>
+						</password>
+						<name translate="label">
+							<label>Users::Name</label>
+							<required>1</required>
+							<minlength>3</minlength>
+						</name>
+					</attributes>
+				</user>
+			</users>
+		</entity>
+		<forms>
+			<users>
+				<login>
+					<title>Login</title>
+					<source>users/user</source>
+					<action>:login</action>
+					<fieldsets>
+						<default>
+							<label></label>
+						</default>
+					</fieldsets>
+					<fields>
+						<email>
+							<validators>
+								<is_unique>skip</is_unique>
+							</validators>
+						</email>
+						<password />
+					</fields>
+				</login>
+				<user translate="title,fieldset,tab">
+					<title>User account</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>users/user</source>
+					<fields>
+						<email />
+						<password>
+							<open>1</open>
+						</password>
+						<name />
+					</fields>
+				</user>
+			</users>
+		</forms>
+		<users>
+			<guest_profile translate="name">
+				<name>Guest</name>
+			</guest_profile>
+		</users>
+	</global>
+	<frontend>
+		<forms>
+			<users>
+				<signup translate="title,fieldset,tab">
+					<title>Create a Seven account</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>users/user</source>
+					<fields>
+						<email />
+						<password />
+						<name />
+					</fields>
+				</signup>
+			</users>
+		</forms>
+		<grids>
+			<users>
+				<user translate="title"> 
+					<title>User list</title>
+					<source>users/user</source>
+					<add_default_actions>0</add_default_actions>
+					<fields>
+						<name />
+					</fields>
+				</user>
+			</users>
+		</grids>
+	</frontend>
+	<admin>
+		<forms>
+			<users>
+				<login>
+					<action>*/*/login</action>
+				</login>
+			</users>
+		</forms>	
+		<grids>
+			<users>
+				<user translate="title">
+					<title>Users</title>
+					<source>users/user</source>
+					<use_ajax>1</use_ajax>
+					<fields>
+						<id>
+							<width>40px</width>
+						</id>
+						<email />
+						<name />
+					</fields>
+				</user>
+			</users>
+		</grids>
+	</admin>
+</config>

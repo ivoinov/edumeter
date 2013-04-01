@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<default>
+		<reference name="body">
+			<block name="developer_layout_info" type="developer/layout_info"></block>
+		</reference>
+	</default>
+	<users_account_login>
+		<reference name="body">
+			<block name="developer_layout_info" type="developer/layout_info"></block>
+		</reference>
+	</users_account_login>
+</layout>

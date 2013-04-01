@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+	<developer_routes_page>
+		<reference name="content">
+			<block name="routing_map_container" type="core/widget_container"> 
+				<block name="routing_map" type="seven_developer/routing_map">
+				
+				</block>
+				<action method="setTitle">
+					<T>Routing</T>
+				</action>
+			</block>
+		</reference>
+	</developer_routes_page>
+	
+</layout>

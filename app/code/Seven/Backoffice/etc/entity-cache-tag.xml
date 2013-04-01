@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<grids>
+			<core>
+				<cache_tag translate="title">
+					<title>Caching</title>
+					<add_default_actions>0</add_default_actions>
+					<filterable>0</filterable>
+					<pager>0</pager>
+					<source>core/cache_tag</source>
+					<fields>
+						<name translate="label">
+							<label>Tag</label>
+						</name>
+						<!--last_update translate="label">
+							<label>Generated at</label>
+							<type>datetime</type>
+						</last_update>
+						<status translate="label">
+							<label>Update required</label>
+							<type>select</type>
+							<options>core/form_input_select_yesno</options>
+						</status-->
+						<actions>
+							<type>action</type>
+							<actions>
+								<flush translate="label">
+									<label>Flush</label>
+									<url_template>*/*/flush?tag={tag}</url_template>
+									<skin_icon>images/icons/bin.png</skin_icon>
+								</flush>
+							</actions>
+						</actions>
+					</fields>
+				</cache_tag>
+			</core>
+		</grids>
+	</admin>
+</config>

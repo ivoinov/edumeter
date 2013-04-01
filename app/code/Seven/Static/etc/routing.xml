@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<routes>
+				<content>
+					<routes>
+						<static translate="name">
+							<name>Static blocks</name>
+							<controller>core/crud</controller>
+							<use>static/block</use>
+						</static>
+					</routes>
+				</content>
+			</routes>
+		</routing>
+	</admin>
+</config>

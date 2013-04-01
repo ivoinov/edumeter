@@ -1,0 +1,4 @@
+<?php foreach($this->getView()->_getAttributes() as $attr) : if($attr->getNoView()) return; ?>
+<h3><?php echo $attr->getLabel(); ?></h3>
+<?php echo $this->getView()->formatData($attr->getKey()); ?>
+<?php endforeach; ?>

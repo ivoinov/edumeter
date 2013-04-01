@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<frontend>
+		<routing>
+			<routes>
+				<signup translate="name">
+					<access>GUESTONLY</access>
+					<name>Sign up</name>
+					<controller>signup/index</controller>
+					<use>users/user</use>
+				</signup>
+			</routes>
+		</routing>
+	</frontend>
+</config>

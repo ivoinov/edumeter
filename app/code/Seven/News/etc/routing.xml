@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<routes>
+				<content translate="name">
+					<name>Content</name>
+					<routes>
+						<news translate="name">
+							<name>News</name>
+							<controller>core/crud</controller>
+							<use>news/entity</use>
+						</news>
+					</routes>
+				</content>
+			</routes>
+		</routing>
+	</admin>
+	<frontend>
+		<routing>
+			<routes>
+				<news translate="name">
+					<name>News</name>
+					<controller>core/crud_read</controller>
+					<use>news/entity</use>
+				</news>
+			</routes>
+		</routing>
+	</frontend>
+</config>

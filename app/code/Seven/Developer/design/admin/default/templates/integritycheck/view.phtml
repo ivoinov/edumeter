@@ -1,0 +1,49 @@
+<style>
+
+.intchk-1 { color: black; } 	/* INFO */
+.intchk-2 { color: green; } 	/* OK */
+.intchk-3 { color: blue; } 		/* ADVICE */
+.intchk-4 { color: #f60; } 		/* WARNING */
+.intchk-5 { color: red; } 		/* ERROR */
+
+h1.intchk-1 { background-image: url('<?php echo $this->getSkinUrl('images/icons/information.png'); ?>'); } 					/* INFO */
+h1.intchk-2 { background-image: url('<?php echo $this->getSkinUrl('images/icons/accept.png'); ?>'); } 						/* OK */
+h1.intchk-3 { background-image: url('<?php echo $this->getSkinUrl('images/icons/comments.png'); ?>'); color: #13798A; } 	/* ADVICE */
+h1.intchk-4 { background-image: url('<?php echo $this->getSkinUrl('images/icons/error.png'); ?>'); } 						/* WARNING */
+h1.intchk-5 { background-image: url('<?php echo $this->getSkinUrl('images/icons/exclamation.png'); ?>'); } 					/* ERROR */
+
+.howtofix { padding: 5px; border: 1px dotted #aaa; background: white; font-family: monospace; font-size: 13px; color: #444; }
+
+</style>
+<script>
+$(document).ready(function(){
+	$("#integritytree").treeview({collapsed: true});
+});	
+</script>
+<?php 
+
+	$_report = $this->getView();
+	
+	$_build_report_tree = function($node, $_build_report_tree, $level = 0) {
+		?>
+			<?php if($level == 0) : ?>
+				<h1 class='intchk-<?php echo $node->getState(); ?>'><?php echo $node->getMessage(); ?></h1>
+			<?php else :?>
+				<div><?php echo $node->getMessage(); ?></div>
+			<?php endif; ?>
+			<?php if($node->getSubreports()) : ?>
+				<ul<?php if($level == 0) : ?> id="integritytree"<?php endif; ?>>
+					<?php foreach($node->getSubreports() as $report) : ?>
+						<li class='intchk-<?php echo $report->getState(); ?>'><?php $_build_report_tree($report, $_build_report_tree, $level + 1); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			<?php if($node->getHowtoFix()) : ?>
+				<b><?php _e("How to fix"); ?></b>
+				<?php $type = is_object($node->getHowtoFix()) ? str_replace('Developer_Model_Integritycheck_Report_Fix_', '', get_class($node->getHowtoFix())) : "Message"; ?>
+				<pre class='howtofix howtofix-<?php echo strtolower($type); ?>'><?php echo $node->getHowtoFix(); ?></pre>
+			<?php endif; ?>
+		<?php 
+	};
+
+	$_build_report_tree($_report, $_build_report_tree);

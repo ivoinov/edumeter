@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <system>
+        <resources>
+            <db>
+                <default>
+                    <type>pdo_mysql</type>
+                    <host>localhost</host>
+                    <dbname>seven</dbname>
+                    <charset>utf8</charset>
+                </default>
+            </db>
+            <identity_map>1</identity_map>
+            <response>
+                <charset>UTF-8</charset>
+            </response>
+            <cache>
+                <type>file</type>
+                <frontend>
+                    <lifetime>7200</lifetime>
+                    <automatic_serialization>1</automatic_serialization>
+                    <caching>0</caching>
+                </frontend>
+                <backend>
+                    <cache_dir>var/cache</cache_dir>
+                </backend>
+            </cache>
+        </resources>
+        <!-- 
+            These packages are always turned ON 
+            and marked as system at the Backoffice
+        -->
+        <required_packages> 
+            <Seven_Core />
+            <Seven_Backoffice />
+        </required_packages>
+        <!-- 
+            These packages are always turned  OFF
+            and invisible in Packages list at the
+            Backoffice 
+        -->
+        <disabled_packages> 
+        </disabled_packages>
+        
+        <layout>
+        	<use_url_tags>0</use_url_tags>
+        </layout>
+    </system>
+</config>

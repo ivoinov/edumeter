@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<core>
+				<locale>
+					<table>core_locales</table>
+					<key>code</key>
+					<attributes>
+						<code translate="label,description">
+							<label>Code</label>
+							<filters>
+								<trim>core/filters::trim</trim>
+							</filters>
+							<validators>
+								<unique>core/validators::unique</unique>
+							</validators>
+							<data_type>char</data_type>
+							<required>1</required>
+							<regexp>/^[a-z]{2}-[A-Z]{2}$/</regexp>
+							<description>Language code in xx-YY format</description>
+						</code>
+						<language translate="label">
+							<label>Language code</label>
+							<data_type>char</data_type>
+						</language>
+						<dictionary_file translate="label,description">
+							<label>Dictionary</label>
+							<type>file</type>
+							<extension>/^mo$/</extension>
+							<description>Site dictionary in .mo format</description>
+							<is_private>1</is_private>
+							<nullable>1</nullable>
+						</dictionary_file>
+						<name translate="label">
+							<label>Name</label>
+							<required>1</required>
+							<minlength>1</minlength>
+						</name>
+					</attributes>
+				</locale>
+			</core>
+		</entity>
+	</global>
+</config>   

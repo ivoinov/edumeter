@@ -1,0 +1,38 @@
+<style>
+#layout-info { background: #ffffe0; border: 1px solid #884; padding: 20px; margin: 10px; border-radius: 10px; }
+#layout-info table.block-scheme { padding: 0; margin: 0; border-collapse: collapse; background: white; }
+#layout-info table.block-scheme td, #layout-info table.block-scheme th { padding: 5px 10px; border: 1px solid #999; }
+#layout-info table.block-scheme th { background: #777; color: white; }
+</style>
+<?php $_build_block_tree = function($block, $builder, $level = 0) { ?>	
+	<?php foreach($block->getChildren() as $child) : ?>
+	<tr>
+		<td><div style="padding-left: <?php echo $level * 20; ?>px"><?php echo $child->getLayoutName() ? : "<i style='color:#aaa'>anonymous</i>"; ?></div></td>
+		<td><?php echo get_class($child); ?></td>
+		<td><?php echo ($child instanceof Core_Block_Template) ? ($child->getTemplate() ?: "<i style='color:#a55'>not specified</i>") : "<i style='color:#aaa'>not used</i>"; ?></td>
+		<td><?php echo $child->getBefore(); ?></td>
+		<td><?php echo $child->getAfter(); ?></td>
+		<td><?php echo $child->getOrderWeight(); ?></td>
+	</tr>
+	<?php if($child->getChildren()) : ?><?php $builder($child, $builder, $level + 1); ?><?php endif; ?>
+	<?php endforeach; ?>
+<?php } ?>
+
+<div id="layout-info">
+	<h3>Tags</h3>
+	<div><?php echo implode(', ', $this->getLayout()->getTags())?></div>
+	<h3>Blocks</h3>
+	<table class="block-scheme" cellspacing="0">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Class</th>
+				<th>Template</th>
+				<th>Before</th>
+				<th>After</th>
+				<th>Order weight</th>
+			</tr>
+		</thead>
+		<tbody><?php $_build_block_tree($this->getLayout()->getBlock('root'), $_build_block_tree); ?></tbody>
+	</table>
+</div>

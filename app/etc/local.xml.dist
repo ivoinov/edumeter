@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <system>
+        <resources>
+            <db>
+                <default>
+                    <type>pdo_mysql</type>
+                    <host>localhost</host>
+                    <username>root</username>
+                    <port>3306</port>
+                    <dbname>seven</dbname>
+                    <password>1111</password>
+                </default>
+            </db>
+            <cache>
+                <frontend>
+                    <caching>1</caching>
+                </frontend>
+            </cache>
+        </resources>
+        <debug>
+            <layout>0</layout>
+            <profiler>0</profiler>
+        </debug>
+        <required_packages>
+            <Seven_Pages />
+            <Seven_Static />
+        </required_packages>
+        <disabled_packages>
+            <Sample_Blog />
+        </disabled_packages>
+    </system>
+</config>

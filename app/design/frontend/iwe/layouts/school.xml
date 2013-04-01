@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <remove name="mainmenu"/>
+        <reference name="head">
+            <action method="addCss"><css>bootstrap/bootstrap.css</css><type>lib</type></action>
+            <action method="addJs"><script>bootstrap/bootstrap.js</script><type>lib</type></action>
+        </reference>
+    </default>
+
+    <school_index>
+        <reference name="head">
+            <action method="addJs"><script>http://maps.google.com/maps/api/js?sensor=false</script></action>
+            <action method="addJs"><script>js/google/maps/map.js</script><type>skin</type></action>
+            <action method="addCss"><css>css/school/googlemap/location.css</css><type>skin</type></action>
+        </reference>
+        <remove name="grid" />
+        <reference name="content">
+            <block type="iwe_school/map" name="googlemaps.location" template="school/googlemap/location.phtml"></block>
+        </reference>
+    </school_index>
+
+</layout>

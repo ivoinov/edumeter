@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<controller>backoffice/index</controller>
+			<routes>
+				<system translate="name">
+					<name>System</name>
+					<order>10000</order>
+					<routes>
+						<packages translate="name">
+							<name>Packages</name>
+							<controller>backoffice/system_packages</controller>
+							<routes>
+								<index>
+									<type>action</type>
+									<layout_tags>system_packages_index</layout_tags>
+									<hidden>1</hidden>
+								</index>
+								<view>
+									<type>action</type>
+									<layout_tags>system_packages_index</layout_tags>
+									<hidden>1</hidden>
+								</view>
+							</routes>
+						</packages>
+						<mailing translate="name">
+							<name>Manage mail</name>
+							<order>-1</order>
+							<routes>
+								<mail translate="name">
+									<name>E-Mail templates</name>
+									<controller>core/crud</controller>
+									<use>core/mail_template</use>
+								</mail>
+							</routes>
+						</mailing>
+						<website translate="name">
+							<name>Website</name>
+							<controller>core/crud</controller>
+							<use>core/website</use>
+						</website>
+						<cache translate="name">
+							<name>Cache</name>
+							<controller>backoffice/system_cache</controller>
+							<use>core/cache_tag</use>
+							<routes>
+								<index>
+									<layout_tags>system_cache_index</layout_tags>
+									<hidden>1</hidden>
+									<type>action</type>
+								</index>
+							</routes>
+						</cache>
+						<config translate="name">
+							<name>Configuration</name>
+							<controller>backoffice/system_config</controller>
+						</config>
+						<locales translate="name">
+							<name>Languages</name>
+							<controller>core/crud</controller>
+							<use>core/locale</use>
+						</locales>
+					</routes>
+				</system>
+			</routes>
+		</routing>
+	</admin>
+</config>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<developer>
+				<error_report>
+					<skip_integritycheck>1</skip_integritycheck>
+					<key>id</key>
+					<attributes>
+						<md5>
+							<label>Report hash</label>
+						</md5>
+						<size>
+							<label>Size</label>
+							<type>number</type>
+							<format>%d bytes</format>
+						</size>
+						<name>
+							<label>Name</label>
+						</name>
+						<file>
+							<label>File path</label>
+						</file>
+						<date>
+							<type>datetime</type>
+							<label>Created at</label>
+						</date>
+					</attributes>
+				</error_report>
+			</developer>
+		</entity>
+	</global>	
+	<admin>
+		<grids>
+			<developer>
+				<error_report translate="title">
+					<title>Error reports</title>
+					<source>developer/error_report</source>
+					<filterable>0</filterable>
+					<add_default_actions>0</add_default_actions>
+					<fields>
+						<date />
+						<name>
+							<output_callback>developer/errorreporting_output::getReportUrl</output_callback>
+						</name>
+						<md5  />
+						<size />
+					</fields>
+				</error_report>
+			</developer>
+		</grids>
+	</admin>
+</config>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<frontend>
+		<forms>
+			<signup>
+				<user>
+					<source>users/user</source>
+					<extends>
+						<userform>users/user</userform>
+					</extends>
+					<fields>
+						<password>
+							<open>0</open>
+							<type>password</type>
+						</password>
+						<confirmpassword translate="label">
+							<label>Confirm password</label>
+							<type>password</type>
+							<confirm_to>password</confirm_to>
+							<validators>
+								<confirm>core/validators::confirm</confirm>
+							</validators>
+							<required>1</required>
+						</confirmpassword>
+					</fields>
+				</user>
+			</signup>
+		</forms>
+	</frontend>
+</config>

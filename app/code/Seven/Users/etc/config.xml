@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Users translate="description,name">
+            	<name>Users</name>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <description></description>
+                <version>0.1.0</version>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>
+            </Users>
+        </modules>
+		<events>
+			<layout_load_before>
+				<Users>users/observer::addLoggedHandlers</Users>
+			</layout_load_before>
+		</events>
+    </global>
+	<admin>
+		<route>
+			<users>
+				<controller>
+					<Users>Users_Controller_Admin</Users>
+				</controller>
+			</users>
+		</route>
+	</admin>
+	<frontend>
+		<route>
+			<users>
+				<controller>
+					<Users>Users_Controller_Frontend</Users>
+				</controller>
+			</users>
+		</route>
+	</frontend>
+</config>

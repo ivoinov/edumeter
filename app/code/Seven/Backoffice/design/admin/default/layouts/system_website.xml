@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<default>
+		<reference name="mainmenu">
+			<action method="addItem">
+				<id>website</id>
+				<data translate="label">
+					<label>Websites</label>
+					<order>900</order>
+					<url>*/system/website</url>
+				</data>
+				<parent>system</parent>
+			</action>
+		</reference>
+	</default>
+
+	<system_website_index>
+		<reference name="grid_container">
+			<action method="setTitle" translate="title">
+				<title>Websites</title>
+			</action>
+			<action method="addButton">
+				<id>configuration</id>
+				<data translate="label">
+					<label>Configuration</label>
+					<type>button</type>
+					<order>1</order>
+					<location>*/system/config</location>
+				</data>
+			</action>
+		</reference>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>website</id>
+			</action>
+		</reference>
+	</system_website_index>
+
+	<system_website_edit allow_apply="1">
+		<reference name="form">
+			<action method="setTitle" translate="title">
+				<title>Websites</title>
+			</action>
+		</reference>
+		<reference name="mainmenu">
+			<action method="setActiveItem">
+				<id>website</id>
+			</action>
+		</reference>
+	</system_website_edit>
+
+	<system_website_add>
+		<apply handler="system_website_edit" />
+	</system_website_add>
+
+</layout>

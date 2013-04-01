@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<system>
+		<cache>
+			<tags>
+				<config_xml translate="name">
+					<name>Application Configuration</name>
+				</config_xml>
+				<!--layout_xml translate="name">
+					<name>Layout markup</name>
+				</layout_xml-->
+				<locale_dict translate="name">
+					<name>Localization dictionaries</name>
+				</locale_dict>
+			</tags>
+		</cache>
+	</system>
+</config>

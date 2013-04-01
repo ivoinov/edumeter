@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	
+	<developer_integritycheck_page>
+	
+		<reference name="view">
+			<action method="setTemplate">
+				<template>Seven/Developer/integritycheck/view.phtml</template>
+			</action>
+		</reference>
+	
+		<reference name="head">
+			<action method="addJs">
+				<script>jquery/jquery.treeview.js</script>
+				<type>lib</type>
+			</action>
+			<action method="addCss">
+				<script>jquery-treeview/style.css</script>
+				<type>skin</type>
+			</action>
+		</reference>
+	
+	</developer_integritycheck_page>
+	
+</layout>

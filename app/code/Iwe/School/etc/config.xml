@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Iwe_School translate="description,name">
+            	<name>IWE School</name>
+                <author>Seven Core Team &lt;ilya@sevenframework.com&gt;</author>
+                <description>Scholl import module</description>
+                <version>1.0.2</version>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>                
+            </Iwe_School>
+        </modules>
+    </global>
+</config>

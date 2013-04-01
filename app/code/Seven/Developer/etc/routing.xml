@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<routing>
+			<routes>
+				<developer translate="name">
+					<name>Developer</name>
+					<order>100000</order>
+					<routes>
+						<routes translate="name">
+							<name>Routes</name>
+							<controller>seven_developer/routing</controller>
+						</routes>
+						<integritycheck translate="name">
+							<name>Integrity check</name>
+							<controller>developer/integritycheck</controller>
+						</integritycheck>
+						<error_reports translate="name">
+							<name>Error reports</name>
+							<controller>developer/errorreporting</controller>
+							<use>developer/error_report</use>
+						</error_reports>
+					</routes>
+				</developer>
+			</routes>
+		</routing>
+	</admin>
+</config>

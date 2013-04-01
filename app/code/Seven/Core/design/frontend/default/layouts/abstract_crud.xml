@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<abstract_view>
+		<reference name="content">
+			<block name="view" type="core/widget_view" template="widgets/view.phtml">
+				<action method="setRegistryName">
+					<name>abstract_view</name>
+				</action>
+			</block>
+		</reference>
+	</abstract_view>
+	
+	<abstract_list>
+		<reference name="content">
+			<block name="grid_container" type="core/widget_container">
+				<block name="grid" type="core/widget_grid_xml" template="widgets/grid.phtml">
+					<action method="setRegistryName">
+						<name>abstract_list</name>
+					</action>
+				</block>
+			</block>
+		</reference>
+	</abstract_list>
+	
+	<abstract_crud_form>
+		<reference name="content">
+			<block name="form" type="core/widget_form_xml" template="widgets/form.phtml">
+				<action method="addButton">
+					<id>submit</id>
+					<data>
+						<label>Save</label>
+						<type>submit</type>
+					</data>
+				</action>
+				<action method="addButton">
+					<id>back</id>
+					<data>
+						<label>Back to list</label>
+						<type>button</type>
+						<url>*/*/</url>
+					</data>
+				</action>
+			</block>
+		</reference>
+	</abstract_crud_form>
+
+	<abstract_edit>
+		<reference name="form">
+			<action method="setRegistryName"><name>abstract_edit</name></action>
+		</reference>
+	</abstract_edit>
+
+	<abstract_create>
+		<reference name="form">
+			<action method="setRegistryName"><name>abstract_create</name></action>
+		</reference>
+	</abstract_create>
+
+	<abstract_edit_multiview>
+		<reference name="form">
+			<action method="setButtonsTop">
+				<top>1</top>
+			</action>
+			<action method="addButton">
+				<id>view_id</id>
+				<data translate="label">
+					<class>core/widget_form_viewswitch</class>
+					<html_name>view_id</html_name>
+					<order>-1000</order>
+					<label>Choose one</label>
+					<top_only>1</top_only>
+					<registry_name>abstract_edit_entity</registry_name>
+				</data>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addJs"><js>js/multiview-form.js</js><type>skin</type></action>
+		</reference>
+	</abstract_edit_multiview>
+	
+	<abstract_list_editable>
+	</abstract_list_editable>
+	
+	<abstract_list_creatable>
+		<reference name="grid_container">
+			<action method="addButton">
+				<id>add</id>
+				<data translate="label">
+					<label>Add new</label>
+					<url>*/*/create</url>
+				</data>
+			</action>
+		</reference>
+	</abstract_list_creatable>
+	
+	<abstract_list_deletable>
+	</abstract_list_deletable>
+		
+</layout>
+

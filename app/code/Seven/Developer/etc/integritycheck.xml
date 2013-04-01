@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<integrity_check>
+			<developer_permissions>developer/integritycheck_task_permissions</developer_permissions>	
+			<developer_entities>developer/integritycheck_task_entity</developer_entities>		
+			<developer_routes>developer/integritycheck_task_routes</developer_routes>		
+		</integrity_check>
+	</global>
+</config>

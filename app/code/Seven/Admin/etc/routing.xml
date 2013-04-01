@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+		<routing>
+			<routes>
+	            <system translate="name">
+	            	<routes>
+		            	<administrators translate="name">
+			                <name>Administrators</name>
+			                <controller>admin/crud</controller>
+			                <use>admin/user</use>
+			                <order>-100</order>
+			            </administrators>
+			        </routes>
+	            </system>
+	            <login translate="name">
+	            	<name>Administrator login</name>
+	            	<controller>admin/login</controller>
+	            	<access>GUESTONLY</access>
+	            </login>
+	            <logout translate="name">
+	            	<name>Logout</name>
+	            	<controller>admin/logout</controller>
+	            	<access>ADMINONLY</access>
+	            	<order>900000</order>
+	            </logout>
+	            <users>
+	            	<routes>
+		            	<account>
+		            		<access>DENY</access>
+		            		<routes>
+		            			<login>
+		            				<access>DENY</access>
+		            			</login>
+		            			<logout>
+		            				<access>DENY</access>
+		            			</logout>
+		            			<index>
+		            				<access>DENY</access>
+		            			</index>
+		            		</routes>
+		            	</account>
+		            </routes>
+	            </users>
+	        </routes>
+        </routing>
+    	<urlaliases>
+    		<admin_login>*/login/</admin_login>
+    	</urlaliases>
+    </admin>
+</config>

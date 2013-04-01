@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<news>
+				<entity>
+					<table>news_entity</table>
+					<view_table>news_entity_view</view_table>
+					<base_class>core/multiview_entity</base_class>
+					<views>core/multiview_views::getI18nViews</views>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+							<type>number</type>
+						</id>
+						<title translate="label">
+							<label>Title</label>
+							<required>1</required>
+							<multiview>1</multiview>
+						</title>
+						<announce translate="label">
+							<label>Announce</label>
+							<type>textarea</type>
+							<required>1</required>
+							<multiview>1</multiview>
+						</announce>
+						<content translate="label">
+							<label>Content</label>
+							<type>textarea</type>
+							<wysiwyg>1</wysiwyg>
+							<multiview>1</multiview>
+						</content>
+						<date>
+							<type>date</type>
+						</date>
+						<author>
+							<type>number</type>						
+						</author>
+					</attributes>
+				</entity>
+			</news>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<news>
+				<entity translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>news/entity</source>
+					<fields>
+						<title />
+						<announce />
+						<content />
+					</fields>
+				</entity>
+			</news>
+		</forms>
+		<grids>
+			<news>
+				<entity translate="title">
+					<title>News</title>
+					<source>news/entity</source>
+					<fields>
+						<id>
+							<width>40px</width>
+						</id>
+						<title />
+					</fields>
+				</entity>
+			</news>
+		</grids>
+	</admin>
+	<frontend>
+		<grids>
+			<news>
+				<entity translate="title">
+					<title>News</title>
+					<source>news/entity</source>
+					<sort>
+						<by>date DESC</by>
+					</sort>
+					<fields>
+						<id />
+						<title />
+					</fields>
+				</entity>
+			</news>
+		</grids>
+	</frontend>
+</config>

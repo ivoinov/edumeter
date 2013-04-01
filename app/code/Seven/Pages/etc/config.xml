@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<modules>
+			<Pages translate="description">
+				<author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+				<name>Content pages</name>
+				<description>Allow to create content pages</description>
+				<version>1.0.2</version>
+                <depends>
+                	<Seven_Core>0.1.0</Seven_Core>
+                </depends>
+			</Pages>
+		</modules>
+	</global>
+</config>

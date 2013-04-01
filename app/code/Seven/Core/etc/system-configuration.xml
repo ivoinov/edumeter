@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<forms>
+			<admin>
+				<system_config>
+					<tabs>
+						<general translate="label">
+							<label>General</label>
+						</general>
+						<webmaster translate="label">
+							<label>Webmaster</label>
+						</webmaster>
+						<mail translate="label">
+							<label>Mail settings</label>
+						</mail>
+					</tabs>
+					<fieldsets>
+						<site translate="label">
+							<label>Site</label>
+							<tab>general</tab>
+						</site>
+						<design translate="label">
+							<label>Design</label>
+							<tab>general</tab>
+						</design>
+						<webmaster translate="label">
+							<label>Webmaster</label>
+							<tab>webmaster</tab>
+						</webmaster>
+						<mail translate="label">
+							<label>Mail settings</label>
+							<tab>mail</tab>
+						</mail>
+					</fieldsets>
+					<fields>
+						<general_site_name translate="label">
+							<label>Name</label>
+							<fieldset>site</fieldset>
+						</general_site_name>
+						<general_site_admin translate="label">
+							<label>Administrator's e-mail</label>
+							<fieldset>site</fieldset>
+						</general_site_admin>
+						<general_site_description translate="label">
+							<label>Description</label>
+							<fieldset>site</fieldset>
+							<area>frontend</area>
+							<type>textarea</type>
+						</general_site_description>
+						<general_site_language translate="label">
+							<label>Site language</label>
+							<fieldset>site</fieldset>
+							<type>select</type>
+							<options>core/locale</options>
+						</general_site_language>
+						<general_design_theme translate="label">
+							<label>Theme</label>
+							<fieldset>design</fieldset>
+						</general_design_theme>
+						<general_design_logo translate="label">
+							<label>Logo</label>
+							<fieldset>design</fieldset>
+							<type>image</type>
+							<area>frontend</area>
+						</general_design_logo>
+						<general_design_logo_alt translate="label">
+							<label>Logo alt</label>
+							<fieldset>design</fieldset>
+							<config_key>general/design/logo_alt</config_key>
+							<area>frontend</area>
+						</general_design_logo_alt>
+						<general_design_favicon translate="label">
+							<label>Favicon</label>
+							<fieldset>design</fieldset>
+							<type>image</type>
+						</general_design_favicon>
+						<webmaster_general_email translate="label">
+							<label>Webmaster's e-mail</label>
+							<fieldset>webmaster</fieldset>
+							<area>system</area>
+						</webmaster_general_email>
+						<webmaster_general_send_exception translate="label">
+							<label>Send exception via e-mail</label>
+							<type>select</type>
+							<area>system</area>
+							<fieldset>webmaster</fieldset>
+							<options>core/form_input_select_yesno</options>
+							<config_key>webmaster/general/send_exception</config_key>
+						</webmaster_general_send_exception>
+						<mail_config_disable translate="label">
+							<label>Disable Mail communications</label>
+							<fieldset>mail</fieldset>
+							<default>0</default>
+							<type>select</type>
+							<options>core/form_input_select_yesno</options>
+						</mail_config_disable>
+						<mail_config_from_email translate="label">
+							<label>Default from e-mail address</label>
+							<fieldset>mail</fieldset>
+							<default>noreply@localhost</default>
+							<required>1</required>
+							<minlength>1</minlength>
+							<validators>
+								<email>core/validators::email</email>
+							</validators>
+						</mail_config_from_email>
+						<mail_config_from_name translate="label">
+							<label>Default from name</label>
+							<fieldset>mail</fieldset>
+							<default>Seven Mail</default>
+							<required>1</required>
+							<minlength>1</minlength>
+						</mail_config_from_name>
+						<!--mail_config_contacts>
+							<label>Additional Contacts</label>
+							<type>collection</type>
+							<fieldset>mail</fieldset>
+							<item>
+								<type>grouped</type>
+								<fields>
+									<name>
+										<label>Name</label>
+									</name>
+									<email>
+										<label>E-Mail</label>
+									</email>
+								</fields>
+							</item>
+						</mail_config_contacts-->
+					</fields>
+				</system_config>
+			</admin>
+		</forms>
+	</admin>
+</config>

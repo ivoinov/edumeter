@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<frontend>
+		<routing>
+			<routes>
+				<users translate="name">
+					<name>Profile</name>
+					<controller>users/account</controller>
+					<access>USERONLY</access>
+					<routes>
+						<login translate="name">
+							<type>action</type>
+							<name>Login</name>
+							<access>GUESTONLY</access>
+						</login>
+						<logout translate="name">
+							<type>action</type>
+							<name>Logout</name>
+							<access>USERONLY</access>
+						</logout>
+						<index translate="name">
+							<type>action</type>
+							<name>Edit</name>
+							<access>USERONLY</access>
+						</index>
+					</routes>
+				</users>
+			</routes>
+		</routing>
+	</frontend>
+	<admin>
+		<routing>
+			<routes>
+				<users translate="name">
+					<name>Users</name>
+					<controller>users/crud</controller>
+					<use>users/user</use>
+					<routes>
+						<account translate="name">
+							<name>My account</name>
+							<controller>users/account</controller>
+							<login_single_form>1</login_single_form>
+							<routes>
+								<login translate="name">
+									<type>action</type>
+									<name>Login</name>
+									<access>GUESTONLY</access>
+								</login>
+								<logout translate="name">
+									<type>action</type>
+									<name>Logout</name>
+									<access>USERONLY</access>
+								</logout>
+								<index translate="name">
+									<type>action</type>
+									<name>Edit</name>
+									<access>USERONLY</access>
+									<layout_tags>profile_edit_page</layout_tags>
+								</index>
+							</routes>
+						</account>
+						<index translate="name">
+							<type>action</type>
+							<name>Users list</name>
+						</index>
+					</routes>
+				</users>
+			</routes>
+		</routing>
+	</admin>
+</config>

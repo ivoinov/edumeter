@@ -1,0 +1,37 @@
+<?php 
+
+$tree_builder = function($nodes, $tree_builder, $level = 0) {
+	foreach($nodes as $urlkey => $node) {
+		$node_object = new Seven_Object($node);
+		?> 
+			<tr>
+				<td>
+					<div style="float: left; width: <?php echo $level * 25; ?>px">&nbsp;</div>
+					/<b><?php echo $urlkey; ?></b>
+				</td> 
+				<td><?php echo $node_object->getName() ? : '<i>undefined</i>'; ?></td>
+				<td><?php echo $node_object->getHidden() ? __("Yes") : __("No"); ?></td>				
+				<td><?php echo $node_object->getAccess() ? : '<i>undefined</i>'; ?></td>
+			</tr>
+			<?php if(is_array($node_object->getRoutes()))
+						$tree_builder($node_object->getRoutes(), $tree_builder, $level + 1); ?>
+		<?php 
+	}
+}
+	
+?>
+<div class="widget-grid">
+	<div class="grid">
+		<table>
+			<thead>
+				<tr>
+					<th><?php _e('Urlkey'); ?></th>
+					<th><?php _e('Name'); ?></th>
+					<th><?php _e('Hidden'); ?></th>
+					<th><?php _e('Access'); ?></th>
+				</tr>
+			</thead>
+			<tbody><?php $tree_builder($this->getNodes(), $tree_builder); ?></tbody>
+		</table>
+	</div>
+</div>

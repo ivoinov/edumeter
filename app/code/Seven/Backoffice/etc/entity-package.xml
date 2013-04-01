@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<admin>
+		<grids>
+			<core>
+				<package translate="title">
+					<title>List</title>
+					<source>core/package</source>
+					<add_default_actions>0</add_default_actions>
+					<fields>
+						<pool translate="label">
+							<label>Pool</label>
+						</pool>
+						<name translate="label">
+							<label>Name</label>
+						</name>
+						<author translate="label">
+							<label>Author</label>
+						</author>
+						<version translate="label">
+							<label>Version</label>
+						</version>
+						<is_system translate="label">
+							<label>Is system</label>
+							<type>backoffice/package_system</type>
+						</is_system>
+						<active translate="label">
+							<label>Turned on</label>
+							<type>select</type>
+							<options>core/form_input_select_yesno</options>
+						</active>
+						<actions>
+							<type>action</type>
+							<actions>
+								<upgrade translate="label">
+									<label>Upgrade</label>
+									<skin_icon>images/icons/plugin_go.png</skin_icon>
+									<url_template>*/*/upgrade?id={id}</url_template>
+									<enabled_callback>Backoffice_Helper_Package::canUpgrade</enabled_callback>
+								</upgrade>
+								<turn_on translate="label">
+									<label>Turn on</label>
+									<skin_icon>images/icons/plugin.png</skin_icon>
+									<url_template>*/*/enable?id={id}</url_template>
+									<enabled_callback>Backoffice_Helper_Package::canBeTurnedOn</enabled_callback>
+								</turn_on>
+								<turn_off translate="label">
+									<label>Turn off</label>
+									<skin_icon>images/icons/plugin_disabled.png</skin_icon>
+									<url_template>*/*/disable?id={id}</url_template>
+									<enabled_callback>Backoffice_Helper_Package::canBeTurnedOff</enabled_callback>
+								</turn_off>
+								<view translate="label">
+									<label>Details</label>
+									<skin_icon>images/icons/wrench_orange.png</skin_icon>
+									<url_template>*/*/view?id={id}</url_template>
+								</view>
+							</actions>
+						</actions>
+					</fields>
+				</package>
+			</core>
+		</grids>
+	</admin>
+</config>

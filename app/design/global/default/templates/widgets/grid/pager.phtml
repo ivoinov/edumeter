@@ -1,0 +1,40 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+<?php if($this->getPageCount() > 1) : ?>
+    <?php _e("Page") ?>
+    <?php if($this->getPageNumber() > 1) : ?>
+        <a href="javascript: grid_<?php echo $this->getGrid()->getHtmlId(); ?>.prevPage();"><img src="<?php echo $this->getSkinUrl('images/icons/control_start_blue.png') ?>" alt="&larr;"></a>
+    <?php else : ?>
+        <img src="<?php echo $this->getSkinUrl('images/icons/control_start.png') ?>" alt="&larr;">
+    <?php endif; ?>
+    <?php
+    	echo Seven::getBlock('core/widget_form_input_text')
+    				->setHtmlName('page')
+    				->setValue($this->getPageNumber())
+    				->setOnchange("grid_" . $this->getGrid()->getHtmlId() . ".goPage(this.value);")
+    				->toHtml(); 
+    ?>
+    <?php if($this->getPageNumber() < $this->getPageCount()) : ?>
+        <a href="javascript: grid_<?php echo $this->getGrid()->getHtmlId(); ?>.nextPage();"><img src="<?php echo $this->getSkinUrl('images/icons/control_start_blue_flip.png') ?>" alt="&rarr;"></a>
+    <?php else : ?>
+        <img src="<?php echo $this->getSkinUrl('images/icons/control_start_flip.png') ?>" alt="&larr;">
+    <?php endif; ?>
+    <?php _e("from") ?> <?php echo $this->getPageCount(); ?>.
+    <?php _en("Show records %d - %d.", ($this->getPageNumber() - 1) * $this->getPageSize() + 1, min($this->getPageNumber() * $this->getPageSize(), $this->getCollectionCount())) ?>
+
+<?php endif; ?>
+<?php _en("Total %d records", (int)$this->getCollectionCount()); ?>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<default_service_denied>
+        <reference name="content">
+            <block name="denied" type="core/template" template="service/denied.phtml" />
+        </reference>
+	</default_service_denied>
+
+    <default_service_noroute>
+        <reference name="content">
+            <block name="noroute" type="core/template" template="service/noroute.phtml" />
+        </reference>
+    </default_service_noroute>
+    
+    <default_service_forbidden>
+        <reference name="content">
+            <block name="noroute" type="core/template" template="service/forbidden.phtml" />
+        </reference>
+    </default_service_forbidden>
+</layout>

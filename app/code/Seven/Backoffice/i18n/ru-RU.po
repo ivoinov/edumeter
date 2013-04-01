@@ -1,0 +1,279 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seven Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 00:12+0300\n"
+"PO-Revision-Date: 2012-09-21 00:14+0300\n"
+"Last-Translator: Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>\n"
+"Language-Team: Seven Core Team <team@sevenframework.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;_en:1,1;_n:1,1;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2))\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../i18n/xml-translate.php:3
+#: ../i18n/xml-translate.php:9
+#: ../i18n/xml-translate.php:22
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../i18n/xml-translate.php:4
+#: ../i18n/xml-translate.php:10
+msgid "Back to list"
+msgstr "Назад к списку"
+
+#: ../i18n/xml-translate.php:5
+msgid "Choose one"
+msgstr "Выберите"
+
+#: ../i18n/xml-translate.php:6
+#: ../i18n/xml-translate.php:8
+msgid "Add new"
+msgstr "Добавить новый"
+
+#: ../i18n/xml-translate.php:12
+#: ../i18n/xml-translate.php:14
+#: ../i18n/xml-translate.php:16
+msgid "Dashboard"
+msgstr "Консоль"
+
+#: ../i18n/xml-translate.php:13
+msgid "Site"
+msgstr "Сайт"
+
+#: ../i18n/xml-translate.php:15
+msgid "Top"
+msgstr "Вверх"
+
+#: ../i18n/xml-translate.php:18
+msgid "Flush cache storage"
+msgstr "Очистить кеш хранилище"
+
+#: ../i18n/xml-translate.php:20
+#: ../i18n/xml-translate.php:21
+#: ../i18n/xml-translate.php:31
+#: ../i18n/xml-translate.php:64
+msgid "Configuration"
+msgstr "Конфигурация"
+
+#: ../i18n/xml-translate.php:24
+#: ../i18n/xml-translate.php:61
+msgid "Packages"
+msgstr "Пакеты"
+
+#: ../i18n/xml-translate.php:25
+msgid "Refresh package list"
+msgstr "Обновить список пакетов"
+
+#: ../i18n/xml-translate.php:26
+msgid "Upgrade packages"
+msgstr "Обновить пакеты"
+
+#: ../i18n/xml-translate.php:27
+msgid "Package"
+msgstr "Пакет"
+
+#: ../i18n/xml-translate.php:29
+#: ../i18n/xml-translate.php:30
+#: ../i18n/xml-translate.php:32
+msgid "Websites"
+msgstr "Сайты"
+
+#: ../i18n/xml-translate.php:34
+msgid "Caching"
+msgstr "Кеширование"
+
+#: ../i18n/xml-translate.php:35
+msgid "Tag"
+msgstr "Тег"
+
+#: ../i18n/xml-translate.php:36
+msgid "Flush"
+msgstr "Очистить"
+
+#: ../i18n/xml-translate.php:38
+#: ../i18n/xml-translate.php:43
+#: ../i18n/xml-translate.php:65
+msgid "Languages"
+msgstr "Языки"
+
+#: ../i18n/xml-translate.php:39
+msgid "Code"
+msgstr "Код"
+
+#: ../i18n/xml-translate.php:40
+#: ../i18n/xml-translate.php:48
+msgid "Name"
+msgstr "Название"
+
+#: ../i18n/xml-translate.php:41
+msgid "Edit"
+msgstr "Изменить"
+
+#: ../i18n/xml-translate.php:42
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../i18n/xml-translate.php:44
+msgid "Language details"
+msgstr "Информация о языке"
+
+#: ../i18n/xml-translate.php:46
+msgid "List"
+msgstr "Список"
+
+#: ../i18n/xml-translate.php:47
+msgid "Pool"
+msgstr "Группа"
+
+#: ../i18n/xml-translate.php:49
+msgid "Author"
+msgstr "Автор"
+
+#: ../i18n/xml-translate.php:50
+msgid "Version"
+msgstr "Версия"
+
+#: ../i18n/xml-translate.php:51
+msgid "Is system"
+msgstr "Системный"
+
+#: ../i18n/xml-translate.php:52
+msgid "Turned on"
+msgstr "Включено"
+
+#: ../i18n/xml-translate.php:53
+msgid "Upgrade"
+msgstr "Обновить"
+
+#: ../i18n/xml-translate.php:54
+msgid "Turn on"
+msgstr "Включить"
+
+#: ../i18n/xml-translate.php:55
+msgid "Turn off"
+msgstr "Выключить"
+
+#: ../i18n/xml-translate.php:56
+msgid "Details"
+msgstr "Подробности"
+
+#: ../i18n/xml-translate.php:58
+msgid "Backoffice"
+msgstr "Служебное помещение"
+
+#: ../i18n/xml-translate.php:60
+msgid "System"
+msgstr "Система"
+
+#: ../i18n/xml-translate.php:62
+msgid "Website"
+msgstr "Сайты"
+
+#: ../i18n/xml-translate.php:63
+msgid "Cache"
+msgstr "Кеш"
+
+#: ../i18n/xml-translate.php:67
+#: ../i18n/xml-translate.php:68
+msgid "General"
+msgstr "Основное"
+
+#: ../Block/Widget/Grid/Column/Package/System.php:32
+msgid "Yes"
+msgstr "Да"
+
+#: ../Block/Widget/Grid/Column/Package/System.php:32
+msgid "No"
+msgstr "Нет"
+
+#: ../Controller/System/Config.php:31
+msgid "Configuration has been updated"
+msgstr "Конфигурация обновлена"
+
+#: ../Controller/System/Config.php:35
+msgid "Can't save new configuration"
+msgstr "Не удалось сохранить конфигурацию"
+
+#: ../Controller/System/Config.php:47
+msgid "Choose website"
+msgstr "Выберите сайт"
+
+#: ../Controller/System/Packages.php:39
+msgid "Enable"
+msgstr "Включить"
+
+#: ../Controller/System/Packages.php:44
+msgid "Disable"
+msgstr "Выключить"
+
+#: ../Controller/System/Packages.php:69
+#: ../Controller/System/Packages.php:88
+#, php-format
+msgid "Package %s was upgraded"
+msgstr "Пакет %s обновлен"
+
+#: ../Controller/System/Packages.php:72
+#: ../Controller/System/Packages.php:90
+#, php-format
+msgid "Can't upgrade package: %s"
+msgstr "Не удалось включить пакет: %s"
+
+#: ../Controller/System/Packages.php:76
+msgid "No upgrades available"
+msgstr "Нету доступных обновлений"
+
+#: ../Controller/System/Packages.php:103
+#, php-format
+msgid "Package %s was enabled"
+msgstr "Пакет %s включен"
+
+#: ../Controller/System/Packages.php:105
+#, php-format
+msgid "Can't enable package: %s"
+msgstr "Не удалось включить пакет: %s"
+
+#: ../Controller/System/Packages.php:118
+#, php-format
+msgid "Package %s was disabled"
+msgstr "Пакет %s отключен"
+
+#: ../Controller/System/Packages.php:120
+#, php-format
+msgid "Can't disable package: %s"
+msgstr "Не удалось выключить пакет: %s"
+
+#: ../Controller/System/Cache.php:21
+msgid "The caching is disabled"
+msgstr "Кэширование отклюено"
+
+#: ../Controller/System/Cache.php:35
+#: ../Controller/System/Cache.php:46
+msgid "Cache was successfully flushed"
+msgstr "Кеш успешно очищен"
+
+#: ../design/admin/default/templates/package_view.phtml:17
+msgid "Package details"
+msgstr "Подробности о пакете"
+
+#~ msgid "Dictionary code"
+#~ msgstr "Код словаря"
+
+#~ msgid "Administrator"
+#~ msgstr "Администратор"
+
+#~ msgid "Config"
+#~ msgstr "Конфигурация"
+
+#~ msgid "View list"
+#~ msgstr "Просмотр списка"
+
+#~ msgid "Package sources not exists"
+#~ msgstr "Файлы пакета не найдены"

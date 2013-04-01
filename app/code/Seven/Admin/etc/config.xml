@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Admin>
+                <author>Seven Core Team &lt;team@sevenframework.com&gt;</author>
+                <description>Administrator users package</description>
+                <version>0.1.0</version>
+            </Admin>
+        </modules>
+    </global>
+    <admin>
+        <events>
+            <route_access>
+                <Admin>admin/observer::isRouteAllowed</Admin>
+            </route_access>
+            <denied_action>
+                <Access>admin/observer::deniedAction</Access>
+            </denied_action>
+            <no_route_action>
+                <Access>admin/observer::norouteAction</Access>
+            </no_route_action>
+        </events>
+        <urlaliases>
+            <login>*/users/login</login>
+        </urlaliases>
+    </admin>
+</config>
