@@ -33,11 +33,6 @@
                             <required>1</required>
                             <description>School address</description>
                         </address>
-                        <phone>
-                            <label>School phone</label>
-                            <maxlength>12</maxlength>
-                            <nullable>1</nullable>
-                        </phone>
                         <description>
                             <label>Description</label>
                             <type>textarea</type>

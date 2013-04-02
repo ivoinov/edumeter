@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <admin_school_index>
+        <reference name="grid_container">
+            <action method="addButton">
+                <id>proceess_school</id>
+                <data>
+                    <url>*/*/process_school</url>
+                    <name>proceess_school</name>
+                    <label>Process Schools</label>
+                </data>
+            </action>
+        </reference>
+    </admin_school_index>
+</layout>

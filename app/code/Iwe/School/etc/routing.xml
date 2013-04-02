@@ -4,7 +4,7 @@
         <routing>
             <routes>
                 <school translate="name">
-                    <controller>core/crud</controller>
+                    <controller>iwe_school/admin_crud</controller>
                     <use>iwe_school/school</use>
                     <name>School</name>
                 </school>
