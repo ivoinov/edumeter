@@ -69,23 +69,69 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
             if( $school->getAddress() )
             {
                 $address = $school->getCity() . ', ' . $school->getAddress();
-                $coords = $this->_getCoorsByAddress($address);
-            } else {
+                $this->_saveSchoolCoords($address,$school);
 
+            } else {
+                $address = $school->getCity();
+                $this->_saveSchoolCoords($address,$school);
             }
         }
     }
 
-    protected function _getCoorsByAddress($address)
+    protected function _getCoorsByYandex($address)
     {
         $address = urlencode($address);
         $url = "http://geocode-maps.yandex.ru/1.x/?geocode=".$address;
         $content = file_get_contents($url);
         preg_match('/<pos>(.*?)<\/pos>/',$content, $point);
         $coordinates = explode(" ", $point[0]);
-        $coordinates[0] = str_replace('<pos>','',$coordinates[0]);
-        $coordinates[1] = str_replace('</pos>','',$coordinates[1]);
-        return array($coordinates[0],$coordinates[1]);
+        $longitude = (float) str_replace('<pos>','',$coordinates[0]);
+        $latitude = (float) str_replace('</pos>','',$coordinates[1]);
+        return $this->_checkCoords($longitude,$latitude);
     }
 
+    protected function _getCoordsByGoogle($address)
+    {
+        $address = urlencode($address);
+        $url = "http://maps.google.com/maps/api/geocode/json?address=".$address."&sensor=false";
+        $content = file_get_contents($url);
+        if(!$content)
+            return null;
+        $data = json_decode($content,true);
+        if( isset($data['status']) && $data['status'] == 'OK' && isset($data['results']))
+        {
+
+            if( isset($data['results'][0]) )
+            {
+                $longitude = (float) $data['results'][0]['geometry']['location']['lng'];
+                $latitude = (float) $data['results'][0]['geometry']['location']['lat'];
+                return $this->_checkCoords($longitude,$latitude);
+            }
+        }
+        return null;
+    }
+
+    protected function _checkCoords($longitude,$latitude)
+    {
+        if($longitude && $latitude)
+        {
+            if( ($longitude <= 41) && ($latitude <= 52) )
+                return new Seven_Object(array('longitude' => $longitude,'latitude' => $latitude));
+        }
+        return null;
+    }
+
+    protected function _saveSchoolCoords($address,$school)
+    {
+        $coords = $this->_getCoorsByYandex($address);
+        if(!$coords)
+        {
+            $coords = $this->_getCoordsByGoogle($address);
+            if(!$coords)
+                return;
+        }
+        $school->setLongitude($coords->getLongitude())
+            ->setLatitude($coords->getLatitude())
+            ->save();
+    }
 }

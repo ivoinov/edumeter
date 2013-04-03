@@ -31,7 +31,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
-                'title'      => $school->getName()
+                'title'      => $school->getName() .  " - " . $school->getCity()
             );
         }
         Seven::app()->getResponse()
