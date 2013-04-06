@@ -2,10 +2,6 @@
 <layout version="0.1.0">
     <default>
         <remove name="mainmenu"/>
-        <reference name="head">
-            <action method="addCss"><css>bootstrap/bootstrap.css</css><type>lib</type></action>
-            <action method="addJs"><script>bootstrap/bootstrap.js</script><type>lib</type></action>
-        </reference>
     </default>
 
     <school_index>

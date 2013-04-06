@@ -1,0 +1,25 @@
+<div id="main_menu">
+	<div class="wrapper">
+        <div class="logo">
+           <a href="<?php echo seven_url("*") ?>">
+            <img src="<?php echo $this->getSkinUrl("images/logo.png"); ?> " height="60px" alt="dadas">
+           </a>
+        </div>
+		<div class="access">
+    		<?php echo $this->getChildHtml('top.menu'); ?>
+		</div>
+		<?php if($this->getItems()) : ?>
+        <div class="m_main">
+            <ul>
+                <?php foreach($this->getItemsTree() as $item) : ?>
+                    <?php if(!$item->isAllowed()) continue; ?>
+                    <li class="<?php echo $item->getIcon(); ?><?php if($item->getActive()) echo ' active' ?>" ><a href="<?php echo $item->getHref(); ?>"><?php echo $item->getLabel(); ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+
+

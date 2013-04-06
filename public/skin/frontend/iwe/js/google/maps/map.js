@@ -127,8 +127,9 @@ var map = {
             function(data) {
                 for(var i = 0; i < data.length; i++) {
                     var location = new google.maps.LatLng(data[i].latitude, data[i].longitude);
-                    var image = new google.maps.MarkerImage('/public/skin/frontend/iwe/images/marker.png',
-                        new google.maps.Size(24, 28),
+                    var image = new google.maps.MarkerImage(
+                        _url('*/image/index', {'infoOnMarker': 9.7}),
+                        new google.maps.Size(100,100),
                         new google.maps.Point(0,0),
                         new google.maps.Point(12,26)
                     );

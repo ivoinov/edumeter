@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <block type="core/html" name="html">
+            <action method="setDocType"><doctype>html4-transitional</doctype></action>
+            <block name="head" type="core/html_head">
+                <action method="addCss"><css>style.css</css><type>skin</type></action>
+                <action method="addMetaHttp">
+                    <http-equiv>Content-Type</http-equiv>
+                    <content>text/html, charset=utf-8</content>
+                </action>
+
+                <action method="addJs"><script>jquery/jquery.js</script><type>lib</type></action>
+                <action method="addCss"><css>bootstrap/bootstrap.css</css><type>lib</type></action>
+                <action method="addJs"><script>bootstrap/bootstrap.js</script><type>lib</type></action>
+                <action method="addJs"><script>seven/seven.js</script><type>lib</type></action>
+                <action method="addJs"><script>js/skin.js</script><type>skin</type></action>
+            </block>
+            <block name="body" type="core/html_body" template="page/layout.phtml" wrapper="#site-holder">
+                <block name="mainMenu" type="core/array">
+                    <block type="core/widget_menu" name="mainmenu.menu" template="page/main-menu.phtml">
+                        <action method="addItem">
+                            <id>home</id>
+                            <data translate="label">
+                                <label>Home</label>
+                                <url>*/</url>
+                                <icon>dashboard</icon>
+                                <order>2</order>
+                            </data>
+                        </action>
+                        <action method="addItem">
+                            <id>schools</id>
+                            <data translate="label">
+                                <label>Schools map</label>
+                                <url>*/school/</url>
+                                <icon>campaigns</icon>
+                                <order>4</order>
+                            </data>
+                        </action>
+
+                    </block>
+                </block>
+                <block name="content" type="core/array" wrapper="#content">
+                    <block name="message" wrapper=".messages" type="core/message" template = "page/message.phtml" before="content" />
+                </block>
+                <block name="footer"  after="content" type="core/widget_menu" template="page/footer.phtml" />
+            </block>
+        </block>
+    </default>
+
+    <default_service_noroute>
+        <reference name="content">
+            <block name="noroute" type="core/template" template="service/noroute.phtml" />
+        </reference>
+    </default_service_noroute>
+
+    <default_service_forbidden>
+        <reference name="content">
+            <block name="noroute" type="core/template" template="service/forbidden.phtml" />
+        </reference>
+    </default_service_forbidden>
+</layout>

@@ -1,0 +1,7 @@
+<h1><?php echo __('Welcome') ?>, <?php echo Seven::getSingleton('users/session')->getUser()->getName(); ?>!</h1>
+<?php  echo $this->getChildHtml("welcome"); ?>
+<div class="main-container">
+<?php  echo $this->getChildHtml("twitter"); ?>
+<?php  echo $this->getChildHtml("graph"); ?>
+</div>
+<div class="clear"></div>

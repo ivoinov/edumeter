@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<dashboard>
+		<reference name="content">
+			<block name="dummytext" type="iwe_dashboard/dashboard" template="Iwe/Dashboard/dummytext.phtml">
+				<block name="welcome" type="static/block"><action method="setBlockId"><id>dashboard-welcome</id></action></block>
+				<block name="graph" type="core/template" template="Iwe/Dashboard/graph.phtml" />
+			</block>
+		</reference>
+	</dashboard>
+
+</layout>

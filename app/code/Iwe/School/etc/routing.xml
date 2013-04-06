@@ -29,6 +29,15 @@
                     <controller>iwe_school/map</controller>
                     <use>iwe_school/school</use>
                 </school>
+                <image>
+                    <access>ALLOW</access>
+                    <hidden>1</hidden>
+                    <routes>
+                        <__id__>
+                            <controller>iwe_school/image</controller>
+                        </__id__>
+                    </routes>
+                </image>
             </routes>
         </routing>
     </frontend>

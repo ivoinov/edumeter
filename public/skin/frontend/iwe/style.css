@@ -1,71 +1,238 @@
-/* 
-    Document   : style
-    Created on : Jul 12, 2011, 9:08:10 AM
-    Author     : s.kolodyazhnyy
-    Description:
-        Sample style file
-*/
-@import url(messages.css);
-@import url(content.css);
+@font-face{ font-family: 'Harabara'; src: url('fonts/harabara.eot'); src: url('harabara.eot?#iefix') format('embedded-opentype'), url('fonts/harabara.ttf') format('truetype'); }
 
-body { margin: 0px; padding: 0px; background: white; }
-
-.dark-background {
-    background: rgb(78,78,78); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(78,78,78,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(78,78,78,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(78,78,78,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(78,78,78,1) 0%,rgba(0,0,0,1) 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, rgba(78,78,78,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a3a3a', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-    background: linear-gradient(top, rgba(78,78,78,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+html,body {
+    height: 100%;
 }
 
-#site-holder { width: 1000px; margin: 0 auto; }
-
-#header { background: white; position: relative; border: 2px solid white; padding: 0px 0px 15px; margin: 0 3px 0 5px; height: 56px; min-width: 600px; }
-#header .logo { background: white; font-family: Ubuntu, sans-serif; float: left; font-size: 44px; padding: 10px 15px; text-shadow: 1px 1px 0px #ddd; }
-#header .logo .blue { color: #3399aa; }
-#header .logo .subtitle { font-size: 13px; line-height: 13px; margin-top: -12px; color: #888; }
-#header .top-menu { position: absolute; right: 0px; top: 0px; }
-#header .top-menu ul { list-style: none; padding: 0; margin: 0px; }
-#header .top-menu ul li { float: left; list-style: none; padding:6px; }
-
-#menu-container { background: #999; height: 50px; margin: 0 5px;  }
-
-#menu-container ul { list-style: none; padding: 0px; margin: 0px; height: 50px; overflow: hidden; }
-
-#menu-container ul li {
-    float: left; list-style: none; margin: 0px; padding: 0px; 
-    border-right: 2px solid white;
-    background: #888;
-    font-family: sans-serif;
+body {
+    background-color:#f4f4f0;background-image:url(images/background.png);background-repeat:repeat-x;background-position:0px 90px;
+    margin: 0;
+    padding: 0;
+    color: #3f3e3e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
 }
 
-#menu-container ul li:hover, #menu-container ul li.hovered {
-    background: rgb(51,153,170); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(51,153,170,1) 0%, rgba(41,105,137,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,153,170,1)), color-stop(100%,rgba(41,105,137,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(51,153,170,1) 0%,rgba(41,105,137,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(51,153,170,1) 0%,rgba(41,105,137,1) 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, rgba(51,153,170,1) 0%,rgba(41,105,137,1) 100%); /* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3399aa', endColorstr='#296989',GradientType=0 ); /* IE6-9 */
-    background: linear-gradient(top, rgba(51,153,170,1) 0%,rgba(41,105,137,1) 100%); /* W3C */
+html>body #site-holder {
+    height: auto;
+    min-height: 100%;
 }
 
-#menu-container ul li a { color: white; text-decoration: none; font-size: 16px; text-shadow: black 1px 1px 0px; line-height: 50px; height: 50px; display: block; margin: 0px; padding: 0px 35px; }
+img {
+    border: none;
+}
 
-#content { padding: 0 25px 15px; }
+a {
+    color: #25882B;
+    text-decoration: underline;
+}
 
-#footer { clear: both; font-size: 12px; color: #777; padding: 20px; border-top: 1px solid #aaa; margin: 0px 10px; }
-#footer ul { margin: 0px auto; padding: 0px; }
-#footer li { float: left; margin: 10px; list-style: none; }
+a:hover {
+    text-decoration: none;
+}
 
-.with-left-col { margin-left: 210px; }
-#left-col { width: 190px; padding: 25px 0 0 15px; margin-right: -190px; float: left; }
+a:active {
+    color: #005500
+}
 
-.with-right-col { margin-right: 210px; }
-#right-col { width: 190px; padding: 25px 15px 0 0; margin-left: -190px; float: right; }
+h1,h2,h3,h4 {
 
+}
 
-.logo img { vertical-align: -20%; margin-right: 5px; }
+h1 {
+    font-family: Harabara,Arial,Verdana,Tahoma;
+    color: #45A84B;
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 0px;
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+/* Main layout */
+#site-holder {
+    height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.widget-box div.field-block .required { color: red; }
+/* Footer */
+.footer-placeholder, #footer {
+    height: 195px;
+}
+
+.toursignup.abovefooter span#footleft {
+    width: 510px;
+    display: block;
+    float: left;
+    text-align: left;
+    font-size: 15px;
+    color: white;
+    font-style: italic;
+    padding-left: 20px;
+}
+
+.toursignup.abovefooter span#footright {
+    text-align: right;
+    width: 430px;
+    display: block;
+    float: right;
+}
+
+.toursignup.abovefooter #footcontainer { width: 960px; margin: 0px auto; height: 25px; }
+
+/*Footer*/
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.toursignup.abovefooter {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 20px 0px 13px;
+    background-color: #45A84B;
+    background-image: url(images/background.png);
+    background-repeat: repeat-x;
+    background-position: 0px 100px;
+}
+
+.footer-wrapper {
+    padding-top: 15px;
+    color: #dedede;
+    text-align: center;
+    background-color: #DDDDD5;
+    background-image: url(images/footerbackground.png);
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+#siteinfo {
+    color: #434343;
+    padding: 22px 0px;
+    padding-left: 210px;
+    background-image: url(images/footericon.png);
+    background-repeat: no-repeat;
+    background-position: 150px center;
+    width: 750px;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 11px;
+}
+
+.menu-footermenu-container {
+    width: 960px;
+    margin: 0px auto;
+    padding: 10px 0px;
+    border-top: 2px dotted #AAA;
+    border-bottom: 2px dotted #AAA;
+    text-align: center;
+}
+
+#menu-footermenu {display:inline;margin-left:15px;}
+#menu-footermenu li {display:inline;margin-right:35px;font-size:12px;list-style:none;}
+#menu-footermenu li a {color:#333333;text-decoration:none;}
+#menu-footermenu li a:hover {color:black;text-decoration:underline;}
+/* Content */
+#content, #ajax-loading-layout, .popup_layer {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#content {
+    padding: 22px 30px 95px;
+    width: 900px;
+    background-color: white;
+    box-shadow: 0 0 5px #888;
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    z-index:100;
+}
+
+.messages {
+    width: 500px;
+    z-index: 100;
+    margin: 0 0 20px 415px;
+    position: absolute;
+    bottom: 100%;
+}
+.logo{float:left;}
+/* Main menu */
+#main_menu {
+    padding: 13px 0 20px 0;
+    height: 127px;
+    z-index:110;
+}
+
+.m_main {
+    float: right;
+    height:23px;
+    margin:21px 20px 0 0;
+}
+
+.m_main li {
+    float: left;
+    display: block;
+
+    height: 15px;
+    /*line-height:23px;
+    margin-left: 10px;background: url(images/menu/m_menu_back.png) 0 0 repeat-x;
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;*/
+}
+
+.m_main a {
+    border-right: 1px dotted #434343;
+    border-width: 0 1px 0 0;
+    color: #434343 ;
+    font-size: 15px;
+    padding: 4px 13px;
+    text-decoration: none;
+    display: block;
+    height:15px;
+    line-height:15px;
+}
+
+.m_main li a:hover,.m_main li.active a {
+    /*background: none;*/
+    background-color: #45A84B;
+    color:#fff;
+}
+
+.access{
+    float:right;
+    margin:18px 6px 0 0;
+}
+.access a {
+    text-decoration:none;
+}
+.access .th_signup a {
+    background-color: #0079D4;
+    border-radius: 5px 5px 5px 5px;
+    color: white !important;
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 4px 20px;
+    text-decoration: none;
+    font-size:15px;
+    line-height:22px;
+    font-weight:700;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+.access .th_signup a:hover{
+    background-color: #434343;
+}
