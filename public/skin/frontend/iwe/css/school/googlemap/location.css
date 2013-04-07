@@ -1,13 +1,7 @@
-#location {
-    height: 500px;
-    background: gray;
-    padding: 15px;
-}
 #map_canvas {
     padding-top: 5px;
     height: 450px;
     width: 600px;
-    float: left;
 }
 span.header-title {
     font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
@@ -21,7 +15,6 @@ span.header-title {
 }
 #navigation-menu-form {
     width: 200px;
-    float: left;
     padding-left: 10px;
 }
 #address-field {
