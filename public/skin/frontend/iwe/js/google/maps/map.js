@@ -140,9 +140,18 @@ var map = {
                         title: data[i].title
                     });
                     that.marker.push(markers);
+                    that._bindEventOnMarker(that.marker[i], data);
                 }
             }, 'json');
-    }
+    },
+    _bindEventOnMarker: function(marker, item) {
+        var infowindow = new google.maps.InfoWindow({
+            content: $('<div></div>').wrapInner($("#infowindow-template").tmpl(item)).html()
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(this.map, marker);
+    });
+}
 }
 $(function(){
     map.init({
