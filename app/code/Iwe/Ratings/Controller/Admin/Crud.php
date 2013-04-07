@@ -17,41 +17,9 @@ class Iwe_Ratings_Controller_Admin_Crud extends Core_Controller_Crud
     public function processStatAction()
     {
         $filesPath = BP . DS . 'var' . DS . 'stat'. DS ;
-        if( !file_exists($filesPath) || !is_readable($filesPath))
-            throw  new Exception($filesPath . ' dose\'t exist or dose\'t readable');
-        foreach(glob($filesPath . '2012' . DS . '*.txt') as $file)
-        {
-            if( !file_exists($file) || !is_readable($file))
-                throw  new Exception($file . ' dose\'t exist or dose\'t readable');
-            $file = BP . DS . 'ENG.txt';
-            if($handle = fopen($file,'r+'))
-            {
-                $cont = 0;
-                while(!feof($handle))
-                {
-                    $line = fgets($handle,1024);
-                    $data = explode(';',$line);
-                    echo "<hr/>";
-                    var_dump(hexdec($line));
-//                    var_dump(hexdec($data[3]));
-//                    var_dump(hexdec($data[4]));
-//                    var_dump(hexdec($data[5]));
-//                    var_dump(hexdec($data[6]));
-//                    var_dump(hexdec($data[7]));
-//                    var_dump(hexdec($data[8]));
-//                    var_dump(hexdec($data[9]));
-//                    var_dump(hexdec($data[10]));
-//                    var_dump(hexdec($data[11]));
-//                    var_dump(hexdec($data[12]));
-//                    var_dump(hexdec($data[13]));
-                    $cont++;
-                    if($cont == 100)
-                        break;
-                }
-            }
-            //fclose($handle);
-            die();
-        }
+
+        $stat = Seven::getModel('iwe_ratings/rating');
+        $school = Seven::getModel('iwe_school/school');
     }
 
 

@@ -11,7 +11,12 @@ class Iwe_School_Model_Marker
     public function renderMarker($rate) {
         $fontSize = 3;
         $strLength = strlen((int)$rate);
-        $filename = BP . '/public/skin/frontend/iwe/images/m'.$strLength.'.png';
+        if($rate <= 3)
+            $filename = BP . '/public/skin/frontend/iwe/images/m1.png';
+        if($rate > 3 && $rate <= 8)
+            $filename = BP . '/public/skin/frontend/iwe/images/m2.png';
+        if($rate > 8 )
+            $filename = BP . '/public/skin/frontend/iwe/images/m3.png';
         list($width, $height) = getimagesize($filename);
         $image = imagecreatefrompng($filename);
         $image_p = imagecreatetruecolor($width, $height);
