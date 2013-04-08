@@ -42,6 +42,7 @@
                 </block>
                 <block name="content" type="core/array" wrapper="#content">
                     <block name="message" wrapper=".messages" type="core/message" template = "page/message.phtml" before="content" />
+                    <block name="ajax_loading_layout" type="iwe_dashboard/ajaxlayout" wrapper="#ajax-loading-layout" />
                 </block>
                 <block name="footer"  after="content" type="core/widget_menu" template="page/footer.phtml" />
             </block>

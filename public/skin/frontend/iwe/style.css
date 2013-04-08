@@ -63,6 +63,12 @@ ul,li
     padding: 0;
     list-style: none
 }
+/* Content */
+#content, #ajax-loading-layout, .popup_layer {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
 /* Main layout */
 #site-holder
 {
@@ -282,4 +288,17 @@ ul,li
 #like-buttons div
 {
     display: inline-block;
+}
+#ajax-loading-layout,.popup_layer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    background: rgba(0, 0, 0, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000);
+    zoom: 1;
+    z-index: 1000;
 }
