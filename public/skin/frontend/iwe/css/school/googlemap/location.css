@@ -2,6 +2,7 @@
     padding-top: 5px;
     height: 450px;
     width: 600px;
+    float: left;
 }
 span.header-title {
     font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
@@ -16,6 +17,7 @@ span.header-title {
 #navigation-menu-form {
     width: 200px;
     padding-left: 10px;
+    float: left;
 }
 #address-field {
     padding-bottom: 40px;

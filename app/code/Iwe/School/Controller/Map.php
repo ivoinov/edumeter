@@ -26,15 +26,16 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     {
         $result = array();
         $collection = Seven::getCollection('iwe_school/school')
-            ->filter('longitude',array('neq' => NULL))
-            ->limit(500);
+            ->filter('longitude',array('neq' => NULL));
         foreach($collection as $school)
         {
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
                 'rate'       => rand(1 ,10),
-                'title'      => $school->getName() .  " - " . $school->getCity()
+                'title'      => $school->getName(),
+                'city'       => $school->getCity(),
+                'id'         => $school->getId()
             );
         }
         Seven::app()->getResponse()
@@ -42,5 +43,10 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
             ->setBody(json_encode($result));
                 return;
 
+    }
+
+    public function viewAction()
+    {
+        $this->_viewAbstract();
     }
 }

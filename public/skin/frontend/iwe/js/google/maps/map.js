@@ -140,7 +140,7 @@ var map = {
                         title: data[i].title
                     });
                     that.marker.push(markers);
-                    that._bindEventOnMarker(that.marker[i], data);
+                    that._bindEventOnMarker(that.marker[i], data[i]);
                 }
             }, 'json');
     },
