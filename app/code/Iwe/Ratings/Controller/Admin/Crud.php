@@ -16,11 +16,60 @@ class Iwe_Ratings_Controller_Admin_Crud extends Core_Controller_Crud
 
     public function processStatAction()
     {
-        $filesPath = BP . DS . 'var' . DS . 'stat'. DS ;
+        $filesPath = BP . DS . 'var' . DS . 'stat'. DS . '2010';
 
         $stat = Seven::getModel('iwe_ratings/rating');
         $school = Seven::getModel('iwe_school/school');
+        foreach( glob($filesPath . DS . '*.txt') as $file )
+        {
+            if($handle = fopen($file,'r+'))
+            {
+                while(!feof($handle))
+                {
+                    $line = fgets($handle,1024);
+                    $data = explode(';',$line);
+                    $schoolInfo = $this->_getSchoolInfo($data);
+                    $schoolName = $data[2];
+                    $passedNumber = $this->_getPassedCount($data[13]);
+                }
+                fclose($handle);
+            }
+        }
     }
 
+    protected function _getSchoolInfo($data)
+    {
+        $info = array();
+        for($i = 3; $i <= 12; $i++)
+        {
+            $info[] = round( $this->_getAcsiiHex( str_split($data[$i]) ), 2 );
+        }
+        return $info;
+    }
 
+    protected function _getAcsiiHex($symbols)
+    {
+        if(isset($symbols[0]))
+            unset($symbols[0]);
+        $number = '';
+        foreach($symbols as $i => $symbol)
+        {
+            if( $i == 3 )
+                $number .= '.' . dechex(ord($symbol));
+            else
+                $number .= dechex(ord($symbol));
+        }
+        return floatval($number);
+    }
+
+    protected function _getPassedCount($char)
+    {
+        $number = '';
+        $symbols = str_split($char);
+        foreach($symbols as $i => $symbol)
+        {
+            return floatval(ord($symbol));
+        }
+
+    }
 }

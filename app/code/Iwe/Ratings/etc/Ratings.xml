@@ -49,6 +49,14 @@
                             <required>1</required>
                             <description>Year of examination</description>
                         </year>
+                        <info translate="label,description">
+                            <label>Detail ratings</label>
+                            <data_type>text</data_type>
+                            <serializable>1</serializable>
+                            <no_view>1</no_view>
+                            <nullable>1</nullable>
+                            <description>Detail school rating</description>
+                        </info>
 					</attributes>
 				</rating>
                 <subject>
