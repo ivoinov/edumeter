@@ -3,6 +3,99 @@
 	<global>
 		<entity>
 			<iwe_ratings>
+                <entity>
+                    <table>iwe_stat_entity</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                        </id>
+                        <year translate="label">
+                            <label>Year</label>
+                            <type>number</type>
+                        </year>
+                        <school_name translate="label">
+                            <label>School name</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </school_name>
+                        <school_type translate="label">
+                            <label>School type</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </school_type>
+                        <school_district translate="label">
+                            <label>School district</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </school_district>
+                        <school_region translate="label">
+                            <label>School region</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </school_region>
+                        <subject translate="label">
+                            <label>Subject</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </subject>
+                        <way translate="label">
+                            <label>Way</label>
+                            <type>text</type>
+                            <maxlength>255</maxlength>
+                        </way>
+                        <passed_number translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                        </passed_number>
+                        <interval1 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>100-123</description>
+                        </interval1>
+                        <interval2 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>124-135</description>
+                        </interval2>
+                        <interval3 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>136-150</description>
+                        </interval3>
+                        <interval4 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>150-161</description>
+                        </interval4>
+                        <interval5 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>162-172</description>
+                        </interval5>
+                        <interval6 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>173-183</description>
+                        </interval6>
+                        <interval7 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>183-190</description>
+                        </interval7>
+                        <interval8 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>190-195</description>
+                        </interval8>
+                        <interval9 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>195-200</description>
+                        </interval9>
+                    </attributes>
+                </entity>
 				<rating>
 					<table>iwe_school_stat</table>
 					<key>id</key>
