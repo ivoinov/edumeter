@@ -61,6 +61,44 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
         fclose($handle);
     }
 
+    public function exportFromCsvAction()
+    {
+        $filePath = BP . DS . 'var' . DS . 'stat' . DS . 'result';
+        foreach(glob($filePath . DS . '*') as $file)
+        {
+            if($handle = fopen($file,'r+'))
+            {
+                while(!feof($handle))
+                {
+                    $lineData = fgetcsv($handle,1024,',');
+                    $entity = Seven::getModel('iwe_ratings/entity');
+                    $entity->setYear($lineData[0])
+                           ->setSchoolName($lineData[1])
+                           ->setSchoolType($lineData[2])
+                           ->setSchoolDistrict($lineData[3])
+                           ->setSchoolRegion($lineData[4])
+                           ->setSubject($lineData[5])
+                           ->setWay($lineData[6])
+                           ->setPassedNumber($lineData[7])
+                           ->setInterval1($lineData[8])
+                           ->setInterval2($lineData[9])
+                           ->setInterval3($lineData[10])
+                           ->setInterval4($lineData[11])
+                           ->setInterval5($lineData[12])
+                           ->setInterval6($lineData[13])
+                           ->setInterval7($lineData[14])
+                           ->setInterval8($lineData[15])
+                           ->setInterval9($lineData[16])
+                           ->setInterval10($lineData[17])
+                           ->save();
+                }
+                fclose($handle);
+            }
+            die();
+        }
+    }
+
+
     public function getSchoolAddressAction()
     {
         $collection = Seven::getCollection('iwe_school/school');

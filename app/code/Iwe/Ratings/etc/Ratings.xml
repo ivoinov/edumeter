@@ -92,8 +92,13 @@
                         <interval9 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
-                            <description>195-200</description>
+                            <description>199</description>
                         </interval9>
+                        <interval10 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <description>200</description>
+                        </interval10>
                     </attributes>
                 </entity>
 				<rating>
