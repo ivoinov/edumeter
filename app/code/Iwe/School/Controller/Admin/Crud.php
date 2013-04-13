@@ -14,99 +14,16 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
         ));
     }
 
-    /*Import schools from file*/
-    public function processSchoolAction()
-    {
-        $file = BP . DS . 'var' . DS . 'schools' . DS . 'DISTRICT.txt';
-        $ids = array();
-        if($handle = fopen($file,'r+'))
-        {
-            while(!feof($handle)) {
-               $data = fgetcsv($handle,1024,';');
-               if( isset($data[1]) && trim($data[1],"'") == 14)
-               {
-                   $ids[$data[0]] = $data[2];
-               }
-
-            }
-        }
-        fclose($handle);
-        $file = BP . DS . 'var' . DS . 'schools' . DS . 'RSCHOOL.txt';
-        if($handle = fopen($file,'r+'))
-        {
-            while(!feof($handle)) {
-                $data = fgetcsv($handle,1024,';');
-                $id = str_replace('"','',$data[0]);
-                $schoolId = ((int)$id ) ?  : (int)substr($id,3);
-                if( !isset($data[18]) )
-                {
-                    var_dump($schoolId);
-                } elseif ( !isset($ids[$data[18]]) )
-                {
-                    var_dump($schoolId);
-                }
-                else
-                {
-                    $schoolModel = Seven::getModel('iwe_school/school')
-                        ->setId($schoolId )
-                        ->setName($data[3])
-                        ->setRegionId(12)
-                        ->setCity( $ids[$data[18]] )
-                        ->setAddress($data[11])
-                        ->setDescription("Дирекція:" . $data[12] . "\n Школа:" . $data[5])
-                        ->save();
-                }
-            }
-        }
-        fclose($handle);
-    }
-
-    public function exportFromCsvAction()
-    {
-        $filePath = BP . DS . 'var' . DS . 'stat' . DS . 'result';
-        foreach(glob($filePath . DS . '*') as $file)
-        {
-            if($handle = fopen($file,'r+'))
-            {
-                while(!feof($handle))
-                {
-                    $lineData = fgetcsv($handle,1024,',');
-                    $entity = Seven::getModel('iwe_ratings/entity');
-                    $entity->setYear($lineData[0])
-                           ->setSchoolName($lineData[1])
-                           ->setSchoolType($lineData[2])
-                           ->setSchoolDistrict($lineData[3])
-                           ->setSchoolRegion($lineData[4])
-                           ->setSubject($lineData[5])
-                           ->setWay($lineData[6])
-                           ->setPassedNumber($lineData[7])
-                           ->setInterval1($lineData[8])
-                           ->setInterval2($lineData[9])
-                           ->setInterval3($lineData[10])
-                           ->setInterval4($lineData[11])
-                           ->setInterval5($lineData[12])
-                           ->setInterval6($lineData[13])
-                           ->setInterval7($lineData[14])
-                           ->setInterval8($lineData[15])
-                           ->setInterval9($lineData[16])
-                           ->setInterval10($lineData[17])
-                           ->save();
-                }
-                fclose($handle);
-            }
-            die();
-        }
-    }
-
-
     public function getSchoolAddressAction()
     {
-        $collection = Seven::getCollection('iwe_school/school');
+        $collection = Seven::getCollection('iwe_school/school')
+                        ->filter('longitude',array('null' => 'null'));
+
         foreach($collection as $school)
         {
             if( $school->getAddress() )
             {
-                $address = $school->getCity() . ', ' . $school->getAddress();
+                $address = $school->getAddress();
                 $this->_saveSchoolCoords($address,$school);
 
             } else {
@@ -122,6 +39,8 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
         $url = "http://geocode-maps.yandex.ru/1.x/?geocode=".$address;
         $content = file_get_contents($url);
         preg_match('/<pos>(.*?)<\/pos>/',$content, $point);
+        if(!isset($point[0]))
+            return ;
         $coordinates = explode(" ", $point[0]);
         $longitude = (float) str_replace('<pos>','',$coordinates[0]);
         $latitude = (float) str_replace('</pos>','',$coordinates[1]);
@@ -153,7 +72,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
     {
         if($longitude && $latitude)
         {
-            if( ($longitude <= 41) && ($latitude <= 52) )
+            if( ($longitude <= 39 && $longitude >= 22) && ($latitude <= 52 && $latitude >= 44 ) )
                 return new Seven_Object(array('longitude' => $longitude,'latitude' => $latitude));
         }
         return null;
