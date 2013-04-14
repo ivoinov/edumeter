@@ -25,8 +25,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     public function getschoolAction()
     {
         $result = array();
-        $collection = Seven::getCollection('iwe_school/school')
-            ->filter('longitude',array('neq' => NULL));
+        $collection = Seven::getCollection('iwe_school/school');
         foreach($collection as $school)
         {
             $result[] = array(
