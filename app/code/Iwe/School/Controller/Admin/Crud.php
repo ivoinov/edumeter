@@ -141,11 +141,31 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
     public function calculateRateAction()
     {
-        $collection = Seven::getCollection('iwe_school/school')->getOwn();
-        foreach($collection as $school)
+        $schoolCollection = Seven::getCollection('iwe_school/school')->getOwn();
+        foreach($schoolCollection as $school)
         {
-            $rate = Seven::getModel('iwe_school/rate');
+            $rate = 0;
+            $years = array(2008,2009,2010,2011);
+            foreach($years as $year)
+            {
+                $statCollection = Seven::getCollection('iwe_ratings/rating')
+                                ->filter('school_id',$school->getId())
+                                ->filter('year',$year);
 
+                $subjects = array();
+                foreach($statCollection as $stat)
+                {
+                    if(isset($subjects[$stat->getSubjectId()]))
+                        continue;
+                    $rate += $stat->getRate();
+                    $subjects[$stat->getSubjectId()] = $stat->getSubjectId();
+                }
+
+            $rate = Seven::getModel('iwe_school/rate')
+                ->setSchoolId($school->getId())
+                ->setYear($year)
+                ->setRate(($rate / count($subjects)/ 10));
+            }
         }
     }
 }
