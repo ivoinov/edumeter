@@ -153,20 +153,21 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
                 $subjects = array();
                 $rateYear = 0;
-                if(!empty($statCollection))
-                foreach($statCollection as $stat)
-                {
-                    if(isset($subjects[$stat->getSubjectId()]))
-                        continue;
-                    $rateYear += ($stat->getRate() / $stat->getCount() );
-                    $subjects[$stat->getSubjectId()] = $stat->getSubjectId();
-                }
+                if(count($statCollection)) {
+                    foreach($statCollection as $stat)
+                    {
+                        if(isset($subjects[$stat->getSubjectId()]))
+                            continue;
+                        $rateYear += ($stat->getRate() / $stat->getCount() );
+                        $subjects[$stat->getSubjectId()] = $stat->getSubjectId();
+                    }
 
-            $rate = Seven::getModel('iwe_school/rate')
-                ->setSchoolId($school->getId())
-                ->setYear($year)
-                ->setRate($rateYear / count($subjects))
-                ->save();
+                $rate = Seven::getModel('iwe_school/rate')
+                    ->setSchoolId($school->getId())
+                    ->setYear($year)
+                    ->setRate($rateYear / count($subjects))
+                    ->save();
+                }
             }
         }
     }
