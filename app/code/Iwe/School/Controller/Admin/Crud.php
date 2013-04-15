@@ -164,7 +164,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
             $rate = Seven::getModel('iwe_school/rate')
                 ->setSchoolId($school->getId())
                 ->setYear($year)
-                ->setRate(($rateYear / count($subjects)/ 10))
+                ->setRate((float)($rateYear / $stat->getCount()))
                 ->save();
             }
         }
