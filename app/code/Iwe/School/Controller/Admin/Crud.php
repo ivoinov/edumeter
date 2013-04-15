@@ -153,6 +153,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
                 $subjects = array();
                 $rateYear = 0;
+                if(!empty($statCollection))
                 foreach($statCollection as $stat)
                 {
                     if(isset($subjects[$stat->getSubjectId()]))
