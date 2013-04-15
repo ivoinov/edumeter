@@ -144,7 +144,6 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
         $schoolCollection = Seven::getCollection('iwe_school/school')->getOwn();
         foreach($schoolCollection as $school)
         {
-            $rate = 0;
             $years = array(2008,2009,2010,2011);
             foreach($years as $year)
             {
@@ -152,19 +151,21 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
                                 ->filter('school_id',$school->getId())
                                 ->filter('year',$year);
 
-                $subjects = array();
                 foreach($statCollection as $stat)
                 {
+                    $subjects = array();
+                    $rateYear = 0;
                     if(isset($subjects[$stat->getSubjectId()]))
                         continue;
-                    $rate += $stat->getRate();
+                    $rateYear += $stat->getRate();
                     $subjects[$stat->getSubjectId()] = $stat->getSubjectId();
                 }
 
             $rate = Seven::getModel('iwe_school/rate')
                 ->setSchoolId($school->getId())
                 ->setYear($year)
-                ->setRate(($rate / count($subjects)/ 10));
+                ->setRate(($rateYear / count($subjects)/ 10))
+                ->save();
             }
         }
     }
