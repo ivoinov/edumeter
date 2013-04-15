@@ -53,52 +53,56 @@
                             <label>Passed number</label>
                             <type>number</type>
                             <description>100-123</description>
+                            <nullable>1</nullable>
                         </interval1>
                         <interval2 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>124-135</description>
                         </interval2>
                         <interval3 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>136-150</description>
                         </interval3>
                         <interval4 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>150-161</description>
                         </interval4>
                         <interval5 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>162-172</description>
                         </interval5>
                         <interval6 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>173-183</description>
                         </interval6>
                         <interval7 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>183-190</description>
                         </interval7>
                         <interval8 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
+                            <nullable>1</nullable>
                             <description>190-195</description>
                         </interval8>
                         <interval9 translate="label">
                             <label>Passed number</label>
                             <type>number</type>
-                            <description>199</description>
+                            <nullable>1</nullable>
+                            <description>195-200</description>
                         </interval9>
-                        <interval10 translate="label">
-                            <label>Passed number</label>
-                            <type>number</type>
-                            <description>200</description>
-                        </interval10>
                     </attributes>
                 </entity>
 				<rating>
@@ -220,6 +224,7 @@
                         <rate>
                             <output_callback>iwe_ratings/output::getValue</output_callback>
                         </rate>
+                        <year/>
 					</fields>
 				</rating>
                 <subject translate="title">

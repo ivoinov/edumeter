@@ -70,6 +70,35 @@
                         </name>
                     </attributes>
                 </region>
+                <rate>
+                    <table>iwe_school_rate</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                        </id>
+                        <school_id translate="label,description">
+                            <label>School number</label>
+                            <type>number</type>
+                            <required>1</required>
+                            <description>Scholl name</description>
+                        </school_id>
+                        <rate translate="label,description">
+                            <label>School rate</label>
+                            <type>number</type>
+                            <required>1</required>
+                            <data_type>decimal</data_type>
+                            <scale>4</scale>
+                            <precision>12</precision>
+                            <description>School rate</description>
+                        </rate>
+                        <year translate="label,description">
+                            <label>Year</label>
+                            <type>number</type>
+                        </year>
+                    </attributes>
+                </rate>
 			</iwe_school>
 		</entity>
 	</global>

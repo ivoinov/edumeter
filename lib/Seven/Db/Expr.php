@@ -103,6 +103,9 @@
 					case "like":
 						$where[] = $key . " LIKE " . $value;
 						break;
+                    case "notlike":
+                        $where[] = $key . "NOT LIKE " . $value;
+                        break;
 					case "regexp":
 						$where[] = $key . " REGEXP " . $value;
 						break;

@@ -25,7 +25,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     public function getschoolAction()
     {
         $result = array();
-        $collection = Seven::getCollection('iwe_school/school');
+        $collection = Seven::getCollection('iwe_school/school')->getOwn();
         foreach($collection as $school)
         {
             $result[] = array(

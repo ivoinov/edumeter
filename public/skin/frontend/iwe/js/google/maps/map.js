@@ -155,7 +155,7 @@ var map = {
 }
 $(function(){
     map.init({
-        zoom: 6,
+        zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: new google.maps.LatLng(48,32)
     })

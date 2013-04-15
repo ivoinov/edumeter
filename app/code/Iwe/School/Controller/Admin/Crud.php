@@ -91,4 +91,61 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
             ->setLatitude($coords->getLatitude())
             ->save();
     }
+
+    public  function assignSchoolAction()
+    {
+        $schoolCollection = Seven::getCollection('iwe_school/school')->getOwn();
+        $subjectModel = Seven::getModel('iwe_ratings/subject');
+        foreach($schoolCollection as $school)
+        {
+            $schoolNumber = array();
+            preg_match('/№[0-9]/',$school->getName(),$schoolNumber);
+            if( isset($schoolNumber[0]) )
+                $statEntityCollection = Seven::getCollection('iwe_ratings/entity')
+                                     ->filter('school_name',array('like' => '%'.$schoolNumber[0]))
+                                     ->filter('school_district',array('like' => '%' . $school->getCity() . '%' ))
+                                     ->filter('school_region',array('like' => '%'.$school->getCity() . '%' ))
+                                     ->filter('school_type',array('notlike' => '%ПТУ%'))
+                                     ->filter('school_type',array('notlike' => '%ВНЗ І-ІІ рівнів акредитації%'))
+                                     ->filter('year',2012);
+            foreach( $statEntityCollection as $rate)
+            {
+
+                $schoolStatRate = 0;
+                $rateArray = array(
+                    '1' => 1,
+                    '2' => 2,
+                    '3' => 3,
+                    '4' => 4,
+                    '5' => 5,
+                    '6' => 6,
+                    '7' => 7,
+                    '8' => 8,
+                    '9' => 9);
+                foreach($rateArray as $coef)
+                {
+                    $inteval = (int) $rate->getData('interval'.$coef);
+                    $schoolStatRate += $inteval * (int)$coef;
+                }
+                $schoolRate = Seven::getModel('iwe_ratings/rating');
+                $subjectModel->load($rate->getSubject(),'name');
+                $schoolRate->setCount($rate->getPassedNumber())
+                           ->setRate($schoolStatRate)
+                           ->setYear($rate->getYear())
+                           ->setSchoolId($school->getId())
+                           ->setSubjectId($subjectModel->getId())
+                           ->save();
+            }
+        }
+    }
+
+    public function calculateRateAction()
+    {
+        $collection = Seven::getCollection('iwe_school/school')->getOwn();
+        foreach($collection as $school)
+        {
+            $rate = Seven::getModel('iwe_school/rate');
+
+        }
+    }
 }
