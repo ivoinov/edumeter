@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+		<routing>
+			<routes>
+	            <district translate="name">
+	                <name>District</name>
+	                <controller>core/crud</controller>
+	                <use>iwe_district/entity</use>
+	            </district>
+	        </routes>
+        </routing>
+    </admin>
+</config>

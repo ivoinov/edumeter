@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Iwe_District translate="description">
+                <author>Ilya Voinov</author>
+                <description>Ukrainian District</description>
+                <version>0.1.0</version>
+            </Iwe_District>
+        </modules>
+    </global>
+</config>

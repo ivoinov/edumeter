@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<iwe_district>
+				<entity>
+					<table>iwe_district_entity</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+                            <type>number</type>
+						</id>
+						<name translate="label">
+							<label>District name</label>
+                            <maxlength>255</maxlength>
+						</name>
+						<region_id translate="label">
+							<label>Region</label>
+                            <type>select</type>
+                            <options>iwe_region/entity</options>
+                            <data_type>int</data_type>
+						</region_id>
+						<additional_id translate="label">
+							<label>Additional id</label>
+                            <type>number</type>
+						</additional_id>
+					</attributes>
+				</entity>
+			</iwe_district>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<iwe_district>
+				<entity translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_district/entity</source>
+					<fields>
+					    <name/>
+                        <region_id/>
+					</fields>
+				</entity>
+			</iwe_district>
+		</forms>
+		<grids>
+			<iwe_district>
+				<entity translate="title">
+					<title>List</title>
+					<source>iwe_district/entity</source>
+					<fields>
+						<id />
+                        <name/>
+                        <region_id/>
+					</fields>
+				</entity>
+			</iwe_district>
+		</grids>
+	</admin>
+</config>
