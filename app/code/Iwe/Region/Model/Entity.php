@@ -8,5 +8,14 @@
  */
 class Iwe_Region_Model_Entity extends Core_Model_Entity
 {
-
+    public function getOptionsArray()
+    {
+        $regionCollection = $this->getCollection();
+        $options = array();
+        foreach($regionCollection as $region)
+        {
+            $options[$region->getAdditionalId()] = $region->getName();
+        }
+        return $options;
+    }
 }
