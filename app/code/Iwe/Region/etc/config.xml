@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Iwe_Region translate="description">
+                <author>Ilya Voinov</author>
+                <description>Ukraine Region</description>
+                <version>0.1.0</version>
+            </Iwe_Region>
+        </modules>
+    </global>
+</config>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<iwe_region>
+				<entity>
+					<table>iwe_region_entity</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+                            <type>number</type>
+						</id>
+                        <name translate="label">
+                            <label>Region name</label>
+                        </name>
+                        <additional_id translate="label">
+                            <type>number</type>
+                            <nullable>1</nullable>
+                        </additional_id>
+                    </attributes>
+				</entity>
+			</iwe_region>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<iwe_region>
+				<entity translate="title,fieldset,tab">
+					<title>Region edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_region/entity</source>
+					<fields>
+                        <name/>
+					</fields>
+				</entity>
+			</iwe_region>
+		</forms>
+		<grids>
+			<iwe_region>
+				<entity translate="title">
+					<title>Regions</title>
+					<source>iwe_region/entity</source>
+					<fields>
+						<id />
+                        <name/>
+					</fields>
+				</entity>
+			</iwe_region>
+		</grids>
+	</admin>
+</config>
