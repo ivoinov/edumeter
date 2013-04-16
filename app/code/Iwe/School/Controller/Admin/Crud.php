@@ -8,9 +8,47 @@
  */
 class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 {
+    public function scriptAction()
+    {
+        $file = BP . DS . 'convert' . DS . 'convert_2012MDMAT.txt';
+        $handle = fopen($file,'r+');
+        while(!feof($handle))
+        {
+            $line = fgetcsv($handle,1024,';');
+            $district = Seven::getModel('iwe_district/entity')->load(substr($line[0],0,8),'additional_id');
+            $region = Seven::getModel('iwe_region/entity')->load(substr($line[1],0,2),'additional_id');
+            if(isset($line[13]))
+                $passedNumber = (int)$line[13];
+            if(!$district->isLoaded() || !$region->isLoaded())
+            {
+                var_dump($line);
+                echo "<hr/>";
+                continue;
+            }
+            $stat = Seven::getModel('iwe_ratings/entity')
+                            ->setYear(2012)
+                            ->setSchoolName($line[2])
+                            ->setSchoolDistrict($district->getName())
+                            ->setSchoolRegion($region->getName())
+                            ->setSubject('Математика')
+                            ->setWay('Точні науки')
+                            ->setPassedNumber($passedNumber)
+                            ->setInterval1((int) ($line[3]/ 100 * $passedNumber)  )
+                            ->setInterval2((int) ($line[4]/ 100 * $passedNumber))
+                            ->setInterval3((int) ($line[5]/ 100 * $passedNumber))
+                            ->setInterval4((int) ($line[6]/ 100 * $passedNumber))
+                            ->setInterval5((int) ($line[7]/ 100 * $passedNumber))
+                            ->setInterval6((int) ($line[8]/ 100 * $passedNumber))
+                            ->setInterval7((int) ($line[9]/ 100 * $passedNumber))
+                            ->setInterval8((int) ($line[10]/ 100 * $passedNumber))
+                            ->setInterval9( (int)(( $line[11]/ 100 * $passedNumber ) + ( $line[12]/ 100 * $passedNumber)) )
+                            ->save();
+        }
+
+    }
     public function getSchoolAddressAction()
     {
-        $collection = Seven::getCollection('iwe_school/school')
+        $collection = Seven::getCollection('iwe_school/entity')
                         ->filter('longitude',array('null' => 'null'));
 
         foreach($collection as $school)

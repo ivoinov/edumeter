@@ -10,30 +10,3 @@
 </script>
 <div id="map-info"></div>
 <div id="map_canvas"></div>
-<div id="navigation-menu-form">
-    <div id="address-field">
-        <label for="search_address">Введите адрес:
-            <input type="text" id="search_address" class="input-medium search-query"/>
-            <div id="address-error" style="display:none; color:red; font-size: 10px;">Введенный адрес не найден</div>
-        </label>
-        <div id="search_button">
-            <input class="btn btn-large btn-warning" type="button" value="Найти" onclick="map.search($('#search_address').val())"/>
-        </div>
-    </div>
-
-    <div id="way-field">
-        <label id="way-field-title">Выберите направление:</label>
-        <div class="checkbox-container">
-            <label for="math">
-                <input type="radio" value="math" id="math" name="search-ways" class="search-ways"/><span>Физико-математический</span>
-            </label>
-            <label for="art">
-                <input type="radio" value="art" id="art" name="search-ways" class="search-ways"/><span>Гуманитарные науки</span>
-            </label>
-            <label for="natural">
-                <input type="radio" value="natural" name="search-ways" id="natural" class="search-ways"/><span>Естественные науки</span>
-            </label>
-        </div>
-    </div>
-</div>
-<div class="clearfix"></div>

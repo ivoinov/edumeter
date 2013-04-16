@@ -1,9 +1,16 @@
-<div class="footer-placeholder"></div>
-<div id="footer">
-	<div class="toursignup abovefooter">
-		<div id="footcontainer">
-			<span id="footleft" title="Albert Einstein">"Everything should be made as simple as possible, but not simpler."</span>
-		</div>
-	</div>
-	<div class="footer-wrapper"><?php echo $this->getChildHtml('footer.text'); ?></div>
-</div>
+<footer class="clearfix">
+    <div class="centered">
+        <div class="logo left"><a href="/"><img src="<?php echo $this->getSkinUrl("images/logo.png");?>" alt="Edumeter"></a></div>
+        <div class="links right">
+            <ul class="left">
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Вопросы</a></li>
+                <li><a href="#">Условия предоставления услуг</a></li>
+                <li><a href="#">Контакты </a></li>
+            </ul>
+            <div class="copyright left">
+                <span>(c) Ilya Voinov</span>
+            </div>
+        </div>
+    </div>
+</footer>

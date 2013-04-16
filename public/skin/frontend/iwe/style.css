@@ -1,304 +1,357 @@
-@font-face{ font-family: 'Harabara'; src: url('fonts/harabara.eot'); src: url('harabara.eot?#iefix') format('embedded-opentype'), url('fonts/harabara.ttf') format('truetype'); }
+@font-face {
+    font-family: 'hvcbold';
+    src: url('fonts/hvcbold.eot');
+    src: url('fonts/hvcbold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/hvcbold.woff') format('woff'),
+    url('fonts/hvcbold.ttf') format('truetype'),
+    url('hvcbold.svg#univers_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-html,body
-{
+html {
+    overflow: auto;
+}
+html,body {
     height: 100%;
 }
 
-body
-{
-    background-color:#f4f4f0;background-image:url(images/background.png);background-repeat:repeat-x;background-position:0px 90px;
-    margin: 0;
-    padding: 0;
-    color: #3f3e3e;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 18px;
-}
-
-html>body #site-holder
-{
-    height: auto;
+.siteContainer{
     min-height: 100%;
-}
-
-img
-{
-    border: none;
-}
-
-a
-{
-    color: #25882B;
-    text-decoration: underline;
-}
-
-a:hover
-{
-    text-decoration: none;
-}
-
-a:active
-{
-    color: #005500
-}
-
-h1,h2,h3,h4
-{
-
-}
-
-h1
-{
-    font-family: Harabara,Arial,Verdana,Tahoma;
-    color: #45A84B;
-    font-size: 32px;
-    line-height: 40px;
-    margin-top: 0px;
-}
-
-ul,li
-{
-    margin: 0;
-    padding: 0;
-    list-style: none
-}
-/* Content */
-#content, #ajax-loading-layout, .popup_layer {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-/* Main layout */
-#site-holder
-{
-    height: 100%;
     position: relative;
+    background: #888888;
 }
 
-.wrapper
-{
-    width: 960px;
+.centered{
+    width: 1185px;
     margin: 0 auto;
 }
 
-.widget-box div.field-block .required { color: red; }
-/* Footer */
-.footer-placeholder, #footer
-{
-    height: 195px;
-}
-
-.toursignup.abovefooter span#footleft
-{
-    width: 510px;
-    display: block;
+.left{
     float: left;
-    text-align: left;
-    font-size: 15px;
-    color: white;
-    font-style: italic;
-    padding-left: 20px;
 }
-
-.toursignup.abovefooter span#footright
-{
-    text-align: right;
-    width: 430px;
-    display: block;
+.right{
     float: right;
 }
 
-.toursignup.abovefooter #footcontainer { width: 960px; margin: 0px auto; height: 25px; }
+a {
+    text-decoration: none;
+    color: white;
+}
 
-/*Footer*/
-#footer
+body {
+    font-size: 14px;
+    font-family: 'hvcbold', Helvetica;
+    color: white;
+}
+
+footer .links,
+.filters a {
+    color: #a3a3a3;
+}
+
+.mapHolder{
+    width: 100%; /*TODO: Remove. View fix*/
+    margin: 0 auto;
+    position: relative;
+}
+.mapHolder img {
+    width: 100%; /*TODO: REMOVE if not needed*/
+}
+.mapHolder .tooltip {
+    position: absolute;
+}
+
+header, footer{
+    height: 40px;
+    line-height: 40px;
+    background: black;
+}
+
+header{
+    color: white;
+}
+header .logo img {
+    display: block;
+}
+header .siteMenu a {
+    font-weight: bold;
+}
+header .searchWrap {
+    padding: 0 30px 0 50px;
+}
+header .formSearch {
+    position: relative;
+}
+
+header .formSearch .txtSearch {
+    width: 285px;
+    height: 30px;
+    padding: 0 25px 0 30px;
+    border: 0 none;
+    border-radius: 45px;
+    outline: none;
+    background: url(images/lens.png) no-repeat 10px 50% white;   /*Add box-shadow*/
+}
+
+header .formSearch .btnClear {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.filters {
+    padding: 10px 0 60px;
+}
+
+.filters li {
+    float: left;
+}
+.filters li.fGroup
 {
+    padding-left: 25px;
+    margin-left: 25px;
+    border-left: 1px solid #a8a8a8;
+}
+.filters li.fGroup:first-child
+{
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0 none;
+}
+
+.filters li.fGroup li
+{
+    position: relative;
+    line-height: 20px;
+    padding-left: 2px;
+}
+.filters li.fGroup li:first-child
+{
+    padding-left: 0;
+}
+
+.filters li.fGroup li.active
+{
+
+    border-radius: 10px;
+    background: #ebebeb;
+}
+.filters li.fGroup li a
+{
+    padding: 0 8px;
+    font-weight: bold;
+}
+.filters li.fGroup li.active a
+{
+    color: #4d4d4d;
+}
+.filters li.fGroup li .arrow
+{
+    width: 20px;
+    height: 10px;
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+    background: url(images/arrow.png) no-repeat;
+}
+.filters li.fGroup li.active .arrow
+{
+    display: block;
+}
+
+
+/*EDUS LIST*/
+.edusList li
+{
+    padding: 35px 0 8px;
+    border-bottom: solid 1px #acacac;
+}
+.edusList .counter
+{
+    width: 150px;
+    text-align: right;
+
+}
+.edusList .counter .ratio
+{
+    font-size: 30px;
+}
+.edusList .infoText
+{
+    width: 425px;
+    padding-left: 25px;
+}
+.edusList .infoText .title
+{
+    line-height: 20px;
+}
+.edusList .infoText .adress
+{
+    line-height: 25px;
+}
+.edusList .infoText a
+{
+    text-shadow: 0 -1px rgba(0,0,0,.8);
+}
+
+.edusList .shiftIndicator
+{
+    padding-top: 15px;
+}
+
+.edusList .shiftIndicator .upper,
+.edusList .shiftIndicator .lower
+{
+    width: 11px;
+    height: 10px;
+    display: block;
+    background: url(images/arrows-sprite.png) no-repeat;
+}
+.edusList .shiftIndicator .lower
+{
+    background-position: 100% 0;
+}
+.edusList .shiftIndicator.inc .upper
+{
+    background-position: 0 100%;
+}
+.edusList .shiftIndicator.dec .lower
+{
+    background-position: 100% 100%;
+}
+
+.edusList .charts
+{
+    width: 450px;
+}
+.edusList .btnHolder
+{
+    width: 135px;
+    text-align: right;
+}
+.edusList .btnHolder .btn
+{
+    width: 43px;
+    height: 43px;
+    background: url(images/circle-arrow-sprite.png) no-repeat;
+}
+.edusList .btnHolder .btn:hover
+{
+    background-position: 0 100%;
+}
+footer {
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    overflow: hidden;
 }
-
-.toursignup.abovefooter
-{
-    width: 100%;
-    margin: 0px auto;
-    text-align: center;
-    padding: 20px 0px 13px;
-    background-color: #45A900;
-    background-image: url(images/background.png);
-    background-repeat: repeat-x;
-    background-position: 0px 100px;
+footer .logo {
+    padding-left: 110px;
 }
-
-.footer-wrapper
-{
-    padding-top: 15px;
-    color: #dedede;
-    text-align: center;
-    background-color: #DDDDD5;
-    background-image: url(images/footerbackground.png);
-    background-repeat: repeat-x;
-    background-position: top;
+footer .links {
+    padding-right: 10px;
 }
-
-#siteinfo
-{
-    color: #434343;
-    padding: 22px 0px;
-    padding-left: 210px;
-    background-repeat: no-repeat;
-    background-position: 150px center;
-    width: 750px;
-    text-align: left;
-    margin: 0 auto;
-    font-size: 11px;
-}
-
-.menu-footermenu-container
-{
-    width: 960px;
-    margin: 0px auto;
-    padding: 10px 0px;
-    border-top: 2px dotted #AAA;
-    border-bottom: 2px dotted #AAA;
-    text-align: center;
-}
-
-#menu-footermenu {display:inline;margin-left:15px;}
-#menu-footermenu li {display:inline;margin-right:35px;font-size:12px;list-style:none;}
-#menu-footermenu li a {color:#333333;text-decoration:none;}
-#menu-footermenu li a:hover {color:black;text-decoration:underline;}
-/* Content */
-#content, #ajax-loading-layout, .popup_layer
-{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-#content
-{
-    padding: 22px 30px 95px;
-    width: 900px;
-    background-color: white;
-    box-shadow: 0 0 5px #888;
-    margin: 0 auto;
-    min-height: 100%;
-    position: relative;
-    z-index:100;
-}
-
-.messages
-{
-    width: 500px;
-    z-index: 100;
-    margin: 0 0 20px 415px;
-    position: absolute;
-    bottom: 100%;
-}
-.logo{float:left;}
-/* Main menu */
-#main_menu
-{
-    padding: 13px 0 20px 0;
-    height: 127px;
-    z-index:110;
-}
-
-.m_main
-{
-    float: right;
-    height:23px;
-    margin:21px 20px 0 0;
-}
-
-.m_main li
-{
+footer .links li {
+    padding-right: 20px;
     float: left;
+}
+
+
+/*CONTENT*/
+.content{
+    padding: 0 0 60px;
+}
+/* Clearing floated blocks. Applied to floated->parent
+=================================*/
+.clearfix:after {
+    content: ".";
     display: block;
-
-    height: 15px;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    *display: inline-block; /*ie7*/
+}
+* html .clearfix {
+    height: 1%;
 }
 
-.m_main a
-{
-    border-right: 1px dotted #434343;
-    border-width: 0 1px 0 0;
-    color: #434343 ;
-    font-size: 15px;
-    padding: 4px 13px;
-    text-decoration: none;
+/* Crossbrowser inline-block
+=================================*/
+.inline {
+    display:                inline-block;
+    *display:               inline;
+    *zoom:                  1;
+}
+
+/* Crossbrowser float clearer
+=================================*/
+.clear {
+    clear:                  both;
+    display:                block;
+    height:                 0;
+    overflow:               hidden;
+}
+
+/* Text-overflow helper
+=================================*/
+.EgMasterPage_clipped {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
     display: block;
-    height:15px;
-    line-height:15px;
 }
-
-.m_main li a:hover,.m_main li.active a
-{
-    /*background: none;*/
-    background-color: #45A84B;
-    color:#fff;
-}
-
-.access
-{
-    float:right;
-    margin:18px 6px 0 0;
-}
-.access a
-{
-    text-decoration:none;
-}
-.access .th_signup a
-{
-    background-color: #0079D4;
-    border-radius: 5px 5px 5px 5px;
-    color: white !important;
-    float: left;
-    font-weight: bold;
-    margin-right: 10px;
-    padding: 4px 20px;
-    text-decoration: none;
-    font-size:15px;
-    line-height:22px;
-    font-weight:700;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-}
-.access .th_signup a:hover{
-    background-color: #434343;
-}
-.home-dummytext h2
-{
-    background: #b7de7e;
-    display: inline-block;
-    color: #fff;
-    font-size: 1.3em;
-    font-weight: normal;
+body {
     line-height: 1;
-    padding: 12px 15px 8px 15px;
-    text-transform: uppercase;
 }
-#like-buttons
-{
-    float: right;
-    height: 65px;
-    margin-top: 30px;
+ol, ul {
+    list-style: none;
 }
-#like-buttons div
-{
-    display: inline-block;
+blockquote, q {
+    quotes: none;
 }
-#ajax-loading-layout,.popup_layer {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: grey;
-    background: rgba(0, 0, 0, 0.7);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000);
-    zoom: 1;
-    z-index: 1000;
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
