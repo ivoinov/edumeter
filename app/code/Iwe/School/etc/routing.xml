@@ -5,19 +5,9 @@
             <routes>
                 <school translate="name">
                     <controller>iwe_school/admin_crud</controller>
-                    <use>iwe_school/school</use>
+                    <use>iwe_school/entity</use>
                     <name>School</name>
                 </school>
-                <content translate="name">
-                    <name>Content</name>
-                    <routes>
-                        <region translate="name">
-                            <controller>core/crud</controller>
-                            <use>iwe_school/region</use>
-                            <name>Regions</name>
-                        </region>
-                    </routes>
-                </content>
             </routes>
         </routing>
     </admin>
@@ -27,17 +17,8 @@
                 <school>
                     <name>School</name>
                     <controller>iwe_school/map</controller>
-                    <use>iwe_school/school</use>
+                    <use>iwe_school/entity</use>
                 </school>
-                <image>
-                    <access>ALLOW</access>
-                    <hidden>1</hidden>
-                    <routes>
-                        <__id__>
-                            <controller>iwe_school/image</controller>
-                        </__id__>
-                    </routes>
-                </image>
             </routes>
         </routing>
     </frontend>

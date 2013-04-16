@@ -94,7 +94,7 @@ require_once 'Zend/Gdata/YouTube/Extension/Occupation.php';
 /**
  * @see Zend_Gdata_YouTube_Extension_School
  */
-require_once 'Zend/Gdata/YouTube/Extension/School.php';
+require_once 'Zend/Gdata/YouTube/Extension/Entity.php';
 
 /**
  * @see Zend_Gdata_YouTube_Extension_Gender
@@ -232,7 +232,7 @@ class Zend_Gdata_YouTube_UserProfileEntry extends Zend_Gdata_Entry
     protected $_occupation = null;
 
     /**
-     * School
+     * Entity
      *
      * @var string
      */

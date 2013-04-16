@@ -8,12 +8,6 @@
  */
 class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 {
-    protected function _getDefaultOptions() {
-        return array_merge(parent::_getDefaultOptions(), array(
-            'list_handlers' => $this->getListHandlers() ?: array('abstract_list', 'abstract_list_editable', 'abstract_list_creatable', 'abstract_list_deletable','admin_school_index'),
-        ));
-    }
-
     public function getSchoolAddressAction()
     {
         $collection = Seven::getCollection('iwe_school/school')

@@ -1,6 +1,6 @@
 <?php
 
-class Iwe_School_Model_School extends Core_Model_Entity {
+class Iwe_School_Model_Entity extends Core_Model_Entity {
 
     public function getOptionsArray()
     {

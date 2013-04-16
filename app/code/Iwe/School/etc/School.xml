@@ -3,7 +3,7 @@
 	<global>
 		<entity>
 			<iwe_school>
-				<school>
+				<entity>
 					<table>iwe_school_entity</table>
 					<key>id</key>
 					<attributes>
@@ -19,8 +19,6 @@
 						</name>
 						<region_id translate="label">
 							<label>Region</label>
-                            <type>select</type>
-                            <options>iwe_school/region</options>
                             <description>School's region</description>
                         </region_id>
                         <city>
@@ -53,59 +51,14 @@
                             <nullable>1</nullable>
                         </latitude>
 					</attributes>
-				</school>
-                <region>
-                    <table>iwe_school_region</table>
-                    <key>id</key>
-                    <attributes>
-                        <id translate="label">
-                            <label>ID</label>
-                            <type>number</type>
-                        </id>
-                        <name translate="label,description">
-                            <label>Name</label>
-                            <maxlength>255</maxlength>
-                            <required>1</required>
-                            <description>Region name</description>
-                        </name>
-                    </attributes>
-                </region>
-                <rate>
-                    <table>iwe_school_rate</table>
-                    <key>id</key>
-                    <attributes>
-                        <id translate="label">
-                            <label>ID</label>
-                            <type>number</type>
-                        </id>
-                        <school_id translate="label,description">
-                            <label>School number</label>
-                            <type>number</type>
-                            <required>1</required>
-                            <description>Scholl name</description>
-                        </school_id>
-                        <rate translate="label,description">
-                            <label>School rate</label>
-                            <type>number</type>
-                            <required>1</required>
-                            <data_type>decimal</data_type>
-                            <scale>4</scale>
-                            <precision>12</precision>
-                            <description>School rate</description>
-                        </rate>
-                        <year translate="label,description">
-                            <label>Year</label>
-                            <type>number</type>
-                        </year>
-                    </attributes>
-                </rate>
+				</entity>
 			</iwe_school>
 		</entity>
 	</global>
 	<admin>
 		<forms>
 			<iwe_school>
-				<school translate="title,fieldset,tab">
+				<entity translate="title,fieldset,tab">
 					<title>Edit from</title>
                     <tabs>
                         <general translate="label">
@@ -123,7 +76,7 @@
                             <label>Сoordinates</label>
                         </coords>
                     </fieldsets>
-					<source>iwe_school/school</source>
+					<source>iwe_school/entity</source>
 					<fields>
 						<name>
                             <tab>general</tab>
@@ -154,22 +107,15 @@
                             <tab>coords</tab>
                         </latitude>
 					</fields>
-				</school>
-                <region>
-                    <title>Region edit from</title>
-                    <source>iwe_school/region</source>
-                    <fields>
-                        <name/>
-                    </fields>
-                </region>
+				</entity>
 			</iwe_school>
 		</forms>
 		<grids>
 			<iwe_school>
-				<school translate="title">
+				<entity translate="title">
 					<title>School list</title>
-					<source>iwe_school/school</source>
-                    <collection>iwe_school/school</collection>
+					<source>iwe_school/entity</source>
+                    <collection>iwe_school/entity</collection>
 					<use_ajax>1</use_ajax>
 					<fields>
 						<id>	
@@ -179,19 +125,7 @@
                         <city/>
                         <region_id/>
 					</fields>
-				</school>
-                <region>
-                    <title>Region list</title>
-                    <source>iwe_school/region</source>
-                    <collection>iwe_school/region</collection>
-                    <use_ajax>1</use_ajax>
-                    <fields>
-                        <id>
-                            <width>40px</width>
-                        </id>
-                        <name />
-                    </fields>
-                </region>
+				</entity>
 			</iwe_school>
 		</grids>
 	</admin>
