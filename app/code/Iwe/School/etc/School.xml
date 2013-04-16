@@ -129,4 +129,24 @@
 			</iwe_school>
 		</grids>
 	</admin>
+    <frontend>
+        <grids>
+            <iwe_school>
+                <entity translate="title">
+                    <title>School list</title>
+                    <source>iwe_school/entity</source>
+                    <collection>iwe_school/entity</collection>
+                    <use_ajax>1</use_ajax>
+                    <fields>
+                        <id>
+                            <width>40px</width>
+                        </id>
+                        <name />
+                        <city/>
+                        <region_id/>
+                    </fields>
+                </entity>
+            </iwe_school>
+        </grids>
+    </frontend>
 </config>
