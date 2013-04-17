@@ -22,6 +22,7 @@ var map = {
     current_postition_city: null,
     update_address_line: false,
     schools : [],
+    radius : null,
     init: function(options) {
         this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
         this.geocoder = new google.maps.Geocoder();
@@ -73,6 +74,7 @@ var map = {
             this.default_position = location;
         this.map.setCenter(location);
         this._moveCurrentPositionMarker(location);
+        this._radius(this.current_position_marker,500);
         this._setupAddressBox(location);
         this.current_position = location;
     },
@@ -157,6 +159,25 @@ var map = {
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(this.map, marker);
         });
+    },
+    _radius: function(marker,radiusValue)
+    {
+
+        this.radius = new google.maps.Circle({
+            map: this.map,
+            draggable:false,
+            radius: radiusValue,
+            fillColor: '#0055aa',
+            fillOpacity: 0.2
+        });
+        this.radius.bindTo('center', marker, 'position');
+        this.map.fitBounds(this.radius.getBounds());
+    },
+    _changeRadius: function(radiusValue)
+    {
+        if(this.radius)
+            this.radius.setMap(null);
+        this._radius(this.current_position_marker,radiusValue);
     }
 }
 $(function(){

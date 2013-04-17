@@ -42,9 +42,4 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
                 return;
 
     }
-
-    public function viewAction()
-    {
-        $this->_viewAbstract();
-    }
 }
