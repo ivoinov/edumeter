@@ -88,9 +88,9 @@ var map = {
                 if(results.length) {
                     var city = (results[0].address_components[3].short_name == "UA") ? "" : results[0].address_components[3].short_name;
                     var adress = results[0].address_components[1].short_name+" "+results[0].address_components[0].short_name;
-                    var infowindow = document.getElementById('map-info');
-                    var adressForInput = "г. "+city+", "+adress;
-                    infowindow.innerHTML = 'Ваш адрес: ' + adress + '<br />Ваш город: '+ city;
+//                    var infowindow = document.getElementById('map-info');
+//                    var adressForInput = "г. "+city+", "+adress;
+//                    infowindow.innerHTML = 'Ваш адрес: ' + adress + '<br />Ваш город: '+ city;
                     that._placeScool(location, city);
                 }
             }

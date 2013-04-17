@@ -24,6 +24,7 @@
                             <label>School type</label>
                             <type>text</type>
                             <maxlength>255</maxlength>
+                            <nullable>1</nullable>
                         </school_type>
                         <school_district translate="label">
                             <label>School district</label>

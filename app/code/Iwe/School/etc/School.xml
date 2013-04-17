@@ -20,6 +20,9 @@
 						<region_id translate="label">
 							<label>Region</label>
                             <description>School's region</description>
+                            <type>select</type>
+                            <options>iwe_region/entity</options>
+                            <data_type>int</data_type>
                         </region_id>
                         <city>
                             <label>City</label>
@@ -133,7 +136,6 @@
         <grids>
             <iwe_school>
                 <entity translate="title">
-                    <title>School list</title>
                     <source>iwe_school/entity</source>
                     <collection>iwe_school/entity</collection>
                     <use_ajax>1</use_ajax>
@@ -145,8 +147,6 @@
                             <width>40px</width>
                         </id>
                         <name />
-                        <city/>
-                        <region_id/>
                     </fields>
                 </entity>
             </iwe_school>
