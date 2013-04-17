@@ -127,4 +127,5 @@ footer .links li {
 .content{
     padding: 0 0 60px;
 }
-
+#location{width: 100%;margin: 0 auto;position: relative;}
+#map_canvas{height: 350px;width: 100%}

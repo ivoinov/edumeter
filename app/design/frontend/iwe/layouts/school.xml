@@ -6,8 +6,8 @@
             <action method="addJs"><script>js/google/maps/map.js</script><type>skin</type></action>
             <action method="addJs"><script>jquery/jquery.tmpl.js</script><type>lib</type></action>
         </reference>
-        <reference name="content">
-            <block type="iwe_school/map" name="googlemaps.location" template="school/googlemap/location.phtml"></block>
+        <reference name="google.map">
+            <block type="iwe_school/map" after="messages"  name="googlemaps.location" template="school/googlemap/location.phtml"/>
         </reference>
     </school_index>
 
