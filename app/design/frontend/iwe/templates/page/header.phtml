@@ -22,9 +22,8 @@
         <div class="siteMenu right">
             <p class="left"><a href="#">Как это работает</a></p>
             <div class="searchWrap left">
-                <form class="formSearch">
-                    <input type="text" class="txtSearch inline" />
-                    <a href="#" class="btnClear"></a>
+                <form class="formSearch" method="post" onsubmit="return map.search($('#searchAddressValue').val())" >
+                    <input id="searchAddressValue" name ="searchAddressValue" type="text" class="txtSearch inline" />
                 </form>
             </div>
             <p class="left"><a href="#">Глобальный рейтинг школ</a></p>

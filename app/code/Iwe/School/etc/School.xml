@@ -137,7 +137,7 @@
             <iwe_school>
                 <entity translate="title">
                     <source>iwe_school/entity</source>
-                    <collection>iwe_school/entity</collection>
+                    <add_default_actions>0</add_default_actions>
                     <use_ajax>1</use_ajax>
                     <sort>
                         <id>id DESC</id>

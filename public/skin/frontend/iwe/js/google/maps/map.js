@@ -15,7 +15,7 @@
 var map = {
     map: null,
     marker: [],
-    geocoder: null,
+    geocoder: this.geocoder,
     default_position: null,
     current_position: null,
     current_position_marker: null,
@@ -32,6 +32,10 @@ var map = {
         }
 
     },
+    setSearchAddress: function(searchAddress)
+    {
+        this.search_address = searchAddress;
+    },
     setSchools: function(schools)
     {
         this.schools = schools;
@@ -43,6 +47,7 @@ var map = {
     search: function(location) {
         this.update_address_line = false;
         this.setLocationByAddress(location);
+        return false;
     },
     setDefaultPosition: function() {
         this.setLocationByAddress("Киев");
@@ -135,12 +140,13 @@ var map = {
 //                    );
                     var markers = new google.maps.Marker({
                         position: location,
+                        animation: google.maps.Animation.DROP,
                         map: that.map,
                         //icon: image,
                         title: data[i].title
                     });
+                    that._bindEventOnMarker(markers, data[i]);
                     that.marker.push(markers);
-                    that._bindEventOnMarker(that.marker[i], data[i]);
                 }
             }, 'json');
     },
@@ -150,8 +156,8 @@ var map = {
         });
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(this.map, marker);
-    });
-}
+        });
+    }
 }
 $(function(){
     map.init({
