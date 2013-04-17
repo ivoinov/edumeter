@@ -74,9 +74,9 @@ var map = {
             this.default_position = location;
         this.map.setCenter(location);
         this._moveCurrentPositionMarker(location);
-        this._radius(this.current_position_marker,500);
         this._setupAddressBox(location);
         this.current_position = location;
+        this._radius(this.current_position_marker,500);
     },
     _moveCurrentPositionMarker: function(location) {
         var that = this;
