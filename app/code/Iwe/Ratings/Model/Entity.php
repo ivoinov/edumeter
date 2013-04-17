@@ -8,5 +8,14 @@
  */
 class Iwe_Ratings_Model_Entity extends Core_Model_Entity
 {
-
+    public function getOptionsArray()
+    {
+        $schoolCollection = $this->getCollection();
+        $options = array();
+        foreach($schoolCollection as $school)
+        {
+            $options[$school->getlId()] = $school->getName();
+        }
+        return $options;
+    }
 }

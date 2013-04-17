@@ -144,7 +144,7 @@ var map = {
                         position: location,
                         animation: google.maps.Animation.DROP,
                         map: that.map,
-                        //icon: image,
+                        icon: data[i].icon,
                         title: data[i].title
                     });
                     that._bindEventOnMarker(markers, data[i]);

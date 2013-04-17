@@ -6,7 +6,7 @@
             	<name>IWE Ratings</name>
                 <author>Seven Core Team &lt;ilya@sevenframework.com&gt;</author>
                 <description>Ratings</description>
-                <version>1.0.4</version>
+                <version>2.0.0</version>
                 <depends>
                 	<Seven_Core>0.1.0</Seven_Core>
                 </depends>                

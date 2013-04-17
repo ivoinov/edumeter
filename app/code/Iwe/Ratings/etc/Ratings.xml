@@ -106,7 +106,56 @@
                         </interval9>
                     </attributes>
                 </entity>
+                <subject_rate>
+                    <table>iwe_stat_subject</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                        </id>
+                        <school_id translate="label">
+                            <label>School</label>
+                            <type>select</type>
+                            <data_type>int</data_type>
+                            <options>iwe_schools/entity</options>
+                        </school_id>
+                        <year translate="label">
+                            <label>Year</label>
+                            <type>number</type>
+                        </year>
+                        <subject translate="label">
+                            <label>Subject</label>
+                        </subject>
+                        <rate translate="label">
+                            <label>School rate for subject for current year</label>
+                            <type>number</type>
+                        </rate>
+                        <passed_number translate="label">
+                            <label>Passed numbers</label>
+                            <type>number</type>
+                        </passed_number>
+                    </attributes>
+                </subject_rate>
 			</iwe_ratings>
 		</entity>
 	</global>
+    <admin>
+        <grids>
+            <iwe_ratings>
+                <subject_rate>
+                    <title>School rates list</title>
+                    <source>iwe_ratings/subject_rate</source>
+                    <collection>iwe_ratings/subject_rate</collection>
+                    <use_ajax>1</use_ajax>
+                    <fields>
+                        <school_id />
+                        <rate/>
+                        <subject/>
+                        <year/>
+                    </fields>
+                </subject_rate>
+            </iwe_ratings>
+        </grids>
+    </admin>
 </config>

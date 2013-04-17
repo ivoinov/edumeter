@@ -30,18 +30,18 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
                             ->setSchoolName($line[2])
                             ->setSchoolDistrict($district->getName())
                             ->setSchoolRegion($region->getName())
-                            ->setSubject('Математика')
+                            ->setSubject('Українська мова')
                             ->setWay('Точні науки')
                             ->setPassedNumber($passedNumber)
-                            ->setInterval1((int) ($line[3]/ 100 * $passedNumber)  )
-                            ->setInterval2((int) ($line[4]/ 100 * $passedNumber))
-                            ->setInterval3((int) ($line[5]/ 100 * $passedNumber))
-                            ->setInterval4((int) ($line[6]/ 100 * $passedNumber))
-                            ->setInterval5((int) ($line[7]/ 100 * $passedNumber))
-                            ->setInterval6((int) ($line[8]/ 100 * $passedNumber))
-                            ->setInterval7((int) ($line[9]/ 100 * $passedNumber))
-                            ->setInterval8((int) ($line[10]/ 100 * $passedNumber))
-                            ->setInterval9( (int)(( $line[11]/ 100 * $passedNumber ) + ( $line[12]/ 100 * $passedNumber)) )
+                            ->setInterval1((int) round($line[3]/ 100 * $passedNumber ,2) )
+                            ->setInterval2((int) round($line[4]/ 100 * $passedNumber ,2))
+                            ->setInterval3((int) round($line[5]/ 100 * $passedNumber ,2))
+                            ->setInterval4((int) round($line[6]/ 100 * $passedNumber ,2))
+                            ->setInterval5((int) round($line[7]/ 100 * $passedNumber ,2))
+                            ->setInterval6((int) round($line[8]/ 100 * $passedNumber ,2))
+                            ->setInterval7((int) round($line[9]/ 100 * $passedNumber ,2))
+                            ->setInterval8((int) round($line[10]/ 100 * $passedNumber,2))
+                            ->setInterval9( (int)(round( $line[11]/ 100 * $passedNumber ,2) + round( $line[12]/ 100 * $passedNumber ,2)) )
                             ->save();
         }
 
@@ -126,8 +126,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
     public  function assignSchoolAction()
     {
-        $schoolCollection = Seven::getCollection('iwe_school/school')->getOwn();
-        $subjectModel = Seven::getModel('iwe_ratings/subject');
+        $schoolCollection = Seven::getCollection('iwe_school/school');
         foreach($schoolCollection as $school)
         {
             $schoolNumber = array();
