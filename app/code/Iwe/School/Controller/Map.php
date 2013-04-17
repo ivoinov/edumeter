@@ -12,13 +12,12 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         return array_merge(parent::_getDefaultOptions(), array(
             'grid_init' => 'iwe_school/entity',
             'collection_alias' => 'iwe_school/entity',
-            //'list_handlers' => 'school_index','abstract_list'
         ));
     }
 
     public function indexAction()
     {
-
+        $this->getLayout()->addTag('school_index');
         $this->_listAbstract();
     }
 

@@ -1,8 +1,13 @@
-@font-face {
+#siteContainer{
+    min-height: 100%;
+    position: relative;
+    background: #888888;
+}
+﻿@font-face {
     font-family: 'hvcbold';
-    src: url('fonts/hvcbold.eot');
-    src: url('fonts/hvcbold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/hvcbold.woff') format('woff'),
+    src: url('hvcbold.eot');
+    src: url('hvcbold.eot?#iefix') format('embedded-opentype'),
+    url('hvcbold.woff') format('woff'),
     url('fonts/hvcbold.ttf') format('truetype'),
     url('hvcbold.svg#univers_condensedbold') format('svg');
     font-weight: normal;
@@ -64,7 +69,7 @@ footer .links,
 
 header, footer{
     height: 40px;
-    line-height: 40px;
+    line-height: 15px;
     background: black;
 }
 
@@ -101,149 +106,6 @@ header .formSearch .btnClear {
     top: 10px;
     right: 5px;
 }
-
-.filters {
-    padding: 10px 0 60px;
-}
-
-.filters li {
-    float: left;
-}
-.filters li.fGroup
-{
-    padding-left: 25px;
-    margin-left: 25px;
-    border-left: 1px solid #a8a8a8;
-}
-.filters li.fGroup:first-child
-{
-    padding-left: 0;
-    margin-left: 0;
-    border-left: 0 none;
-}
-
-.filters li.fGroup li
-{
-    position: relative;
-    line-height: 20px;
-    padding-left: 2px;
-}
-.filters li.fGroup li:first-child
-{
-    padding-left: 0;
-}
-
-.filters li.fGroup li.active
-{
-
-    border-radius: 10px;
-    background: #ebebeb;
-}
-.filters li.fGroup li a
-{
-    padding: 0 8px;
-    font-weight: bold;
-}
-.filters li.fGroup li.active a
-{
-    color: #4d4d4d;
-}
-.filters li.fGroup li .arrow
-{
-    width: 20px;
-    height: 10px;
-    display: none;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    margin-left: -5px;
-    background: url(images/arrow.png) no-repeat;
-}
-.filters li.fGroup li.active .arrow
-{
-    display: block;
-}
-
-
-/*EDUS LIST*/
-.edusList li
-{
-    padding: 35px 0 8px;
-    border-bottom: solid 1px #acacac;
-}
-.edusList .counter
-{
-    width: 150px;
-    text-align: right;
-
-}
-.edusList .counter .ratio
-{
-    font-size: 30px;
-}
-.edusList .infoText
-{
-    width: 425px;
-    padding-left: 25px;
-}
-.edusList .infoText .title
-{
-    line-height: 20px;
-}
-.edusList .infoText .adress
-{
-    line-height: 25px;
-}
-.edusList .infoText a
-{
-    text-shadow: 0 -1px rgba(0,0,0,.8);
-}
-
-.edusList .shiftIndicator
-{
-    padding-top: 15px;
-}
-
-.edusList .shiftIndicator .upper,
-.edusList .shiftIndicator .lower
-{
-    width: 11px;
-    height: 10px;
-    display: block;
-    background: url(images/arrows-sprite.png) no-repeat;
-}
-.edusList .shiftIndicator .lower
-{
-    background-position: 100% 0;
-}
-.edusList .shiftIndicator.inc .upper
-{
-    background-position: 0 100%;
-}
-.edusList .shiftIndicator.dec .lower
-{
-    background-position: 100% 100%;
-}
-
-.edusList .charts
-{
-    width: 450px;
-}
-.edusList .btnHolder
-{
-    width: 135px;
-    text-align: right;
-}
-.edusList .btnHolder .btn
-{
-    width: 43px;
-    height: 43px;
-    background: url(images/circle-arrow-sprite.png) no-repeat;
-}
-.edusList .btnHolder .btn:hover
-{
-    background-position: 0 100%;
-}
 footer {
     width: 100%;
     position: absolute;
@@ -261,100 +123,8 @@ footer .links li {
     padding-right: 20px;
     float: left;
 }
-
-
 /*CONTENT*/
 .content{
     padding: 0 0 60px;
 }
-/* Clearing floated blocks. Applied to floated->parent
-=================================*/
-.clearfix:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-.clearfix {
-    *display: inline-block; /*ie7*/
-}
-* html .clearfix {
-    height: 1%;
-}
 
-/* Crossbrowser inline-block
-=================================*/
-.inline {
-    display:                inline-block;
-    *display:               inline;
-    *zoom:                  1;
-}
-
-/* Crossbrowser float clearer
-=================================*/
-.clear {
-    clear:                  both;
-    display:                block;
-    height:                 0;
-    overflow:               hidden;
-}
-
-/* Text-overflow helper
-=================================*/
-.EgMasterPage_clipped {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-/**
- * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
- * http://cssreset.com
- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-#site-holder {
-    width: 100%;
-}
