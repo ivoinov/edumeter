@@ -24,22 +24,18 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     public function getschoolAction()
     {
         $result = array();
-        $collection = Seven::getCollection('iwe_school/entity');
+        $latitude = $this->getRequest()->getParam('lat');
+        $longitude = $this->getRequest()->getParam('lng');
+        $radius = $this->getRequest()->getParam('radius');
+        $collection = Seven::getCollection('iwe_school/entity')->getInCurrentRadius($radius,$latitude,$longitude);
         foreach($collection as $school)
         {
             $rate = rand(1 ,10);
-            if($rate >= 1 && $rate <= 5)
-                $icon = 'red.png';
-            elseif($rate >= 6 && $rate <= 7)
-                $icon = 'blue.png';
-            else
-                $icon = 'green.png';
-            $icon = $this->_getSkinUrl('images/'.'pin_'.$icon);
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
                 'rate'       => $rate,
-                'icon'       => $icon,
+                'icon'       => $this->_getMarkerIcon($rate),
                 'title'      => $school->getName(),
                 'city'       => $school->getCity(),
                 'id'         => $school->getId()
@@ -50,6 +46,17 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
             ->setBody(json_encode($result));
                 return;
 
+    }
+
+    protected function _getMarkerIcon($rate)
+    {
+        if($rate >= 1 && $rate <= 5)
+            $icon = 'red.png';
+        elseif($rate >= 6 && $rate <= 7)
+            $icon = 'blue.png';
+        else
+            $icon = 'green.png';
+        return $this->_getSkinUrl('images/'.'pin_'.$icon);
     }
 
     protected function _getSkinUrl($path)

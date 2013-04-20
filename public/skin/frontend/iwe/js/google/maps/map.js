@@ -23,6 +23,7 @@ var map = {
     update_address_line: false,
     schools : [],
     radius : null,
+    currentRadiusValue: 0,
     init: function(options) {
         this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
         this.geocoder = new google.maps.Geocoder();
@@ -75,8 +76,8 @@ var map = {
         this.map.setCenter(location);
         this._moveCurrentPositionMarker(location);
         this._setupAddressBox(location);
+        this.changeRadius(this.currentRadiusValue);
         this.current_position = location;
-        this._radius(this.current_position_marker,500);
     },
     _moveCurrentPositionMarker: function(location) {
         var that = this;
@@ -93,12 +94,12 @@ var map = {
         this.geocoder.geocode({'latLng': location}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if(results.length) {
-                    var city = (results[0].address_components[3].short_name == "UA") ? "" : results[0].address_components[3].short_name;
+                    var city = (results[0].address_components[3].short_name == "UA") ? "" : results[0].address_components[2].short_name;
                     var adress = results[0].address_components[1].short_name+" "+results[0].address_components[0].short_name;
 //                    var infowindow = document.getElementById('map-info');
 //                    var adressForInput = "г. "+city+", "+adress;
 //                    infowindow.innerHTML = 'Ваш адрес: ' + adress + '<br />Ваш город: '+ city;
-                    that._placeScool(location, city);
+                    that._placeScool(location);
                 }
             }
         });
@@ -126,31 +127,29 @@ var map = {
             }
         }
     },
-    _placeScool: function(location, city) {
+    _placeScool: function(location) {
         this._deleteMarkers();
         var that = this;
-        var url = _url('*/*/getschool',{'ajax':1,'city' :city})
+        var url = _url('*/*/getschool',{'ajax':1})
         $.post(url,
             function(data) {
                 for(var i = 0; i < data.length; i++) {
-                    var location = new google.maps.LatLng(data[i].latitude, data[i].longitude);
-//                    var image = new google.maps.MarkerImage(
-//                        _url('*/image/index', {'infoOnMarker': data[i].rate}),
-//                        new google.maps.Size(100,100),
-//                        new google.maps.Point(0,0),
-//                        new google.maps.Point(12,26)
-//                    );
-                    var markers = new google.maps.Marker({
-                        position: location,
-                        animation: google.maps.Animation.DROP,
-                        map: that.map,
-                        icon: data[i].icon,
-                        title: data[i].title
-                    });
-                    that._bindEventOnMarker(markers, data[i]);
-                    that.marker.push(markers);
+                        var location = new google.maps.LatLng(data[i].latitude, data[i].longitude);
+                        if(that.radius.getBounds().contains(location))
+                        {
+                            var markers = new google.maps.Marker({
+                                position: location,
+                                animation: google.maps.Animation.DROP,
+                                map: that.map,
+                                icon: data[i].icon,
+                                title: data[i].title
+                            });
+                            that._bindEventOnMarker(markers, data[i]);
+                            that.marker.push(markers);
+                        }
                 }
-            }, 'json');
+            }, 'json'
+        );
     },
     _bindEventOnMarker: function(marker, item) {
         var infowindow = new google.maps.InfoWindow({
@@ -173,11 +172,20 @@ var map = {
         this.radius.bindTo('center', marker, 'position');
         this.map.fitBounds(this.radius.getBounds());
     },
-    _changeRadius: function(radiusValue)
+    changeRadius: function(radiusValue)
     {
         if(this.radius)
             this.radius.setMap(null);
-        this._radius(this.current_position_marker,radiusValue);
+        if(this.currentRadiusValue != 0)
+            this.currentRadiusValue = radiusValue;
+        else
+            this.currentRadiusValue = 500;
+        this._radius(this.current_position_marker,this.currentRadiusValue);
+        this._placeScool(this.current_position_marker)
+    },
+    getSchoolAtRadius: function()
+    {
+
     }
 }
 $(function(){
