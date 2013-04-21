@@ -147,6 +147,7 @@
                             <width>40px</width>
                         </id>
                         <name />
+                        <address/>
                     </fields>
                 </entity>
             </iwe_school>

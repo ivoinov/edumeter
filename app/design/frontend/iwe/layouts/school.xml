@@ -3,12 +3,24 @@
     <school_index>
         <reference name="head">
             <action method="addJs"><script>http://maps.google.com/maps/api/js?sensor=false</script></action>
+            <action method="addJs"><script>http://maps.google.com/maps/api/js?sensor=false</script></action>
             <action method="addJs"><script>js/google/maps/map.js</script><type>skin</type></action>
             <action method="addJs"><script>jquery/jquery.tmpl.js</script><type>lib</type></action>
+            <action method="addJs"><script>jquery/cookies.js</script><type>lib</type></action>
+            <action method="addJs"><script>seven/widgets/list.js</script><type>lib</type></action>
+            <action method="addJs"><script>iwe/list.js</script><type>lib</type></action>
         </reference>
         <reference name="google.map">
             <block type="iwe_school/map" after="messages"  name="googlemaps.location" template="school/googlemap/location.phtml"/>
         </reference>
+        <reference name="grid_container">
+            <block name="school_list" type='iwe_school/list'>
+                <action method="initXml"><xml_name>iwe_school/entity</xml_name></action>
+                <action method="setTemplate"><template>school/data.phtml</template></action>
+                <action method="setWrapperTemplate"><template>school/list.phtml</template></action>
+            </block>
+        </reference>
+        <remove name="grid"/>
     </school_index>
 
 </layout>

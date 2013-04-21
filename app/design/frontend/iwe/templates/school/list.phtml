@@ -1,0 +1,26 @@
+<script id="school-item-template" type="text/x-jquery-tmpl" xmlns="http://www.w3.org/1999/html">
+<li class="school-line clearfix">
+	<div class="header">
+		<div class="info">${name} <br/> ${address}</div>
+		<div class="charts"></div>
+	</div>
+</li>
+</script>
+<script id="school-empty-line-template" type="text/x-jquery-tmpl">
+	<li class="school-empty-line">
+		<p>No campaigns found</p>
+	</li>
+</script>
+<div class="filters">
+    <ul class="clearfix">
+        <?php echo $this->getFilter('radius')->getFilterHtml(); ?>
+        <?php echo $this->getFilter('way')->getFilterHtml(); ?>
+        <?php echo $this->getFilter('year')->getFilterHtml(); ?>
+    </ul>
+</div>
+<div class="school-list grid">
+	<div class="school-list-header">
+		<div class="clear"></div>
+	</div>
+	<ul id="school-list"><?php echo $this->getInnerHtml(); ?></ul>
+</div>

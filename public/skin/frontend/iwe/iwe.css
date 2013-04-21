@@ -107,7 +107,6 @@ header .formSearch .btnClear {
 }
 footer {
     width: 100%;
-    position: absolute;
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -128,3 +127,208 @@ footer .links li {
 }
 #location{width: 100%;margin: 0 auto;position: relative;}
 #map_canvas{height: 350px;width: 100%}
+
+/*Stat school list*/
+.school-list {
+    background: #888888;
+    font-size: 14px;
+}
+
+.school-list p {
+    color: #999;
+}
+
+.school-list .selected {
+    background: #888888;
+}
+
+.school-line {
+    list-style: none;
+    height: 18px;
+    overflow: hidden;
+    background: #888888;
+    padding: 35px 0 8px;
+    border-bottom: solid 1px #acacac;
+}
+
+.school-list .header {
+    line-height: 22px;
+    margin: 0 0 8px 0;
+}
+.school-line .info {
+    width: 425px;
+    padding-left: 25px;
+    float: left;
+}
+
+.school-empty-line {
+    background: #888888;
+    padding: 20px;
+    text-align: center;
+}
+
+.school-empty-line p {
+    color: #333;
+}
+
+.school-list-header a {
+    text-decoration: none;
+}
+
+.school-list-header a:hover {
+    text-decoration: underline;
+}
+
+.school-list .school-segment-line {
+    height: 30px;
+}
+
+.school-list .school-segment-line h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.school-list .school-product-list {
+    display: none;
+}
+
+.school-list .opened {
+    border-weight: 2px;
+}
+
+#school-list ul {
+    margin-left: 20px;
+}
+
+#school-list ul ul {
+    margin: 3px 0 6px 50px;
+}
+
+#school-pager {
+    margin-top: -3px;
+    float: right;
+}
+
+#school-pager>a,#product-pager>img {
+    margin-top: 4px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#school-line {
+    width: 30px;
+    text-align: center;
+}
+
+.school-segment-checkbox {
+    float: left;
+    margin-right: 7px;
+}
+
+.school-segment-line .segment_name {
+    width: 430px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.school-segment-line .segment_scans {
+    width: 100px;
+    float: left;
+    text-align: center;
+}
+
+.school-segment-line .segment_profit {
+    width: 100px;
+    float: left;
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+.school-with-segments {
+    cursor: pointer
+}
+
+.segment-product-line {
+    height: 30px;
+}
+
+.segment-product-line li {
+    width: 440px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.segment-product-line .segment-product-scans {
+    width: 45px;
+    float: left;
+    text-align: center;
+}
+
+.segment-product-line .segment-product-profit {
+    width: 150px;
+    float: left;
+    text-align: center;
+}
+/*Filters */
+.filters {
+    padding: 10px 0 60px;
+}
+
+.filters li {
+    float: left;
+}
+.filters li.fGroup
+{
+    border-left: 1px solid #a8a8a8;
+}
+.filters li.fGroup:first-child
+{
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0 none;
+}
+
+.filters li.fGroup li
+{
+    position: relative;
+    line-height: 20px;
+    padding-left: 2px;
+}
+.filters li.fGroup li:first-child
+{
+    padding-left: 0;
+}
+
+.filters li.fGroup li.active
+{
+
+    border-radius: 10px;
+    background: #ebebeb;
+}
+.filters li.fGroup li a
+{
+    padding: 0 8px;
+    font-weight: bold;
+}
+.filters li.fGroup li.active a
+{
+    color: #4d4d4d;
+}
+.filters li.fGroup li .arrow
+{
+    width: 20px;
+    height: 10px;
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+    background: url(../images/arrow.png) no-repeat;
+}
+.filters li.fGroup li.active .arrow
+{
+    display: block;
+}

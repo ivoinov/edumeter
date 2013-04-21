@@ -171,7 +171,6 @@ var map = {
             fillOpacity: 0.2
         });
         this.radius.bindTo('center', this.current_position_marker, 'position');
-        this.map.fitBounds(this.radius.getBounds());
         google.maps.event.addListener(this.radius, 'radius_changed', function() {
             that._placeScool(that.current_position);
         });
@@ -186,15 +185,7 @@ var map = {
             this._radius(this.currentRadiusValue);
         else
             this.radius.setRadius(this.currentRadiusValue);
-    },
-    reloadGrid: function()
-    {
-        var that = this;
-        var url = _url('*/*/reloadgrid',{'ajax':1,'markers[]':that.visibleSchoolIds})
-        $.post(url,
-            function(data) {console.log(data)}, 'json'
-        );
-
+        this.map.fitBounds(this.radius.getBounds());
     }
 }
 $(function(){
