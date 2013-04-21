@@ -91,6 +91,16 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
 
     protected function _getSchoolRate($schoolId)
     {
-        return rand(1,10);
+        $rating = 0;
+        $ratingsCollection = Seven::getCollection('iwe_ratings/subject_rate')
+            ->filter('school_id',$schoolId)
+            ->filter('year',2012);
+        if(!count($ratingsCollection))
+            return rand(1,10);
+        foreach($ratingsCollection as $rate)
+        {
+            $rating += $rate->getRate();
+        }
+        return round($rating / count($ratingsCollection),2);
     }
 }

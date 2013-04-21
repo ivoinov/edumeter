@@ -132,13 +132,19 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
             if($id == 0 || $id == 32 || $id == 33)
                 continue;
             $schoolNumber = array();
-            preg_match('/№[0-9]/',$school->getName(),$schoolNumber);
+            preg_match('/№[0-9]*/',$school->getName(),$schoolNumber);
             if( isset($schoolNumber[0]) )
                 $statEntityCollection = Seven::getCollection('iwe_ratings/entity')
                                      ->filter('school_name',array('like' => '%'.$schoolNumber[0]))
                                      ->filter('school_district',array('like' => '%' . $school->getCity() . '%' ))
                                      ->filter('school_region',array('like' => '%'.$school->getCity() . '%' ))
-                                     ->filter('year',2009);
+                                     ->filter('year',2012);
+            if(!count($statEntityCollection))
+                $statEntityCollection = Seven::getCollection('iwe_ratings/entity')
+                    ->filter('school_name',array('like' => '%'.$schoolNumber[0].'%'))
+                    ->filter('school_district',array('like' => '%' . $school->getCity() . '%' ))
+                    ->filter('school_region',array('like' => '%'.$school->getCity() . '%' ))
+                    ->filter('year',2009);
             foreach( $statEntityCollection as $rate)
             {
                 $subjectModel = Seven::getModel('iwe_subject/entity');
