@@ -22,6 +22,7 @@ var map = {
     current_postition_city: null,
     update_address_line: false,
     schools : [],
+    visibleSchoolIds: [],
     radius : null,
     currentRadiusValue: 0,
     init: function(options) {
@@ -96,9 +97,6 @@ var map = {
                 if(results.length) {
                     var city = (results[0].address_components[3].short_name == "UA") ? "" : results[0].address_components[2].short_name;
                     var adress = results[0].address_components[1].short_name+" "+results[0].address_components[0].short_name;
-//                    var infowindow = document.getElementById('map-info');
-//                    var adressForInput = "г. "+city+", "+adress;
-//                    infowindow.innerHTML = 'Ваш адрес: ' + adress + '<br />Ваш город: '+ city;
                     that._placeScool(location);
                 }
             }
@@ -126,6 +124,8 @@ var map = {
                 this.marker[i].setMap(null);
             }
         }
+        this.marker.splice(0,this.marker.length);
+        this.visibleSchoolIds.splice(0,this.marker.length);
     },
     _placeScool: function(location) {
         this._deleteMarkers();
@@ -146,6 +146,7 @@ var map = {
                             });
                             that._bindEventOnMarker(markers, data[i]);
                             that.marker.push(markers);
+                            that.visibleSchoolIds.push(data[i].id);
                         }
                 }
             }, 'json'
@@ -159,9 +160,9 @@ var map = {
             infowindow.open(this.map, marker);
         });
     },
-    _radius: function(marker,radiusValue)
+    _radius: function(radiusValue)
     {
-
+        var that = this;
         this.radius = new google.maps.Circle({
             map: this.map,
             draggable:false,
@@ -169,22 +170,30 @@ var map = {
             fillColor: '#0055aa',
             fillOpacity: 0.2
         });
-        this.radius.bindTo('center', marker, 'position');
+        this.radius.bindTo('center', this.current_position_marker, 'position');
         this.map.fitBounds(this.radius.getBounds());
+        google.maps.event.addListener(this.radius, 'radius_changed', function() {
+            that._placeScool(that.current_position);
+        });
     },
     changeRadius: function(radiusValue)
     {
-        if(this.radius)
-            this.radius.setMap(null);
         if(this.currentRadiusValue != 0)
             this.currentRadiusValue = radiusValue;
         else
             this.currentRadiusValue = 500;
-        this._radius(this.current_position_marker,this.currentRadiusValue);
-        this._placeScool(this.current_position_marker)
+        if(!this.radius)
+            this._radius(this.currentRadiusValue);
+        else
+            this.radius.setRadius(this.currentRadiusValue);
     },
-    getSchoolAtRadius: function()
+    reloadGrid: function()
     {
+        var that = this;
+        var url = _url('*/*/reloadgrid',{'ajax':1,'markers[]':that.visibleSchoolIds})
+        $.post(url,
+            function(data) {console.log(data)}, 'json'
+        );
 
     }
 }

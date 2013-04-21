@@ -48,6 +48,19 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
 
     }
 
+    public function reloadGridAction()
+    {
+//        if(!$this->getRequest()->isAjax())
+//            throw new Core_Exception_Forbidden;
+        $markers = $this->getRequest()->getParam('markers');
+        if(!$markers || empty($markers))
+            $this->getLayout()->getBlock('grid');
+            Seven::app()->getResponse()
+                ->setIsAjax(true)
+                ->setBody(json_encode($markers));
+        return;
+    }
+
     protected function _getMarkerIcon($rate)
     {
         if($rate >= 1 && $rate <= 5)
