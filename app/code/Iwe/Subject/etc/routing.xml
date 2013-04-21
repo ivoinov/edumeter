@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+		<routing>
+			<routes>
+                <content>
+                    <routes>
+                        <subject translate="name">
+                            <name>Subject</name>
+                            <controller>core/crud</controller>
+                            <use>iwe_subject/entity</use>
+                        </subject>
+                    </routes>
+                </content>
+	        </routes>
+        </routing>
+    </admin>
+</config>

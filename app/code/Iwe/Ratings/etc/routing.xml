@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+        <routing>
+            <routes>
+                <school>
+                    <routes>
+                        <ratings translate="name">
+                            <controller>core/crud</controller>
+                            <use>iwe_ratings/subject_rate</use>
+                            <name>Ratings</name>
+                        </ratings>
+                    </routes>
+                </school>
+            </routes>
+        </routing>
+    </admin>
+</config>

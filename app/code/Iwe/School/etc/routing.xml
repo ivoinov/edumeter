@@ -3,10 +3,15 @@
     <admin>
         <routing>
             <routes>
-                <school translate="name">
-                    <controller>iwe_school/admin_crud</controller>
-                    <use>iwe_school/entity</use>
-                    <name>School</name>
+                <school>
+                    <name>EDUmeter</name>
+                    <routes>
+                        <school translate="name">
+                            <controller>iwe_school/admin_crud</controller>
+                            <use>iwe_school/entity</use>
+                            <name>School</name>
+                        </school>
+                    </routes>
                 </school>
             </routes>
         </routing>

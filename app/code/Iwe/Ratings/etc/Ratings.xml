@@ -118,7 +118,7 @@
                             <label>School</label>
                             <type>select</type>
                             <data_type>int</data_type>
-                            <options>iwe_schools/entity</options>
+                            <options>iwe_school/entity</options>
                         </school_id>
                         <year translate="label">
                             <label>Year</label>
@@ -126,10 +126,14 @@
                         </year>
                         <subject translate="label">
                             <label>Subject</label>
+                            <type>select</type>
+                            <options>iwe_subject/entity</options>
                         </subject>
                         <rate translate="label">
-                            <label>School rate for subject for current year</label>
+                            <label>School rate</label>
+                            <description>School rate for subject for current year</description>
                             <type>number</type>
+                            <data_type>float</data_type>
                         </rate>
                         <passed_number translate="label">
                             <label>Passed numbers</label>
@@ -141,6 +145,22 @@
 		</entity>
 	</global>
     <admin>
+        <forms>
+            <iwe_ratings>
+                <subject_rate>
+                    <title>School rates edit</title>
+                    <source>iwe_ratings/subject_rate</source>
+                    <use_ajax>1</use_ajax>
+                    <fields>
+                        <school_id/>
+                        <year/>
+                        <subject/>
+                        <rate/>
+                        <passed_number/>
+                    </fields>
+                </subject_rate>
+            </iwe_ratings>
+        </forms>
         <grids>
             <iwe_ratings>
                 <subject_rate>
@@ -149,7 +169,7 @@
                     <collection>iwe_ratings/subject_rate</collection>
                     <use_ajax>1</use_ajax>
                     <fields>
-                        <school_id />
+                        <school_id/>
                         <rate/>
                         <subject/>
                         <year/>

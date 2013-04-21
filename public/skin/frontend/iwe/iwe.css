@@ -279,6 +279,7 @@ footer .links li {
 
 .filters li {
     float: left;
+    list-style: none;
 }
 .filters li.fGroup
 {

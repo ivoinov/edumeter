@@ -30,7 +30,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $collection = Seven::getCollection('iwe_school/entity')->getInCurrentRadius($radius,$latitude,$longitude);
         foreach($collection as $school)
         {
-            $rate = rand(1 ,10);
+            $rate = $this->_getSchoolRate($school->getId());
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
@@ -87,5 +87,10 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         }
         return Seven::app()->getRequest()->getBaseUrl() . $url;
 
+    }
+
+    protected function _getSchoolRate($schoolId)
+    {
+        return rand(1,10);
     }
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<iwe_subject>
+				<entity>
+					<table>iwe_subject_entity</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+                            <type>number</type>
+                            <data_type>int</data_type>
+                            <identity>true</identity>
+						</id>
+                        <name translate="label">
+                            <label>Subject name</label>
+                            <maxlength>255</maxlength>
+                        </name>
+					</attributes>
+				</entity>
+			</iwe_subject>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<iwe_subject>
+				<entity translate="title,fieldset,tab">
+					<title>Edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_subject/entity</source>
+					<fields>
+                        <name/>
+					</fields>
+				</entity>
+			</iwe_subject>
+		</forms>
+		<grids>
+			<iwe_subject>
+				<entity translate="title">
+					<title>List</title>
+					<source>iwe_subject/entity</source>
+					<fields>
+						<id />
+                        <name/>
+					</fields>
+				</entity>
+			</iwe_subject>
+		</grids>
+	</admin>
+</config>

@@ -16,13 +16,9 @@
 
 $this->start();
 
-$this->query("CREATE TABLE `iwe_stat_subject` (
-      `id` INT(11) NOT NULL AUTO_INCREMENT,
-      `school_id` INT(11) NOT NULL,
-      `year` INT(11) NOT NULL,
-      `subject` VARCHAR(255) NOT NULL,
-      `rate` INT(11) NOT NULL,
-      `passed_number` INT(11) NOT NULL,
+$this->query("CREATE TABLE `iwe_subject_entity` (
+      `id` INT(11) NOT NULL,
+      `name` VARCHAR(255) NOT NULL,
       PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
