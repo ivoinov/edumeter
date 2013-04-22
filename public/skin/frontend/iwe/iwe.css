@@ -1,3 +1,50 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 #siteContainer{
     min-height: 100%;
     position: relative;
@@ -130,9 +177,22 @@ footer .links li {
 #map_canvas{height: 350px;width: 100%}
 
 /*Stat school list*/
+.school-list .grid {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
 .school-list {
-    background: #888888;
-    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 .school-list p {
@@ -145,7 +205,7 @@ footer .links li {
 
 .school-line {
     list-style: none;
-    height: 18px;
+    height: 60px;
     overflow: hidden;
     background: #888888;
     padding: 35px 0 8px;
@@ -153,15 +213,66 @@ footer .links li {
 }
 
 .school-list .header {
-    line-height: 22px;
+    line-height: 40px;
     margin: 0 0 8px 0;
 }
+
+.school-line .rate {
+    float: left;
+    width: 150px;
+    text-align: right;
+}.school-line .rate .ratio {
+     font-size: 30px;
+    color: #ffffff;
+ }
 .school-line .info {
     width: 425px;
-    padding-left: 25px;
-    float: left;
+    padding-left: 40px;
+}
+.school-line .info .title {
+    line-height: 20px;
+}
+.school-line .info .title a {
+    text-shadow: 0 -1px rgba(0,0,0,.8);
+    text-decoration: none;
+    color: white;
+}
+.school-line .info .description{
+     line-height: 25px;
+     text-shadow: 0 -1px rgba(0,0,0,.8);
+     text-decoration: none;
+     color: white;
+}
+.school-line .info .address{
+     line-height: 25px;
 }
 
+.school-line .info .address a{
+    text-shadow: 0 -1px rgba(0,0,0,.8);
+    text-decoration: none;
+    color: white;
+}
+.school-list .btnHolder
+{
+    width: 135px;
+    text-align: right;
+}
+.school-list .btnHolder .btn
+{
+    width: 43px;
+    height: 43px;
+    background: url(images/circle-arrow-sprite.png) no-repeat;
+    display: inline-block;
+}
+
+.school-list .charts
+{
+    width: 450px;
+}
+.school-list .btnHolder .btn:hover
+{
+    background-position: 0 100%;
+}
 .school-empty-line {
     background: #888888;
     padding: 20px;

@@ -1,8 +1,20 @@
 <script id="school-item-template" type="text/x-jquery-tmpl" xmlns="http://www.w3.org/1999/html">
 <li class="school-line clearfix">
 	<div class="header">
-		<div class="info">${name} <br/> ${address}</div>
-		<div class="charts"></div>
+        <div class="rate">
+            <div class="inline">
+                <span class="ratio">${rate}</span>
+            </div>
+        </div>
+		<div class="info left">
+            <h4 class="title"><a href="#">${name}</a></h4>
+            <p class="description">${description}</p>
+            <p class="address"><a href="#">${address}</a></p>
+        </div>
+        <div class="charts left">
+            some charts...
+        </div>
+        <div class="btnHolder left"><a href="#" class="btn inline"></a></div>
 	</div>
 </li>
 </script>

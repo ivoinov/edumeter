@@ -27,7 +27,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $collection = Seven::getCollection('iwe_school/entity');
         foreach($collection as $school)
         {
-            $rate = $this->_getSchoolRate($school->getId());
+            $rate = $school->getRate();
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
@@ -71,21 +71,6 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         }
         return Seven::app()->getRequest()->getBaseUrl() . $url;
 
-    }
-
-    protected function _getSchoolRate($schoolId)
-    {
-        $rating = 0;
-        $ratingsCollection = Seven::getCollection('iwe_ratings/subject_rate')
-            ->filter('school_id',$schoolId)
-            ->filter('year',2012);
-        if(!count($ratingsCollection))
-            return rand(1,10);
-        foreach($ratingsCollection as $rate)
-        {
-            $rating += $rate->getRate();
-        }
-        return round($rating / count($ratingsCollection),2);
     }
 
     protected function _calculateDistance ($φA, $λA, $φB, $λB) {

@@ -148,6 +148,7 @@
                         </id>
                         <name />
                         <address/>
+                        <description/>
                     </fields>
                 </entity>
             </iwe_school>
