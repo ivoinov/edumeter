@@ -110,6 +110,7 @@ footer {
     bottom: 0;
     left: 0;
     overflow: hidden;
+    position: absolute;
 }
 footer .logo {
     padding-left: 110px;
@@ -327,7 +328,6 @@ footer .links li {
     bottom: -10px;
     left: 50%;
     margin-left: -5px;
-    background: url(../images/arrow.png) no-repeat;
 }
 .filters li.fGroup li.active .arrow
 {

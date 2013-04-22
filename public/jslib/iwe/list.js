@@ -10,12 +10,12 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
     },
     changeRadius: function(radius)
     {
-        if(!map)
+        if(!this.map)
         {
             alert('Please reload page');
             return false;
         }
-        map.changeRadius(radius);
+        this.map.changeRadius(radius);
         $('#radius-filter li.filter.active').removeClass('active');
         $('#raius-filter-' + radius).addClass('active');
     }

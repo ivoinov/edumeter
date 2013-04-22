@@ -76,7 +76,7 @@ var map = {
             this.default_position = location;
         this.map.setCenter(location);
         this._moveCurrentPositionMarker(location);
-        this._setupAddressBox(location);
+        //this._setupAddressBox(location);
         this.changeRadius(this.currentRadiusValue);
         this.current_position = location;
     },
@@ -146,7 +146,9 @@ var map = {
                             });
                             that._bindEventOnMarker(markers, data[i]);
                             that.marker.push(markers);
-                            that.visibleSchoolIds.push(data[i].id);
+                            if( that.radius.getBounds().contains(markers.getPosition()) &&
+                                that.visibleSchoolIds.indexOf(data[i].id) == -1 )
+                                that.visibleSchoolIds.push(data[i].id);
                         }
                 }
             }, 'json'
