@@ -125,7 +125,7 @@ var map = {
             }
         }
         this.marker.splice(0,this.marker.length);
-        this.visibleSchoolIds.splice(0,this.marker.length);
+        this.visibleSchoolIds.splice(0,this.visibleSchoolIds.length);
     },
     _placeScool: function(location) {
         this._deleteMarkers();
@@ -135,7 +135,7 @@ var map = {
             function(data) {
                 for(var i = 0; i < data.length; i++) {
                         var location = new google.maps.LatLng(data[i].latitude, data[i].longitude);
-                        if(that.radius.getBounds().contains(location))
+                        if(that.map.getBounds().contains(location))
                         {
                             var markers = new google.maps.Marker({
                                 position: location,
@@ -172,7 +172,7 @@ var map = {
         });
         this.radius.bindTo('center', this.current_position_marker, 'position');
         google.maps.event.addListener(this.radius, 'radius_changed', function() {
-            that._placeScool(that.current_position);
+            that._setupAddressBox(that.current_position);
         });
     },
     changeRadius: function(radiusValue)
