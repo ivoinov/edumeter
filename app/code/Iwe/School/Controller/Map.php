@@ -25,14 +25,16 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     {
         $result = array();
         $collection = Seven::getCollection('iwe_school/entity');
+        $way = $this->getRequest()->getParam('way');
+        $year = $this->getRequest()->getParam('year');
         foreach($collection as $school)
         {
-            $rate = $school->getRate();
+            $rate = $school->getRate($way, $year);
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
                 'rate'       => $rate,
-                'icon'       => $this->_getMarkerIcon($rate),
+                'icon'       => $this->_getMarkerIcon($rate, $year),
                 'title'      => $school->getName(),
                 'city'       => $school->getCity(),
                 'id'         => $school->getId()

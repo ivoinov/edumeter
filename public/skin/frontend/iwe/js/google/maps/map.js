@@ -25,6 +25,8 @@ var map = {
     visibleSchoolIds: [],
     radius : null,
     currentRadiusValue: 0,
+    way: 'global',
+    year: 2012,
     init: function(options) {
         this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
         this.geocoder = new google.maps.Geocoder();
@@ -47,13 +49,21 @@ var map = {
     {
         return this.schools;
     },
+    setYear: function(year)
+    {
+        this.year = year;
+    },
+    setWay: function(way)
+    {
+        this.way = way;
+    },
     search: function(location) {
         this.update_address_line = false;
         this.setLocationByAddress(location);
         return false;
     },
     setDefaultPosition: function() {
-        this.setLocationByAddress("Киев");
+        this.setLocationByAddress("Житомир");
     },
     setLocationByAddress: function(address) {
         this.updateLocation(address, this.setCurrentPosition.bind(this));
@@ -76,7 +86,7 @@ var map = {
             this.default_position = location;
         this.map.setCenter(location);
         this._moveCurrentPositionMarker(location);
-        //this._setupAddressBox(location);
+        this._setupAddressBox(location);
         this.changeRadius(this.currentRadiusValue);
         this.current_position = location;
     },
@@ -130,7 +140,7 @@ var map = {
     _placeScool: function(location) {
         this._deleteMarkers();
         var that = this;
-        var url = _url('*/*/getschool',{'ajax':1})
+        var url = _url('*/*/getschool',{'ajax':1,'way': that.way,'year': that.year })
         $.post(url,
             function(data) {
                 for(var i = 0; i < data.length; i++) {
