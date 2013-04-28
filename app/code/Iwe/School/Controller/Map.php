@@ -30,6 +30,8 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         foreach($collection as $school)
         {
             $rate = $school->getRate($way, $year);
+            if($rate === -1)
+                continue;
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),

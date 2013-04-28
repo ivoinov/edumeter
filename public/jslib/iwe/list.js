@@ -51,5 +51,5 @@ $(function(){
     school_list.setMap(map);
     $('#raius-filter-500').addClass('active');
     $('#way-filter-global').addClass('active');
-    $('#year-filter-2012').addClass('active');
+    $('#year-filter-2011').addClass('active');
 })
