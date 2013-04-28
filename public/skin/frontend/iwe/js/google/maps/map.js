@@ -63,7 +63,7 @@ var map = {
         return false;
     },
     setDefaultPosition: function() {
-        this.setLocationByAddress("Житомир");
+        this.setLocationByAddress("Киев");
     },
     setLocationByAddress: function(address) {
         this.updateLocation(address, this.setCurrentPosition.bind(this));
