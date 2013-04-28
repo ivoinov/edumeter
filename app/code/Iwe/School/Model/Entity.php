@@ -18,7 +18,7 @@ class Iwe_School_Model_Entity extends Core_Model_Entity {
          return $schoolArray;
     }
 
-    public function getRate($way = 'global', $year = 2012)
+    public function getRate($way = 'global', $year = 2010)
     {
         $rating = 0;
         if($way === 'global') {
