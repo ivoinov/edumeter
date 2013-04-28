@@ -49,9 +49,9 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
 
     protected function _getMarkerIcon($rate)
     {
-        if($rate >= 1 && $rate <= 5)
+        if($rate >= 1 && $rate <= 2.5)
             $icon = 'red.png';
-        elseif($rate >= 6 && $rate <= 7)
+        elseif($rate > 2.5 && $rate <= 4.5)
             $icon = 'blue.png';
         else
             $icon = 'green.png';
