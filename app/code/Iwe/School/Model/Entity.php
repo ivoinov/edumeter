@@ -45,6 +45,8 @@ class Iwe_School_Model_Entity extends Core_Model_Entity {
                     $count++;
                 }
             }
+        if(!$count)
+            return -1;
         return round($rating / $count ,2);
     }
 }
