@@ -15,9 +15,10 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
             alert('Please reload page');
             return false;
         }
-        this.map.changeRadius(radius);
+        this.getMap().changeRadius(radius);
         $('#radius-filter li.filter.active').removeClass('active');
         $('#raius-filter-' + radius).addClass('active');
+        SchoolListWidgetClass.prototype.reload().apply(this, arguments);
     },
     changeWay: function(way)
     {
@@ -33,7 +34,22 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
         $('#year-filter li.filter.active').removeClass('active');
         $('#year-filter-' + year).addClass('active');
 
+    },
+    _extendReloadParams: function(params) {
+        var radius = this.getMap().currentRadiusValue;
+        var current_longitude = this.getMap().current_position.lng();
+        var current_latitude = this.getMap().current_position.lat();
+        var way = this.getMap().way;
+        var year = this.getMap().year;
+        return $.extend({
+            "radius": radius,
+            "current_longitude":  current_longitude,
+            "current_latitude": current_latitude,
+            "way": way,
+            "year": year
+        }, SchoolListWidgetClass.prototype._extendReloadParams.apply(this, arguments));
     }
+
 });
 
 var school_list = new SchoolListWidgetClass({

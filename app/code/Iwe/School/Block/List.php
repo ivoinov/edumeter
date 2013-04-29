@@ -16,7 +16,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
         $this->removeFilter('pager');
         $this->addFilter("radius", array('type' => 'iwe_school/radius', 'filter_priority' => 0));
         $this->addFilter("way", array('type' => 'iwe_school/way', 'filter_priority' => 0));
-        $this->addFilter("year", array('type' => 'iwe_school/way', 'filter_priority' => 0));
+        $this->addFilter("year", array('type' => 'iwe_school/year', 'filter_priority' => 0));
         if($radius = $this->getFilter("radius")) {
             $radius->setTemplate("school/filters/radius.phtml");
         }
