@@ -18,8 +18,10 @@ class Iwe_School_Model_Entity extends Core_Model_Entity {
          return $schoolArray;
     }
 
-    public function getRate($way = 'global', $year = 2010)
+    public function getRate($way = 'global', $year = 2011)
     {
+        if(!$way)
+            $way = 'global';
         $rating = 0;
         if($way === 'global') {
             $ratingsCollection = Seven::getCollection('iwe_ratings/subject_rate')

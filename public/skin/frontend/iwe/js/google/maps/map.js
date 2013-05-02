@@ -89,6 +89,7 @@ var map = {
         this._setupAddressBox(location);
         this.changeRadius(this.currentRadiusValue);
         this.current_position = location;
+        school_list.reload('list');
     },
     _moveCurrentPositionMarker: function(location) {
         var that = this;

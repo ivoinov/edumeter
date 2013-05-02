@@ -18,14 +18,16 @@ class Iwe_School_Block_Widget_Grid_Filter_Radius extends Core_Block_Widget_Grid_
 
     public function  apply($collection, $grid)
     {
-        $longitude = $this->_getCurrentLongitude();
-        $latitude = $this->_getCurrentLatitude();
-        $radius = $this->getFilterValue();
-        if($longitude && $latitude)
-        {
-            $collection->filter('id',array('from' => 1,'to' => 3));
-            return $collection;
+        $currentLongitude = (float) $this->_getCurrentLongitude();
+        $currentLatitude = (float) $this->_getCurrentLatitude();
+        if(($currentLongitude) && ($currentLatitude)) {
+            foreach($collection as $schoolId => $school) {
+                $dist = $this->_calculateDistance($currentLatitude,$currentLongitude,$school->getLatitude(),$school->getLongitude());
+                if($dist >= (float)$this->getFilterValue())
+                   $school->setId(null);
+            }
         }
+        return $collection;
     }
 
     protected function _getCurrentLongitude()

@@ -30,8 +30,6 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         foreach($collection as $school)
         {
             $rate = $school->getRate($way, $year);
-            if($rate === -1)
-                continue;
             $result[] = array(
                 'longitude'  => $school->getLongitude(),
                 'latitude'   => $school->getLatitude(),
@@ -51,6 +49,8 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
 
     protected function _getMarkerIcon($rate)
     {
+        if($rate === -1)
+            return $this->_getSkinUrl('images/pin_red.png');
         if($rate >= 1 && $rate <= 2.5)
             $icon = 'red.png';
         elseif($rate > 2.5 && $rate <= 4.5)

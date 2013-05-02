@@ -41,14 +41,16 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
     public function getContentArray()
     {
         $content = array('items' => array());
+        $content_row = array();
         foreach($this->getCollection() as $row) {
-            $content_row = array();
+            if(!$row->_getId())
+                continue;
             $content_row['id'] = $row->_getId();
             $content_row['hash'] = md5($row->getName());
             foreach($this->getColumns() as $id => $column) {
                 $content_row[$id] = $column->getCellValue($row);
             }
-            $content_row['rate'] = $row->getRate();
+            $content_row['rate'] = ($row->getData('rate')) ? $row->getData('rate') : $row->getRate() ;
             $content['items'][] = $content_row;
         }
         return $content;
