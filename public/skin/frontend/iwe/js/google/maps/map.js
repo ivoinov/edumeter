@@ -166,11 +166,15 @@ var map = {
         );
     },
     _bindEventOnMarker: function(marker, item) {
-        var infowindow = new google.maps.InfoWindow({
-            content: $('<div></div>').wrapInner($("#infowindow-template").tmpl(item)).html()
+        var infoBubble = new InfoBubble({
+            map: this.map,
+            content: $('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html(),
+            shadowStyle: 0
         });
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(this.map, marker);
+            if(!infoBubble.isOpen()) {
+                infoBubble.open(this.map,marker);
+            }
         });
     },
     _radius: function(radiusValue)

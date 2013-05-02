@@ -139,9 +139,6 @@
                     <source>iwe_school/entity</source>
                     <add_default_actions>0</add_default_actions>
                     <use_ajax>1</use_ajax>
-                    <sort>
-                        <id>id DESC</id>
-                    </sort>
                     <fields>
                         <id>
                             <width>40px</width>
