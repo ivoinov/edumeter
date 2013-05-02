@@ -18,12 +18,6 @@ class Iwe_School_Block_Widget_Grid_Filter_Way extends Core_Block_Widget_Grid_Fil
 
     public function  apply($collection, $grid)
     {
-        if($way = $this->getFilterValue()) {
-            foreach($collection as $schoolId => $school) {
-                $rate = $school->getRate($way);
-                $school->setRate($rate);
-            }
-        }
         return $collection;
     }
 

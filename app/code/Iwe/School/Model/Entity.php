@@ -20,8 +20,6 @@ class Iwe_School_Model_Entity extends Core_Model_Entity {
 
     public function getRate($way = 'global', $year = 2011)
     {
-        if(!$way)
-            $way = 'global';
         $rating = 0;
         if($way === 'global') {
             $ratingsCollection = Seven::getCollection('iwe_ratings/subject_rate')
@@ -35,8 +33,8 @@ class Iwe_School_Model_Entity extends Core_Model_Entity {
             }
             return round($rating / count($ratingsCollection),2);
         }
+        $count = 0;
         if(isset($this->_wayMap[$way]))
-            $count = 0;
             foreach($this->_wayMap[$way] as $subjectId) {
                 $ratingsCollection = Seven::getCollection('iwe_ratings/subject_rate')
                     ->filter('school_id',$this->getId())

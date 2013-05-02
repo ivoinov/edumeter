@@ -18,12 +18,6 @@ class Iwe_School_Block_Widget_Grid_Filter_Year extends Core_Block_Widget_Grid_Fi
 
     public function  apply($collection, $grid)
     {
-        if($year = $this->getFilterValue()) {
-            foreach($collection as $schoolId => $school) {
-                $rate = $school->getRate('',$year);
-                $school->setRate($rate);
-            }
-        }
         return $collection;
     }
 }
