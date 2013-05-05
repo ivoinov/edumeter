@@ -44,4 +44,32 @@ class Core_Model_Form_Input_Select extends Core_Model_Form_Input_Abstract{
         }
         return true;
     }
+
+    protected function _getRequestValue() {
+        if($this->getMultiple()) {
+            $source = $this->getSource();
+            if(isset($source[$this->getName()]))
+                return $source[$this->getName()];
+        }
+        $source = $this->getSource();
+        foreach($this->getNameArray() as $key) {
+            if(isset($source[$key]))
+                $source = $source[$key];
+            else
+                return null;
+        }
+        return $source;
+    }
+
+    public function getNameArray() {
+        if(strpos($this->getHtmlName(), '[') === false)
+            return array($this->getHtmlName());
+        return array_map(function($item) { return trim($item, ']'); }, explode('[', $this->getHtmlName()));
+    }
+
+    public function isValid() {
+        if($this->getMultiple())
+            return true;
+        return parent::isValid();
+    }
 }

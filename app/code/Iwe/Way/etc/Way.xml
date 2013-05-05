@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<entity>
+			<iwe_way>
+				<entity>
+					<table>iwe_way_entity</table>
+					<key>id</key>
+					<attributes>
+						<id translate="label">
+							<label>ID</label>
+                            <type>number</type>
+                            <data_type>int</data_type>
+                            <identity>true</identity>
+						</id>
+                        <name translate="label">
+                            <label>Way name</label>
+                            <maxlength>255</maxlength>
+                        </name>
+                        <subjects translate="label">
+                            <label>Way subjects</label>
+                            <type>select</type>
+                            <options>iwe_subject/entity</options>
+                            <data_type>text</data_type>
+                            <multiple>1</multiple>
+                            <size>20</size>
+                            <html_name>subjects[]</html_name>
+                            <serializable>1</serializable>
+                        </subjects>
+					</attributes>
+				</entity>
+			</iwe_way>
+		</entity>
+	</global>
+	<admin>
+		<forms>
+			<iwe_way>
+				<entity translate="title,fieldset,tab">
+					<title>Way edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_way/entity</source>
+					<fields>
+                        <name/>
+                        <subjects/>
+					</fields>
+				</entity>
+			</iwe_way>
+		</forms>
+		<grids>
+			<iwe_way>
+				<entity translate="title">
+                    <title>Ways list</title>
+					<source>iwe_way/entity</source>
+					<fields>
+						<id />
+                        <name/>
+					</fields>
+				</entity>
+			</iwe_way>
+		</grids>
+	</admin>
+</config>

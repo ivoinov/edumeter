@@ -46,8 +46,12 @@ class Core_Block_Widget_Form_Input_Select extends Core_Block_Widget_Form_Input_A
 		$options_html = array();
 		if($this->getPlaceholder())
 				$options_html[] = "<option value='" . $this->getPlaceholderValue() . "'>" . $this->getPlaceholder() . "</option>";
-		foreach($options as $key => $value)
-			$options_html[] = "<option value='" . $key . "'" . ((string)$this->getValue() == (string)$key ? " selected" : "") . ">" . $value . "</option>";
+            foreach($options as $key => $value)
+                if(!is_array($this->getValue()))
+                    $options_html[] = "<option value='" . $key . "'" . ((string)$this->getValue() == (string)$key ? " selected" : "") . ">" . $value . "</option>";
+                else {
+                    $options_html[] = "<option value='" . $key . "'" . (in_array($key,$this->getValue()) ? " selected" : "") . ">" . $value . "</option>";
+                }
 		return implode('', $options_html);
 	}
 	
