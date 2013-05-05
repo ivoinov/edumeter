@@ -10,7 +10,8 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 {
     public function scriptAction()
     {
-        $file = BP . DS . 'convert' . DS . 'convert_2012MDMAT.txt';
+        set_time_limit(0);
+        $file = BP . DS . 'var' . DS . 'stat' . DS . 'convert_2012MDSPA.txt';
         $handle = fopen($file,'r+');
         while(!feof($handle))
         {
@@ -30,8 +31,8 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
                             ->setSchoolName($line[2])
                             ->setSchoolDistrict($district->getName())
                             ->setSchoolRegion($region->getName())
-                            ->setSubject('Українська мова')
-                            ->setWay('Точні науки')
+                            ->setSubject('Іспанська мова')
+                            ->setWay('Гуманітарні науки')
                             ->setPassedNumber($passedNumber)
                             ->setInterval1((int) round($line[3]/ 100 * $passedNumber ,2) )
                             ->setInterval2((int) round($line[4]/ 100 * $passedNumber ,2))
@@ -44,7 +45,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
                             ->setInterval9( (int)(round( $line[11]/ 100 * $passedNumber ,2) + round( $line[12]/ 100 * $passedNumber ,2)) )
                             ->save();
         }
-
+        fclose($handle);
     }
     public function getSchoolAddressAction()
     {
@@ -177,36 +178,4 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
         }
     }
 
-    public function calculateRateAction()
-    {
-        $schoolCollection = Seven::getCollection('iwe_school/school')->getOwn();
-        foreach($schoolCollection as $school)
-        {
-            $years = array(2008,2009,2010,2011);
-            foreach($years as $year)
-            {
-                $statCollection = Seven::getCollection('iwe_ratings/rating')
-                                ->filter('school_id',$school->getId())
-                                ->filter('year',$year);
-
-                $subjects = array();
-                $rateYear = 0;
-                if(count($statCollection)) {
-                    foreach($statCollection as $stat)
-                    {
-                        if(isset($subjects[$stat->getSubjectId()]))
-                            continue;
-                        $rateYear += ($stat->getRate() / $stat->getCount() );
-                        $subjects[$stat->getSubjectId()] = $stat->getSubjectId();
-                    }
-
-                $rate = Seven::getModel('iwe_school/rate')
-                    ->setSchoolId($school->getId())
-                    ->setYear($year)
-                    ->setRate($rateYear / count($subjects))
-                    ->save();
-                }
-            }
-        }
-    }
 }
