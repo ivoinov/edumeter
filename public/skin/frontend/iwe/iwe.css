@@ -210,7 +210,7 @@ footer .links li {
 
 .school-line {
     list-style: none;
-    height: 60px;
+    height: 45px;
     overflow: hidden;
     background: #888888;
     padding: 35px 0 8px;
@@ -243,11 +243,19 @@ footer .links li {
     text-decoration: none;
     color: white;
 }
-.school-line .info .description{
+.school-line .additional-information {
+    text-shadow: 0 -1px rgba(0,0,0,.8);
+    text-decoration: none;
+    color: white;
+    width: 1000px;
+}
+.school-line .additional-information .description{
      line-height: 25px;
      text-shadow: 0 -1px rgba(0,0,0,.8);
      text-decoration: none;
      color: white;
+    float: left;
+    padding: 10px 190px;
 }
 .school-line .info .address{
      line-height: 25px;
