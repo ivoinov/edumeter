@@ -16,7 +16,7 @@
                     <routes>
                         <way_stat translate="name">
                             <name>Way ratings</name>
-                            <controller>core/crud</controller>
+                            <controller>iwe_way/admin_stat_crud</controller>
                             <use>iwe_way/stat</use>
                         </way_stat>
                     </routes>

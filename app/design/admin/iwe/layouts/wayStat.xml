@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+	<admin_school_way_stat_index>
+        <reference name="grid_container">
+            <action method="addButton">
+                <id>update_way_stat</id>
+                <data translate="label">
+                    <label>Update way ratings</label>
+                    <type>button</type>
+                    <location>*/*/update_stat</location>
+                </data>
+            </action>
+        </reference>
+	</admin_school_way_stat_index>
+
+</layout>
