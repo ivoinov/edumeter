@@ -49,6 +49,7 @@ table {
     min-height: 100%;
     position: relative;
     background: #888888;
+    padding-bottom: 40px;
 }
 ﻿@font-face {
     font-family: 'hvcbold';
@@ -128,8 +129,11 @@ header .logo img {
 header .siteMenu a {
     font-weight: bold;
 }
+header .siteMenu p {
+    padding-top: 10px;
+}
 header .searchWrap {
-    padding: 0 30px 0 50px;
+    padding: 3px 30px 0 50px;
 }
 header .formSearch {
     position: relative;
@@ -157,13 +161,14 @@ footer {
     bottom: 0;
     left: 0;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
 }
 footer .logo {
     padding-left: 110px;
 }
 footer .links {
     padding-right: 10px;
+    padding-top: 15px;
 }
 footer .links li {
     padding-right: 20px;
