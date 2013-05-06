@@ -60,7 +60,9 @@
                             <label>Rate</label>
                             <description>School rate for current year</description>
                             <type>number</type>
-                            <datatype>tinyint</datatype>
+                            <data_type>float</data_type>
+                            <scale>4</scale>
+                            <precision>12</precision>
                         </rate>
                     </attributes>
                 </stat>
