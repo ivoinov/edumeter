@@ -29,6 +29,41 @@
                         </subjects>
 					</attributes>
 				</entity>
+                <stat>
+                    <table>iwe_stat_way</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                            <data_type>int</data_type>
+                            <identity>true</identity>
+                        </id>
+                        <way translate="label">
+                            <label>Way title</label>
+                            <type>select</type>
+                            <data_type>int</data_type>
+                            <options>iwe_way/entity</options>
+                        </way>
+                        <school translate="label">
+                            <label>School name</label>
+                            <type>select</type>
+                            <options>iwe_school/entity</options>
+                            <data_type>int</data_type>
+                        </school>
+                        <year translate="label">
+                            <label>Year</label>
+                            <type>select</type>
+                            <options>iwe_way/entity::getYearsOptions</options>
+                        </year>
+                        <rate translate="label">
+                            <label>Rate</label>
+                            <description>School rate for current year</description>
+                            <type>number</type>
+                            <datatype>tinyint</datatype>
+                        </rate>
+                    </attributes>
+                </stat>
 			</iwe_way>
 		</entity>
 	</global>
@@ -45,18 +80,40 @@
                         <subjects/>
 					</fields>
 				</entity>
+				<stat translate="title,fieldset,tab">
+					<title>Way rating edit from</title>
+					<fieldset>General</fieldset>
+					<tab>General</tab>
+					<source>iwe_way/stat</source>
+					<fields>
+                        <way />
+                        <school/>
+                        <year />
+                        <rate/>
+					</fields>
+				</stat>
 			</iwe_way>
 		</forms>
 		<grids>
 			<iwe_way>
-				<entity translate="title">
+                <entity translate="title">
                     <title>Ways list</title>
-					<source>iwe_way/entity</source>
-					<fields>
-						<id />
+                    <source>iwe_way/entity</source>
+                    <fields>
+                        <id />
                         <name/>
-					</fields>
-				</entity>
+                    </fields>
+                </entity>
+                <stat translate="title">
+                    <title>Ways ratings list</title>
+                    <source>iwe_way/stat</source>
+                    <fields>
+                        <way />
+                        <school/>
+                        <year />
+                        <rate/>
+                    </fields>
+                </stat>
 			</iwe_way>
 		</grids>
 	</admin>

@@ -18,4 +18,16 @@ class Iwe_Way_Model_Entity extends Core_Model_Entity
         }
         return $subjectArray;
     }
+
+    public function getYearsOptions()
+    {
+
+        return array(
+            2008 => 2008,
+            2009 => 2009,
+            2010 => 2010,
+            2011 => 2011,
+            2012 => 2012
+        );
+    }
 }

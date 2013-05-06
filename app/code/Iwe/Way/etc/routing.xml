@@ -12,6 +12,15 @@
                         </way>
                     </routes>
                 </content>
+                <school>
+                    <routes>
+                        <way_stat translate="name">
+                            <name>Way ratings</name>
+                            <controller>core/crud</controller>
+                            <use>iwe_way/stat</use>
+                        </way_stat>
+                    </routes>
+                </school>
 	        </routes>
         </routing>
     </admin>
