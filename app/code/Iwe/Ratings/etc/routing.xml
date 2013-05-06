@@ -8,7 +8,7 @@
                         <ratings translate="name">
                             <controller>core/crud</controller>
                             <use>iwe_ratings/subject_rate</use>
-                            <name>Ratings</name>
+                            <name>Subject ratings</name>
                         </ratings>
                     </routes>
                 </school>

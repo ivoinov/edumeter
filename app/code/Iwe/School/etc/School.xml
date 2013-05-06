@@ -126,7 +126,9 @@
 						</id>
 						<name />
                         <city/>
-                        <region_id/>
+                        <region_id>
+                            <output_callback>iwe_school/output::getRegionName</output_callback>
+                        </region_id>
 					</fields>
 				</entity>
 			</iwe_school>
