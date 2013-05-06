@@ -76,6 +76,6 @@ var school_list = new SchoolListWidgetClass({
 $(function(){
     school_list.setMap(map);
     $('#raius-filter-500').addClass('active');
-    $('#way-filter-global').addClass('active');
+    $('#way-filter-2').addClass('active');
     $('#year-filter-2011').addClass('active');
 })

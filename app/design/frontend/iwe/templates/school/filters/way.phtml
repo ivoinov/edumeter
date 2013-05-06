@@ -1,20 +1,23 @@
+<?php $wayCollection = Seven::getCollection('iwe_way/entity') ;?>
 <li class="schoolTypes fGroup" id="way-filter">
     <ul>
-        <li class="filter" id="way-filter-global">
-            <a href="javascript:school_list.changeWay('global')">все шкалы</a>
-            <span class="arrow"></span>
-        </li>
-        <li class="filter" id="way-filter-math" >
-            <a href="javascript:school_list.changeWay('math')">физико-математические</a>
-            <span class="arrow"></span>
-        </li>
-        <li class="filter"  id="way-filter-arts">
-            <a href="javascript:school_list.changeWay('arts')">гуманитарные</a>
-            <span class="arrow"></span>
-        </li>
-        <li class="filter"  id="way-filter-natural">
-            <a href="javascript:school_list.changeWay('natural')">естествознательные</a>
-            <span class="arrow"></span>
-        </li>
+        <?php foreach($wayCollection as $way ): ?>
+            <li class="filter" id="way-filter-<?php echo $way->getId();?>">
+                <a href="javascript:school_list.changeWay(<?php echo $way->getId();?>)"><?php echo $way->getName();?></a>
+                <span class="arrow"></span>
+            </li>
+        <?php endforeach; ?>
+<!--        <li class="filter" id="way-filter-math" >-->
+<!--            <a href="javascript:school_list.changeWay('math')">физико-математические</a>-->
+<!--            <span class="arrow"></span>-->
+<!--        </li>-->
+<!--        <li class="filter"  id="way-filter-arts">-->
+<!--            <a href="javascript:school_list.changeWay('arts')">гуманитарные</a>-->
+<!--            <span class="arrow"></span>-->
+<!--        </li>-->
+<!--        <li class="filter"  id="way-filter-natural">-->
+<!--            <a href="javascript:school_list.changeWay('natural')">естествознательные</a>-->
+<!--            <span class="arrow"></span>-->
+<!--        </li>-->
     </ul>
 </li>

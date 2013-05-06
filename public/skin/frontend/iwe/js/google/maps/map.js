@@ -25,8 +25,8 @@ var map = {
     visibleSchoolIds: [],
     radius : null,
     currentRadiusValue: 0,
-    way: 'global',
-    year: 2011,
+    way: '2',
+    year: 2012,
     init: function(options) {
         this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
         this.geocoder = new google.maps.Geocoder();

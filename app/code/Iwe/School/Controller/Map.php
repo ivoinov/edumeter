@@ -51,11 +51,11 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
     {
         if($rate === -1)
             return $this->_getSkinUrl('images/pin_red.png');
-        if($rate >= 1 && $rate <= 2.5)
+        if($rate < 150)
             $icon = 'red.png';
-        elseif($rate > 2.5 && $rate <= 4.5)
+        if($rate >= 150 && $rate < 170)
             $icon = 'blue.png';
-        else
+        if($rate >= 170)
             $icon = 'green.png';
         return $this->_getSkinUrl('images/'.'pin_'.$icon);
     }
