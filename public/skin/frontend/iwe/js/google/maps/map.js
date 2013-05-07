@@ -12,6 +12,16 @@
  * Time: 6:40 PM
  * To change this template use File | Settings | File Templates.
  */
+var infoBubble = new InfoBubble({
+    map: map,
+    shadowStyle: 1,
+    padding: 0,
+    backgroundColor: 'rgb(14,14,14)',
+    borderRadius: 10,
+    borderWidth: 0,
+    hideCloseButton: false
+});
+
 var map = {
     map: null,
     marker: [],
@@ -35,7 +45,6 @@ var map = {
         } else {
             this.setDefaultPosition();
         }
-
     },
     setSearchAddress: function(searchAddress)
     {
@@ -166,15 +175,9 @@ var map = {
         );
     },
     _bindEventOnMarker: function(marker, item) {
-        var infoBubble = new InfoBubble({
-            map: this.map,
-            content: $('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html(),
-            shadowStyle: 0
-        });
         google.maps.event.addListener(marker, 'click', function() {
-            if(!infoBubble.isOpen()) {
-                infoBubble.open(this.map,marker);
-            }
+            infoBubble.setContent($('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html());
+            infoBubble.open(this.map,marker);
         });
     },
     _radius: function(radiusValue)
@@ -213,5 +216,3 @@ $(function(){
     })
 
 });
-
-

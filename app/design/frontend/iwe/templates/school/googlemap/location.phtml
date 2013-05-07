@@ -1,8 +1,9 @@
 <script id="infowindow-template" type="text/x-jquery-tmpl">
-    {{if $data.title }}
-        Школа: <b>${title}</b><br/>
-        Рейтинг: <b>${rate}</b><br/>
-    {{/if}}
+    <div class="info-window">
+        <div class="rate">${rate}</div>
+        <div class="school-name">${title}</div>
+        <div class="arrow"><a class="close-button" href="#"></a></div>
+    </div>
 </script>
 <!--<div id="map-info"></div>-->
 <div id="map_canvas"></div>

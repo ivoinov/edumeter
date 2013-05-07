@@ -462,3 +462,49 @@ footer .links li {
 {
     display: block;
 }
+/* Map markers info windows */
+.info-window {
+    background: rgb(125,126,125);
+    background: -moz-linear-gradient(top,  rgb(125,126,125) 0%, rgb(14,14,14) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(125,126,125)), color-stop(100%,rgb(14,14,14)));
+    background: -webkit-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
+    background: -o-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
+    background: -ms-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
+    background: linear-gradient(to bottom,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+    height: 35px;
+    width: auto;
+    border-radius: 10px;
+}
+.info-window .rate {
+    padding: 5px 5px;
+    color: white;
+    text-align: right;
+    width: 15px;
+    font-size: 22px;
+    float: left;
+}
+
+.info-window .school-name {
+    float: left;
+    padding: 5px 0px 0px 30px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 -2px rgba(0,0,0,.9);
+    text-align:center;
+    vertical-align:middle;
+}
+
+.info-window .arrow {
+    float: left;
+    height: auto;
+    width: 35px;
+    text-align: right;
+}
+.info-window .arrow a {
+    height: 30px;
+    width: 35px;
+    background: url("images/arrow.png") no-repeat;
+    display: inline-block;
+}
