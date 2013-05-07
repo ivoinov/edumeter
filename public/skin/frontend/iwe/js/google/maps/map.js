@@ -19,7 +19,7 @@ var infoBubble = new InfoBubble({
     backgroundColor: 'rgb(14,14,14)',
     borderRadius: 10,
     borderWidth: 0,
-    hideCloseButton: false
+    hideCloseButton: true
 });
 
 var map = {
@@ -179,6 +179,11 @@ var map = {
             infoBubble.setContent($('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html());
             infoBubble.open(this.map,marker);
         });
+        google.maps.event.addListener(this.map, 'click', function() {
+            if(infoBubble.isOpen())
+                infoBubble.close();
+        });
+
     },
     _radius: function(radiusValue)
     {
