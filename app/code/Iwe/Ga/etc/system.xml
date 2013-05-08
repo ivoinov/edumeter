@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+        <forms>
+            <admin>
+                <system_config>
+                    <tabs>
+                        <ga translate="label">
+                            <label>Google analytics</label>
+                        </ga>
+                    </tabs>
+                    <fieldsets>
+                        <default_settings translate="label">
+                            <label>GA settings</label>
+                            <tab>ga</tab>
+                        </default_settings>
+                    </fieldsets>
+                    <fields>
+                        <ga_track_code translate="label">
+                            <label>GA track code</label>
+                            <fieldset>default_settings</fieldset>
+                            <tab>ga</tab>
+                        </ga_track_code>
+                    </fields>
+                    </system_config>
+                </admin>
+            </forms>
+        </admin>
+    </config>
