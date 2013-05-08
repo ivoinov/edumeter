@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="content">
+            <block type="core/template" template="Iwe/Ga/ga.phtml"/>
+        </reference>
+    </default>
+</layout>

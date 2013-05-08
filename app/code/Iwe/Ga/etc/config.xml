@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <modules>
+            <Iwe_Ga translate="description">
+                <author>Ilya Voinov</author>
+                <description>Enabled Google Analytics</description>
+                <version>0.1.0</version>
+            </Iwe_Ga>
+        </modules>
+    </global>
+</config>
