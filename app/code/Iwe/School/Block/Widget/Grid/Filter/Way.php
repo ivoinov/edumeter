@@ -18,7 +18,7 @@ class Iwe_School_Block_Widget_Grid_Filter_Way extends Core_Block_Widget_Grid_Fil
 
     public function  apply($collection, $grid)
     {
-        return $collection;
+        return;
     }
 
 }

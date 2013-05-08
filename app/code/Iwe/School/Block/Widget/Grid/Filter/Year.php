@@ -18,6 +18,6 @@ class Iwe_School_Block_Widget_Grid_Filter_Year extends Core_Block_Widget_Grid_Fi
 
     public function  apply($collection, $grid)
     {
-        return $collection;
+        return;
     }
 }

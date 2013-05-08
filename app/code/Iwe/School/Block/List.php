@@ -51,7 +51,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
             foreach($this->getColumns() as $id => $column) {
                 $content_row[$id] = $column->getCellValue($row);
             }
-            $content_row['rate'] = ($row->getData('rate')) ? $row->getData('rate') : $row->getRate() ;
+            $content_row['rate'] = round(($row->getData('rate')) ? $row->getData('rate') : $row->getRate()) ;
             $content['items'][] = $content_row;
         }
         return $content;

@@ -22,15 +22,7 @@ class Iwe_School_Block_Widget_Grid_Filter_Rate extends Core_Block_Widget_Grid_Fi
     {
         $way = $this->_getWayFilterValue();
         $year = $this->_getYearFilterValue();
-        if($way || $year) {
-            foreach($collection as $school) {
-                if(!$school->getId())
-                    continue;
-                $rate = $school->getRate($way,$year);
-                $school->setRate($rate);
-            }
-        }
-        return $collection;
+        return $collection->withRate($way, $year);
     }
 
 }
