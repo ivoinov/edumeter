@@ -484,6 +484,7 @@ footer .links li {
     font-size: 22px;
     float: left;
     font-weight: bold;
+    font-family: 'hvcbold', Helvetica;
     text-shadow: 0 -2px rgba(0,0,0,.9);
 }
 
@@ -492,6 +493,7 @@ footer .links li {
     padding: 8px 8px 0px 25px;
     color: white;
     font-size: 14px;
+    font-family: 'hvcbold', Helvetica;
     text-shadow: 0 -1px rgba(0,0,0,.9);
     text-align:center;
     vertical-align:middle;
@@ -508,4 +510,24 @@ footer .links li {
     width: 35px;
     background: url("images/arrow.png") no-repeat;
     display: inline-block;
+}
+
+/* 404 page */
+p.text-404 {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 65px;
+    text-shadow: 0 -2px rgba(255,255,255,.8);
+    font-family: 'hvcbold', Helvetica;
+}
+.image-404 {
+    text-align: center;
+    padding-top: 65px;
+}
+h1.page-not-found{
+    font-size: 35px;
+    text-align: center;
+    padding-top: 50px;
+    text-shadow: 0 -2px rgba(255,255,255,.8);
+    font-family: 'hvcbold', Helvetica;
 }

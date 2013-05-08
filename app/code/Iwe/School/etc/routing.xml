@@ -18,8 +18,13 @@
     </admin>
     <frontend>
         <routing>
-            <controller>iwe_school/map</controller>
-            <use>iwe_school/entity</use>
+            <routes>
+                <school>
+                    <name>School</name>
+                    <controller>iwe_school/map</controller>
+                    <use>iwe_school/entity</use>
+                </school>
+            </routes>
         </routing>
     </frontend>
 </config>
