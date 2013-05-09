@@ -8,7 +8,7 @@
                     <routes>
                         <school translate="name">
                             <controller>iwe_school/admin_crud</controller>
-                            <use>iwe_school/entity</use>
+                            <use>iwe_school/school</use>
                             <name>School</name>
                         </school>
                     </routes>

@@ -48,7 +48,7 @@
                         <school translate="label">
                             <label>School name</label>
                             <type>select</type>
-                            <options>iwe_school/entity</options>
+                            <options>iwe_school/school</options>
                             <data_type>int</data_type>
                         </school>
                         <year translate="label">

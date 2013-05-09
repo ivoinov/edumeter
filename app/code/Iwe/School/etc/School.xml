@@ -55,13 +55,65 @@
                         </latitude>
 					</attributes>
 				</entity>
+                <school>
+                    <table>iwe_school_entity</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                        </id>
+                        <name translate="label,description">
+                            <label>Name</label>
+                            <maxlength>255</maxlength>
+                            <required>1</required>
+                            <description>School name</description>
+                        </name>
+                        <region_id translate="label">
+                            <label>Region</label>
+                            <description>School's region</description>
+                            <type>select</type>
+                            <options>iwe_region/entity</options>
+                            <data_type>int</data_type>
+                        </region_id>
+                        <city>
+                            <label>City</label>
+                            <maxlength>255</maxlength>
+                        </city>
+                        <address>
+                            <label>School address</label>
+                            <maxlength>255</maxlength>
+                            <required>1</required>
+                            <description>School address</description>
+                        </address>
+                        <description>
+                            <label>Description</label>
+                            <type>textarea</type>
+                            <wysiwyg>1</wysiwyg>
+                            <nullable>1</nullable>
+                            <data_type>text</data_type>
+                        </description>
+                        <longitude>
+                            <label>Longitude</label>
+                            <data_type>float</data_type>
+                            <nullable>1</nullable>
+                            <description>School longitude</description>
+                        </longitude>
+                        <latitude>
+                            <label>Latitude</label>
+                            <description>School latitude</description>
+                            <data_type>float</data_type>
+                            <nullable>1</nullable>
+                        </latitude>
+                    </attributes>
+                </school>
 			</iwe_school>
 		</entity>
 	</global>
 	<admin>
 		<forms>
 			<iwe_school>
-				<entity translate="title,fieldset,tab">
+				<school translate="title,fieldset,tab">
 					<title>Edit from</title>
                     <tabs>
                         <general translate="label">
@@ -79,7 +131,7 @@
                             <label>Сoordinates</label>
                         </coords>
                     </fieldsets>
-					<source>iwe_school/entity</source>
+					<source>iwe_school/school</source>
 					<fields>
 						<name>
                             <tab>general</tab>
@@ -110,15 +162,14 @@
                             <tab>coords</tab>
                         </latitude>
 					</fields>
-				</entity>
+				</school>
 			</iwe_school>
 		</forms>
 		<grids>
 			<iwe_school>
-				<entity translate="title">
+				<school translate="title">
 					<title>School list</title>
-					<source>iwe_school/entity</source>
-                    <collection>iwe_school/entity</collection>
+					<source>iwe_school/school</source>
 					<use_ajax>1</use_ajax>
 					<fields>
 						<id>	
@@ -130,7 +181,7 @@
                             <output_callback>iwe_school/output::getRegionName</output_callback>
                         </region_id>
 					</fields>
-				</entity>
+				</school>
 			</iwe_school>
 		</grids>
 	</admin>

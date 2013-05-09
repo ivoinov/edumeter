@@ -118,7 +118,7 @@
                             <label>School</label>
                             <type>select</type>
                             <data_type>int</data_type>
-                            <options>iwe_school/entity</options>
+                            <options>iwe_school/school</options>
                         </school_id>
                         <year translate="label">
                             <label>Year</label>
