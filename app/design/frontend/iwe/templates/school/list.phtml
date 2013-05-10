@@ -10,7 +10,29 @@
             <h4 class="title"><a href="#">${name}</a></h4>
             <p class="address"><a href="#">${address}</a></p>
         </div>
-        <div class="charts left"><span style="color:#888888">some chrats</span></div>
+        <div class="charts left">
+            <dl>
+
+                {{each waysChart}}
+                    <dt>${name}</dt>
+                    <dd>
+                        <div class="${color}" style="width:${width}%;"><strong></strong></div>
+                    </dd>
+                {{/each}}
+<!--                <dt>точные</dt>-->
+<!--                <dd>-->
+<!--                    <div class="green" style="width:80%;"><strong></strong></div>-->
+<!--                </dd>-->
+<!--                <dt>гуманитарные</dt>-->
+<!--                <dd>-->
+<!--                    <div class="red" style="width:25%;"><strong></strong></div>-->
+<!--                </dd>-->
+<!--                <dt>естественные</dt>-->
+<!--                <dd>-->
+<!--                    <div class="yellow" style="width:55%;"><strong></strong></div>-->
+<!--                </dd>-->
+            </dl>
+        </div>
         <div class="btnHolder left"><a href="#" class="btn inline"></a></div>
         <div class="additional-information">
             <div class="description">{{html description}}</div>

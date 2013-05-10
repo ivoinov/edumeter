@@ -53,8 +53,46 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
             }
             $content_row['rate'] = round(($row->getData('rate')) ? $row->getData('rate') : $row->getRate()) ;
             $content_row['description'] = $row->getDescription();
+            $content_row['waysChart'] = $this->_getWaysRate($row->getSchool(), $row->getYear());
             $content['items'][] = $content_row;
+
         }
         return $content;
+    }
+
+    protected function _getWaysRate($schoolId, $year)
+    {
+        $result = array();
+        $wayStatCollection = Seven::getCollection('iwe_way/stat')
+                ->filter('way',array('neq' => 2))
+                ->filter('school',$schoolId)
+                ->filter('year', $year);
+        foreach($wayStatCollection as $wayStatObject) {
+            $rate = (int)$wayStatObject->getRate();
+            $result[] = array(
+                'color' => $this->_getLineColor($rate),
+                'width' => $this->_getLineWidth($rate),
+                'name'  => Seven::getModel('iwe_way/entity')->load($wayStatObject->getWay())->getName()
+            );
+        }
+            return $result;
+    }
+
+    protected function _getLineColor($rate)
+    {
+        $color = 'green';
+        $rate = round($rate);
+        if($rate < 150)
+            $color = 'red';
+        if($rate >= 150 && $rate < 170)
+            $color = 'yellow';
+        if($rate >= 170)
+            $color = 'green';
+        return $color;
+    }
+
+    protected function _getLineWidth($rate)
+    {
+        return round($rate * 100 / 200);
     }
 }

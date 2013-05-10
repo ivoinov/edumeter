@@ -212,7 +212,7 @@ footer .links li {
 
 .school-line {
     list-style: none;
-    height: 45px;
+    height: 65px;
     overflow: hidden;
     background: #888888;
     padding: 35px 0 8px;
@@ -270,7 +270,7 @@ footer .links li {
 }
 .school-list .btnHolder
 {
-    width: 135px;
+    width: 40px;
     text-align: right;
 }
 .school-list .btnHolder .btn
@@ -532,4 +532,75 @@ h1.page-not-found{
     padding-top: 50px;
     text-shadow: 0 -2px rgba(255,255,255,.8);
     font-family: 'hvcbold', Helvetica;
+}
+
+/* Charts */
+div.charts dl {
+    margin: 0;
+    padding: 0;
+}
+div.charts dt {
+    position: relative; /* IE is dumb */
+    clear: both;
+    display: block;
+    float: left;
+    width: 120px;
+    height: 10px;
+    line-height: 20px;
+    margin-right: 17px;
+    font-size: .75em;
+    text-align: right;
+}
+div.charts dd {
+    position: relative; /* IE is dumb */
+    display: block;
+    float: left;
+    width: 197px;
+    height: 10px;
+    margin: 0 0 15px;
+    background: rgb(85,85,85);
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.9);
+}
+div.charts dd div {
+    position: relative;
+    height: 10px;
+    border-radius: 15px;
+    text-align:right;
+}
+
+div.charts dd div.green
+{
+    background: rgb(182,224,38);
+    background: -moz-linear-gradient(left,  rgb(182,224,38) 0%, rgb(171,220,40) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(182,224,38)), color-stop(100%,rgb(171,220,40)));
+    background: -webkit-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
+    background: -o-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
+    background: -ms-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
+    background: linear-gradient(to right,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6e026', endColorstr='#abdc28',GradientType=1 );
+}
+
+div.charts dd div.red
+{
+    background: rgb(254,187,187);
+    background: -moz-linear-gradient(left,  rgb(254,187,187) 0%, rgb(254,144,144) 45%, rgb(255,92,92) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(254,187,187)), color-stop(45%,rgb(254,144,144)), color-stop(100%,rgb(255,92,92)));
+    background: -webkit-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
+    background: -o-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
+    background: -ms-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
+    background: linear-gradient(to right,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 );
+}
+
+div.charts dd div.yellow
+{
+    background: rgb(241,231,103);
+    background: -moz-linear-gradient(left,  rgb(241,231,103) 0%, rgb(254,182,69) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(241,231,103)), color-stop(100%,rgb(254,182,69)));
+    background: -webkit-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
+    background: -o-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
+    background: -ms-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
+    background: linear-gradient(to right,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=1 );
 }
