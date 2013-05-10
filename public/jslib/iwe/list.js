@@ -58,7 +58,19 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
                 "year": year
             }
         );
+    },
+    openItemView: function(element, accardion) {
+        ListWidgetClass.prototype.openItemView.apply(this, arguments);
+        if($(element).is('.opened')) {
+            $('div.btnHolder a',element).removeClass('close');
+            $('div.btnHolder a',element).addClass('open');
+        } else {
+            $('div.btnHolder a',element).removeClass('open');
+            $('div.btnHolder a',element).addClass('close');
+
+        }
     }
+
 
 });
 
