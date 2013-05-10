@@ -197,6 +197,29 @@ footer .links li {
 #location{width: 100%;margin: 0 auto;position: relative;}
 #map_canvas{height: 350px;width: 100%}
 
+#map_show_control
+{
+    width: 40px;
+    text-align: right;
+}
+#map_show_control a
+{
+    width: 43px;
+    height: 43px;
+    display: inline-block;
+    background: url("images/circle-arrow.png");
+    text-decoration: none;
+    color: white;
+}
+#map_show_control a.show
+{
+    background: url("images/circle-arrow-down.png");
+}
+#map_show_control a.hide
+{
+    background: url("images/circle-arrow-up.png");
+}
+
 /*Stat school list*/
 .school-list .grid {
     margin: 0;

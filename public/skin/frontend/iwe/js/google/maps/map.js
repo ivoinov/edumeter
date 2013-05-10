@@ -45,6 +45,11 @@ var map = {
         } else {
             this.setDefaultPosition();
         }
+        var homeControlDiv = document.createElement('div');
+        var homeControl = new this.showHideMap(homeControlDiv,this);
+
+        homeControlDiv.index = 1;
+        this.map.controls[google.maps.ControlPosition.LEFT_CENTER].push(homeControlDiv);
     },
     setSearchAddress: function(searchAddress)
     {
@@ -211,6 +216,29 @@ var map = {
         else
             this.radius.setRadius(this.currentRadiusValue);
         this.map.fitBounds(this.radius.getBounds());
+    },
+    showHideMap: function(controlDiv,that) {
+        controlDiv.style.padding = '7px';
+        var controlUI = document.getElementById('map_show_control');
+        controlUI.style.cursor = 'pointer';
+        controlUI.title = 'Скрыть/Показать список школ';
+        controlDiv.appendChild(controlUI);
+
+        google.maps.event.addDomListener(controlUI, 'click', function() {
+            if($('div.school-list').css('display') == 'none') {
+                $('#map_canvas').css('height','350px');
+                $('div.school-list').toggle('slow');
+                $('#map_show_control a').removeClass('hide');
+                $('#map_show_control a').addClass('show');
+            } else {
+                $('#map_canvas').css('height','95%');
+                $('div.school-list').toggle('slow');
+                $('#map_show_control a').removeClass('show');
+                $('#map_show_control a').addClass('hide');
+            }
+            google.maps.event.trigger(that.map, 'resize');
+            that.map.fitBounds(that.radius.getBounds());
+        });
     }
 }
 $(function(){
