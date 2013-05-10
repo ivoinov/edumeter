@@ -20,29 +20,29 @@
                     <block name="message" wrapper=".messages" type="core/message" template = "page/message.phtml"/>
                     <block name="google.map" type="core/array" wrapper="#location"/>
                 </block>
-                <block name="footer"  after="content" type="core/widget_menu" template="page/footer.phtml">
-                    <action method="addItem">
-                        <id>about</id>
-                        <data>
-                            <url>/</url>
-                            <label>О нас</label>
-                        </data>
-                    </action>
-                    <action method="addItem">
-                        <id>questions</id>
-                        <data>
-                            <url>/</url>
-                            <label>Вопросы</label>
-                        </data>
-                    </action>
-                    <action method="addItem">
-                        <id>contact</id>
-                        <data>
-                            <url>/</url>
-                            <label>Контакты</label>
-                        </data>
-                    </action>
-                </block>
+                <!--<block name="footer"  after="content" type="core/widget_menu" template="page/footer.phtml">-->
+                    <!--<action method="addItem">-->
+                        <!--<id>about</id>-->
+                        <!--<data>-->
+                            <!--<url>/</url>-->
+                            <!--<label>О нас</label>-->
+                        <!--</data>-->
+                    <!--</action>-->
+                    <!--<action method="addItem">-->
+                        <!--<id>questions</id>-->
+                        <!--<data>-->
+                            <!--<url>/</url>-->
+                            <!--<label>Вопросы</label>-->
+                        <!--</data>-->
+                    <!--</action>-->
+                    <!--<action method="addItem">-->
+                        <!--<id>contact</id>-->
+                        <!--<data>-->
+                            <!--<url>/</url>-->
+                            <!--<label>Контакты</label>-->
+                        <!--</data>-->
+                    <!--</action>-->
+                <!--</block>-->
             </block>
         </block>
     </default>
