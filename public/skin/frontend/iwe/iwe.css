@@ -162,6 +162,16 @@ header .formSearch .btnClear {
     top: 10px;
     right: 5px;
 }
+
+header div.description
+{
+    padding: 17px 5px;
+    color: white;
+    font-size: 16px;
+    font-family: 'hvcbold', Helvetica;
+    text-shadow: 0 -2px rgba(120,120,120,.9);
+
+}
 footer {
     width: 100%;
     bottom: 0;

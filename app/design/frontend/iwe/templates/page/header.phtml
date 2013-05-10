@@ -18,11 +18,15 @@
     <div class="centered clearfix">
         <div class="logo left">
             <img src="<?php echo $this->getSkinUrl('images/logo.png'); ?>" alt="Edimeter logo" />
+
+        </div>
+        <div class="description left">
+            <span> рейтинг школ Украины по результатам ВНО</span>
         </div>
         <div class="siteMenu right">
             <div class="searchWrap left">
                 <form class="formSearch" method="post" onsubmit="return map.search($('#searchAddressValue').val())" >
-                    <input id="searchAddressValue" name ="searchAddressValue" type="text" class="txtSearch inline" />
+                    <input id="searchAddressValue" name ="searchAddressValue" type="text" class="txtSearch inline" placeholder="Введите свой адрес"/>
                 </form>
             </div>
         </div>
