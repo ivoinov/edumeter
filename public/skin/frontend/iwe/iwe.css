@@ -115,7 +115,7 @@ footer .links,
 }
 
 header, footer{
-    height: 40px;
+    height: 30px;
     line-height: 15px;
     background: black;
 }
@@ -138,16 +138,13 @@ header .siteMenu a {
 header .siteMenu p {
     padding-top: 10px;
 }
-header .searchWrap {
-    padding: 3px 30px 0 50px;
-}
 header .formSearch {
     position: relative;
 }
 
 header .formSearch .txtSearch {
     width: 285px;
-    height: 30px;
+    height: 28px;
     padding: 0 25px 0 30px;
     border: 0 none;
     border-radius: 45px;
@@ -165,13 +162,14 @@ header .formSearch .btnClear {
 
 header div.description
 {
-    padding: 17px 5px;
+    padding-top: 5px;
     color: white;
     font-size: 16px;
     font-family: 'hvcbold', Helvetica;
     text-shadow: 0 -2px rgba(120,120,120,.9);
 
 }
+header span.logo-text {font-size: 22px;}
 footer {
     width: 100%;
     bottom: 0;
