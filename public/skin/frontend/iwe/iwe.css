@@ -189,6 +189,9 @@ footer .links li {
     float: left;
 }
 /*CONTENT*/
+#centered_content {
+    padding-top: 30px;
+}
 .content{
     padding: 0 0 60px;
 }
