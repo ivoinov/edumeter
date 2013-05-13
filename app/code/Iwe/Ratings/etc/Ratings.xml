@@ -104,6 +104,12 @@
                             <nullable>1</nullable>
                             <description>195-200</description>
                         </interval9>
+                        <interval10 translate="label">
+                            <label>Passed number</label>
+                            <type>number</type>
+                            <nullable>1</nullable>
+                            <description>195-200</description>
+                        </interval10>
                     </attributes>
                 </entity>
                 <subject_rate>

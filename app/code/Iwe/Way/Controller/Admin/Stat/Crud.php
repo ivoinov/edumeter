@@ -17,8 +17,8 @@ class Iwe_Way_Controller_Admin_Stat_Crud extends Core_Controller_Crud_Crud
     public function updateStatAction()
     {
         set_time_limit(0);
-        $years = array(2008, 2009, 2010, 2011, 2012);
-        $schoolCollection = Seven::getCollection('iwe_school/entity');
+        $years = array(2012);
+        $schoolCollection = Seven::getCollection('iwe_school/school')->filter('region_id',6);
         foreach ($schoolCollection as $school) {
             foreach ($years as $year) {
                 foreach (Seven::getCollection('iwe_way/entity') as $way) {
