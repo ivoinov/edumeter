@@ -154,8 +154,16 @@ var map = {
     },
     _placeScool: function(location) {
         this._deleteMarkers();
+        var mapRadius = this._getMapRadius();
         var that = this;
-        var url = _url('*/*/getschool',{'ajax':1,'way': that.way,'year': that.year })
+        var url = _url('*/*/getschool',{
+            'ajax':1,
+            'way': that.way,
+            'year': that.year,
+            'longitude': that.current_position.lng(),
+            'latitude': that.current_position.lat(),
+            'viewableRadius': mapRadius
+        })
         $.post(url,
             function(data) {
                 for(var i = 0; i < data.length; i++) {
@@ -178,6 +186,24 @@ var map = {
                 }
             }, 'json'
         );
+    },
+    _getMapRadius: function() {
+        var bounds = this.map.getBounds();
+
+        var center = bounds.getCenter();
+        var ne = bounds.getNorthEast();
+
+        var r = 6372795;
+
+        var lat1 = center.lat() / 57.2958;
+        var lon1 = center.lng() / 57.2958;
+        var lat2 = ne.lat() / 57.2958;
+        var lon2 = ne.lng() / 57.2958;
+
+        var dis = r * Math.acos(Math.sin(lat1) * Math.sin(lat2) +
+            Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1));
+
+        return dis;
     },
     _bindEventOnMarker: function(marker, item) {
         google.maps.event.addListener(marker, 'click', function() {

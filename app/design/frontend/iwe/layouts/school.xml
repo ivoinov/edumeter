@@ -2,7 +2,7 @@
 <layout version="0.1.0">
     <school_index>
         <reference name="head">
-            <action method="addJs"><script>http://maps.google.com/maps/api/js?sensor=false</script></action>
+            <action method="addJs"><script>http://maps.google.com/maps/api/js?sensor=true&amp;libraries=geometry</script></action>
             <action method="addJs"><script>http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js</script></action>
             <action method="addJs"><script>js/google/maps/map.js</script><type>skin</type></action>
             <action method="addJs"><script>jquery/jquery.tmpl.js</script><type>lib</type></action>

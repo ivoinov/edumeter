@@ -26,7 +26,12 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $result = array();
         $way = $this->getRequest()->getParam('way');
         $year = $this->getRequest()->getParam('year');
-        $collection = Seven::getCollection('iwe_school/entity')->withRate($way, $year);
+        $currentLongitude = $this->getRequest()->getParam('longitude');
+        $currentLatitude = $this->getRequest()->getParam('latitude');
+        $radius = round($this->getRequest()->getParam('viewableRadius'));
+        $collection = Seven::getCollection('iwe_school/entity')
+            ->getInCurrentRadius($currentLongitude,$currentLatitude,$radius)
+            ->withRate($way, $year);
         foreach($collection as $school)
         {
             $rate = round($school->getData('rate'));
