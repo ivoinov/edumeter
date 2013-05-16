@@ -70,6 +70,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
         foreach($wayStatCollection as $wayStatObject) {
             $rate = (int)$wayStatObject->getRate();
             $result[] = array(
+                'rate' => (int)$wayStatObject->getRate(),
                 'color' => $this->_getLineColor($rate),
                 'width' => $this->_getLineWidth($rate),
                 'name'  => Seven::getModel('iwe_way/entity')->load($wayStatObject->getWay())->getName()
