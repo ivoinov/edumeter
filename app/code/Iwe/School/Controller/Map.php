@@ -59,7 +59,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         if($rate < 150)
             $icon = 'red.png';
         if($rate >= 150 && $rate < 170)
-            $icon = 'blue.png';
+            $icon = 'yellow.png';
         if($rate >= 170)
             $icon = 'green.png';
         return $this->_getSkinUrl('images/'.'pin_'.$icon);
