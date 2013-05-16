@@ -69,9 +69,20 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
             $('div.btnHolder a',element).addClass('close');
 
         }
+    },
+    redraw: function() {
+        var list = this;
+        var toBind = $(".notbinded", $(list.elements.list));
+        toBind.on('click', function(e) {
+            console.log(e.target);
+            if($(e.target).is("input, textarea, select, button,img"))
+                return;
+            list.openItemView(this);
+        });
+        toBind.removeClass('notbinded');
+        $(list.elements.items).filter('.even').removeClass('even');
+        $(list.elements.items).filter(':nth-child(even)').addClass('even');
     }
-
-
 });
 
 var school_list = new SchoolListWidgetClass({
