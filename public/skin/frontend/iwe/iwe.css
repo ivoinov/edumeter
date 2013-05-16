@@ -196,7 +196,7 @@ footer .links li {
     padding: 0 0 60px;
 }
 #location{width: 100%;margin: 0 auto;position: relative;}
-#map_canvas{height: 70%;width: 100%}
+#map_canvas{height: 65%;width: 100%}
 
 #map_show_control
 {
@@ -443,7 +443,7 @@ footer .links li {
 }
 /*Filters */
 .filters {
-    padding: 10px 0 60px;
+    padding: 10px 0 25px;
 }
 
 .filters li {
