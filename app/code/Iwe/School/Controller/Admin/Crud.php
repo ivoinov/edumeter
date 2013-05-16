@@ -63,12 +63,11 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
     {
         $collection = Seven::getCollection('iwe_school/school')
             ->filter('longitude', array('null' => 'null'))
-            ->filter('latitude', array('null' => 'null'))
-            ->filter('region_id',6);
+            ->filter('latitude', array('null' => 'null'));
 
         foreach ($collection as $school) {
             if ($school->getAddress()) {
-                $address = 'м. Житомир, '.$school->getAddress();
+                $address = $school->getAddress();
                 $this->_saveSchoolCoords($address, $school);
 
             } else {
@@ -135,7 +134,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
     public function assignSchoolAction()
     {
-        $schoolCollection = Seven::getCollection('iwe_school/school')->filter('region_id',6);
+        $schoolCollection = Seven::getCollection('iwe_school/school');
         foreach ($schoolCollection as $id => $school) {
             $statEntityCollection = Seven::getCollection('iwe_ratings/entity')
                 ->filter('school_name', array('like' => '%' . $school->getName() . '%'))
