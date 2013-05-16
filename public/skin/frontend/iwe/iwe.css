@@ -412,7 +412,7 @@ footer .links li {
     text-align: center;
 }
 
-.clear {
+.clear .clearfix {
     clear: both;
 }
 
@@ -517,7 +517,7 @@ footer .links li {
     background: -ms-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
     background: linear-gradient(to bottom,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
-    height: 35px;
+    height: 55px;
     width: auto;
     border-radius: 10px;
 }
@@ -535,7 +535,7 @@ footer .links li {
 
 .info-window .school-name {
     float: left;
-    padding: 8px 8px 0px 25px;
+    padding: 8px 8px 10px 25px;
     color: white;
     font-size: 14px;
     font-family: 'hvcbold', Helvetica;
@@ -543,7 +543,12 @@ footer .links li {
     text-align:center;
     vertical-align:middle;
 }
-
+.info-window .distance {
+    color: white;
+    padding-left: 50px;
+    font-family: 'hvcbold', Helvetica;
+    text-shadow: 0 -1px rgba(0,0,0,.8);
+}
 .info-window .arrow {
     float: left;
     height: auto;

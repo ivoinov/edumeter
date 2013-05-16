@@ -2,6 +2,13 @@
     <div class="info-window">
         <div class="rate">${rate}</div>
         <div class="school-name">${title}</div>
+        <div class="distance clearfix">Расстояние:
+            {{if distance < 900 }}
+                ${distance} м
+            {{else}}
+                ${distance / 1000} км
+            {{/if}}
+        </div>
 <!--        <div class="arrow"><a class="close-button" href="#"></a></div>-->
     </div>
 </script>
