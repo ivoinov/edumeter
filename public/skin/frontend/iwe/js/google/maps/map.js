@@ -12,16 +12,6 @@
  * Time: 6:40 PM
  * To change this template use File | Settings | File Templates.
  */
-var infoBubble = new InfoBubble({
-    map: map,
-    shadowStyle: 1,
-    padding: 0,
-    backgroundColor: 'rgb(14,14,14)',
-    borderRadius: 10,
-    borderWidth: 0,
-    hideCloseButton: true
-});
-
 var map = {
     map: null,
     marker: [],
@@ -35,6 +25,7 @@ var map = {
     visibleSchoolIds: [],
     radius : null,
     currentRadiusValue: 0,
+    infoBubble: null,
     way: '2',
     year: 2012,
     init: function(options) {
@@ -75,6 +66,9 @@ var map = {
         this.update_address_line = false;
         this.setLocationByAddress(location);
         return false;
+    },
+    setInfoBuble: function(infoBuble) {
+      this.infoBubble = infoBuble;
     },
     setDefaultPosition: function() {
         this.setLocationByAddress("Киев");
@@ -206,15 +200,19 @@ var map = {
         return dis;
     },
     _bindEventOnMarker: function(marker, item) {
+        var that = this;
         google.maps.event.addListener(marker, 'click', function() {
-            infoBubble.setContent($('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html());
-            infoBubble.open(this.map,marker);
+            that.infoBubble.setContent($('<div class="school-infowindow-content"></div>').wrapInner($("#infowindow-template").tmpl(item)).html());
+            that.infoBubble.open(this.map,marker);
         });
         google.maps.event.addListener(this.map, 'click', function() {
-            if(infoBubble.isOpen())
-                infoBubble.close();
+            if(that.infoBubble.isOpen())
+                that.infoBubble.close();
         });
-
+        google.maps.event.addListener(this.radius, 'click', function() {
+            if(that.infoBubble.isOpen())
+                that.infoBubble.close();
+        });
     },
     _radius: function(radiusValue)
     {
@@ -274,5 +272,13 @@ $(function(){
         center: new google.maps.LatLng(48,32),
         scrollwheel: false
     })
-
+    map.setInfoBuble(new InfoBubble({
+        map: map.map,
+        shadowStyle: 1,
+        padding: 0,
+        backgroundColor: 'rgb(14,14,14)',
+        borderRadius: 10,
+        borderWidth: 0,
+        hideCloseButton: true
+    }) );
 });
