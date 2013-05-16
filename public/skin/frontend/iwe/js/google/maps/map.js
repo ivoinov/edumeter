@@ -252,7 +252,7 @@ var map = {
 
         google.maps.event.addDomListener(controlUI, 'click', function() {
             if($('div.school-list').css('display') == 'none') {
-                $('#map_canvas').css('height','350px');
+                $('#map_canvas').css('height','65%');
                 $('div.school-list').toggle('slow');
                 $('#map_show_control a').removeClass('hide');
                 $('#map_show_control a').addClass('show');
@@ -271,7 +271,8 @@ $(function(){
     map.init({
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: new google.maps.LatLng(48,32)
+        center: new google.maps.LatLng(48,32),
+        scrollwheel: false
     })
 
 });
