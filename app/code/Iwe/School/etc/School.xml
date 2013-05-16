@@ -24,6 +24,11 @@
                             <options>iwe_region/entity</options>
                             <data_type>int</data_type>
                         </region_id>
+                        <district_id>
+                            <label>District</label>
+                            <description>School's district</description>
+                            <data_type>int</data_type>
+                        </district_id>
                         <city>
                             <label>City</label>
                             <maxlength>255</maxlength>
@@ -53,6 +58,10 @@
                             <data_type>float</data_type>
                             <nullable>1</nullable>
                         </latitude>
+                        <search_str>
+                            <label>Search str</label>
+                            <nullable>1</nullable>
+                        </search_str>
 					</attributes>
 				</entity>
                 <school>
@@ -76,6 +85,11 @@
                             <options>iwe_region/entity</options>
                             <data_type>int</data_type>
                         </region_id>
+                        <district_id>
+                            <label>District</label>
+                            <description>School's district</description>
+                            <data_type>int</data_type>
+                        </district_id>
                         <city>
                             <label>City</label>
                             <maxlength>255</maxlength>
@@ -105,6 +119,10 @@
                             <data_type>float</data_type>
                             <nullable>1</nullable>
                         </latitude>
+                        <search_str>
+                            <label>Search str</label>
+                            <nullable>1</nullable>
+                        </search_str>
                     </attributes>
                 </school>
 			</iwe_school>

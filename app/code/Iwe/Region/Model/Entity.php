@@ -14,7 +14,7 @@ class Iwe_Region_Model_Entity extends Core_Model_Entity
         $options = array();
         foreach($regionCollection as $region)
         {
-            $options[$region->getAdditionalId()] = $region->getName();
+            $options[$region->getId()] = $region->getName();
         }
         return $options;
     }

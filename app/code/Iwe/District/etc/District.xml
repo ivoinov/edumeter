@@ -23,7 +23,7 @@
 						</region_id>
 						<additional_id translate="label">
 							<label>Additional id</label>
-                            <type>number</type>
+                            <data_type>varchar</data_type>
 						</additional_id>
 					</attributes>
 				</entity>

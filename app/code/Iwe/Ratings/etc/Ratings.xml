@@ -20,32 +20,28 @@
                             <type>text</type>
                             <maxlength>255</maxlength>
                         </school_name>
-                        <school_type translate="label">
-                            <label>School type</label>
-                            <type>text</type>
-                            <maxlength>255</maxlength>
-                            <nullable>1</nullable>
-                        </school_type>
-                        <school_district translate="label">
+                        <district_id translate="label">
                             <label>School district</label>
-                            <type>text</type>
-                            <maxlength>255</maxlength>
-                        </school_district>
-                        <school_region translate="label">
+                            <type>number</type>
+                        </district_id>
+                        <region_id translate="label">
                             <label>School region</label>
-                            <type>text</type>
-                            <maxlength>255</maxlength>
-                        </school_region>
-                        <subject translate="label">
+                            <type>select</type>
+                            <options>iwe_region/entity</options>
+                            <data_type>int</data_type>
+                        </region_id>
+                        <subject_id translate="label">
                             <label>Subject</label>
-                            <type>text</type>
-                            <maxlength>255</maxlength>
-                        </subject>
-                        <way translate="label">
+                            <type>select</type>
+                            <options>iwe_subject/entity</options>
+                            <data_type>int</data_type>
+                        </subject_id>
+                        <way_id translate="label">
                             <label>Way</label>
-                            <type>text</type>
-                            <maxlength>255</maxlength>
-                        </way>
+                            <type>select</type>
+                            <options>iwe_way/entity</options>
+                            <data_type>int</data_type>
+                        </way_id>
                         <passed_number translate="label">
                             <label>Passed number</label>
                             <type>number</type>
