@@ -77,6 +77,10 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
             console.log(e.target);
             if($(e.target).is("input, textarea, select, button,img"))
                 return;
+            if($(e.target).is("a")) {
+                list.openItemView(this);
+                return false;
+            }
             list.openItemView(this);
         });
         toBind.removeClass('notbinded');
