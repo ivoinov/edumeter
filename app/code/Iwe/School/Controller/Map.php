@@ -106,8 +106,8 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $ad = atan2($y, $x);
         $dist = (int)($ad * 6372795);
         if($dist < 900)
-            return round($dist,2) . 'м';
-        return round($dist / 1000, 2) . 'км';
+            return round($dist,2) . ' м';
+        return round($dist / 1000, 2) . ' км';
 
     }
 }

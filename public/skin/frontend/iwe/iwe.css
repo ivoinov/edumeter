@@ -521,44 +521,21 @@ footer .links li {
     width: auto;
     border-radius: 10px;
 }
-.info-window .rate {
-    padding: 5px 5px;
-    color: white;
-    text-align: right;
-    width: 15px;
-    font-size: 22px;
+.info-window .distance {
+    padding: 15px;
+    color: #A9A9A9;
+    text-align: center;
+    font-size: 18px;
     float: left;
     font-weight: bold;
     font-family: 'hvcbold', Helvetica;
     text-shadow: 0 -2px rgba(0,0,0,.9);
 }
-
-.info-window .school-name {
-    float: left;
-    padding: 8px 8px 10px 25px;
-    color: white;
-    font-size: 14px;
-    font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -1px rgba(0,0,0,.9);
-    text-align:center;
-    vertical-align:middle;
-}
-.school-name {
-    word-wrap: break-word;
-    width: 250px;
-}
-.info-window .distance {
-    color: white;
-    padding-left: 50px;
-    font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -1px rgba(0,0,0,.8);
-}
-.info-window .arrow {
-    float: left;
+.info-window .rate {
     height: auto;
     width: 35px;
-    text-align: right;
-    font-size: 22px;
+    text-align: center;
+    font-size: 27px;
     float: left;
     font-weight: bold;
     font-family: 'hvcbold', Helvetica;
@@ -566,13 +543,20 @@ footer .links li {
     text-shadow: 0 -2px rgba(0,0,0,.9);
     padding: 10px;
 }
-.info-window .arrow a {
-    height: 30px;
-    width: 35px;
-    background: url("images/arrow.png") no-repeat;
-    display: inline-block;
+.info-window .school-name {
+    float: left;
+    padding: 8px 8px 10px 25px;
+    color: white;
+    font-size: 14px;
+    font-family: 'hvcbold', Helvetica;
+    text-shadow: 0 -1px rgba(0,0,0,.9);
+    text-align:left;
+    vertical-align:middle;
 }
-
+.school-name {
+    word-wrap: break-word;
+    width: 250px;
+}
 /* 404 page */
 p.text-404 {
     font-size: 25px;
