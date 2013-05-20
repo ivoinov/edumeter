@@ -68,9 +68,9 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
                 ->filter('school',$schoolId)
                 ->filter('year', $year);
         foreach($wayStatCollection as $wayStatObject) {
-            $rate = (int)$wayStatObject->getRate();
+            $rate = round($wayStatObject->getRate());
             $result[] = array(
-                'rate' => (int)$wayStatObject->getRate(),
+                'rate' => $rate,
                 'color' => $this->_getLineColor($rate),
                 'width' => $this->_getLineWidth($rate),
                 'name'  => Seven::getModel('iwe_way/entity')->load($wayStatObject->getWay())->getName()
