@@ -104,6 +104,10 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $y = sqrt(pow($cl2 * $sdelta, 2) + pow($cl1 * $sl2 - $sl1 * $cl2 * $cdelta, 2));
         $x = $sl1 * $sl2 + $cl1 * $cl2 * $cdelta;
         $ad = atan2($y, $x);
-        return  (int)($ad * 6372795);
+        $dist = (int)($ad * 6372795);
+        if($dist < 900)
+            return round($dist,2) . 'м';
+        return round($dist / 1000, 2) . 'км';
+
     }
 }

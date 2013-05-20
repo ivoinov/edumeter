@@ -543,6 +543,10 @@ footer .links li {
     text-align:center;
     vertical-align:middle;
 }
+.school-name {
+    word-wrap: break-word;
+    width: 250px;
+}
 .info-window .distance {
     color: white;
     padding-left: 50px;
@@ -554,6 +558,13 @@ footer .links li {
     height: auto;
     width: 35px;
     text-align: right;
+    font-size: 22px;
+    float: left;
+    font-weight: bold;
+    font-family: 'hvcbold', Helvetica;
+    color: #ffffff;
+    text-shadow: 0 -2px rgba(0,0,0,.9);
+    padding: 10px;
 }
 .info-window .arrow a {
     height: 30px;
