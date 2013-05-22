@@ -523,6 +523,7 @@ footer .links li {
 }
 .info-window .distance {
     padding-top: 15px;
+    padding-right: 5px;
     color: #A9A9A9;
     text-align: center;
     font-size: 18px;

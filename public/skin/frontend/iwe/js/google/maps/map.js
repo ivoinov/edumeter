@@ -279,7 +279,6 @@ $(function(){
         backgroundColor: 'rgb(14,14,14)',
         borderRadius: 10,
         borderWidth: 0,
-        hideCloseButton: true,
-        minWidth:'450'
+        hideCloseButton: true
     }) );
 });
