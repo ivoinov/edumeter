@@ -94,6 +94,6 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
 
     protected function _getLineWidth($rate)
     {
-        return round($rate * 100 / 200);
+        return round(($rate - 100) * 200 / 100);
     }
 }

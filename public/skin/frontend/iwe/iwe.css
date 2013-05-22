@@ -600,7 +600,7 @@ div.charts dd {
     position: relative; /* IE is dumb */
     display: block;
     float: left;
-    width: 197px;
+    width: 200px;
     height: 10px;
     margin: 0 0 15px;
     background: rgb(85,85,85);
