@@ -508,7 +508,8 @@ footer .links li {
     display: block;
 }
 /* Map markers info windows */
-.info-window {
+.info-window
+{
     background: rgb(125,126,125);
     background: -moz-linear-gradient(top,  rgb(125,126,125) 0%, rgb(14,14,14) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(125,126,125)), color-stop(100%,rgb(14,14,14)));
@@ -517,45 +518,38 @@ footer .links li {
     background: -ms-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
     background: linear-gradient(to bottom,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
-    height: 55px;
-    width: auto;
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    display: table;
     border-radius: 10px;
 }
-.info-window .distance {
-    padding-top: 15px;
-    padding-right: 5px;
-    color: #A9A9A9;
-    text-align: center;
-    font-size: 18px;
-    float: left;
-    font-weight: bold;
-    font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -2px rgba(0,0,0,.9);
-}
-.info-window .rate {
-    height: auto;
-    width: 35px;
-    text-align: center;
-    font-size: 27px;
-    float: left;
-    font-weight: bold;
-    font-family: 'hvcbold', Helvetica;
+.info-window span
+{
+    vertical-align: middle;
+    display: table-cell;
     color: #ffffff;
-    text-shadow: 0 -2px rgba(0,0,0,.9);
-    padding-top: 15px;
-    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 60px;
 }
-.info-window .school-name {
-    float: left;
-    padding: 8px 8px 10px 25px;
-    color: white;
+.info-window span.distance {
+    color: #A9A9A9;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'hvcbold', Helvetica;
+    text-shadow: 0 -2px rgba(0,0,0,.9);
+}
+.info-window span.rate {
+    font-size: 27px;
+    font-weight: bold;
+    font-family: 'hvcbold', Helvetica;
+    text-shadow: 0 -2px rgba(0,0,0,.9);
+}
+.info-window span.school-name {
     font-size: 14px;
     font-family: 'hvcbold', Helvetica;
     text-shadow: 0 -1px rgba(0,0,0,.9);
     text-align:left;
-    vertical-align:middle;
-}
-.school-name {
     word-wrap: break-word;
     width: 200px;
 }
