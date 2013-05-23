@@ -77,7 +77,6 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
         var list = this;
         var toBind = $(".notbinded", $(list.elements.list));
         toBind.on('click', function(e) {
-            console.log(e.target);
             if($(e.target).is("input, textarea, select, button,img"))
                 return;
             if($(e.target).is("a")) {
