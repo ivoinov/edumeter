@@ -519,10 +519,11 @@ footer .links li {
     background: linear-gradient(to bottom,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
     text-align: center;
-    height: 80px;
+    height: 100%;
     width: 100%;
     display: table;
     border-radius: 10px;
+    overflow: hidden;
 }
 .info-window span
 {
