@@ -130,6 +130,7 @@ header{
     overflow: hidden;
     position: fixed;
     z-index: 999;
+    min-width: 1125px;
 }
 header .logo img {
     display: block;
@@ -248,7 +249,9 @@ footer .links li {
 
 .school-line {
     list-style: none;
-    height: 65px;
+    line-height: 20px;
+    min-height: 65px;
+    height: 100px;
     overflow: hidden;
     background: #888888;
     padding: 35px 0 8px;
@@ -265,6 +268,7 @@ footer .links li {
 .school-line .rate {
     float: left;
     width: 50px;
+    height: 50%;
     max-width: 21%;
     text-align: right;
     padding-left: 10px;
@@ -275,9 +279,8 @@ footer .links li {
 .school-line .info {
     width: 425;
     max-width: 37%;
+    height: 50%;
     padding-left: 40px;
-}
-.school-line .info .title {
     line-height: 20px;
 }
 .school-line .info .title a {
@@ -289,15 +292,16 @@ footer .links li {
     text-shadow: 0 -1px rgba(0,0,0,.8);
     text-decoration: none;
     color: white;
-    width: 1000px;
+    min-width: 1125px;
+    height: 100px;
+    float: left;
+    padding-left: 105px;
+    padding-top: 15px;
 }
 .school-line .additional-information .description{
-    line-height: 25px;
     text-shadow: 0 -1px rgba(0,0,0,.8);
     text-decoration: none;
     color: white;
-    float: left;
-    padding: 10px 190px;
 }
 .school-line .info .address{
      line-height: 25px;
@@ -311,6 +315,7 @@ footer .links li {
 .school-list .btnHolder
 {
     width: 40px;
+    height: 50%;
     text-align: right;
     max-width: 2%;
 }
@@ -333,6 +338,7 @@ footer .links li {
 {
     width: 400px;
     min-width: 32%;
+    height: 50%;
 }
 .school-list .btnHolder .btn:hover
 {
@@ -656,5 +662,4 @@ div.charts dd div.yellow
 .charts dt
 {
     font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -1px rgba(80,80,80,.7);
 }
