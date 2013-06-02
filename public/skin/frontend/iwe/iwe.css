@@ -454,6 +454,7 @@ footer .links li {
     padding: 10px 0 25px;
     margin:0 auto;
     min-width: 1125px;
+    max-width: 90%;
 }
 
 .filters li {
