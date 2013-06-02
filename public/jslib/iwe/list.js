@@ -15,6 +15,10 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
     },
     changeRadius: function(radius)
     {
+        if(radius > 5000) {
+            alert('The radius is too large. Do you want to break our server :)');
+            return false;
+        }
         if(!this.map)
         {
             alert('Please reload page');

@@ -18,9 +18,11 @@ class Iwe_School_Block_Widget_Grid_Filter_Radius extends Core_Block_Widget_Grid_
 
     public function  apply($collection, $grid)
     {
+        if($radius = (float)$this->getFilterValue() > 5000) {
+            return $collection;
+        }
         $currentLongitude = (float) $this->_getCurrentLongitude();
         $currentLatitude = (float) $this->_getCurrentLatitude();
-        $radius = (float)$this->getFilterValue();
         return $collection->getInCurrentRadius($currentLongitude,$currentLatitude,$radius);
     }
 
