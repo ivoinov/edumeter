@@ -222,7 +222,9 @@ var map = {
             draggable:false,
             radius: radiusValue,
             fillColor: '#0055aa',
-            fillOpacity: 0.2
+            fillOpacity: 0.1,
+            strokeColor: '#607B8B',
+            strokeWeight: 3
         });
         this.radius.bindTo('center', this.current_position_marker, 'position');
         google.maps.event.addListener(this.radius, 'radius_changed', function() {

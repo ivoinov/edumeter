@@ -1,7 +1,5 @@
 var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
     map: null,
-    sort_order:				'DESC',
-    sort_key:				'rate',
     list_animation_speed: 1000,
     setMap: function(map)
     {

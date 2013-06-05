@@ -24,10 +24,28 @@
         <div class="btnHolder left">
             <a href="#" class="btn inline close"></a>
         </div>
-        <div class="additional-information">
-            <div class="description">{{html description}}</div>
+        <div style="clear:both;"></div>
+        <div class="open-head-wrapper">
+            <div class="additional-information">
+                <p class="description">{{html description}}</p>
+            </div>
+            <div class="all-subject-charts">
+                {{each subjectCharts}}
+                    <div class="subject-chart-wrapper">
+                        <span class="subject-chart-name">${subjectName}</span>
+                        <div class="subject-chart">
+                            <table class="graph" cellspacing="0px">
+                                <tr>
+                                    {{each years}}
+                                        <td title="${rate}" class="graph_col"><div class = "subject-${color}" style="height:${height}%"></div></td>
+                                    {{/each}}
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
-
     </div>
 </li>
 </script>

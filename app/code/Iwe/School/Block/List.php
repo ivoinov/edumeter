@@ -54,6 +54,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
             $content_row['rate'] = round(($row->getData('rate')) ? $row->getData('rate') : $row->getRate()) ;
             $content_row['description'] = $row->getDescription();
             $content_row['waysChart'] = $this->_getWaysRate($row->getSchool(), $row->getYear());
+            $content_row['subjectCharts'] = $this->_getSubjectRate($row->getSchool());
             $content['items'][] = $content_row;
 
         }
@@ -95,5 +96,27 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
     protected function _getLineWidth($rate)
     {
         return round(($rate - 100) * 200 / 100);
+    }
+
+    protected function _getLineHeight($rate)
+    {
+        $height = 0;
+        return round(100 * ($rate - 100) / 100);
+    }
+    protected function _getSubjectRate($schoolId)
+    {
+        $result = array();
+        $subjectRateCollection = Seven::getCollection('iwe_ratings/subject_rate')
+            ->filter('school_id',$schoolId);
+        foreach($subjectRateCollection as $subjectRateObject) {
+            $row = array();
+            $rate = round($subjectRateObject->getRate());
+            $row['subjectName'] = Seven::getModel('iwe_subject/entity')->load($subjectRateObject->getSubject())->getName();
+            $row['years'][$subjectRateObject->getYear()]['rate'] = $rate;
+            $row['years'][$subjectRateObject->getYear()]['color'] = $this->_getLineColor($rate);
+            $row['years'][$subjectRateObject->getYear()]['height'] = $this->_getLineHeight($rate);
+            $result[] = $row;
+        }
+        return $result;
     }
 }
