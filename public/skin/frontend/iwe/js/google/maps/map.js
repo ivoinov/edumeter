@@ -276,9 +276,10 @@ var map = {
         var controlUI = document.getElementById('add_voice_control');
         controlUI.style.cursor = 'pointer';
         controlUI.title = 'Сообщить об ошибке';
-        $.getJSON('http://edumeter.local/user/voice/add?ajax=1',function(data){
+        var url = 'user/voice/add'
+        $.getJSON(_url(url,{'ajax' : 1 }),function(data){
             $('#myModal div.modal-body').html(data.form);$('#myModal div.modal-body').html(data.form);
-            $('#myModal div.modal-body form').attr('action','http://edumeter.local/user/voice/add');
+            $('#myModal div.modal-body form').attr('action',_url(url));
 
             $('#submit-voice-adding').click(function(){
                 if($('#myModal textarea[name="message"]').val().length < 15) {
