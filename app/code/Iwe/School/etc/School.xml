@@ -32,6 +32,7 @@
                         <city>
                             <label>City</label>
                             <maxlength>255</maxlength>
+                            <nullable>1</nullable>
                         </city>
                         <address>
                             <label>School address</label>
@@ -93,6 +94,7 @@
                         <city>
                             <label>City</label>
                             <maxlength>255</maxlength>
+                            <nullable>1</nullable>
                         </city>
                         <address>
                             <label>School address</label>

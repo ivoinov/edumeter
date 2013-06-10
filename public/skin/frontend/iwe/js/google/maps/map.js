@@ -1,13 +1,6 @@
 /**
  * Created with JetBrains PhpStorm.
  * User: ivoinov
- * Date: 3/17/13
- * Time: 1:37 AM
- * To change this template use File | Settings | File Templates.
- */
-/**
- * Created with JetBrains PhpStorm.
- * User: ivoinov
  * Date: 3/13/13
  * Time: 6:40 PM
  * To change this template use File | Settings | File Templates.
@@ -36,11 +29,8 @@ var map = {
         } else {
             this.setDefaultPosition();
         }
-        var homeControlDiv = document.createElement('div');
-        var homeControl = new this.showHideMap(homeControlDiv,this);
-
-        homeControlDiv.index = 1;
-        this.map.controls[google.maps.ControlPosition.LEFT_CENTER].push(homeControlDiv);
+        this._createShowHideMapControll();
+        this._createAddUserVoiceControll();
     },
     setSearchAddress: function(searchAddress)
     {
@@ -243,6 +233,13 @@ var map = {
             this.radius.setRadius(this.currentRadiusValue);
         this.map.fitBounds(this.radius.getBounds());
     },
+    _createShowHideMapControll: function() {
+        var hideShowButton = document.createElement('div');
+        var hideShowControl = new this.showHideMap(hideShowButton,this);
+
+        hideShowButton.index = 1;
+        this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(hideShowButton);
+    },
     showHideMap: function(controlDiv,that) {
         controlDiv.style.padding = '7px';
         var controlUI = document.getElementById('map_show_control');
@@ -265,6 +262,36 @@ var map = {
             google.maps.event.trigger(that.map, 'resize');
             that.map.fitBounds(that.radius.getBounds());
         });
+    },
+    _createAddUserVoiceControll: function() {
+        var addVoiceButton = document.createElement('div');
+        var addVoiceControl = new this.addUserVoice(addVoiceButton, this);
+
+        addVoiceButton.index = 1;
+        this.map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(addVoiceButton);
+
+    },
+    addUserVoice: function(controlDiv, that) {
+        controlDiv.style.padding = '7px';
+        var controlUI = document.getElementById('add_voice_control');
+        controlUI.style.cursor = 'pointer';
+        controlUI.title = 'Сообщить об ошибке';
+        $.getJSON('http://edumeter.local/user/voice/add?ajax=1',function(data){
+            $('#myModal div.modal-body').html(data.form);$('#myModal div.modal-body').html(data.form);
+            $('#myModal div.modal-body form').attr('action','http://edumeter.local/user/voice/add');
+
+            $('#submit-voice-adding').click(function(){
+                if($('#myModal textarea[name="message"]').val().length < 15) {
+                    $('#myModal textarea[name="message"]').parent().parent().addClass('control-group error');
+                    if($('#user-voice-error').length == 0) {
+                        $('#myModal textarea[name="message"]').parent().append('<span class="help-inline" id="user-voice-error">Пожалуйста введите сообщение</span>');
+                    }
+                    return false;
+                }
+                $('#myModal form').submit();
+            });
+        });
+        controlDiv.appendChild(controlUI);
     }
 }
 $(function(){

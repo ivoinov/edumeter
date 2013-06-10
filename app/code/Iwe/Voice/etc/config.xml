@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+		<modules>
+            <Iwe_Voice translate="description">
+                <author>Ilya Voinov</author>
+                <description>User voice</description>
+                <version>1.0.1</version>
+            </Iwe_Voice>
+        </modules>
+    </global>
+</config>

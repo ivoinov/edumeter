@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <admin>
+		<routing>
+			<routes>
+                <school>
+                    <routes>
+                        <voice translate="name">
+                            <name>User voice</name>
+                            <controller>core/crud</controller>
+                            <use>iwe_voice/entity</use>
+                        </voice>
+                    </routes>
+                </school>
+	        </routes>
+        </routing>
+    </admin>
+    <frontend>
+        <routing>
+            <routes>
+                <user>
+                    <routes>
+                        <voice translate="name">
+                            <name>User voice</name>
+                            <controller>iwe_voice/crud</controller>
+                            <use>iwe_voice/entity</use>
+                        </voice>
+                    </routes>
+                </user>
+            </routes>
+        </routing>
+    </frontend>
+</config>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <entity>
+            <iwe_voice>
+                <entity>
+                    <table>iwe_user_voice</table>
+                    <key>id</key>
+                    <attributes>
+                        <id translate="label">
+                            <label>ID</label>
+                            <type>number</type>
+                            <data_type>int</data_type>
+                            <identity>true</identity>
+                        </id>
+                        <type_id translate="label">
+                            <label>Type</label>
+                            <type>select</type>
+                            <data_type>tinyint</data_type>
+                            <options>iwe_voice/entity::getVoiceType</options>
+                        </type_id>
+                        <message translate="label">
+                            <label>Message</label>
+                            <type>textarea</type>
+                            <data_type>text</data_type>
+                            <required>1</required>
+                            <minlength>25</minlength>
+                        </message>
+                    </attributes>
+                </entity>
+            </iwe_voice>
+        </entity>
+    </global>
+    <admin>
+        <forms>
+            <iwe_voice>
+                <entity translate="title,fieldset,tab">
+                    <title>Voice edit form</title>
+                    <fieldset>General</fieldset>
+                    <tab>General</tab>
+                    <source>iwe_voice/entity</source>
+                    <fields>
+                        <type_id/>
+                        <message/>
+                    </fields>
+                </entity>
+            </iwe_voice>
+        </forms>
+        <grids>
+            <iwe_voice>
+                <entity translate="title">
+                    <title>User voices list</title>
+                    <source>iwe_voice/entity</source>
+                    <add_default_actions>0</add_default_actions>
+                    <fields>
+                        <id />
+                        <type_id/>
+                        <actions>
+                            <type>action</type>
+                            <actions>
+                                <view>
+                                    <label>View</label>
+                                    <skin_icon>images/icons/tab_go.png</skin_icon>
+                                    <url_template>*/*/view?id={id}</url_template>
+                                </view>
+                                <delete>
+                                    <label>Delete</label>
+                                    <skin_icon>images/icons/chart_curve_delete.png</skin_icon>
+                                    <url_template>*/*/delete?id={id}</url_template>
+                                </delete>
+                            </actions>
+                        </actions>
+                    </fields>
+                </entity>
+            </iwe_voice>
+        </grids>
+    </admin>
+    <frontend>
+        <forms>
+            <iwe_voice>
+                <entity translate="title,fieldset,tab">
+                    <fieldset>General</fieldset>
+                    <tab>General</tab>
+                    <source>iwe_voice/entity</source>
+                    <use_ajax>true</use_ajax>
+                    <fields>
+                        <type_id>
+                            <label>Тип ошибки</label>
+                        </type_id>
+                        <message>
+                            <label>Сообщение</label>
+                        </message>
+                    </fields>
+                </entity>
+            </iwe_voice>
+        </forms>
+    </frontend>
+</config>

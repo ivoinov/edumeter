@@ -1,0 +1,31 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category   Seven
+ * @package    Seven
+ * @author     Sergey Kolodyazhnyy <sergey.kolodyazhnyy@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ */
+?>
+<fieldset style="border: none;box-shadow: none;"class="widget-box">
+    <?php if($this->getLabel()) : ?><h2><?php echo $this->getLabel(); ?></h2><?php endif; ?>
+    <?php foreach($this->getSortedChildren() as $key => $child) : ?>
+        <div class="field-block<?php if($child->getType()) echo ' field-block-' . str_replace('/', '-', $child->getType()); ?><?php if($child->hasErrorMessage()) : ?> validation-fail<?php endif; ?>">
+            <label for="<?php echo $child->getHtmlId() ?>"><?php echo $child->getLabel(); ?><?php if($child->getRequired()) : ?> <span class="required">*</span><?php endif; ?></label>
+            <?php if($child->getUseDefault() !== null) : ?><div class="default-value"><input type='checkbox' name='defaults[<?php echo $child->getHtmlName(); ?>]' <?php if($child->getUseDefault()) echo "checked"; ?>> Use default value</div><?php endif; ?>
+            <div class="input<?php if($child->getType()) echo ' input-' . str_replace('/', '-', $child->getType()); ?>">
+                <?php if($child->getScope()) : ?><div class="property-scope">[<?php echo $child->getScope(); ?>]</div><?php endif; ?>
+                <?php echo $child->toHtml(); ?> 
+            </div>
+            <div class="validation-error"><?php echo $child->getErrorMessage(); ?></div>
+            <?php if($child->getDescription()) : ?><p><?php echo $child->getDescription(); ?></p> <?php endif; ?>
+        </div>
+    <?php endforeach;?>
+</fieldset>

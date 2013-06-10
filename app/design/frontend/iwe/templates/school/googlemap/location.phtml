@@ -5,8 +5,24 @@
         <span class="distance">${distance}</span>
     </div>
 </script>
-<!--<div id="map-info"></div>-->
 <div id="map_canvas"></div>
 <div id="map_show_control">
     <a href="#" class="show"></a>
+</div>
+<div id="add_voice_control">
+    <a href="#myModal" role="button" class="btn btn-info" data-toggle="modal"  data-backdrop="static" >Сообщите об ошибке</a>
+</div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Сообщить об ошибке</h3>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+        <button id="submit-voice-adding" class="btn btn-success">Отправить</button>
+    </div>
 </div>

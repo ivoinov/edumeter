@@ -117,7 +117,7 @@ footer .links,
 }
 
 header, footer{
-    height: 30px;
+    height: 40px;
     line-height: 15px;
     background: black;
 }
@@ -134,6 +134,7 @@ header{
 }
 header .logo img {
     display: block;
+    height: 30px;
 }
 header .siteMenu a {
     font-weight: bold;
@@ -143,15 +144,14 @@ header .siteMenu p {
 }
 header .formSearch {
     position: relative;
+    margin-top: 5px;
 }
 
 header .formSearch .txtSearch {
-    width: 285px;
     height: 28px;
     padding: 0 25px 0 30px;
     border: 0 none;
     border-radius: 45px;
-    outline: none;
     background: url(images/lens.png) no-repeat 10px 50% white;   /*Add box-shadow*/
 }
 
@@ -242,7 +242,12 @@ footer .links li {
     font: inherit;
     vertical-align: baseline;
 }
-
+.school-list h4 {
+    font-size: inherit;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0;
+}
 .school-list .selected {
     background: #888888;
 }
@@ -326,13 +331,15 @@ div.open-head-wrapper
 {
     width: 40px;
     text-align: right;
-    max-width: 2%;
 }
 .school-list .btnHolder .btn
 {
     width: 43px;
     height: 43px;
     display: inline-block;
+    padding: 0;
+    border: inherit;
+    border-color: inherit;
 }
 
 .school-list .btnHolder a.btn.close {
@@ -341,6 +348,7 @@ div.open-head-wrapper
 
 .school-list .btnHolder a.btn.open {
     background: url(images/circle-arrow-down.png) no-repeat;
+    box-shadow: none;
 }
 
 .school-list .charts
@@ -470,10 +478,17 @@ div.open-head-wrapper
     min-width: 1125px;
     max-width: 90%;
 }
-
+.filters ul {
+    padding: 0;
+    margin: 0;
+}
 .filters li {
     float: left;
     list-style: none;
+}
+.filters li a:hover, a:focus {
+    color: #a3a3a3;
+    text-decoration: none;
 }
 .fGroup
 {   margin-left: 5px;
