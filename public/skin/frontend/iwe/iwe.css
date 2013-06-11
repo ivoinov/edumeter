@@ -757,3 +757,39 @@ div.charts dd div.yellow
     background: linear-gradient(to bottom,  #ffd65e 0%,#f73d3d 87%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#f73d3d',GradientType=0 );
 }
+/* Use voice */
+.rotate-90-deg {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+    /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    /* Should be unset in IE9+ I think. */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+#user-voice
+{
+    position: absolute;
+    z-index: 100001;
+    cursor: pointer;
+    right: 0;
+    width: 175px;
+    padding-top: 140px;
+    top: 25%;
+}
+#user-voice a
+{
+    height: 25px;
+}
+#user-voice-school-names
+{
+    display: none;
+}

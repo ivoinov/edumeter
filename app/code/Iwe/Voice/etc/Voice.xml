@@ -18,6 +18,8 @@
                             <type>select</type>
                             <data_type>tinyint</data_type>
                             <options>iwe_voice/entity::getVoiceType</options>
+                            <default>3</default>
+                            <html_id>user-voice-form-type</html_id>
                         </type_id>
                         <message translate="label">
                             <label>Message</label>
@@ -25,7 +27,15 @@
                             <data_type>text</data_type>
                             <required>1</required>
                             <minlength>25</minlength>
+                            <html_id>user-voice-message</html_id>
                         </message>
+                        <additional_information>
+                            <type>select</type>
+                            <label>School name</label>
+                            <options>iwe_voice/entity::getSchoolsName</options>
+                            <data_type>varchar</data_type>
+                            <maxlength>255</maxlength>
+                        </additional_information>
                     </attributes>
                 </entity>
             </iwe_voice>
@@ -87,6 +97,10 @@
                         <type_id>
                             <label>Тип ошибки</label>
                         </type_id>
+                        <additional_information>
+                            <label>Выберите школу</label>
+                            <html_id>user-voice-school-names</html_id>
+                        </additional_information>
                         <message>
                             <label>Сообщение</label>
                         </message>

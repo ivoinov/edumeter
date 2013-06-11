@@ -18,7 +18,10 @@
                 <block name="header"  type="core/template" template="page/header.phtml" />
                 <block name="content" type="core/array" wrapper="#centered_content">
                     <block name="message" wrapper=".messages" type="core/message" template = "page/message.phtml"/>
-                    <block name="google.map" type="core/array" wrapper="#location"/>
+                    <block name="google.map" type="core/array" wrapper="#location">
+                        <block name="user.voice" type="iwe_voice/voice"/>
+                    </block>
+
                 </block>
                 <!--<block name="footer"  after="content" type="core/widget_menu" template="page/footer.phtml">-->
                     <!--<action method="addItem">-->

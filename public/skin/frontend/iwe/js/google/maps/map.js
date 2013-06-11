@@ -30,7 +30,6 @@ var map = {
             this.setDefaultPosition();
         }
         this._createShowHideMapControll();
-        this._createAddUserVoiceControll();
     },
     setSearchAddress: function(searchAddress)
     {
@@ -262,37 +261,6 @@ var map = {
             google.maps.event.trigger(that.map, 'resize');
             that.map.fitBounds(that.radius.getBounds());
         });
-    },
-    _createAddUserVoiceControll: function() {
-        var addVoiceButton = document.createElement('div');
-        var addVoiceControl = new this.addUserVoice(addVoiceButton, this);
-
-        addVoiceButton.index = 1;
-        this.map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(addVoiceButton);
-
-    },
-    addUserVoice: function(controlDiv, that) {
-        controlDiv.style.padding = '7px';
-        var controlUI = document.getElementById('add_voice_control');
-        controlUI.style.cursor = 'pointer';
-        controlUI.title = 'Сообщить об ошибке';
-        var url = 'user/voice/add'
-        $.getJSON(_url(url,{'ajax' : 1 }),function(data){
-            $('#myModal div.modal-body').html(data.form);$('#myModal div.modal-body').html(data.form);
-            $('#myModal div.modal-body form').attr('action',_url(url));
-
-            $('#submit-voice-adding').click(function(){
-                if($('#myModal textarea[name="message"]').val().length < 15) {
-                    $('#myModal textarea[name="message"]').parent().parent().addClass('control-group error');
-                    if($('#user-voice-error').length == 0) {
-                        $('#myModal textarea[name="message"]').parent().append('<span class="help-inline" id="user-voice-error">Пожалуйста введите сообщение</span>');
-                    }
-                    return false;
-                }
-                $('#myModal form').submit();
-            });
-        });
-        controlDiv.appendChild(controlUI);
     }
 }
 $(function(){

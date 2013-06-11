@@ -13,7 +13,7 @@ class Iwe_Voice_Controller_Crud extends Core_Controller_Crud_Create
         $this->_createAbstract(array(
             'edit_message' => __("Сообщение об ошибки было доставлено. Спасибо."),
             'edit_form_type' => 'iwe_voice/entity',
-            'create_redirect' => seven_url('*/school/index'),
+            'create_redirect' => false,
             'create_message'=> false
         ));
     }
