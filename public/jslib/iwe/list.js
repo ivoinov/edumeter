@@ -90,6 +90,7 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
         toBind.removeClass('notbinded');
         $(list.elements.items).filter('.even').removeClass('even');
         $(list.elements.items).filter(':nth-child(even)').addClass('even');
+        userVoice.updateSchoolList(school_list.items);
     }
 });
 

@@ -18,7 +18,7 @@
                             <type>select</type>
                             <data_type>tinyint</data_type>
                             <options>iwe_voice/entity::getVoiceType</options>
-                            <default>3</default>
+                            <default>1</default>
                             <html_id>user-voice-form-type</html_id>
                         </type_id>
                         <message translate="label">

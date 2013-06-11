@@ -11,6 +11,9 @@ var userVoice = {
     init: function() {
         var self = this;
         $.getJSON(_url(self.formUrl,{'ajax' : 1 }), function(data){self._setHtmlForm(data)} );
+        $('#user-voice-form').on('hidden', function () {
+            self._clearForm();
+        })
     },
     _setHtmlForm: function(data) {
 
@@ -18,7 +21,6 @@ var userVoice = {
         var form = data.form;
         $('#user-voice-form div.modal-body').append(form);
         $('#user-voice-form form').attr('action',_url(this.formUrl,{'ajax':1}));
-        $('#user-voice-school-names').parents('div.field-block-select').css('display','none');
         $('#submit-user-voice').click(function(){self.submitUserVoice($('#user-voice-form form'))});
         $('#user-voice-form-type').change(function(){
             self.changeType($('#user-voice-form-type').val(), $('#user-voice-school-names'));
@@ -44,8 +46,8 @@ var userVoice = {
     _clearForm: function(formElement) {
         var typeElement = $('#user-voice-form-type', formElement);
         var messageElement = $('#user-voice-message', formElement);
-        typeElement.val(3);
-        this.changeType(3, $('#user-voice-school-names'))
+        typeElement.val(1);
+        this.changeType(1, $('#user-voice-school-names'))
         messageElement.val('');
         $('div.validation-error').each(function(){
             $(this).html('');
@@ -77,6 +79,14 @@ var userVoice = {
             userVoiceForm.submit();
         } else {
             return false;
+        }
+    },
+    updateSchoolList: function(items) {
+        $('#user-voice-school-names option').remove();
+        for(var i in items) {
+            var option = '<option value="'+ items[i].id +'">' + items[i].name + '</option>';
+            console.log(option)
+            $("#user-voice-school-names").append(option);
         }
     }
 

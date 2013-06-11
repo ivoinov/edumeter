@@ -19,10 +19,10 @@ class Iwe_Voice_Model_Entity extends Core_Model_Entity
     public function getSchoolsName()
     {
         $schoolNames = array();
-        $schoolNames = Seven::getCollection('iwe_school/school')
-                ->getSelect()
-                ->columns(array('id','name'))
-                ->fetchPairs();
+//        $schoolNames = Seven::getCollection('iwe_school/school')
+//                ->getSelect()
+//                ->columns(array('id','name'))
+//                ->fetchPairs();
         return $schoolNames;
     }
 }

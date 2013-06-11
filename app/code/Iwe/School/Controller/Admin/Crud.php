@@ -67,7 +67,9 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
 
         foreach ($collection as $school) {
             if ($school->getAddress()) {
-                $address = $school->getAddress();
+                $district = Seven::getModel('iwe_district/entity')->load($school->getDistrictId());
+                $region = Seven::getModel('iwe_region/entity')->load($district->getRegionId());
+                $address = $region->getName().', '.$district->getName(). ', '.$school->getAddress();
                 $this->_saveSchoolCoords($address, $school);
 
             } else {
