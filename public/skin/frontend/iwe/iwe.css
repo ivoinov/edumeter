@@ -777,7 +777,7 @@ div.charts dd div.yellow
 }
 #user-voice
 {
-    position: absolute;
+    position: fixed;
     z-index: 100001;
     cursor: pointer;
     right: 0;
