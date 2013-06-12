@@ -10,6 +10,18 @@
                     <http-equiv>Content-Type</http-equiv>
                     <content>text/html, charset=utf-8</content>
                 </action>
+                <action method="addMeta">
+                    <name>keywords</name>
+                    <content>результати тестування, ЗНО, ВНО, Рейнитг школ,незалежне тестування, статистика ЗНО, независимое тестирование, зовнішнє незалежне оцінювання,тестування</content>
+                </action>
+                <action method="addMeta">
+                    <name>description</name>
+                    <content>Рейтинг школ Украины за результатами ВНО | Рейтинг шкіл України за результатами зовнішньго незалежного оцінювання</content>
+                </action>
+                <action method="addMeta">
+                    <name>author</name>
+                    <content>Ilya Voinov ilya.voinov@yahoo.com | http://edumeter.com.ua</content>
+                </action>
                 <action method="addJs"><script>jquery/jquery.js</script><type>lib</type></action>
                 <action method="addJs"><script>seven/seven.js</script><type>lib</type></action>
                 <action method="addJs"><script>js/skin.js</script><type>skin</type></action>
