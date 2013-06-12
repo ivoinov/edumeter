@@ -35,6 +35,7 @@
                             <options>iwe_voice/entity::getSchoolsName</options>
                             <data_type>varchar</data_type>
                             <maxlength>255</maxlength>
+                            <optional>1</optional>
                         </additional_information>
                     </attributes>
                 </entity>

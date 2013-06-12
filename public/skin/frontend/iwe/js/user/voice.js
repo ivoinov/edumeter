@@ -57,7 +57,7 @@ var userVoice = {
         var self = this;
         if(this._isValid(userVoiceForm)) {
             var typeId = $('#user-voice-form-type', userVoiceForm).val();
-            var schoolName = $('#user-voice-school-names', userVoiceForm).val();
+            var schoolName = $('#user-voice-school-names option:selected',  userVoiceForm).html()
             var message = $('#user-voice-message', userVoiceForm).val();
             userVoiceForm.submit(function(){
                 $.ajax({
@@ -85,7 +85,6 @@ var userVoice = {
         $('#user-voice-school-names option').remove();
         for(var i in items) {
             var option = '<option value="'+ items[i].id +'">' + items[i].name + '</option>';
-            console.log(option)
             $("#user-voice-school-names").append(option);
         }
     }
