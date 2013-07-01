@@ -11,7 +11,7 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
     public function scriptAction()
     {
         set_time_limit(0);
-        $file = BP . DS . 'var' . DS . 'stat' . DS . 'convert_2011MDUKR.txt';
+        $file = BP . DS . 'var' . DS . 'stat' . DS . '2010' . DS . '2010 BIO matching edumeter.txt';
         $handle = fopen($file, 'r');
         $failCount = 0;
         $count = 0;
@@ -20,37 +20,33 @@ class Iwe_School_Controller_Admin_Crud extends Core_Controller_Crud
             $line = fgetcsv($handle,2048,';');
 
             if($count == 0)
-                $district = Seven::getModel('iwe_district/entity')->load(substr($line[0],3,strlen($line[0])), 'additional_id');
+                $school = Seven::getModel('iwe_school/school')->load(substr($line[0],3,strlen($line[0])));
             else
-                $district = Seven::getModel('iwe_district/entity')->load($line[0], 'additional_id');
-            if($line[0] == 14123000)
-                $district = Seven::getModel('iwe_district/entity')->load(157);
-            if(!$district->isLoaded()) {
+                $school = Seven::getModel('iwe_school/school')->load($line[0]);
+            if(!$school->isLoaded()) {
                 var_dump($line);
                 echo "<hr/>";
                 $failCount++;
                 continue;
             }
-            $name = explode('№',$line[2]);
-            $schoolName = isset($name[1]) ? $name[0] . '№' . ltrim($name[1]) : $name[0];
             $statEntity
-                ->setYear(2011)
-                ->setSchoolName($schoolName)
-                ->setDistrictId($district->getId())
-                ->setRegionId($district->getRegionId())
-                ->setSubjectId(9)
-                ->setWayId(4)
-                ->setPassedNumber($line[13])
-                ->setInterval1(round($line[3] * (int)$line[13] / 100 , 2))
-                ->setInterval2(round($line[4] * (int)$line[13] / 100 , 2))
-                ->setInterval3(round($line[5] * (int)$line[13] / 100 , 2))
-                ->setInterval4(round($line[6] * (int)$line[13] / 100 , 2))
-                ->setInterval5(round($line[7] * (int)$line[13] / 100 , 2))
-                ->setInterval6(round($line[8] * (int)$line[13] / 100 , 2))
-                ->setInterval7(round($line[9] * (int)$line[13] / 100 , 2))
-                ->setInterval8(round($line[10] * (int)$line[13] / 100 , 2))
-                ->setInterval9(round($line[11] * (int)$line[13] / 100 , 2))
-                ->setInterval10(round($line[12] * (int)$line[13] / 100 , 2))
+                ->setYear(2010)
+                ->setSchoolName($school->getName())
+                ->setDistrictId($school->getDistrictId())
+                ->setRegionId($school->getRegionId())
+                ->setSubjectId(2)
+                ->setWayId(5)
+                ->setPassedNumber($line[14])
+                ->setInterval2(round($line[4] * (int)$line[14] / 100 , 2))
+                ->setInterval3(round($line[5] * (int)$line[14] / 100 , 2))
+                ->setInterval4(round($line[6] * (int)$line[14] / 100 , 2))
+                ->setInterval5(round($line[7] * (int)$line[14] / 100 , 2))
+                ->setInterval6(round($line[8] * (int)$line[14] / 100 , 2))
+                ->setInterval7(round($line[9] * (int)$line[14] / 100 , 2))
+                ->setInterval8(round($line[10] * (int)$line[14] / 100 , 2))
+                ->setInterval9(round($line[11] * (int)$line[14] / 100 , 2))
+                ->setInterval10(round($line[12] * (int)$line[14] / 100 , 2))
+                ->setInterval10(round($line[13] * (int)$line[14] / 100 , 2))
                 ->save();
             $count++;
         }
