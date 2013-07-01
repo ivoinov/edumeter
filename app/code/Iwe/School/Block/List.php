@@ -115,6 +115,13 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
             $row['years'][$subjectRateObject->getYear()]['rate'] = $rate;
             $row['years'][$subjectRateObject->getYear()]['color'] = $this->_getLineColor($rate);
             $row['years'][$subjectRateObject->getYear()]['height'] = $this->_getLineHeight($rate);
+            $row['years'][2010]['rate'] = rand(120,200);
+            $row['years'][2010]['height'] = $this->_getLineHeight(rand(120,200));
+            $row['years'][2010]['color'] = $this->_getLineColor(rand(120,200));
+            $row['years'][2011]['rate'] = rand(120,200);
+            $row['years'][2011]['height'] = $this->_getLineHeight(rand(120,200));
+            $row['years'][2011]['color'] = $this->_getLineColor(rand(120,200));
+            ksort($row['years']);
             $result[] = $row;
         }
         return $result;
