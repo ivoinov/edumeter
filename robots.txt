@@ -1,0 +1,28 @@
+# For domain: http://edumeter.com.ua
+
+# main section
+User-agent:*
+Disallow: /public/
+Disallow: /var/
+Disallow: /google5a9d999c8ede404d.html
+Disallow: /yandex_4fe4fd8f3f9dfe1e.html
+Crawl-delay: 86400
+# End of main section
+
+# Images section
+User-agent: Yandex/1.01.001 (compatible; Win16; P)
+Disallow: /public/
+Disallow: /var/
+User-agent: Googlebot-Image
+Disallow: /public/
+Disallow: /var/
+User-agent: yahoo-mmcrawler
+Disallow: /public/
+Disallow: /var/
+User-agent: psbot
+Disallow: /public/
+Disallow: /var/
+# End of images section
+
+User-agent: Yandex
+Host: www.edumeter.com.ua
