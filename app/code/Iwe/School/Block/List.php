@@ -8,6 +8,9 @@
  */
 class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
 {
+    const CACHE_CONFIG_KEY_WAY_RATE = 'WAY_RATE';
+    const CACHE_CONFIG_KEY_SUBJECT_RATE = 'SUBJECT_RATE';
+
     public function __construct($data = array())
     {
         if(!isset($data['use_ajax']))
@@ -63,7 +66,14 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
 
     protected function _getWaysRate($schoolId, $year)
     {
-        $result = array();
+        $cacheId = $schoolId . '_'.self::CACHE_CONFIG_KEY_WAY_RATE;
+        $result = Seven::cache()->load($cacheId);
+        if(!empty($result)) {
+            return $result;
+        }
+        else {
+            $result = array();
+        }
         $wayStatCollection = Seven::getCollection('iwe_way/stat')
                 ->filter('way',array('neq' => 2))
                 ->filter('school',$schoolId)
@@ -77,7 +87,8 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
                 'name'  => Seven::getModel('iwe_way/entity')->load($wayStatObject->getWay())->getName()
             );
         }
-            return $result;
+        Seven::cache()->save($result, $cacheId, array(md5('school_way_rate')));
+        return $result;
     }
 
     protected function _getLineColor($rate)
@@ -105,25 +116,39 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
     }
     protected function _getSubjectRate($schoolId)
     {
-        $result = array();
-        $subjectRateCollection = Seven::getCollection('iwe_ratings/subject_rate')
-            ->filter('school_id',$schoolId);
-        foreach($subjectRateCollection as $subjectRateObject) {
-            $row = array();
-            $rate = round($subjectRateObject->getRate());
-            $row['subjectName'] = Seven::getModel('iwe_subject/entity')->load($subjectRateObject->getSubject())->getName();
-            $row['years'][$subjectRateObject->getYear()]['rate'] = $rate;
-            $row['years'][$subjectRateObject->getYear()]['color'] = $this->_getLineColor($rate);
-            $row['years'][$subjectRateObject->getYear()]['height'] = $this->_getLineHeight($rate);
-            $row['years'][2010]['rate'] = rand(120,200);
-            $row['years'][2010]['height'] = $this->_getLineHeight(rand(120,200));
-            $row['years'][2010]['color'] = $this->_getLineColor(rand(120,200));
-            $row['years'][2011]['rate'] = rand(120,200);
-            $row['years'][2011]['height'] = $this->_getLineHeight(rand(120,200));
-            $row['years'][2011]['color'] = $this->_getLineColor(rand(120,200));
-            ksort($row['years']);
-            $result[] = $row;
+        $cacheId = $schoolId . '_'.self::CACHE_CONFIG_KEY_SUBJECT_RATE;
+        $result = Seven::cache()->load($cacheId);
+        if(!empty($result))
+            return $result;
+        $years = array(2010,2011,2012);
+        $row = array();
+        foreach($years as $year) {
+            $subjectRateCollection = Seven::getCollection('iwe_ratings/subject_rate')
+                ->filter('school_id', $schoolId)
+                ->filter('year', $year);
+            foreach($subjectRateCollection as $subjectRateObject) {
+                $rate = round($subjectRateObject->getRate());
+                $subject = Seven::getModel('iwe_subject/entity')->load($subjectRateObject->getSubject());
+                if(!isset($row[$subject->getId()])) {
+                    $row[$subject->getId()]['subjectName'] = $subject->getName();
+                }
+                $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['rate'] = $rate;
+                $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['color'] = $this->_getLineColor($rate);
+                $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['height'] = $this->_getLineHeight($rate);
+            }
         }
-        return $result;
+        foreach($row as $subjectId => $subjectRow) {
+            foreach($years as $year) {
+                if(!isset($subjectRow['years'][$year])) {
+                    $subjectRow['years'][$year]['rate'] = 0;
+                    $subjectRow['years'][$year]['color'] = 'red';
+                    $subjectRow['years'][$year]['height'] = 0;
+                }
+            }
+            ksort($subjectRow['years']);
+            $row[$subjectId] = $subjectRow;
+        }
+        Seven::cache()->save($row, $cacheId, array(md5('school_subject_rate')));
+        return $row;
     }
 }

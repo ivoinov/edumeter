@@ -36,6 +36,7 @@
                             <data_type>varchar</data_type>
                             <maxlength>255</maxlength>
                             <optional>1</optional>
+                            <nullable>1</nullable>
                         </additional_information>
                     </attributes>
                 </entity>
