@@ -35,11 +35,13 @@
                         <span class="subject-chart-name">${subjectName}</span>
                         <div class="subject-chart">
                             <table class="graph" cellspacing="0px">
-                                <tr>
-                                    {{each years}}
-                                        <td class="graph_col"><div  title="${rate}" class = "subject-${color}" style="height:${height}%"></div></td>
-                                    {{/each}}
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        {{each years}}
+                                            <td class="graph_col"><div  title="${rate}" class = "subject-${color}" style="height:${height}%"></div></td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>

@@ -243,7 +243,7 @@ footer .links li {
     vertical-align: baseline;
 }
 .school-list h4 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     line-height: normal;
     margin: 0;
@@ -702,6 +702,10 @@ div.charts dd div.yellow
 {
     font-family: 'hvcbold', Helvetica;
     padding-right: 10px;
+    line-height: 20px;
+    font-size: .75em;
+    color: #FFFFFF;
+    text-shadow: 0 -1px rgba(75,75,75,.8);
 }
 .graph td
 {
