@@ -18,11 +18,16 @@ class Iwe_School_Block_Widget_Grid_Filter_Rate extends Core_Block_Widget_Grid_Fi
         return Seven::app()->getRequest()->getParam('way');
     }
 
+    protected function _getFromFilterValue()
+    {
+        return Seven::app()->getRequest()->getParam('from');
+    }
     public function apply($collection, $grid)
     {
         $way = $this->_getWayFilterValue();
         $year = $this->_getYearFilterValue();
-        return $collection->withRate($way, $year);
+        $from = ($this->_getFromFilterValue() == 'false') ? 0 : 1;
+        return $collection->withRate($way, $year, $from);
     }
 
 }

@@ -10,11 +10,12 @@ class Iwe_School_Resource_Entity_Collection extends Core_Resource_Entity_Collect
         }
         return $this->_select;
     }
-    public function withRate($way = 2, $year = 2012)
+    public function withRate($way = 2, $year = 2012, $from = 0)
     {
         return $this
-                ->filter('way',$way)
-                ->filter('year',$year)
+                ->filter('way', $way)
+                ->filter('year', $year)
+                ->filter('from', (int)$from)
                 ->order('rate DESC');
     }
 

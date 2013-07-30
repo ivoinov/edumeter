@@ -37,11 +37,12 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
         $('#way-filter-' + way).addClass('active');
         this.reload('list');
     },
-    changeYear: function(year)
+    changeYear: function(year, from)
     {
         this.getMap().setYear(year);
         this.getMap().setCurrentPosition(this.getMap().current_position);
         this.getMap().infoBubble.close();
+        this.getMap().from = from;
         $('#year-filter li.filter.active').removeClass('active');
         $('#year-filter-' + year).addClass('active');
         this.reload('list');
@@ -53,6 +54,7 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
         var current_latitude = this.getMap().current_position.lat();
         var way = this.getMap().way;
         var year = this.getMap().year;
+        var from = this.getMap().from;
         return $.extend(
             ListWidgetClass.prototype._extendReloadParams.apply(this, arguments),
             {
@@ -60,7 +62,8 @@ var SchoolListWidgetClass = Seven.Class(ListWidgetClass, {
                 "current_longitude":  current_longitude,
                 "current_latitude": current_latitude,
                 "way": way,
-                "year": year
+                "year": year,
+                "from" : from
             }
         );
     },

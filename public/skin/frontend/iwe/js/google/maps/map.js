@@ -21,6 +21,7 @@ var map = {
     infoBubble: null,
     way: '2',
     year: 2012,
+    from: false,
     init: function(options) {
         this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
         this.geocoder = new google.maps.Geocoder();
@@ -143,6 +144,7 @@ var map = {
             'ajax':1,
             'way': that.way,
             'year': that.year,
+            'from': that.from,
             'longitude': that.current_position.lng(),
             'latitude': that.current_position.lat(),
             'viewableRadius': mapRadius
