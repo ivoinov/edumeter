@@ -108,11 +108,12 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
     {
         return round(($rate - 100) * 200 / 100);
     }
+
     protected function _getLineHeight($rate)
     {
+        $height = 0;
         return round(100 * ($rate - 100) / 100);
     }
-
     protected function _getSubjectRate($schoolId)
     {
         $cacheId = $schoolId . '_'.self::CACHE_CONFIG_KEY_SUBJECT_RATE;
