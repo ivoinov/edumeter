@@ -64,6 +64,11 @@
                             <scale>4</scale>
                             <precision>12</precision>
                         </rate>
+                        <from>
+                            <label>From flag</label>
+                            <data_type>tinyint</data_type>
+                            <default>0</default>
+                        </from>
                     </attributes>
                 </stat>
 			</iwe_way>
@@ -111,7 +116,6 @@
                     <source>iwe_way/stat</source>
                     <fields>
                         <way />
-                        <school/>
                         <year />
                         <rate/>
                     </fields>

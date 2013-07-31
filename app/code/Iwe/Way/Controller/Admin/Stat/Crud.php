@@ -17,7 +17,7 @@ class Iwe_Way_Controller_Admin_Stat_Crud extends Core_Controller_Crud_Crud
     public function updateStatAction()
     {
         set_time_limit(0);
-        $years = array(2012);
+        $years = array(2011);
         $schoolCollection = Seven::getCollection('iwe_school/school');
         foreach ($schoolCollection as $school) {
             foreach ($years as $year) {
@@ -57,5 +57,49 @@ class Iwe_Way_Controller_Admin_Stat_Crud extends Core_Controller_Crud_Crud
             }
         }
         $this->redirect(seven_url('*/*/'));
+    }
+
+    public function calculateFromStatAction()
+    {
+        set_time_limit(0);
+	ini_set('memory_limit','1024M');
+        $schoolCollection = Seven::getCollection('iwe_school/school');
+        foreach($schoolCollection as $schoolModel) {
+            $schoolWayStatCollection = Seven::getCollection('iwe_way/stat')
+                ->filter('school', $schoolModel->getId());
+            $ratesArray = array();
+            foreach($schoolWayStatCollection as $wayModel) {
+                if(!isset($ratesArray[$wayModel->getWay()])) {
+                    $ratesArray[$wayModel->getWay()] = array();
+                    $ratesArray[$wayModel->getWay()][] = $wayModel->getRate();
+                } else {
+                    $ratesArray[$wayModel->getWay()][] = $wayModel->getRate();
+                }
+            }
+            $ratesArray = $this->_proceesRateArray($ratesArray);
+            foreach($ratesArray as $wayId => $rateValue) {
+                $wayRateModel = Seven::getModel('iwe_way/stat')
+                            ->setWay($wayId)
+                            ->setSchool($schoolModel->getId())
+                            ->setYear(2010)
+                            ->setRate($rateValue)
+                            ->setFrom(1)
+                            ->save();
+                unset($wayRateModel);
+            }
+        }
+    }
+
+    protected function _proceesRateArray($rateArray)
+    {
+        $result = array();
+        foreach($rateArray as $wayId => $rateData) {
+            $rateValue = 0;
+             foreach ($rateData as $rate) {
+                 $rateValue += $rate;
+             }
+            $result[$wayId] = round($rateValue / count($rateData), 2);
+        }
+        return $result;
     }
 }
