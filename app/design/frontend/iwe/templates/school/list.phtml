@@ -1,57 +1,65 @@
 <script id="school-item-template" type="text/x-jquery-tmpl" xmlns="http://www.w3.org/1999/html">
-<li class="school-line clearfix">
-	<div class="header">
-        <div class="rate">
-            <div class="inline">
-                <span class="ratio">${rate}</span>
+    <li class="school-line clearfix">
+        <div class="header">
+            <div class="rate">
+                <div class="inline">
+                    <span class="ratio">${rate}</span>
+                </div>
             </div>
-        </div>
-		<div class="info left">
-            <h4 class="title"><a href="#">${name}</a></h4>
-            <p class="address"><a href="#">${address}</a></p>
-        </div>
-        <div class="charts left">
-            <dl>
+            <div class="info left">
+                <h4 class="title"><a href="#">${name}</a></h4>
+                <p class="address"><a href="#">${address}</a></p>
+            </div>
+            <div class="charts left">
+                <dl>
 
-                {{each waysChart}}
+                    {{each waysChart}}
                     <dt>${name}</dt>
                     <dd title="${rate}" >
                         <div class="${color}" style="width:${width}px;"><strong></strong></div>
                     </dd>
-                {{/each}}
-            </dl>
-        </div>
-        <div class="btnHolder left">
-            <a href="#" class="btn inline close"></a>
-        </div>
-        <div style="clear:both;"></div>
-        <div class="open-head-wrapper">
-            <div class="additional-information">
-                <p class="description">{{html description}}</p>
-            </div>
-            <div class="charts left">
-                {{each subjectCharts}}
-                <dl>
-                    <dt>${subjectName}</dt>
-                    {{each years}}
-                        {{if rate > 0}}
-                            <dd  style="float:right">
-                                <div class="${color}" title="${rate}"  style="width:${width}px"><strong></strong></div>
-                            </dd>
-                            <br class="clear"/>
-                        {{/if}}
                     {{/each}}
                 </dl>
-                {{/each}}
+            </div>
+            <div class="btnHolder left">
+                <a href="#" class="btn inline close"></a>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="open-head-wrapper">
+                <div class="rate">
+                    <div class="inline">
+                        <div style="height:30px" class="ratio"></div>
+                    </div>
+                </div>
+                <div class="info left">
+                    <p class="description">{{html description}}</p>
+                </div>
+                <div class="charts all-subject-charts left">
+                    {{each subjectCharts}}
+                    <div class="subject-chart-wrapper">
+                        <span class="subject-chart-name">${subjectName}</span>
+                        <div class="subject-chart">
+                            <table class="graph" cellspacing="0px">
+                                <tbody>
+                                <tr>
+                                    {{each years}}
+                                    <td class="graph_col"><div  title="${rate}" class = "subject-${color}" style="height:${height}%"></div></td>
+                                    {{/each}}
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
             </div>
         </div>
-    </div>
-</li>
+    </li>
 </script>
 <script id="school-empty-line-template" type="text/x-jquery-tmpl">
-	<li class="school-empty-line">
-		<p>No campaigns found</p>
-	</li>
+    <li class="school-empty-line">
+        <p>No campaigns found</p>
+    </li>
 </script>
 <div class="filters">
     <ul class="clearfix">
@@ -61,8 +69,8 @@
     </ul>
 </div>
 <div class="school-list grid">
-	<div class="school-list-header">
-		<div class="clear"></div>
-	</div>
-	<ul id="school-list"><?php echo $this->getInnerHtml(); ?></ul>
+    <div class="school-list-header">
+        <div class="clear"></div>
+    </div>
+    <ul id="school-list"><?php echo $this->getInnerHtml(); ?></ul>
 </div>
