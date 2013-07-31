@@ -26,10 +26,29 @@
         </div>
         <div style="clear:both;"></div>
         <div class="open-head-wrapper">
-            <div class="additional-information">
+            <div class="rate">
+                <div class="inline">
+                    <div style="height:30px"class="ratio"></div>
+                </div>
+            </div>
+            <div class="info left">
                 <p class="description">{{html description}}</p>
             </div>
             <div class="all-subject-charts">
+                <div class="subject-chart-wrapper year">
+                    <div class="subject-chart-name"></div>
+                    <div class="subject-chart year">
+                        <table class="graph" cellspacing="0px">
+                            <tbody>
+                            <tr>
+                                <td class="graph_col year"><div title="2010" style="height:100%">2010</div></td>
+                                <td class="graph_col year"><div title="2011" style="height:100%">2011</div></td>
+                                <td class="graph_col year"><div title="2012" style="height:100%">2012</div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 {{each subjectCharts}}
                     <div class="subject-chart-wrapper">
                         <span class="subject-chart-name">${subjectName}</span>

@@ -765,6 +765,26 @@ div.charts dd div.yellow
     background: linear-gradient(to right,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 );
 }
+.subject-chart-wrapper.year
+{
+    padding-bottom: 5px;
+}
+.subject-chart.year
+{
+    width: 270px;
+    display: inline-block;
+    height: auto;
+    border-radius: 10px;
+    background: transparent;
+}
+td.graph_col.year
+{
+    font-family: 'hvcbold', Helvetica;
+    line-height: 20px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-shadow: 0 -1px rgba(75,75,75,.8);
+}
 /* Use voice */
 .rotate-90-deg {
     -webkit-transform: rotate(-90deg);
