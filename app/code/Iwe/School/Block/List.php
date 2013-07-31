@@ -109,11 +109,6 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
         return round(($rate - 100) * 200 / 100);
     }
 
-    protected function _getLineHeight($rate)
-    {
-        $height = 0;
-        return round(100 * ($rate - 100) / 100);
-    }
     protected function _getSubjectRate($schoolId)
     {
         $cacheId = $schoolId . '_'.self::CACHE_CONFIG_KEY_SUBJECT_RATE;
@@ -134,7 +129,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
                 }
                 $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['rate'] = $rate;
                 $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['color'] = $this->_getLineColor($rate);
-                $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['height'] = $this->_getLineHeight($rate);
+                $row[$subject->getId()]['years'][$subjectRateObject->getYear()]['width'] = $this->_getLineWidth($rate);
             }
         }
         foreach($row as $subjectId => $subjectRow) {
@@ -142,7 +137,7 @@ class Iwe_School_Block_List extends Core_Block_Widget_Grid_Xml
                 if(!isset($subjectRow['years'][$year])) {
                     $subjectRow['years'][$year]['rate'] = 0;
                     $subjectRow['years'][$year]['color'] = 'red';
-                    $subjectRow['years'][$year]['height'] = 0;
+                    $subjectRow['years'][$year]['width'] = 0;
                 }
             }
             ksort($subjectRow['years']);

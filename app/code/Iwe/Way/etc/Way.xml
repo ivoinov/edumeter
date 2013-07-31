@@ -55,6 +55,7 @@
                             <label>Year</label>
                             <type>select</type>
                             <options>iwe_way/entity::getYearsOptions</options>
+                            <data_type>int</data_type>
                         </year>
                         <rate translate="label">
                             <label>Rate</label>
