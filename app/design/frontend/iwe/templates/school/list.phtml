@@ -29,22 +29,19 @@
             <div class="additional-information">
                 <p class="description">{{html description}}</p>
             </div>
-            <div class="all-subject-charts">
+            <div class="charts left">
                 {{each subjectCharts}}
-                    <div class="subject-chart-wrapper">
-                        <span class="subject-chart-name">${subjectName}</span>
-                        <div class="subject-chart">
-                            <table class="graph" cellspacing="0px">
-                                <tbody>
-                                    <tr>
-                                        {{each years}}
-                                            <td class="graph_col"><div  title="${rate}" class = "subject-${color}" style="height:${height}%"></div></td>
-                                        {{/each}}
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <dl>
+                    <dt>${subjectName}</dt>
+                    {{each years}}
+                        {{if rate > 0}}
+                            <dd  style="float:right">
+                                <div class="${color}" title="${rate}"  style="width:${width}px"><strong></strong></div>
+                            </dd>
+                            <br class="clear"/>
+                        {{/if}}
+                    {{/each}}
+                </dl>
                 {{/each}}
             </div>
         </div>
