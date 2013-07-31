@@ -31,7 +31,7 @@ class Iwe_School_Controller_Map extends Core_Controller_Crud_Abstract_List
         $radius = round($this->getRequest()->getParam('viewableRadius'));
         $from = ($this->getRequest()->getParam('from') == 'false') ? 0 : 1;
         $collection = Seven::getCollection('iwe_school/entity')
-            ->getInCurrentRadius($currentLongitude,$currentLatitude,$radius)
+            ->getInCurrentRadius($currentLongitude, $currentLatitude, $radius)
             ->withRate($way, $year, $from);
         foreach($collection as $school)
         {
