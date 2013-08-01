@@ -27,6 +27,7 @@
                 <action method="addJs"><script>js/skin.js</script><type>skin</type></action>
                 <action method="addJs"><script>bootstrap/bootstrap.min.js</script><type>lib</type></action>
                 <action method="addCss"><script>bootstrap/bootstrap.min.css</script><type>lib</type></action>
+                <action method="setFavicon"><icon>images/favicon.ico</icon></action>
             </block>
             <block name="body" type="core/html_body" template="page/layout.phtml">
                 <block name="header"  type="core/template" template="page/header.phtml" />
