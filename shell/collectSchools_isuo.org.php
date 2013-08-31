@@ -12,6 +12,7 @@ if(file_exists($filename)) {
     if(!$handle) {
         die("Can't open file {$filename}");
     }
+    $counter = 0;
     for($i = 0; $i <= 500000; $i++) {
         $ch = curl_init($websiteUrl . $i);
         curl_setopt($ch, CURLOPT_HEADER, 1);
@@ -30,8 +31,11 @@ if(file_exists($filename)) {
             $csvLine['address'] = $tableElement[0]->children(7)->children(1)->plaintext;
             $csvLine['description'] = _getDescription($tableElement[0]);
             fputcsv($handle, $csvLine, ';', '"');
+            $counter++;
+            echo "Export school {$csvLine['shortName']} from isuo.org \n";
         }
     }
+    echo "Number of exported schools - {$counter} \n";
 } else {
     die("File does not exist");
 }
