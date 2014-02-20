@@ -248,11 +248,11 @@ footer .links li {
 }
 
 #map_show_control a.show {
-    background: url("images/circle-arrow-down.png");
+    background: url("images/circle-arrow.png");
 }
 
 #map_show_control a.hide {
-    background: url("images/circle-arrow-up.png");
+    background: url("images/circle-arrow-left.png");
 }
 
 /*Stat school list*/
