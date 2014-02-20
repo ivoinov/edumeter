@@ -849,10 +849,8 @@ td.graph_col.year {
     position: fixed;
     z-index: 100001;
     cursor: pointer;
-    right: 0;
-    width: 175px;
-    padding-top: 140px;
-    top: 25%;
+    left: -70px;
+    top: 50%;
 }
 
 #user-voice a {

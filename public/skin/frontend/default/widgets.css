@@ -201,7 +201,7 @@
 
 /* Widget Container */
 
-.widget-container {
+#centered_content > .widget-container {
     float: right;
     width: 40%;
     height: 95%;
