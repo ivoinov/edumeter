@@ -293,7 +293,7 @@ footer .links li {
     list-style: none;
     line-height: 20px;
     min-height: 65px;
-    height: 165px;
+    height: 135px;
     overflow: hidden;
     background: #888888;
     padding: 25px 0 8px;
@@ -303,6 +303,10 @@ footer .links li {
 .school-list .header {
     line-height: 40px;
     margin: 0 0 8px 0;
+}
+
+.school-list .header .info {
+    min-height: 100px;
 }
 
 .school-line .rate {
@@ -318,10 +322,9 @@ footer .links li {
 }
 
 .school-line .info {
-    width: 80%;
+    width: 35%;
     padding-left: 15px;
     line-height: 20px;
-    min-height: 95px;
 }
 
 .school-line .info .title a {
@@ -372,8 +375,7 @@ div.open-head-wrapper {
 }
 
 .school-list .btnHolder {
-    width: 40px;
-    text-align: right;
+    padding: 10px 5px 0 0px;
 }
 
 .school-list .btnHolder .btn {
@@ -392,11 +394,6 @@ div.open-head-wrapper {
 .school-list .btnHolder a.btn.open {
     background: url(images/circle-arrow-down.png) no-repeat;
     box-shadow: none;
-}
-
-.school-list .charts {
-    width: 400px;
-    min-width: 32%;
 }
 
 .school-list .btnHolder .btn:hover {
@@ -666,9 +663,6 @@ div.charts dt {
     position: relative; /* IE is dumb */
     clear: both;
     display: block;
-    float: left;
-    width: 120px;
-    height: 10px;
     line-height: 20px;
     margin-right: 17px;
     font-size: .75em;
@@ -683,7 +677,6 @@ div.charts dd {
     float: left;
     width: 200px;
     height: 10px;
-    margin: 0 0 15px;
     background: rgb(85, 85, 85);
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .9);
