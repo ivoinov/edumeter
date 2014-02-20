@@ -271,7 +271,7 @@ $(function(){
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: new google.maps.LatLng(48,32),
-        scrollwheel: false
+        scrollwheel: true
     })
     map.setInfoBuble(new InfoBubble({
         map: map.map,
