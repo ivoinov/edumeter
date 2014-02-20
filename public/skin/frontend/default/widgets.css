@@ -201,6 +201,13 @@
 
 /* Widget Container */
 
+.widget-container {
+    float: right;
+    width: 40%;
+    height: 95%;
+    overflow-y: scroll;
+}
+
 .widget-container .widget-container-buttons {
     text-align: right;
     margin-bottom: 26px;
