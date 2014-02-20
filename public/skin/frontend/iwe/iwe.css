@@ -22,30 +22,37 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-#siteContainer{
+
+#siteContainer {
     min-height: 100%;
     min-width: 1125px;
     position: relative;
@@ -53,13 +60,13 @@ table {
     padding-bottom: 40px;
     margin: 0 auto;
 }
-﻿@font-face {
+
+﻿
+
+@font-face {
     font-family: 'hvcbold';
     src: url('hvcbold.eot');
-    src: url('hvcbold.eot?#iefix') format('embedded-opentype'),
-    url('hvcbold.woff') format('woff'),
-    url('fonts/hvcbold.ttf') format('truetype'),
-    url('hvcbold.svg#univers_condensedbold') format('svg');
+    src: url('hvcbold.eot?#iefix') format('embedded-opentype'), url('hvcbold.woff') format('woff'), url('fonts/hvcbold.ttf') format('truetype'), url('hvcbold.svg#univers_condensedbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -67,25 +74,27 @@ table {
 html {
     overflow: auto;
 }
-html,body {
+
+html, body {
     height: 100%;
 }
 
-.siteContainer{
+.siteContainer {
     min-height: 100%;
     position: relative;
     background: #888888;
 }
 
-.centered{
+.centered {
     width: 1185px;
     margin: 0 auto;
 }
 
-.left{
+.left {
     float: left;
 }
-.right{
+
+.right {
     float: right;
 }
 
@@ -104,25 +113,27 @@ footer .links,
     color: #a3a3a3;
 }
 
-.mapHolder{
+.mapHolder {
     width: 100%; /*TODO: Remove. View fix*/
     margin: 0 auto;
     position: relative;
 }
+
 .mapHolder img {
     width: 100%; /*TODO: REMOVE if not needed*/
 }
+
 .mapHolder .tooltip {
     position: absolute;
 }
 
-header, footer{
+header, footer {
     height: 40px;
     line-height: 15px;
     background: black;
 }
 
-header{
+header {
     color: white;
     width: 100%;
     top: 0;
@@ -132,16 +143,20 @@ header{
     z-index: 999;
     min-width: 1125px;
 }
+
 header .logo img {
     display: block;
     height: 30px;
 }
+
 header .siteMenu a {
     font-weight: bold;
 }
+
 header .siteMenu p {
     padding-top: 10px;
 }
+
 header .formSearch {
     position: relative;
     margin-top: 5px;
@@ -152,7 +167,7 @@ header .formSearch .txtSearch {
     padding: 0 25px 0 30px;
     border: 0 none;
     border-radius: 45px;
-    background: url(images/lens.png) no-repeat 10px 50% white;   /*Add box-shadow*/
+    background: url(images/lens.png) no-repeat 10px 50% white; /*Add box-shadow*/
 }
 
 header .formSearch .btnClear {
@@ -163,16 +178,19 @@ header .formSearch .btnClear {
     right: 5px;
 }
 
-header div.description
-{
+header div.description {
     padding-top: 5px;
     color: white;
     font-size: 16px;
     font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -2px rgba(120,120,120,.9);
+    text-shadow: 0 -2px rgba(120, 120, 120, .9);
 
 }
-header span.logo-text {font-size: 22px;}
+
+header span.logo-text {
+    font-size: 22px;
+}
+
 footer {
     width: 100%;
     bottom: 0;
@@ -180,34 +198,47 @@ footer {
     overflow: hidden;
     position: fixed;
 }
+
 footer .logo {
     padding-left: 110px;
 }
+
 footer .links {
     padding-right: 10px;
     padding-top: 15px;
 }
+
 footer .links li {
     padding-right: 20px;
     float: left;
 }
+
 /*CONTENT*/
 #centered_content {
     padding-top: 30px;
 }
-.content{
+
+.content {
     padding: 0 0 60px;
 }
-#location{width: 100%;margin: 0 auto;position: relative;}
-#map_canvas{height: 65%;width: 100%}
 
-#map_show_control
-{
+#location {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#map_canvas {
+    height: 65%;
+    width: 100%
+}
+
+#map_show_control {
     width: 40px;
     text-align: right;
 }
-#map_show_control a
-{
+
+#map_show_control a {
     width: 43px;
     height: 43px;
     display: inline-block;
@@ -215,12 +246,12 @@ footer .links li {
     text-decoration: none;
     color: white;
 }
-#map_show_control a.show
-{
+
+#map_show_control a.show {
     background: url("images/circle-arrow-down.png");
 }
-#map_show_control a.hide
-{
+
+#map_show_control a.hide {
     background: url("images/circle-arrow-up.png");
 }
 
@@ -242,12 +273,14 @@ footer .links li {
     font: inherit;
     vertical-align: baseline;
 }
+
 .school-list h4 {
     font-size: 18px;
     font-weight: bold;
     line-height: normal;
     margin: 0;
 }
+
 .school-list .selected {
     background: #888888;
 }
@@ -275,10 +308,13 @@ footer .links li {
     max-width: 21%;
     text-align: right;
     padding-left: 10px;
-}.school-line .rate .ratio {
+}
+
+.school-line .rate .ratio {
     font-size: 30px;
     color: #ffffff;
- }
+}
+
 .school-line .info {
     width: 425;
     max-width: 37%;
@@ -286,56 +322,60 @@ footer .links li {
     padding-left: 40px;
     line-height: 20px;
 }
+
 .school-line .info .title a {
-    text-shadow: 0 -1px rgba(0,0,0,.8);
+    text-shadow: 0 -1px rgba(0, 0, 0, .8);
     text-decoration: none;
     color: white;
 }
-div.open-head-wrapper
-{
+
+div.open-head-wrapper {
     height: auto;
 }
+
 .school-line .additional-information {
     width: 30%;
     margin: 5px;
     float: left;
     padding-right: 90px;
     word-spacing: 3px;
-    text-shadow: 0 -1px rgba(0,0,0,.8);
-    text-decoration: none;
-    color: white;
-}
-.school-line .additional-information .description{
-    text-shadow: 0 -1px rgba(0,0,0,.8);
+    text-shadow: 0 -1px rgba(0, 0, 0, .8);
     text-decoration: none;
     color: white;
 }
 
-.school-line .all-subject-charts{
+.school-line .additional-information .description {
+    text-shadow: 0 -1px rgba(0, 0, 0, .8);
+    text-decoration: none;
+    color: white;
+}
+
+.school-line .all-subject-charts {
     width: 400px;
     min-width: 32%;
     float: left;
     text-decoration: none;
     color: #FFFFFF;
     text-align: right;
-    text-shadow: 0 -1px rgba(75,75,75,.8);
-}
-.school-line .info .address{
-     line-height: 25px;
+    text-shadow: 0 -1px rgba(75, 75, 75, .8);
 }
 
-.school-line .info .address a{
-    text-shadow: 0 -1px rgba(0,0,0,.8);
+.school-line .info .address {
+    line-height: 25px;
+}
+
+.school-line .info .address a {
+    text-shadow: 0 -1px rgba(0, 0, 0, .8);
     text-decoration: none;
     color: white;
 }
-.school-list .btnHolder
-{
+
+.school-list .btnHolder {
     width: 40px;
     text-align: right;
 }
-.school-list .btnHolder .btn
-{
+
+.school-list .btnHolder .btn {
     width: 43px;
     height: 43px;
     display: inline-block;
@@ -353,15 +393,15 @@ div.open-head-wrapper
     box-shadow: none;
 }
 
-.school-list .charts
-{
+.school-list .charts {
     width: 400px;
     min-width: 32%;
 }
-.school-list .btnHolder .btn:hover
-{
+
+.school-list .btnHolder .btn:hover {
     background-position: 0 100%;
 }
+
 .school-empty-line {
     background: #888888;
     padding: 20px;
@@ -410,7 +450,7 @@ div.open-head-wrapper
     float: right;
 }
 
-#school-pager>a,#product-pager>img {
+#school-pager > a, #product-pager > img {
     margin-top: 4px;
     display: inline-block;
     vertical-align: top;
@@ -473,68 +513,71 @@ div.open-head-wrapper
     float: left;
     text-align: center;
 }
+
 /*Filters */
 .filters {
     padding: 10px 0 25px;
-    margin:0 auto;
+    margin: 0 auto;
     min-width: 1215px;
     max-width: 96%;
 }
+
 .filters ul {
     padding: 0;
     margin: 0;
 }
+
 .filters li {
     float: left;
     list-style: none;
 }
+
 .filters li a:hover, a:focus {
     color: #a3a3a3;
     text-decoration: none;
 }
-.fGroup
-{   margin-left: 5px;
+
+.fGroup {
+    margin-left: 5px;
     padding-left: 5px;
 }
-.filters li.fGroup
-{
+
+.filters li.fGroup {
     border-left: 1px solid #a8a8a8;
 }
-.filters li.fGroup:first-child
-{
+
+.filters li.fGroup:first-child {
     padding-left: 0;
     margin-left: 0;
     border-left: 0 none;
 }
 
-.filters li.fGroup li
-{
+.filters li.fGroup li {
     position: relative;
     line-height: 20px;
     padding-left: 2px;
 }
-.filters li.fGroup li:first-child
-{
+
+.filters li.fGroup li:first-child {
     padding-left: 0;
 }
 
-.filters li.fGroup li.active
-{
+.filters li.fGroup li.active {
 
     border-radius: 10px;
     background: #ebebeb;
 }
-.filters li.fGroup li a
-{
+
+.filters li.fGroup li a {
     padding: 0 8px;
     font-weight: bold;
 }
-.filters li.fGroup li.active a
-{
+
+.filters li.fGroup li.active a {
     color: #4d4d4d;
 }
-.filters li.fGroup li .arrow
-{
+
+.filters li.fGroup li .arrow {
     width: 20px;
     height: 10px;
     display: none;
@@ -543,21 +586,21 @@ div.open-head-wrapper
     left: 50%;
     margin-left: -5px;
 }
-.filters li.fGroup li.active .arrow
-{
+
+.filters li.fGroup li.active .arrow {
     display: block;
 }
+
 /* Map markers info windows */
-.info-window
-{
-    background: rgb(125,126,125);
-    background: -moz-linear-gradient(top,  rgb(125,126,125) 0%, rgb(14,14,14) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(125,126,125)), color-stop(100%,rgb(14,14,14)));
-    background: -webkit-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
-    background: -o-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
-    background: -ms-linear-gradient(top,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
-    background: linear-gradient(to bottom,  rgb(125,126,125) 0%,rgb(14,14,14) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+.info-window {
+    background: rgb(125, 126, 125);
+    background: -moz-linear-gradient(top, rgb(125, 126, 125) 0%, rgb(14, 14, 14) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(125, 126, 125)), color-stop(100%, rgb(14, 14, 14)));
+    background: -webkit-linear-gradient(top, rgb(125, 126, 125) 0%, rgb(14, 14, 14) 100%);
+    background: -o-linear-gradient(top, rgb(125, 126, 125) 0%, rgb(14, 14, 14) 100%);
+    background: -ms-linear-gradient(top, rgb(125, 126, 125) 0%, rgb(14, 14, 14) 100%);
+    background: linear-gradient(to bottom, rgb(125, 126, 125) 0%, rgb(14, 14, 14) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d7e7d', endColorstr='#0e0e0e', GradientType=0);
     text-align: center;
     height: 100%;
     width: 100%;
@@ -565,52 +608,58 @@ div.open-head-wrapper
     border-radius: 10px;
     overflow: hidden;
 }
-.info-window span
-{
+
+.info-window span {
     vertical-align: middle;
     display: table-cell;
     color: #ffffff;
     padding-right: 10px;
     min-width: 60px;
 }
+
 .info-window span.distance {
     color: #A9A9A9;
     font-size: 18px;
     font-weight: bold;
     font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -2px rgba(0,0,0,.9);
+    text-shadow: 0 -2px rgba(0, 0, 0, .9);
 }
+
 .info-window span.rate {
     font-size: 27px;
     font-weight: bold;
     font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -2px rgba(0,0,0,.9);
+    text-shadow: 0 -2px rgba(0, 0, 0, .9);
 }
+
 .info-window span.school-name {
     font-size: 14px;
     font-family: 'hvcbold', Helvetica;
-    text-shadow: 0 -1px rgba(0,0,0,.9);
-    text-align:left;
+    text-shadow: 0 -1px rgba(0, 0, 0, .9);
+    text-align: left;
     word-wrap: break-word;
     width: 200px;
 }
+
 /* 404 page */
 p.text-404 {
     font-size: 25px;
     text-align: center;
     padding-top: 65px;
-    text-shadow: 0 -2px rgba(255,255,255,.8);
+    text-shadow: 0 -2px rgba(255, 255, 255, .8);
     font-family: 'hvcbold', Helvetica;
 }
+
 .image-404 {
     text-align: center;
     padding-top: 65px;
 }
-h1.page-not-found{
+
+h1.page-not-found {
     font-size: 35px;
     text-align: center;
     padding-top: 50px;
-    text-shadow: 0 -2px rgba(255,255,255,.8);
+    text-shadow: 0 -2px rgba(255, 255, 255, .8);
     font-family: 'hvcbold', Helvetica;
 }
 
@@ -619,6 +668,7 @@ div.charts dl {
     margin: 0;
     padding: 0;
 }
+
 div.charts dt {
     position: relative; /* IE is dumb */
     clear: both;
@@ -631,8 +681,9 @@ div.charts dt {
     font-size: .75em;
     text-align: right;
     color: #FFFFFF;
-    text-shadow: 0 -1px rgba(75,75,75,.8);
+    text-shadow: 0 -1px rgba(75, 75, 75, .8);
 }
+
 div.charts dd {
     position: relative; /* IE is dumb */
     display: block;
@@ -640,148 +691,148 @@ div.charts dd {
     width: 200px;
     height: 10px;
     margin: 0 0 15px;
-    background: rgb(85,85,85);
+    background: rgb(85, 85, 85);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.9);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .9);
 }
+
 div.charts dd div {
     position: relative;
     height: 10px;
     border-radius: 15px;
-    text-align:right;
+    text-align: right;
 }
 
-div.charts dd div.green
-{
-    background: rgb(182,224,38);
-    background: -moz-linear-gradient(left,  rgb(182,224,38) 0%, rgb(171,220,40) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(182,224,38)), color-stop(100%,rgb(171,220,40)));
-    background: -webkit-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: -o-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: -ms-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: linear-gradient(to right,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6e026', endColorstr='#abdc28',GradientType=1 );
+div.charts dd div.green {
+    background: rgb(182, 224, 38);
+    background: -moz-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(182, 224, 38)), color-stop(100%, rgb(171, 220, 40)));
+    background: -webkit-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -o-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -ms-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: linear-gradient(to right, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b6e026', endColorstr='#abdc28', GradientType=1);
 }
 
-div.charts dd div.red
-{
-    background: rgb(254,187,187);
-    background: -moz-linear-gradient(left,  rgb(254,187,187) 0%, rgb(254,144,144) 45%, rgb(255,92,92) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(254,187,187)), color-stop(45%,rgb(254,144,144)), color-stop(100%,rgb(255,92,92)));
-    background: -webkit-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: -o-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: -ms-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: linear-gradient(to right,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 );
+div.charts dd div.red {
+    background: rgb(254, 187, 187);
+    background: -moz-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(254, 187, 187)), color-stop(45%, rgb(254, 144, 144)), color-stop(100%, rgb(255, 92, 92)));
+    background: -webkit-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -o-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -ms-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: linear-gradient(to right, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=1);
 }
 
-div.charts dd div.yellow
-{
-    background: rgb(241,231,103);
-    background: -moz-linear-gradient(left,  rgb(241,231,103) 0%, rgb(254,182,69) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(241,231,103)), color-stop(100%,rgb(254,182,69)));
-    background: -webkit-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: -o-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: -ms-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: linear-gradient(to right,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=1 );
+div.charts dd div.yellow {
+    background: rgb(241, 231, 103);
+    background: -moz-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(241, 231, 103)), color-stop(100%, rgb(254, 182, 69)));
+    background: -webkit-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -o-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -ms-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: linear-gradient(to right, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1e767', endColorstr='#feb645', GradientType=1);
 }
-.charts dt
-{
+
+.charts dt {
     font-family: 'hvcbold', Helvetica;
-}/* Subject charts */
-.subject-chart
-{
+}
+
+/* Subject charts */
+.subject-chart {
     width: 270px;
     display: inline-block;
     height: auto;
-    background: rgb(75,75,75);
+    background: rgb(75, 75, 75);
     border-radius: 10px;
 }
-.subject-chart-name
-{
+
+.subject-chart-name {
     font-family: 'hvcbold', Helvetica;
     padding-right: 10px;
     color: #FFFFFF;
-    text-shadow: 0 -1px rgba(75,75,75,.8);
+    text-shadow: 0 -1px rgba(75, 75, 75, .8);
     display: inline-block;
     height: 20px;
     padding-bottom: 15px;
 }
-.graph td
-{
+
+.graph td {
     height: 100%;
 }
-.subject-chart .graph, .graph tr, .graph td
-{
+
+.subject-chart .graph, .graph tr, .graph td {
     border: 0px;
     padding: 0px;
     margin: 0px;
     vertical-align: bottom;
     text-align: center;
 }
-.subject-chart .graph_col
-{
+
+.subject-chart .graph_col {
     text-align: center;
     height: 35px;
 }
-.subject-chart .graph_col div
-{
+
+.subject-chart .graph_col div {
     width: 60px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     color: white;
     margin-left: 25px;
 }
-.subject-chart .subject-green
-{
-    background: rgb(182,224,38);
-    background: -moz-linear-gradient(left,  rgb(182,224,38) 0%, rgb(171,220,40) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(182,224,38)), color-stop(100%,rgb(171,220,40)));
-    background: -webkit-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: -o-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: -ms-linear-gradient(left,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    background: linear-gradient(to right,  rgb(182,224,38) 0%,rgb(171,220,40) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6e026', endColorstr='#abdc28',GradientType=1 );
+
+.subject-chart .subject-green {
+    background: rgb(182, 224, 38);
+    background: -moz-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(182, 224, 38)), color-stop(100%, rgb(171, 220, 40)));
+    background: -webkit-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -o-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: -ms-linear-gradient(left, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    background: linear-gradient(to right, rgb(182, 224, 38) 0%, rgb(171, 220, 40) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b6e026', endColorstr='#abdc28', GradientType=1);
 }
-.subject-chart .subject-yellow
-{
-    background: rgb(241,231,103);
-    background: -moz-linear-gradient(left,  rgb(241,231,103) 0%, rgb(254,182,69) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(241,231,103)), color-stop(100%,rgb(254,182,69)));
-    background: -webkit-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: -o-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: -ms-linear-gradient(left,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    background: linear-gradient(to right,  rgb(241,231,103) 0%,rgb(254,182,69) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=1 );
+
+.subject-chart .subject-yellow {
+    background: rgb(241, 231, 103);
+    background: -moz-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(241, 231, 103)), color-stop(100%, rgb(254, 182, 69)));
+    background: -webkit-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -o-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: -ms-linear-gradient(left, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    background: linear-gradient(to right, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1e767', endColorstr='#feb645', GradientType=1);
 }
-.subject-chart .subject-red
-{
-    background: rgb(254,187,187);
-    background: -moz-linear-gradient(left,  rgb(254,187,187) 0%, rgb(254,144,144) 45%, rgb(255,92,92) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(254,187,187)), color-stop(45%,rgb(254,144,144)), color-stop(100%,rgb(255,92,92)));
-    background: -webkit-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: -o-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: -ms-linear-gradient(left,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    background: linear-gradient(to right,  rgb(254,187,187) 0%,rgb(254,144,144) 45%,rgb(255,92,92) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 );
+
+.subject-chart .subject-red {
+    background: rgb(254, 187, 187);
+    background: -moz-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgb(254, 187, 187)), color-stop(45%, rgb(254, 144, 144)), color-stop(100%, rgb(255, 92, 92)));
+    background: -webkit-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -o-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: -ms-linear-gradient(left, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    background: linear-gradient(to right, rgb(254, 187, 187) 0%, rgb(254, 144, 144) 45%, rgb(255, 92, 92) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=1);
 }
-.subject-chart.year
-{
+
+.subject-chart.year {
     width: 270px;
     display: inline-block;
     height: auto;
     border-radius: 10px;
     background: transparent;
 }
-td.graph_col.year
-{
+
+td.graph_col.year {
     font-family: 'hvcbold', Helvetica;
     line-height: 20px;
     font-size: 14px;
     color: #FFFFFF;
-    text-shadow: 0 -1px rgba(75,75,75,.8);
+    text-shadow: 0 -1px rgba(75, 75, 75, .8);
 }
+
 /* Use voice */
 .rotate-90-deg {
     -webkit-transform: rotate(-90deg);
@@ -800,8 +851,8 @@ td.graph_col.year
     /* Should be unset in IE9+ I think. */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
-#user-voice
-{
+
+#user-voice {
     position: fixed;
     z-index: 100001;
     cursor: pointer;
@@ -810,7 +861,7 @@ td.graph_col.year
     padding-top: 140px;
     top: 25%;
 }
-#user-voice a
-{
+
+#user-voice a {
     height: 25px;
 }
