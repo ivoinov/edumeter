@@ -239,7 +239,7 @@ var map = {
         var hideShowControl = new this.showHideMap(hideShowButton,this);
 
         hideShowButton.index = 1;
-        this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(hideShowButton);
+        this.map.controls[google.maps.ControlPosition.RIGHT].push(hideShowButton);
     },
     showHideMap: function(controlDiv,that) {
         controlDiv.style.padding = '7px';
