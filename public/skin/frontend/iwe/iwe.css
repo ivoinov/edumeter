@@ -306,7 +306,7 @@ footer .links li {
 }
 
 .school-list .header .info {
-    min-height: 100px;
+    min-height: 45px;
 }
 
 .school-line .rate {
@@ -579,6 +579,14 @@ div.open-head-wrapper {
 
 .filters li.fGroup li.active .arrow {
     display: block;
+}
+
+#radius-filter {
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    background: gray;
+    padding: 5px;
 }
 
 /* Map markers info windows */
