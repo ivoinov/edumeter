@@ -581,6 +581,14 @@ div.open-head-wrapper {
     display: block;
 }
 
+#radius-filter {
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    background: gray;
+    padding: 5px;
+}
+
 /* Map markers info windows */
 .info-window {
     background: rgb(125, 126, 125);
