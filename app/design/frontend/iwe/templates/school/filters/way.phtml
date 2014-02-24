@@ -3,7 +3,11 @@
     <ul>
         <?php foreach($wayCollection as $way ): ?>
             <li class="filter" id="way-filter-<?php echo $way->getId();?>">
-                <a href="javascript:school_list.changeWay(<?php echo $way->getId();?>)"><?php echo $way->getName();?></a>
+                <?php $fullName = $way->getName();
+                $namePart = explode(' ', trim($fullName));
+                $name = $namePart[0];
+                ?>
+                <a href="javascript:school_list.changeWay(<?php echo $way->getId(); ?>)"><?php echo $name; ?></a>
                 <span class="arrow"></span>
             </li>
         <?php endforeach; ?>
