@@ -313,6 +313,10 @@ footer .links li {
     min-height: 45px;
 }
 
+.school-list .header .charts {
+    margin-right: 2%;
+}
+
 .school-line .rate {
     float: left;
     width: 10%;
@@ -361,11 +365,12 @@ div.open-head-wrapper {
 .school-line .all-subject-charts {
     width: 400px;
     min-width: 32%;
-    float: left;
+    float: right;
     text-decoration: none;
     color: #FFFFFF;
     text-align: right;
     text-shadow: 0 -1px rgba(75, 75, 75, .8);
+    margin: 6% 2% 0 0;
 }
 
 .school-line .info .address {
