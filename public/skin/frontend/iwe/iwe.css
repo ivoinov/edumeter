@@ -598,6 +598,10 @@ div.open-head-wrapper {
     padding: 5px;
 }
 
+#year-filter-2010 {
+    border-left: 1px solid white;
+}
+
 /* Map markers info windows */
 .info-window {
     background: rgb(125, 126, 125);
