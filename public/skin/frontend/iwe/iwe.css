@@ -598,8 +598,9 @@ div.open-head-wrapper {
     padding: 5px;
 }
 
-#year-filter-2010 {
-    border-left: 1px solid white;
+.separatorType {
+    color: #fff;
+    font-size: 20px;
 }
 
 /* Map markers info windows */
