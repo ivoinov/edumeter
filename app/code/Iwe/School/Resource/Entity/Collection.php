@@ -19,6 +19,17 @@ class Iwe_School_Resource_Entity_Collection extends Core_Resource_Entity_Collect
                 ->order('rate DESC');
     }
 
+    public function withTableRate($region, $district, $way = 2, $year = 2012, $from = 0)
+    {
+        if (!empty($region)) $this->filter('region_id', $region);
+        if (!empty($district)) $this->filter('district_id', $district);
+        return $this
+            ->filter('way', $way)
+            ->filter('year', $year)
+            ->filter('from', (int)$from)
+            ->order('rate DESC');
+    }
+
     public function getInCurrentRadius($currentLongitude,$currentLatitude,$radius)
 
     {

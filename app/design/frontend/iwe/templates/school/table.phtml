@@ -1,0 +1,123 @@
+<div class="school-table">
+    <div class="filters">
+        <select class="filter" id="region">
+            <option value="0">Область</option>
+            <?php foreach ($this->getRegions() as $region): ?>
+                <option value="<?php echo $region->getId() ?>"><?php echo $region->getName() ?></option>
+            <?php endforeach; ?>
+        </select>
+        <select class="filter" id="district">
+            <option value="0">Регион</option>
+            <?php foreach ($this->getDistricts() as $district): ?>
+                <option value="<?php echo $district->getId() ?>"><?php echo $district->getName() ?></option>
+            <?php endforeach; ?>
+        </select>
+        <ul class="clearfix">
+            <li class="schoolTypes fGroup" id="way-filter">
+                <ul>
+                    <?php foreach ($this->getWayCollection() as $way): ?>
+                        <li class="filter" id="way-filter-<?php echo $way->getId(); ?>">
+                            <a href="javascript:school_table.changeWay(<?php echo $way->getId(); ?>)"><?php echo $way->getName(); ?></a>
+                            <span class="arrow"></span>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+            <li class="yearType fGroup" id="year-filter">
+                <ul>
+                    <li class="filter" id="year-filter-2010">
+                        <a href="javascript:school_table.changeYear(2010, true)">с 2010 года</a>
+                        <span class="arrow"></span>
+                    </li>
+                    <li class="filter" id="year-filter-2012">
+                        <a href="javascript:school_table.changeYear(2012, false)">последний год</a>
+                        <span class="arrow"></span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="school-list grid">
+        <div class="school-list-header">
+            <div class="clear"></div>
+        </div>
+        <ul id="school-list"><?php echo $this->getInnerHtml(); ?></ul>
+    </div>
+</div>
+<script id="school-item-template" type="text/x-jquery-tmpl" xmlns="http://www.w3.org/1999/html">
+<li class="school-line clearfix">
+	<div class="header">
+        <div class="rate">
+            <div class="inline">
+                <span class="ratio">${rate}</span>
+            </div>
+            <div class="btnHolder">
+                <a href="#" class="btn inline close"></a>
+            </div>
+        </div>
+		<div class="info left">
+            <h4 class="title"><a href="#">${name}</a></h4>
+            <p class="address"><a href="#">${address}</a></p>
+        </div>
+        <div class="charts left">
+            <dl>
+
+                {{each waysChart}}
+                    <dt>${name}</dt>
+                    <dd title="${rate}" >
+                        <div class="${color}" style="width:${width}px;"><strong></strong></div>
+                    </dd>
+                {{/each}}
+            </dl>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="open-head-wrapper">
+            <div class="rate">
+                <div class="inline">
+                    <div style="height:30px"class="ratio"></div>
+                </div>
+            </div>
+            <div class="info left">
+                <p class="description">{{html description}}</p>
+            </div>
+            <div class="all-subject-charts">
+                <div class="subject-chart-wrapper year">
+                    <div class="subject-chart-name"></div>
+                    <div class="subject-chart year">
+                        <table class="graph" cellspacing="0px">
+                            <tbody>
+                            <tr>
+                                <td class="graph_col year"><div title="2010" style="height:90%">2010</div></td>
+                                <td class="graph_col year"><div title="2011" style="height:90%">2011</div></td>
+                                <td class="graph_col year"><div title="2012" style="height:90%">2012</div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {{each subjectCharts}}
+                    <div class="subject-chart-wrapper">
+                        <span class="subject-chart-name">${subjectName}</span>
+                        <div class="subject-chart">
+                            <table class="graph" cellspacing="0px">
+                                <tbody>
+                                    <tr>
+                                        {{each years}}
+                                            <td class="graph_col"><div  title="${rate}" class = "subject-${color}" style="height:${height}%"></div></td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</li>
+</script>
+<script id="school-empty-line-template" type="text/x-jquery-tmpl">
+	<li class="school-empty-line">
+		<p>No campaigns found</p>
+	</li>
+</script>

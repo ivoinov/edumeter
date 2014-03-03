@@ -23,6 +23,12 @@
                     <name>School</name>
                     <controller>iwe_school/map</controller>
                     <use>iwe_school/entity</use>
+                    <routes>
+                        <table>
+                            <name>School table</name>
+                            <controller>iwe_school/table</controller>
+                        </table>
+                    </routes>
                 </school>
             </routes>
         </routing>

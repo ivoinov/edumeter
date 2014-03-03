@@ -24,6 +24,24 @@
         </reference>
         <remove name="grid"/>
     </school_index>
+    <school_table>
+        <reference name="head">
+            <action method="addJs"><script>bootstrap/bootstrap.min.js</script><type>lib</type></action>
+            <action method="addCss"><script>bootstrap/bootstrap.min.css</script><type>lib</type></action>
+            <action method="addJs"><script>jquery/jquery.tmpl.js</script><type>lib</type></action>
+            <action method="addJs"><script>jquery/cookies.js</script><type>lib</type></action>
+            <action method="addJs"><script>seven/widgets/list.js</script><type>lib</type></action>
+            <action method="addJs"><script>iwe/table.js</script><type>lib</type></action>
+        </reference>
+        <reference name="content">
+            <block name="school_table" type='iwe_school/table'>
+                <action method="initXml"><xml_name>iwe_school/entity</xml_name></action>
+                <action method="setTemplate"><template>school/tableData.phtml</template></action>
+                <action method="setWrapperTemplate"><template>school/table.phtml</template></action>
+            </block>
+            <remove name="grid_container"/>
+        </reference>
+    </school_table>
 
     <user_voice_add>
         <reference name="form">
