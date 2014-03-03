@@ -239,7 +239,7 @@ var map = {
         var hideShowControl = new this.showHideMap(hideShowButton,this);
 
         hideShowButton.index = 1;
-        this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(hideShowButton);
+        this.map.controls[google.maps.ControlPosition.RIGHT].push(hideShowButton);
     },
     showHideMap: function(controlDiv,that) {
         controlDiv.style.padding = '7px';
@@ -249,17 +249,18 @@ var map = {
         controlDiv.appendChild(controlUI);
 
         google.maps.event.addDomListener(controlUI, 'click', function() {
-            if($('div.school-list').css('display') == 'none') {
-                $('#map_canvas').css('height','65%');
-                $('div.school-list').toggle('slow');
+            if($('#map_show_control a').attr('class') == 'hide') {
+                $('#location').animate({width:'60%'},1000);
+                $('#location').css('width','60%');
                 $('#map_show_control a').removeClass('hide');
                 $('#map_show_control a').addClass('show');
             } else {
-                $('#map_canvas').css('height','95%');
-                $('div.school-list').toggle('slow');
+                $('#location').animate({width:'100%'},1000);
+                $('#location').css('width','100%');
                 $('#map_show_control a').removeClass('show');
                 $('#map_show_control a').addClass('hide');
             }
+            $('.widget-container').toggle('slow');
             google.maps.event.trigger(that.map, 'resize');
             that.map.fitBounds(that.radius.getBounds());
         });

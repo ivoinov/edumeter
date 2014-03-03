@@ -102,6 +102,10 @@ a {
     color: white;
 }
 
+a:focus {
+    outline: none;
+}
+
 body {
     font-size: 14px;
     font-family: 'hvcbold', Helvetica;
@@ -248,11 +252,11 @@ footer .links li {
 }
 
 #map_show_control a.show {
-    background: url("images/circle-arrow-down.png");
+    background: url("images/circle-arrow.png");
 }
 
 #map_show_control a.hide {
-    background: url("images/circle-arrow-up.png");
+    background: url("images/circle-arrow-left.png");
 }
 
 /*Stat school list*/
@@ -293,7 +297,7 @@ footer .links li {
     list-style: none;
     line-height: 20px;
     min-height: 65px;
-    height: 165px;
+    height: 135px;
     overflow: hidden;
     background: #888888;
     padding: 25px 0 8px;
@@ -303,6 +307,14 @@ footer .links li {
 .school-list .header {
     line-height: 40px;
     margin: 0 0 8px 0;
+}
+
+.school-list .header .info {
+    min-height: 45px;
+}
+
+.school-list .header .charts {
+    margin-right: 2%;
 }
 
 .school-line .rate {
@@ -318,10 +330,9 @@ footer .links li {
 }
 
 .school-line .info {
-    width: 80%;
+    width: 40%;
     padding-left: 15px;
     line-height: 20px;
-    min-height: 95px;
 }
 
 .school-line .info .title a {
@@ -352,13 +363,14 @@ div.open-head-wrapper {
 }
 
 .school-line .all-subject-charts {
-    width: 400px;
+    width: 410px;
     min-width: 32%;
-    float: left;
+    float: right;
     text-decoration: none;
     color: #FFFFFF;
     text-align: right;
     text-shadow: 0 -1px rgba(75, 75, 75, .8);
+    margin: 6% 2% 0 0;
 }
 
 .school-line .info .address {
@@ -372,8 +384,7 @@ div.open-head-wrapper {
 }
 
 .school-list .btnHolder {
-    width: 40px;
-    text-align: right;
+    padding: 10px 5px 0 0px;
 }
 
 .school-list .btnHolder .btn {
@@ -392,11 +403,6 @@ div.open-head-wrapper {
 .school-list .btnHolder a.btn.open {
     background: url(images/circle-arrow-down.png) no-repeat;
     box-shadow: none;
-}
-
-.school-list .charts {
-    width: 400px;
-    min-width: 32%;
 }
 
 .school-list .btnHolder .btn:hover {
@@ -584,6 +590,19 @@ div.open-head-wrapper {
     display: block;
 }
 
+#radius-filter {
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    background: gray;
+    padding: 5px;
+}
+
+.separatorType {
+    color: #fff;
+    font-size: 20px;
+}
+
 /* Map markers info windows */
 .info-window {
     background: rgb(125, 126, 125);
@@ -666,9 +685,6 @@ div.charts dt {
     position: relative; /* IE is dumb */
     clear: both;
     display: block;
-    float: left;
-    width: 120px;
-    height: 10px;
     line-height: 20px;
     margin-right: 17px;
     font-size: .75em;
@@ -683,7 +699,6 @@ div.charts dd {
     float: left;
     width: 200px;
     height: 10px;
-    margin: 0 0 15px;
     background: rgb(85, 85, 85);
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .9);
@@ -849,10 +864,8 @@ td.graph_col.year {
     position: fixed;
     z-index: 100001;
     cursor: pointer;
-    right: 0;
-    width: 175px;
-    padding-top: 140px;
-    top: 25%;
+    left: -70px;
+    top: 50%;
 }
 
 #user-voice a {
